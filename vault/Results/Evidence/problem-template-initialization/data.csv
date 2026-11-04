@@ -1,0 +1,10 @@
+check_id,verification_origin,status,observed_result
+unit_tests,prior_turn,PASS,16 tests; 0 failures; 0 errors; 0 skipped
+real_scene_loading,prior_turn,PASS,1000 tasks; 10 satellites; 2823 windows; 444817 attitude records
+parsed_data_fingerprint,prior_turn,PASS,b624266760b5b21426b015d4ff2b91babadf78ee4d7a1f6fee123da28d9dcc0b
+explicit_real_observation,prior_turn,PASS,task=0; satellite=0; start=38840; end=38863; profit=5
+short_real_observation_rejection,prior_turn,PASS,feasible=false; IMAGING_DURATION
+vault_structure,current_turn,PASS,3 standard entry notes; gate plan; Evidence and Reports
+document_links,current_turn,PASS,all local Markdown links resolve
+existing_code_preservation,current_turn,PASS,Java sources; tests; pom.xml; .gitignore unchanged
+archive_contents,current_turn,PASS,all packaged files equal current template files

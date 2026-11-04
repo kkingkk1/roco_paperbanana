@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "record_type": "p1_problem_adaptation",
+  "updated_at": "2026-11-04",
+  "project_root": "E:\\OneDrive\\project\\static_determine\\roco_paperbanana",
+  "project_git_head": null,
+  "problem_contract": "vault/Knowledge/问题建模.md",
+  "scope": "只读内部网格、单窗候选、输入等距检查和验证器首尾排除；不含求解器实验",
+  "runtime": {
+    "java": "21.0.4",
+    "maven": "3.9.11",
+    "platform": "Windows",
+    "priority": "Normal；启动命令的 PowerShell 已检查，未设置其他进程优先级"
+  },
+  "commands": [
+    "mvn -o test",
+    "java -Xmx2g -cp target/classes main.InspectScene 'E:\\OneDrive\\project\\static_determine\\Scene\\1000-10-0-0-12' 1000 10",
+    "javac -encoding UTF-8 -cp 'target/classes;target/p1-baseline-comparator/classes' -d target/p1-baseline-comparator/classes 'vault/Results/Evidence/p1-problem-adaptation/SceneAudit.java'",
+    "java -Xmx2g -cp 'target/classes;target/p1-baseline-comparator/classes' audit.SceneAudit 'E:\\OneDrive\\project\\static_determine\\Scene\\1000-10-0-0-12' 1000 10"
+  ],
+  "baseline": {
+    "tests_passed": 16,
+    "problem_instance_sha256": "c8d923c48f439ecff4f149c2b4a2456c0b8881b53c1fbaed3a1f4d043f11a20b",
+    "schedule_validator_sha256": "24ce089d20d3a7f28685c4a3c5093400d0add1ffab5e37129dcb034f70ee7549",
+    "internal_plans_compared": 11,
+    "boundary_observations_now_rejected": 2
+  },
+  "current_tests": {
+    "passed": 25,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "adapter_interface_simplification": {
+    "reason": "直接使用内部记录列表，移除易与时间步长混淆的索引名称及转换接口",
+    "algorithm": "SHA-256",
+    "scope": "按顺序编码卫星、任务、窗口、内部姿态记录及全部候选的原始记录位置；不代表原始文件哈希",
+    "before": "c556ffcf5ffb3bd81f58c2f63483a7d753ddb1122d80c8aa53344d000a4135a7",
+    "after": "c556ffcf5ffb3bd81f58c2f63483a7d753ddb1122d80c8aa53344d000a4135a7"
+  },
+  "scene": {
+    "path": "E:\\OneDrive\\project\\static_determine\\Scene\\1000-10-0-0-12",
+    "tasks": 1000,
+    "satellites": 10,
+    "windows": 2823,
+    "raw_attitude_records": 444817,
+    "internal_records": 439173,
+    "single_window_candidates": 377674,
+    "exhaustively_compared_windows": 32,
+    "validator_compared_observations": 6823
+  }
+}

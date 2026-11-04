@@ -1,0 +1,11 @@
+check_id,status,observed_result
+baseline_tests,PASS,16 tests; 0 failures; 0 errors; 0 skipped
+current_tests,PASS,25 tests; 0 failures; 0 errors; 0 skipped
+internal_plan_comparator,PASS,11 plans; same feasibility profit and violations
+boundary_comparator,PASS,2 observations; previously accepted and now rejected
+unequal_spacing_comparator,PASS,previously accepted and now rejected as invalid input
+real_scene_loading,PASS,1000 tasks; 10 satellites; 2823 windows; 444817 raw records
+real_scene_adapter,PASS,2823 windows; 439173 internal records; 377674 candidates
+real_scene_exhaustive_comparator,PASS,32 windows; independent pair enumeration
+real_scene_validator_comparator,PASS,6823 observations; same feasibility profit and violations
+adapter_interface_comparator,PASS,c556ffcf5ffb3bd81f58c2f63483a7d753ddb1122d80c8aa53344d000a4135a7; same before and after

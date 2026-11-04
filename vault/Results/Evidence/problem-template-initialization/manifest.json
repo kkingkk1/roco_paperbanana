@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "record_type": "problem_template_initialization",
+  "updated_at": "2026-10-06",
+  "project_root": "E:\\OneDrive\\project\\static_determine\\new_hybrid_problem_template",
+  "project_git_head": null,
+  "source_project": "E:\\OneDrive\\project\\static_determine\\new_hybrid",
+  "source_head_at_derivation": "ca0e05acd1f31cac7e53d7f44d5d7744d90583c5",
+  "source_selection": "current_worktree_at_derivation",
+  "scope": "问题建模与 vault 初始化；没有方法实验",
+  "runtime": {
+    "java": "21.0.4",
+    "maven": "3.9.11",
+    "priority": "Normal"
+  },
+  "prior_verification": {
+    "origin": "previous_turn_in_same_chat",
+    "test_command": "mvn -o test",
+    "tests": {
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "scene": "E:\\OneDrive\\project\\static_determine\\Scene\\1000-10-0-0-12",
+    "scene_command": "java -Xmx2g -cp target/classes main.InspectScene <scene-directory> 1000 10",
+    "scene_counts": {
+      "tasks": 1000,
+      "satellites": 10,
+      "windows": 2823,
+      "attitude_records": 444817
+    },
+    "parsed_data_sha256": "b624266760b5b21426b015d4ff2b91babadf78ee4d7a1f6fee123da28d9dcc0b",
+    "fingerprint_scope": "全部已解析值、任务窗口映射和顺序；不是原始文件哈希",
+    "explicit_observation": {
+      "task": 0,
+      "satellite": 0,
+      "start": 38840,
+      "end": 38863,
+      "profit": 5
+    },
+    "provenance_report_at_verification": "E:\\codex_data\\2026-10-05\\e-onedrive-project-static-determine-new\\outputs\\模板验收与文件清单.md"
+  },
+  "current_verification": {
+    "command": "E:\\codex_data\\2026-10-05\\e-onedrive-project-static-determine-new\\work\\verify_vault.py",
+    "before_snapshot": "E:\\codex_data\\2026-10-05\\e-onedrive-project-static-determine-new\\work\\vault-before.json",
+    "scope": "文档链接、vault 路由、既有代码哈希、压缩包内容",
+    "unchanged_source_test_build_hashes": {
+      ".gitignore": "0b8d3c2794411e680ed2d0ab681dc1ce7ed9f6f9186643262d511d0d01fcf103",
+      "pom.xml": "1da355d421193ef7573238555081d671d3084d3c2b3cc90cbed2a8593c29c498",
+      "src/main/java/main/InspectScene.java": "03f7c3df049b50d6ef78d288f4d62c1ba90b9f08b438524acce962a4849a599b",
+      "src/main/java/model/AttitudeRecord.java": "633cc8d3fb8fec758d2a8b4ab64d01832927d4c9da65e58ebf7f0e7016c2ac03",
+      "src/main/java/model/ProblemInstance.java": "c8d923c48f439ecff4f149c2b4a2456c0b8881b53c1fbaed3a1f4d043f11a20b",
+      "src/main/java/model/Satellite.java": "d7a4d39a47ff57392e28dc3539bae344a4297f71b2ae6ac8ec4d0035f6786733",
+      "src/main/java/model/ScheduledTask.java": "dce85f497b81b57c07d10c600f810701077c6a1ccb9f6a34f80b347b3a3fbb2e",
+      "src/main/java/model/SchedulingPlan.java": "cac52b1a07464923f8d071874dde40376bf587c5d885360524f03ef6f7363bb6",
+      "src/main/java/model/Task.java": "8e06fdd210dfee567c8d99ef9a8daaeb0e481faba693cd6d3ddffefaf3011a60",
+      "src/main/java/model/TimeWindow.java": "1a9fc3a959c260629a6fc8e444ca0861b1fee90368c9b3ebec1eac01dbc40740",
+      "src/main/java/problem/ScheduleValidator.java": "24ce089d20d3a7f28685c4a3c5093400d0add1ffab5e37129dcb034f70ee7549",
+      "src/main/java/utils/DataLoader.java": "d3ad7d0970a9594766450abe01ca34ed0fda191be696851e694903f93b1b1bb4",
+      "src/main/java/utils/TimeUtils.java": "f3757fe762359a9412c8aff9ca08600be47e1315b669d0555ff8f2b8f39f9ceb",
+      "src/test/java/problem/ScheduleValidatorTest.java": "2c8c403c0c881d74a4796454decce53326adb95191a7c2d73574f5cc146cb880",
+      "src/test/java/utils/DataLoaderTest.java": "c651c351ef1c137efcaebd31cb25736a55e79bde3aa53c7dd9e42055704466a1"
+    }
+  },
+  "evidence_sha256": {
+    "evidence.md": "3a3f6a714a7c6cc2cf3c396e385eccaf2865671a027628d2bebccf117a4789ac",
+    "data.csv": "40b6b1ee85e027845673af625c996bc1c23cfa73aedc208f42a650bf264f8262"
+  },
+  "canonical_documents": {
+    "docs/问题建模.md": "e92dd03312942e332bfa5a5c19d77f442b70391f607546f2a7c4995e22b0a35b",
+    "vault/Knowledge/Source-Provenance.md": "317eb0d75315a1af02832c2e39f18ae8c53e0613ba9fc574c00f087dea150e18"
+  }
+}
