@@ -1,0 +1,12 @@
+phase,implementation,tasks,seed,budget,population,baseline_profit,initial_profit,profit,observations,trace_count,status,elapsed_ms,raw_output
+initial,original,300,42,fixed,12:120,1550,1603.0,1603,294,10,COMPLETED,441,outputs/p1-rkhma-phase-orig-300-42-init-v2.txt
+initial,assembled,300,42,fixed,12:120,1550,1603.0,1603,294,10,COMPLETED,913,outputs/p1-rkhma-phase-assembled-300-42-init-v2.txt
+full,original,300,42,fixed,12:120,not_measured,1603.0,1618,300,60,COMPLETED,1103,outputs/p1-rkhma-phase-orig-300-42-full-v2.txt
+full,assembled,300,42,fixed,12:120,not_measured,1603.0,1618,300,60,COMPLETED,1552,outputs/p1-rkhma-phase-assembled-300-42-full-v2.txt
+initial,original,300,1234,fixed,12:120,1550,1603.0,1603,296,10,COMPLETED,432,outputs/p1-rkhma-phase-orig-300-1234-init.txt
+initial,assembled,300,1234,fixed,12:120,1550,1603.0,1603,296,10,COMPLETED,1083,outputs/p1-rkhma-phase-assembled-300-1234-init.txt
+full,original,300,1234,fixed,12:120,not_measured,1603.0,1618,300,20,COMPLETED,793,outputs/p1-rkhma-phase-orig-300-1234-full.txt
+full,assembled,300,1234,fixed,12:120,not_measured,1603.0,1618,300,20,COMPLETED,1133,outputs/p1-rkhma-phase-assembled-300-1234-full.txt
+full,original,500,42,auto,270:27000,not_measured,unavailable,0,0,0,SEARCH_EXPIRED,4565,outputs/p1-rkhma-phase-orig-500-42-auto.txt
+full,assembled,500,42,auto,270:27000,not_measured,unavailable,2400,392,0,SEARCH_EXPIRED,4652,outputs/p1-rkhma-phase-assembled-500-42-auto.txt
+baseline,original,500,42,baseline,not_applicable,not_measured,unavailable,2400,392,0,COMPLETED,174,outputs/p1-rkhma-phase-orig-500-42-baseline.txt

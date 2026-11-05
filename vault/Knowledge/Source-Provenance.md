@@ -51,6 +51,34 @@
 P1已实现只读内部网格、单窗候选迭代和验证器首尾排除；改前实现及同输入对照见[验收证据](../Results/Evidence/p1-problem-adaptation/evidence.md)。
 来源实现按1秒内部步长检查；本项目仍按已确认合同读取输入步长，不将1秒写成新的通用问题约束。
 
+## RKHMA 方法借鉴
+
+2026-11-04用户确认：在P1的8个手工组合中借鉴RKHMA的分配、局部搜索和插入做法，不额外复现完整RKHMA。
+以下参照均为 `satellite-basin-hopping` 的本机工作树；本项目按现有问题合同重新实现，没有复制其算法或实验产物。
+
+- [MaxWindowCountStrategy](../../../satellite-basin-hopping/src/main/java/operator/assignment/MaxWindowCountStrategy.java) 与 [MinTaskCountStrategy](../../../satellite-basin-hopping/src/main/java/operator/assignment/MinTaskCountStrategy.java)提供机会数量和负载分配思路。本项目使用合法候选数及窗口长度归一化负载，不引入容量硬裁剪。
+- [ReassignmentOrchestrator](../../../satellite-basin-hopping/src/main/java/main/ReassignmentOrchestrator.java) 与 [InsertionOrderLocalSearcher](../../../satellite-basin-hopping/src/main/java/algorithm/twostage/InsertionOrderLocalSearcher.java)提供转移、交换和局部重插思路。本项目在受影响星副本上编辑，并按完整方案的原始收益严格接受或撤销。
+- [GreedyInsertion](../../../satellite-basin-hopping/src/main/java/operator/insertion/GreedyInsertion.java) 与 [MinTransitionInsertion](../../../satellite-basin-hopping/src/main/java/operator/insertion/MinTransitionInsertion.java)提供可行插入和转换代价思路。本项目分别选择最早结束或最小新增转换时间，并保留完整内部候选域。
+
+不迁入来源实现的额外 slack 奖励、固定1秒索引假设或完整种群混合搜索；这些手工策略不是完整RKHMA复现。
+
+## 完整RKHMA的后续迁移
+
+2026-11-04用户进一步要求迁入完整RKHMA，并可将其拆分、重组及与手工A/B/C互换。此要求取代上一节仅借鉴的范围；上一节仍记录原手工策略的来源。
+2026-11-05用户确定所有规模采用来源不超过500任务时的做法，暂不为来源初始跨星调整另设兼容路径。A3对全部规模使用复合初始化策略7；超过500任务不再采用来源的策略8及其跨星修补。B3保留初始单星混合搜索及重分配后的局部调整；默认初始种群搜索次数为2，移除来源针对4000及以上任务的搜索缩减与延迟校准分支。
+既有[300任务分阶段对照](../Results/Reports/p1-rkhma-phase-comparison.md)未执行超过500任务分支的初始跨星调整，不能证明该调整的收益，也不能证明后续重分配不够强。该机制的受控比较不作为P1前置条件。
+
+完整RKHMA参照 `E:\OneDrive\project\static_determine\satellite-basin-hopping` 当前工作树，分支 `main`，HEAD 为 `fda0333454f8273d726e136d7ed67b3207754090`。该工作树含未提交修改；逐文件来源与迁入哈希见[迁移清单](../Results/Evidence/p1-rkhma-reassembly/manifest.json)。
+参照使用显式固定配置 `410000`，即 DE/rand/1 与 PSO 的完整混合路径，包含来源初始分配、种群搜索、贪心解码、四类重分配、热启动与校准。
+
+源码位于独立的 `method.rkhma.legacy` 包。来源模型复制为运行期工作对象，并映射回本项目的原始任务、窗口和姿态对象；共享问题层和Scene不被修改。
+1秒内部记录夹具使用来源GREEDY并与来源按相同输入、种子和预算对照。其他内部间隔使用原记录与精确时长构造可行插入；该适配不保证复现来源的窗口偏好和搜索轨迹。
+来源优化器使用微小 slack 奖励区分同收益候选。这个评分只用于其内部搜索；最终合法性与原始收益由本项目验证器计算。
+
+为按项目5秒合同返回已有合法解，限时入口提前保存来源首个基准种群个体对应的调度。在已记录的对照条件下，搜索完成时返回来源协调流程结果。来源重分配可能触发全星校准，该行为在RKHMA组合中保留。
+RKHMA的A/B/C现直接实现`SolverContracts`，来源协调器保留同一组件的快速执行路径。250任务完整对照和300任务截止差异见[统一证据](../Results/Evidence/p1-rkhma-unified/evidence.md)。来源500以上的原初始修补已按用户决定移除，因此不能把大规模结果称为原算法逐步复现。
+来源通用父算法库中的可选 SHADE 特征交叉依赖 Apache Commons Math；固定 `410000` 不调用该分支，本次未迁入该分支，也未新增生产依赖。旧调参文件、随机种子表和实验结果未迁入。
+
 ## 本轮实验数据的指定生成器
 
 2026-10-25用户指定 `E:\OneDrive\project\static_determine\Scene\敏捷卫星实验数据生成代码` 作为本轮实验数据生成来源。

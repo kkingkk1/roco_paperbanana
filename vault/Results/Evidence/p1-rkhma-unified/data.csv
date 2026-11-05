@@ -1,0 +1,10 @@
+case,tasks,implementation,seed,population_evaluations,status,profit,observations,elapsed_ms,raw_output
+fixed_250,250,original,42,12:120,COMPLETED,1330,250,596,outputs/p1-rkhma-unified/original-final-250-42.txt
+fixed_250,250,native_components,42,12:120,COMPLETED,1330,250,1185,outputs/p1-rkhma-unified/native-v2-250-42.txt
+fixed_250,250,common_interfaces,42,12:120,COMPLETED,1330,250,3699,outputs/p1-rkhma-unified/generic-v2-250-42.txt
+fixed_300,300,original_prior,42,12:120,COMPLETED,1618,300,1103,outputs/p1-rkhma-phase-orig-300-42-full-v2.txt
+fixed_300,300,native_components,42,12:120,COMPLETED,1618,300,1672,outputs/p1-rkhma-unified/native-v2-300-42.txt
+fixed_300,300,common_interfaces,42,12:120,SEARCH_EXPIRED,1615,297,4580,outputs/p1-rkhma-unified/generic-v2-300-42.txt
+formal_500,500,A3B3C3,42,auto,SEARCH_EXPIRED,2400,392,4764.426,outputs/p1-rkhma-unified/real-v2-a3b3c3.txt
+formal_500,500,A3B1C3,42,auto,SEARCH_EXPIRED,2401,387,4669.729,outputs/p1-rkhma-unified/real-v2-a3b1c3.txt
+formal_500,500,A1B3C1,42,auto,SEARCH_EXPIRED,2110,387,4653.536,outputs/p1-rkhma-unified/real-v2-a1b3c1.txt

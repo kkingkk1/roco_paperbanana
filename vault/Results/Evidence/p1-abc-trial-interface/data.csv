@@ -1,0 +1,7 @@
+check,case,before,after,status
+a3_initial_c_calls,501_conflicting_tasks,503,0,PASS
+manual_combination_rows,3_fixtures_8_combinations,24,24_identical,PASS
+rkhma_trace_lines,300_tasks_seed42,72,72_identical,PASS
+full_maven_tests,repository_suite,57,68,PASS
+real_scene_profit,1000_tasks_seed42,not_measured,1972,SEARCH_EXPIRED
+real_scene_observations,1000_tasks_seed42,not_measured,285,SEARCH_EXPIRED

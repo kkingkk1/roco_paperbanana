@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "record_type": "p1_rkhma_phase_comparison",
+  "date": "2026-11-05",
+  "hostname": "DESKTOP-UKPM2VE",
+  "project_root": "E:\\OneDrive\\project\\static_determine\\roco_paperbanana",
+  "branch": "master",
+  "project_base_git_head": "8b380c5aeaa7d6b0ccd06ce9d315ad64ea53cbff",
+  "source": {
+    "root": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping",
+    "branch": "main",
+    "git_head": "fda0333454f8273d726e136d7ed67b3207754090",
+    "working_tree": "有用户未提交变更；只读取实际源码及已有类",
+    "source_and_class_sha256": {
+      "main/TaskAllocationCoordinator": {
+        "source_sha256": "7ba3f2f375c9b263dbf598fc13749fb00b60b819c8b35139ba375f4a94057772",
+        "class_sha256": "a0f05199d67354046edc93876c7813c5f418fe480e62e8ba3cee37d1ecbfc120",
+        "class_newer_than_source": true
+      },
+      "main/AssignmentDeltaEvaluator": {
+        "source_sha256": "301d79ed23891418c7b477c020eb8aa0f79e8ddf25bf7c9ed3a9a8d3626bf70b",
+        "class_sha256": "ab415228ea9fa6782db244b06750f85708a483dccfd99f1b7459f8c9b91e0b41",
+        "class_newer_than_source": true
+      },
+      "main/DeltaFastRefiner": {
+        "source_sha256": "49c7ca777141ac8c3624afe9d39260730fa57e95da6290b73bcaea7768415445",
+        "class_sha256": "3b6ff5e6c76b9f580dd2a9d297cada87315aa38e5c95f1130aa4e0f0b3520737",
+        "class_newer_than_source": true
+      },
+      "main/ReassignmentOrchestrator": {
+        "source_sha256": "70e1f9926c315c2d41c409d21197fd76689fed35b645d194d92d570482fdc69c",
+        "class_sha256": "a691465779bbaad8453bd1c5056d9205903f55e3f059c8ea0bfcf29256dbf9d8",
+        "class_newer_than_source": true
+      },
+      "main/RunSingleHybridConfig": {
+        "source_sha256": "72eb789d7626abc0b357c52190e46d80c78565f7bc5d38a1c74cf1716f7d63f7",
+        "class_sha256": "6c353dca6f7997bf89fa9b317d2c1b8b0ae7ca9e859feb9919417de0fb4cbe8f",
+        "class_newer_than_source": true
+      },
+      "utils/DataLoader": {
+        "source_sha256": "e4b1374b35370d07be87e28a2c33921285b893235f7a983046101e831d53edbf",
+        "class_sha256": "125dd2448573ac144e7f99d620c5ce674429bf0249a2f6ac3777b7c6301c38f7",
+        "class_newer_than_source": true
+      },
+      "utils/Initialize": {
+        "source_sha256": "8aa7854afe18a944a7c8998932c58d60e7f03fa6ecb73f08f0dbfda4d9c6f210",
+        "class_sha256": "b12469e5cbb604c51ffb6209999a2f1211710ed9a839db99567e975793941274",
+        "class_newer_than_source": true
+      },
+      "utils/AssignTaskOperator": {
+        "source_sha256": "42ff846a825483bb4a420c16e44b365fc25377108db70f7e5b6b3be4715e3be0",
+        "class_sha256": "01184f0efe44fbe99b48fb1cec2b4dcdd9fb6c53b7c599242d63fd275668616c",
+        "class_newer_than_source": true
+      },
+      "utils/PlanUtils": {
+        "source_sha256": "1c09581598eff8016c29c12dff30912ac49a0a21708c81fbaf9aeb0574927c0f",
+        "class_sha256": "cc46c459c7d58eca9735329b81443421cfee0210a0e778566b17da74dc2fdcec",
+        "class_newer_than_source": true
+      },
+      "core/HybCec": {
+        "source_sha256": "b1df8bf50d688d7002ae966a2b9aeb4acf0326033851f270443cfd8132092dbb",
+        "class_sha256": "5bf4f63ea22eb362677e8cea643e6c080347e6f00c1b3789063a3d2095911271",
+        "class_newer_than_source": true
+      },
+      "common/RandomProvider": {
+        "source_sha256": "19d7cd77817b0b95831eebbbd1739f0c88b49de7f73eee55b95f178475309778",
+        "class_sha256": "5d5da18224d791382c675727d142c73f492bfe45b86bfdb1f35b05ba5b2b8e41",
+        "class_newer_than_source": true
+      },
+      "operator/insertion/GreedyInsertion": {
+        "source_sha256": "a0a1d94ef620d3eaea1a9af487039a18105bdc338cd24ee998da337f45812262",
+        "class_sha256": "7a9e50ace7013c60886329637d127d5ebea25dc3b7f98167b18b691d35a9bd35",
+        "class_newer_than_source": true
+      }
+    }
+  },
+  "environment": {
+    "os": "Windows",
+    "java": "OpenJDK 21.0.4",
+    "maven": "3.9.11",
+    "powershell": "7.6.9",
+    "priority": "Normal",
+    "cpu_cores": 1,
+    "job_memory_bytes": 2147483648,
+    "search_deadline_ms": 4500,
+    "hard_deadline_ms": 5000,
+    "source_untimed_note": "无内部4.5秒截止，仍受外部5秒硬截止；对照运行均在4.5秒内完成"
+  },
+  "input": {
+    "scene": "E:\\OneDrive\\project\\static_determine\\Scene\\500-5-0-0-24",
+    "input_file_sha256": {
+      "tasklist.txt": "5f56a0c55c5164e060e1130d2181ef184f846b798b6a7e5aa5e4c8efcdfac76f",
+      "outputtimewindow_1.txt": "3a98a744f0f6e0f24fb2cf04c3630f812239063a9555703922fee6f41793ad2f",
+      "outputattitude_1.txt": "fabb09caafbf144be44ef51e06af4c68c38f86aeebb9f7c4913b52fd83e227f8",
+      "outputtimewindow_2.txt": "e0e36451f1cb886d7f40fe0b554ab06d13cf2707a7ca305e37daa7409e301cc5",
+      "outputattitude_2.txt": "cc36652b9706c3ac3c9bbbcf73bf7464966dd03d23ffb260c2c5b4ade13d10be",
+      "outputtimewindow_3.txt": "4042a65f2a420b818352b2e2cb85eeab3c84fa3b0d61d39dfcf53ef98dedb9f1",
+      "outputattitude_3.txt": "47f9eb8fb201bdd3f297f95c99613325ae203b99c76257f6fb5dc3e524771001",
+      "outputtimewindow_4.txt": "0994f02c042c809f871da5103caa863f21f83d7b6c73a739425a0abf22e2ea77",
+      "outputattitude_4.txt": "f88cd491d37ad7ebd12afc241427d66e64bd5cf8e8961833a7b26dc5856b00d3",
+      "outputtimewindow_5.txt": "f16dbb941d495fbf7b1ea04e76d4977d9511643d914b972cc6789257a37ad0ea",
+      "outputattitude_5.txt": "3e7f4881fe361228f340b8532bba328c5287277e8be394394632f38751d7db57"
+    },
+    "real_scene_prefix_300_sha256": "52ec585f808b028f2dbf6329ae5907211e4d6104f78576649ded05ed21c6e1ad",
+    "real_scene_full_500_sha256": "374cc6b79e9879b578aae56a962d7e07935aa3b429c38a702936646e62fc5546",
+    "input_scope": "只读加载；300任务为500场景的前300任务及全部5星窗口；输入副本只在内存"
+  },
+  "algorithm": {
+    "configuration": "410000",
+    "parents": [
+      "DE/rand/1",
+      "PSO"
+    ],
+    "decoder": "GREEDY",
+    "reassign_iterations": 25,
+    "perturb_threshold": 1,
+    "perturb_strength": 0.02,
+    "controlled_npop": 12,
+    "controlled_maxfes_nominal": 120,
+    "seeds": [
+      42,
+      1234
+    ],
+    "default_npop_500": 270,
+    "default_maxfes_nominal_500": 27000
+  },
+  "checks": {
+    "source_reassembly_completed_pairs": 4,
+    "exact_comparison": [
+      "initial",
+      "baseline",
+      "profit_history",
+      "strategy_history",
+      "owners",
+      "observations",
+      "per_satellite_fitness_and_evaluation_traces",
+      "status"
+    ],
+    "control_300": {
+      "baseline_profit": 1550,
+      "initial_profit": 1603,
+      "final_profit": 1618
+    },
+    "default_500": {
+      "source_profit": 0,
+      "source_observations": 0,
+      "assembled_profit": 2400,
+      "assembled_observations": 392,
+      "status": "SEARCH_EXPIRED",
+      "source_baseline_matches_assembled": true
+    },
+    "original_timed_same_profit_different_schedule": true,
+    "independent_source_output_validation": "passed",
+    "compare_results_output": [
+      "four_completed_pairs=identical",
+      "original_timed_checkpoint=equal_profit_different_schedule",
+      "default_order=before_diff_after_identical",
+      "500_task_default_budget=both_expired_source_0_assembled_checkpoint_2400",
+      "500_task_source_baseline=assembled_checkpoint"
+    ],
+    "regression_before": "默认轨迹[1, 1, 0, 0]，预期[0, 0, 1, 1]，测试失败",
+    "regression_after": "默认[0, 0, 1, 1]；显式false仍为[1, 1, 0, 0]，测试通过",
+    "full_tests": {
+      "tests": 57,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "readme_scene": {
+      "tasks": 1000,
+      "satellites": 10,
+      "windows": 2823,
+      "attitude_records": 444817,
+      "empty_feasible": true
+    }
+  },
+  "interfaces": "当前RkhmaRuntime来源专用接口与SolverContracts手工接口不同；通用B未接收C回调",
+  "limitations": [
+    "300任务使用固定小种群和标称maxFes以完成过程，不代表默认性能",
+    "500任务默认5秒均未完成初始全星优化；检查点策略不同，不作性能比较",
+    "非1秒记录适配不保证来源逐步轨迹一致",
+    "当前两组种子不构成统计验证",
+    "最大单星归属数不超过2时，来源与重组版自动种群下限不同"
+  ],
+  "data_rows": 11,
+  "sha256": {
+    "src/main/java/method/rkhma/legacy/main/TaskAllocationCoordinator.java": "5b7c019eeabaf396d7aa1552a8cf307e2c2164eb1e536d0f74e5af8b1a4b60c2",
+    "src/main/java/method/runtime/RkhmaRuntime.java": "b483cf7dbbceaf40c98bc14c62c5bc540840c540854a4950d2bd354866f05044",
+    "src/main/java/method/runtime/SolverContracts.java": "69687b01a2b93b5657dae6fe8f680fc8ba49dced250f244f249ccfdcc8211a48",
+    "src/main/java/method/runtime/TwoStageSolver.java": "f4b5a876dec2aa6d2167ca6406e04a5f0cac595a7a78a11d5401aebe88f32d6a",
+    "src/main/java/method/rkhma/bridge/ProblemBridge.java": "db5fa707666e35362d2346f4fc946af2be8adc177aa05b702289aa743505ed3f",
+    "src/main/java/problem/ScheduleValidator.java": "526f92fab778313525d8d9b914bbf8a0c0c6d108bc997d7ed4701eabc4e61f9a",
+    "src/test/java/method/runtime/RkhmaRuntimeTest.java": "de5ee4bff8c0455f0d32d9384ae7852a3ae7589452b28414c8dddac0ecf8c833",
+    "scripts/P1ResourceJob.cs": "b2ec7cc536735ba0ce6afd726edbbc7de99129dea5c003996a5224558c9a1539",
+    "vault/Results/Evidence/p1-rkhma-phase-comparison/ComparisonFixture.java": "c962530ab3258182cb6d3c364fa06ae09a5a6c0054d92aeb8595dc9edbc7ed90",
+    "vault/Results/Evidence/p1-rkhma-phase-comparison/OriginalRkhmaAudit.java": "2d54415f9af0834dda2d42ddba3c930914524e0c59926fd5d21d9e6a65c446b5",
+    "vault/Results/Evidence/p1-rkhma-phase-comparison/OriginalBaselineAudit.java": "ace396cd24b03c35a7b191cf8ba507823137d41f2094778f94ba8e2044469b8a",
+    "vault/Results/Evidence/p1-rkhma-phase-comparison/AssembledRkhmaAudit.java": "ac4dd10b6727294c1948eab72bf1a4d0c1065544e7db838fedc52375325d2489",
+    "vault/Results/Evidence/p1-rkhma-phase-comparison/VerifyComparison.java": "a6942ef8e6dae0a44111e7a673c8414a3d676f9a14f445c4040b891bcddb3420",
+    "vault/Results/Evidence/p1-rkhma-phase-comparison/RunComparison.ps1": "bbd1f5fa55525143f1d3e8bcbda2465c9085b3a92eb22f6f505f8e16b9b784e5",
+    "vault/Results/Evidence/p1-rkhma-phase-comparison/CompareResults.py": "88fb81a38884042279c67440065d62084fdc0b4a24999760d363cd4f3cad1849",
+    "vault/Results/Evidence/p1-rkhma-phase-comparison/data.csv": "f4ee19aff322b23c0ba920a00a19b4c65635391e3993221bbba497bacb9c5342",
+    "vault/Results/Evidence/p1-rkhma-phase-comparison/evidence.md": "18166e0e3e325d8ca2e92c3dc364c8f4ab73b730ba531170205d75989a2aea10",
+    "vault/Results/Reports/p1-rkhma-phase-comparison.md": "cedb4c136c4d8cc527beef06e566faa739c867e579191c6761a9e0b1a978d96c"
+  },
+  "raw_output_sha256": {
+    "outputs/p1-rkhma-phase-assembled-24-42-init-det.txt": "5ead50e1e3641b29721fe6fba7cc873894b96f4c3211d3676d9e8b9fc9e4b874",
+    "outputs/p1-rkhma-phase-assembled-300-1234-full.txt": "229d6bf71d94f752c27a1c3f415473c90b1dfa02d472725db128e9123667cf4b",
+    "outputs/p1-rkhma-phase-assembled-300-1234-init.txt": "3cd92ead7e1c1c8f21c8000b739d06b42cf8c5bef1ec6caa47c3c03d4d5280eb",
+    "outputs/p1-rkhma-phase-assembled-300-42-full-default.txt": "c247c135889519aa2dfa93941b1b7a82fcfb27b45d7ec0137d6c25db3a6b626c",
+    "outputs/p1-rkhma-phase-assembled-300-42-full-defaultpool.txt": "6b80735bb8ed6fb21fd5e27eb65bda88495e03d4f69f112ba2a6bc85a4e1acd8",
+    "outputs/p1-rkhma-phase-assembled-300-42-full-det.txt": "c247c135889519aa2dfa93941b1b7a82fcfb27b45d7ec0137d6c25db3a6b626c",
+    "outputs/p1-rkhma-phase-assembled-300-42-full-fixed.txt": "c247c135889519aa2dfa93941b1b7a82fcfb27b45d7ec0137d6c25db3a6b626c",
+    "outputs/p1-rkhma-phase-assembled-300-42-full-v2.txt": "cd23a1c91346d9980f31e80cacb615229c8cd9e14081f6da628c30cbf3e56139",
+    "outputs/p1-rkhma-phase-assembled-300-42-init-v2.txt": "2cd75c46799149eda092bc5dc2d776b65afdbb5f8e59c703e455547f02088990",
+    "outputs/p1-rkhma-phase-assembled-500-42-auto.txt": "dfa265c74f7d668b46c1f04514b16685c3147e6146989d704716ba23cd7585fe",
+    "outputs/p1-rkhma-phase-orig-100-42-full.txt": "9834910c401feb69e6a230f9f9e88e4bc5a1d1bc15eceac384940fb293ca8176",
+    "outputs/p1-rkhma-phase-orig-24-42-init.txt": "5ead50e1e3641b29721fe6fba7cc873894b96f4c3211d3676d9e8b9fc9e4b874",
+    "outputs/p1-rkhma-phase-orig-300-1234-full.txt": "229d6bf71d94f752c27a1c3f415473c90b1dfa02d472725db128e9123667cf4b",
+    "outputs/p1-rkhma-phase-orig-300-1234-init.txt": "3cd92ead7e1c1c8f21c8000b739d06b42cf8c5bef1ec6caa47c3c03d4d5280eb",
+    "outputs/p1-rkhma-phase-orig-300-42-full-defaultpool.txt": "c247c135889519aa2dfa93941b1b7a82fcfb27b45d7ec0137d6c25db3a6b626c",
+    "outputs/p1-rkhma-phase-orig-300-42-full-timed-v2.txt": "7d5c139d26a60e67027a605244fa955c753bf6f3ab6f8309c0ae89d36efabba9",
+    "outputs/p1-rkhma-phase-orig-300-42-full-untimed.txt": "c247c135889519aa2dfa93941b1b7a82fcfb27b45d7ec0137d6c25db3a6b626c",
+    "outputs/p1-rkhma-phase-orig-300-42-full-v2.txt": "cd23a1c91346d9980f31e80cacb615229c8cd9e14081f6da628c30cbf3e56139",
+    "outputs/p1-rkhma-phase-orig-300-42-full.txt": "1e07dcfc50db89ab7a732d7ea96091e06c5a91726d161094f01bd2caff4d5d6f",
+    "outputs/p1-rkhma-phase-orig-300-42-init-v2.txt": "2cd75c46799149eda092bc5dc2d776b65afdbb5f8e59c703e455547f02088990",
+    "outputs/p1-rkhma-phase-orig-500-42-auto.txt": "54fd5a71b2218e06cfcca6421159b882fcf2d9b7e0e5ce3dec99232b308aedac",
+    "outputs/p1-rkhma-phase-orig-500-42-baseline.txt": "0a789263d96cbac6ca1071409518a896f68d85b1b7693ab9570b171c2af0266f"
+  },
+  "subsequent_documentation_update": {
+    "date": "2026-11-05",
+    "scope": "只在历史报告和证据顶部补充后续进展；保留原对照和数值。",
+    "previous_sha256": {
+      "vault/Results/Evidence/p1-rkhma-phase-comparison/evidence.md": "44563a94d0882c32c3e82800b00b8a89ab9a5b3bc80aff4181e7aca8dc0d4528",
+      "vault/Results/Reports/p1-rkhma-phase-comparison.md": "0658d950f496d34aa795403a0f099d17499f7c22fcc7eda03f4bc0d99c469fb7"
+    }
+  }
+}

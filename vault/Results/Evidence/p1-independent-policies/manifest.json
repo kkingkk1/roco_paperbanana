@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "record_type": "p1_independent_policies",
+  "date": "2026-11-05",
+  "hostname": "DESKTOP-UKPM2VE",
+  "project_root": "E:\\OneDrive\\project\\static_determine\\roco_paperbanana",
+  "branch": "master",
+  "base_git_head": "8b380c5aeaa7d6b0ccd06ce9d315ad64ea53cbff",
+  "working_tree": "含此前未提交工作；对照使用修改前快照及同合同历史记录。",
+  "environment": {
+    "os": "Windows-10-10.0.19045-SP0",
+    "java": "OpenJDK 21.0.4",
+    "maven": "3.9.11",
+    "powershell": "7.6.9",
+    "priority": "Normal",
+    "cpu_cores": 1,
+    "job_memory_bytes": 2147483648,
+    "search_deadline_ms": 4500,
+    "hard_deadline_ms": 5000,
+    "data_loading": "公共场景加载另计"
+  },
+  "scene_1000": {
+    "path": "E:\\OneDrive\\project\\static_determine\\Scene\\1000-10-0-0-12",
+    "tasks": 1000,
+    "satellites": 10,
+    "windows": 2823,
+    "attitude_records": 444817,
+    "files_sha256": {
+      "tasklist.txt": "22e79dfd1caeee47627fa552ed1d2958d192f86c7611bf791ff2aed6b6997e81",
+      "outputtimewindow_1.txt": "c77918526ff44edeaceb0a344bb5dc1de05fbafe43350bd6a69a6317e815a52f",
+      "outputtimewindow_2.txt": "9fd8bdef383e590d8498e054ad441049c70d4c4f8b286fecad34bb1db7ad4d0a",
+      "outputtimewindow_3.txt": "c432c431514463b9d144a23b4f404c766938dcb1f3cff877df46506f470ea54a",
+      "outputtimewindow_4.txt": "be92d61af6527b44291c422563cf4ca666a8aaf6a5e8358061e5c930c779baf3",
+      "outputtimewindow_5.txt": "38449e025af31c38516d3a5148bc99917054bac2a42856f6971ce95f7a32eff2",
+      "outputtimewindow_6.txt": "f3a93173d6a2de1f1898abbe0bf6734efdb724973ef04710d434568c432c0988",
+      "outputtimewindow_7.txt": "e7dcee66accb41ef5580198c56d965c11bdabb7d84766c837ac06e31a267d81b",
+      "outputtimewindow_8.txt": "4ca321e9f18932ad9a85ad6bf0bab4ef51bb8dfe3fa4b91cb8e1b01cd1421212",
+      "outputtimewindow_9.txt": "49d0eef81f420dead10649a9baf8a6cd8c0f267aaff8d1600282771ab56e16e0",
+      "outputtimewindow_10.txt": "544606e7f423d4657802b411cb889cde52e17194a661c5a4c6e799a1e0750e9d",
+      "outputattitude_1.txt": "2e9c2ad11090b720a03534c75f4331c3669e529683e5d3ee5f1d46263ea1f410",
+      "outputattitude_2.txt": "6b7e5c51831ec64eebd099971a082c35a787ef16fc52a1d1a1157158f8d69c07",
+      "outputattitude_3.txt": "efa04973dcebf3bba680ee3dbd352806c1fc2f61e423e42467385ff4c38b6bb7",
+      "outputattitude_4.txt": "3444a13caebb6326d623a91ddf7c63f24bc0986769b3197dc0138fff6c3bda7d",
+      "outputattitude_5.txt": "eb4871fcd54e929a2970d3d999061381d928dba04bf312f880b389589ad9240a",
+      "outputattitude_6.txt": "84a01c1c44a9ea02d7d36fdb6046797431ab3d80236342ccad2811cd2b743964",
+      "outputattitude_7.txt": "600602d1b83b545a060390c8d85fdbe2e2079c29ce8df40ea4dd88a83f15dfed",
+      "outputattitude_8.txt": "94bf5ee81adea9a7d29807c973087189646fe13d7bd53a5e4a422bbeba43e116",
+      "outputattitude_9.txt": "ddd10ec84b3e383efaf4259e0a43eef577da9839ce8560c8e43e90a7fad3c161",
+      "outputattitude_10.txt": "084bc6520462c0139f6de125e194bd6a1c2dd54ad651d9a0fe465c1a9ffdfe2a"
+    }
+  },
+  "scene_300": {
+    "path": "E:\\OneDrive\\project\\static_determine\\Scene\\500-5-0-0-24",
+    "tasks": 300,
+    "satellites": 5,
+    "prefix_sha256_historical": "52ec585f808b028f2dbf6329ae5907211e4d6104f78576649ded05ed21c6e1ad",
+    "files_sha256": {
+      "tasklist.txt": "5f56a0c55c5164e060e1130d2181ef184f846b798b6a7e5aa5e4c8efcdfac76f",
+      "outputtimewindow_1.txt": "3a98a744f0f6e0f24fb2cf04c3630f812239063a9555703922fee6f41793ad2f",
+      "outputattitude_1.txt": "fabb09caafbf144be44ef51e06af4c68c38f86aeebb9f7c4913b52fd83e227f8",
+      "outputtimewindow_2.txt": "e0e36451f1cb886d7f40fe0b554ab06d13cf2707a7ca305e37daa7409e301cc5",
+      "outputattitude_2.txt": "cc36652b9706c3ac3c9bbbcf73bf7464966dd03d23ffb260c2c5b4ade13d10be",
+      "outputtimewindow_3.txt": "4042a65f2a420b818352b2e2cb85eeab3c84fa3b0d61d39dfcf53ef98dedb9f1",
+      "outputattitude_3.txt": "47f9eb8fb201bdd3f297f95c99613325ae203b99c76257f6fb5dc3e524771001",
+      "outputtimewindow_4.txt": "0994f02c042c809f871da5103caa863f21f83d7b6c73a739425a0abf22e2ea77",
+      "outputattitude_4.txt": "f88cd491d37ad7ebd12afc241427d66e64bd5cf8e8961833a7b26dc5856b00d3",
+      "outputtimewindow_5.txt": "f16dbb941d495fbf7b1ea04e76d4977d9511643d914b972cc6789257a37ad0ea",
+      "outputattitude_5.txt": "3e7f4881fe361228f340b8532bba328c5287277e8be394394632f38751d7db57"
+    }
+  },
+  "before_sources": {
+    "src/main/java/method/runtime/ManualStrategies.java": {
+      "snapshot": "outputs/p1-independent-policies/before/src/main/java/method/runtime/ManualStrategies.java",
+      "sha256": "b3c7d6c16f8c24ec82ebccc00ec3ca2853064bd708c5938a984d2430d3ce7ac2"
+    },
+    "src/main/java/method/runtime/SolverContracts.java": {
+      "snapshot": "outputs/p1-independent-policies/before/src/main/java/method/runtime/SolverContracts.java",
+      "sha256": "c5d6f4c54157fc17be83c1fedc0c35bc85dcd093b7639a3c9d5efc89636035e8"
+    },
+    "src/main/java/method/runtime/TwoStageSolver.java": {
+      "snapshot": "outputs/p1-independent-policies/before/src/main/java/method/runtime/TwoStageSolver.java",
+      "sha256": "087505becbc48975a746ea4e5f7d38d76368034b03a068b8b1208384e3f85245"
+    },
+    "src/main/java/method/runtime/RkhmaRuntime.java": {
+      "snapshot": "outputs/p1-independent-policies/before/src/main/java/method/runtime/RkhmaRuntime.java",
+      "sha256": "49727970a3368d7612e5b7587eeac953c5a3c6d86ecf6e74012d8192196252b6"
+    },
+    "src/test/java/method/runtime/TwoStageSolverTest.java": {
+      "snapshot": "outputs/p1-independent-policies/before/src/test/java/method/runtime/TwoStageSolverTest.java",
+      "sha256": "a5bfd73e055fb9dae3a05ef1dcaa88470c2e981799f617fb8992f231744a940a"
+    },
+    "src/test/java/method/runtime/RkhmaRuntimeTest.java": {
+      "snapshot": "outputs/p1-independent-policies/before/src/test/java/method/runtime/RkhmaRuntimeTest.java",
+      "sha256": "de5ee4bff8c0455f0d32d9384ae7852a3ae7589452b28414c8dddac0ecf8c833"
+    },
+    "src/test/java/method/runtime/CandidateTrialTest.java": {
+      "snapshot": "outputs/p1-independent-policies/before/src/test/java/method/runtime/CandidateTrialTest.java",
+      "sha256": "b11dc60171f0c4345770cd8db72cbb385901fc0fc1ff7df36221fc93d85dac10"
+    }
+  },
+  "checks": {
+    "maven_tests_before": 68,
+    "maven_tests_after": 70,
+    "maven_failures": 0,
+    "hand_fixtures": 3,
+    "full_choices": 103,
+    "feasible_choices": 55,
+    "combination_rows_equal": 24,
+    "independent_oracle": "PASS",
+    "rkhma_300_lines_equal": 72,
+    "rkhma_300_seed": 42,
+    "rkhma_300_profit": 1618,
+    "real_1000_combination": "A2B2C2",
+    "real_1000_seed": 42,
+    "real_1000_profit": 1870,
+    "real_1000_observations": 260,
+    "real_1000_elapsed_ms": 4629.461,
+    "real_1000_status": "SUCCESS / SEARCH_EXPIRED",
+    "real_1000_independent_feasible": true
+  },
+  "interface_change": "移除B.searchLocal/proposeLocal；分别实现初始化局部和重分配局部入口，不提供旧入口转发。",
+  "limitations": [
+    "真实1000任务未做同组合改前收益对照；不作性能比较。",
+    "来源原生模块尚未直接实现通用A/B/C接口。",
+    "小实例自动种群下限差异待核实。"
+  ],
+  "sha256": {
+    "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e",
+    "src/main/java/method/runtime/SolverContracts.java": "4eacd133cf494194039665dfb4f1eac9632eefb0559685dedf7d48364168ac8c",
+    "src/main/java/method/runtime/TwoStageSolver.java": "cb64bdb3ddff7460f22fa7a9da3401ba838be254d852bfd92b07089beabfb210",
+    "src/main/java/method/runtime/RkhmaRuntime.java": "faab660062e66433678adc4a916787c9dbd699bcc4df248913127c00c2262181",
+    "src/test/java/method/runtime/IndependentPoliciesTest.java": "5f99a47f7ec326130c601e0b806f6bbb8fe12f79d4eb51a76dad041369e98d5d",
+    "src/test/java/method/runtime/TwoStageSolverTest.java": "dea777f73b43fefad4c66f58f5049d8c981e6c11a8305e8b6a6847a83e3a10d6",
+    "src/test/java/method/runtime/RkhmaRuntimeTest.java": "0b6ebc1f5bc741cf2491e2235dbb9dbc533a8da3005b2f0defd7b8f6bb1fa213",
+    "src/test/java/method/runtime/CandidateTrialTest.java": "ff0979acdc686dec83d08af79d6177f38b3cafed178452fb313c9d54afc5cbfd",
+    "src/test/java/method/runtime/P1EnumerationAudit.java": "08cc4a713b9b396cb8b87bdad2ee7e4d3e1c4b52b2a9ac2d50d7f19ad1960da2",
+    "vault/Results/Evidence/p1-small-enumeration/independent_oracle.py": "efc0fd595d4f84b07adbfa3b40134a7b0a154172f5d59c727924929ada794483",
+    "vault/Results/Evidence/p1-two-stage-runtime/P1SolverCheck.java": "1e86032d7538fc43dbc4b800898845f2fc0004fb875b386919a24ed036c42c5b",
+    "vault/Results/Evidence/p1-independent-policies/data.csv": "94373101efef8801b8c4c2251a4f652dec087acef604a023ee46fcff6682fe32",
+    "vault/Results/Evidence/p1-independent-policies/evidence.md": "bbac4d03957d0e361d1ed81a4fe15c729e3980afeea62c0084bb1d302b68d161",
+    "vault/Results/Reports/p1-independent-policies.md": "aea760bb07c38cd544d2b3e12c81e34c7d90359bdbed42f0d4d6370071b74ed3",
+    "outputs/p1-independent-policies/baseline.json": "ceb0deb9a48a128f9be587b216b0fbcc0b0788bd24677cf15943ee7dae74042c",
+    "outputs/p1-independent-policies/before-manual.csv": "94373101efef8801b8c4c2251a4f652dec087acef604a023ee46fcff6682fe32",
+    "outputs/p1-independent-policies/after-manual-final.csv": "94373101efef8801b8c4c2251a4f652dec087acef604a023ee46fcff6682fe32",
+    "outputs/p1-independent-policies/oracle-final.txt": "dd8cdf3fc24f6446b77fda44862154c83d489e0f4a5b6f1563bde1797ba11f37",
+    "outputs/p1-independent-policies/full-tests-final.txt": "b53a879fdefa50376aac9e7467af63ac11c37a2789b39296cc29a4deb5e3ceb8",
+    "outputs/p1-independent-policies/inspect-final.txt": "62f7527aafab69547a4c486647721118c7ccf946cd9b226626d8580933d53d21",
+    "outputs/p1-independent-policies/rkhma-after-300-42.txt": "cd23a1c91346d9980f31e80cacb615229c8cd9e14081f6da628c30cbf3e56139",
+    "outputs/p1-independent-policies/real-a2b2c2.txt": "185b6307e3444bd2358f2a843918399694206de62164490180a9f9ad5f92afdd",
+    "outputs/p1-independent-policies/real-check.txt": "659ce1aa16f0d5fe4ddb9b438f33980548803490c32e48c0f36c78266f1c8d47",
+    "outputs/p1-unified-abc-baseline/a3b3c3-final-300-42.txt": "cd23a1c91346d9980f31e80cacb615229c8cd9e14081f6da628c30cbf3e56139",
+    "vault/Results/Evidence/p1-abc-trial-interface/manifest.json": "d4b6769cc630bd123610e726a3425c2785e13c134e6c83d153c43de9b8a8526d",
+    "outputs/p1-independent-policies/full-tests-final-v2.txt": "f7ea2e247c2d9bc32cf097193d227d2a2b2776398686294bcb9936fc91e35f59",
+    "outputs/p1-independent-policies/inspect-final-v2.txt": "62f7527aafab69547a4c486647721118c7ccf946cd9b226626d8580933d53d21"
+  }
+}

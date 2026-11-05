@@ -1,0 +1,282 @@
+{
+  "schema": "p1-rkhma-unified-v1",
+  "date": "2026-11-05",
+  "host": "DESKTOP-UKPM2VE",
+  "project_root": "E:\\OneDrive\\project\\static_determine\\roco_paperbanana",
+  "branch": "master",
+  "base_commit": "8b380c5aeaa7d6b0ccd06ce9d315ad64ea53cbff",
+  "reference_root": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping",
+  "reference_branch": "main",
+  "reference_head": "fda0333454f8273d726e136d7ed67b3207754090",
+  "reference_worktree": "contains uncommitted changes; pre-existing compiled classes were read only",
+  "runtime": {
+    "java": "21.0.4",
+    "maven": "3.9.11",
+    "priority": "Normal",
+    "cpu_cores": 1,
+    "job_commit_bytes": 2147483648,
+    "search_seconds": 4.5,
+    "hard_seconds": 5
+  },
+  "source_and_tests": [
+    {
+      "path": "src/main/java/method/rkhma/legacy/common/TuningDefaults.java",
+      "bytes": 7219,
+      "sha256": "e5917fce0c1b23931e669f76c3d4684013b8f7efcc068af8b5f38f9846b7587f"
+    },
+    {
+      "path": "src/main/java/method/rkhma/legacy/core/HybCec.java",
+      "bytes": 69649,
+      "sha256": "ceffdfd89b31bcd697b08836e972690e23807c26c132da7c79af00e86e600229"
+    },
+    {
+      "path": "src/main/java/method/rkhma/legacy/main/AssignmentDeltaEvaluator.java",
+      "bytes": 11660,
+      "sha256": "8e3b25c3a1f6817af54bcda5716ef1908ea1e15f5c569d476f87f7f1bb3cf7f0"
+    },
+    {
+      "path": "src/main/java/method/rkhma/legacy/main/BundleMoveEvaluator.java",
+      "bytes": 7822,
+      "sha256": "686a241d6ca1f22711e2e02d6c4876799cbd406c98c6c7ee715288b818cfaed8"
+    },
+    {
+      "path": "src/main/java/method/rkhma/legacy/main/DeltaFastRefiner.java",
+      "bytes": 17099,
+      "sha256": "2cb724afbcf9b141f394885bf6f020a2f980b3054e37a1630c248bb3fb9a4e9e"
+    },
+    {
+      "path": "src/main/java/method/rkhma/legacy/main/ReassignmentMoveServices.java",
+      "bytes": 2822,
+      "sha256": "7de2e57202a5619a4e484cf0732a933fb6a9b2963e439c535d6e5d2550522700"
+    },
+    {
+      "path": "src/main/java/method/rkhma/legacy/main/ReplacementMoveEvaluator.java",
+      "bytes": 12366,
+      "sha256": "e95a67d5204d5c6e20fb85ca01236e428cb99c532d27321333b6f3499d0eb5e8"
+    },
+    {
+      "path": "src/main/java/method/rkhma/legacy/main/SwapMoveEvaluator.java",
+      "bytes": 7973,
+      "sha256": "7ce933146de564cee66dedd0ad9489f24ba65d2272a2483423eeea9d5719afea"
+    },
+    {
+      "path": "src/main/java/method/rkhma/legacy/main/TaskAllocationCoordinator.java",
+      "bytes": 117585,
+      "sha256": "4d9b7fc389d66c57171770fded310ebb53e31f77963b14670d2bec63ae00e919"
+    },
+    {
+      "path": "src/main/java/method/rkhma/legacy/model/Satellite.java",
+      "bytes": 4182,
+      "sha256": "e39617d47b7f52fa7ade6e168f941d77d324ce1d7d02dff7805e1bcf772413d7"
+    },
+    {
+      "path": "src/main/java/method/rkhma/legacy/utils/PlanUtils.java",
+      "bytes": 87928,
+      "sha256": "bbb2738c85cbc6cd487d83533fa74e9dbb50c96faca857fd12e39d47bdd0ab92"
+    },
+    {
+      "path": "src/main/java/method/runtime/RkhmaAllocation.java",
+      "bytes": 12382,
+      "sha256": "e07786710ddf9a46b4dd29f26652f5e95633456e96263a61171fdf5e009afc0e"
+    },
+    {
+      "path": "src/main/java/method/runtime/RkhmaGreedyDecoder.java",
+      "bytes": 4854,
+      "sha256": "cef27ebe3f2db9f5018700173c0f48313204d8323146b53d908cfabd3f34e1e2"
+    },
+    {
+      "path": "src/main/java/method/runtime/RkhmaHybridSearch.java",
+      "bytes": 11753,
+      "sha256": "59f593b1b8e39b3fcbde69988aecd6bd1ee1de9182c973336d5ad0a1f74601a7"
+    },
+    {
+      "path": "src/main/java/method/runtime/RkhmaRuntime.java",
+      "bytes": 45700,
+      "sha256": "c4dcb70314a077bf2a998c47f0742974c8b989c8abb66649db61ca6cf0a3a06d"
+    },
+    {
+      "path": "src/main/java/method/runtime/SolverContracts.java",
+      "bytes": 12284,
+      "sha256": "8dc33c8e997720455765f9dc33ce407eeb8444020ddf9cf7c84300f4dda67e41"
+    },
+    {
+      "path": "src/main/java/method/runtime/TwoStageSolver.java",
+      "bytes": 31680,
+      "sha256": "db49c49b892040b3b3f6a512db2473a6dc9122b03ea118f9ed80f15ba014c575"
+    },
+    {
+      "path": "src/test/java/method/rkhma/legacy/main/UnifiedLargeTrialTest.java",
+      "bytes": 2694,
+      "sha256": "8cc75dcb3632ca492c14d9f64f041dd28ba9c8b35cc3257bf82f1b0572411656"
+    },
+    {
+      "path": "src/test/java/method/runtime/A3InitializationTest.java",
+      "bytes": 6044,
+      "sha256": "0f106a95505cb3ba93ecf5cb413f77740dfceec68b1d5ede0197954fdda19337"
+    },
+    {
+      "path": "src/test/java/method/runtime/CandidateTrialTest.java",
+      "bytes": 28961,
+      "sha256": "9c5f6fdc01b4d454891b91c6e20858fa1134c6c641e20ddc2a2103da428c89de"
+    },
+    {
+      "path": "src/test/java/method/runtime/RkhmaRuntimeTest.java",
+      "bytes": 35882,
+      "sha256": "40c83f80dbecf1f1823651ce25ab1e72cf98c830d17d1c66ea20c9ecee2de4cc"
+    }
+  ],
+  "documents_and_audit": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 6804,
+      "sha256": "111e6e4e4645d8de145fbc92e2fb0395447c6419ce458fedeebd607ea88b2ce0"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8241,
+      "sha256": "24b875598f5b29664b3df2296f46b8ccc5530a62cbbb229523b2feb5ccbd4a7c"
+    },
+    {
+      "path": "vault/00-Knowledge-Base-Status.md",
+      "bytes": 3723,
+      "sha256": "4cbb0fd254648435e8d9705b566331bb4cc3d1995150a866a9eb70b2009f72d7"
+    },
+    {
+      "path": "vault/01-Research-Plan-and-Progress.md",
+      "bytes": 3599,
+      "sha256": "ad8b8ec347906b74e020a19316c554cef180b19a762991d7481c8dcde8513a68"
+    },
+    {
+      "path": "vault/02-Index.md",
+      "bytes": 3597,
+      "sha256": "a36ad43ba59f7437086542af79504e0005f4339b7f918baecdad568d68309500"
+    },
+    {
+      "path": "vault/Knowledge/Source-Provenance.md",
+      "bytes": 10656,
+      "sha256": "23db9c40fd1fc952ec0cef1e0e3ed3b8d6a3b0657a4e8d136cd869b42b871bad"
+    },
+    {
+      "path": "vault/Knowledge/多智能体算法与评价合同.md",
+      "bytes": 22813,
+      "sha256": "24f527c4f6c97ba5c08093afae02ff69769032eca6a5ddd7a990afded1b7b480"
+    },
+    {
+      "path": "vault/Plan/mechanisms/P1-可运行求解器起点.md",
+      "bytes": 9125,
+      "sha256": "2d9153d4732c40f1f925e13def4bad937c70ef495d57dff3958e2ec1b9a2ef42"
+    },
+    {
+      "path": "vault/Plan/mechanisms/P2-五角色协作演化.md",
+      "bytes": 4960,
+      "sha256": "e363c285af880b7fd6a36b5cfcaf421ce51a015c616f48056966b57f8855b462"
+    },
+    {
+      "path": "vault/Plan/面向成像卫星任务调度的多智能体协作自动算法设计.md",
+      "bytes": 11134,
+      "sha256": "2ff248b6bc13413205d8c3c7dba5d56cf7231d02cfe46dca20962f021ff746d6"
+    },
+    {
+      "path": "vault/Results/Reports/p1-rkhma-unified.md",
+      "bytes": 2989,
+      "sha256": "aad48fbbfe540e9a9cad877fabc9421a1ec47d8ca30fba5f2aa333b21cc05c88"
+    },
+    {
+      "path": "vault/Results/Evidence/p1-rkhma-unified/evidence.md",
+      "bytes": 9871,
+      "sha256": "4ce676a23c2ce2eea588d324ef6ea6cc834b069efc8e4b87f89e5a35581859df"
+    },
+    {
+      "path": "vault/Results/Evidence/p1-rkhma-unified/data.csv",
+      "bytes": 1096,
+      "sha256": "c3b8a7e011b745d043794899ccabe5e05509c5c22f77291cab49761d8d7f67d8"
+    },
+    {
+      "path": "vault/Results/Evidence/p1-rkhma-unified/UnifiedRkhmaAudit.java",
+      "bytes": 3947,
+      "sha256": "52ffec3983a86e3ef1818748a34b70e83c3483178023720f0bd6e5f90620689a"
+    },
+    {
+      "path": "vault/Results/Evidence/p1-rkhma-unified/RunUnifiedComparison.ps1",
+      "bytes": 4991,
+      "sha256": "31d387e0f56e3844596ec163399dd7ecb75cab5a081db64297ab6a4686701755"
+    }
+  ],
+  "run_outputs": [
+    {
+      "path": "outputs/p1-rkhma-unified/original-final-250-42.txt",
+      "bytes": 19099,
+      "sha256": "59ac64fc91f3123a4dbbd49a98c3f640e74194129de7b0c6deb3ca5d75728eed"
+    },
+    {
+      "path": "outputs/p1-rkhma-unified/native-v2-250-42.txt",
+      "bytes": 9158,
+      "sha256": "7b5a46811a350c125b7548d10e6672a879ec43169d626058e2d38acad3465512"
+    },
+    {
+      "path": "outputs/p1-rkhma-unified/generic-v2-250-42.txt",
+      "bytes": 9102,
+      "sha256": "7dc57d191639b53fd3d3696f778b2ad99b39ab3fd4c19dd3efd409749772e5b8"
+    },
+    {
+      "path": "outputs/p1-rkhma-phase-orig-300-42-full-v2.txt",
+      "bytes": 50714,
+      "sha256": "cd23a1c91346d9980f31e80cacb615229c8cd9e14081f6da628c30cbf3e56139"
+    },
+    {
+      "path": "outputs/p1-rkhma-unified/native-v2-300-42.txt",
+      "bytes": 11118,
+      "sha256": "26389512a17e81711f2408bf2890cbd2ec6e8452a6c808a640066653a4661f58"
+    },
+    {
+      "path": "outputs/p1-rkhma-unified/generic-v2-300-42.txt",
+      "bytes": 10875,
+      "sha256": "fa55e2fc93e8b1ac657d9e07e5c2acf2582a11eefd0bfacaf1924302731c85fe"
+    },
+    {
+      "path": "outputs/p1-rkhma-unified/real-v2-a3b3c3.txt",
+      "bytes": 22992,
+      "sha256": "45c7cdca4ae7067e1ecc5adae697caeb72295d21c4b2f95aecbf62003ad6e517"
+    },
+    {
+      "path": "outputs/p1-rkhma-unified/real-v2-a3b1c3.txt",
+      "bytes": 22692,
+      "sha256": "9725da1b5c4b46ca1679c57ad59298e5c91ab6a1c6206dc9a9202185375bd42e"
+    },
+    {
+      "path": "outputs/p1-rkhma-unified/real-v2-a1b3c1.txt",
+      "bytes": 22649,
+      "sha256": "1c6c12d814ca97e0f3d361c0d9417666947e5af592ae64be6777e33e2adb1d99"
+    },
+    {
+      "path": "outputs/p1-rkhma-unified/full-tests-final-v4.txt",
+      "bytes": 4115,
+      "sha256": "9487427dd085aa572b5954c89530a60c94a3e47904ff249d9517b090fa1bfd41"
+    },
+    {
+      "path": "outputs/p1-rkhma-unified/inspect-final-v4.txt",
+      "bytes": 111,
+      "sha256": "62f7527aafab69547a4c486647721118c7ccf946cd9b226626d8580933d53d21"
+    },
+    {
+      "path": "outputs/p1-rkhma-unified/manual-final.csv",
+      "bytes": 2068,
+      "sha256": "94373101efef8801b8c4c2251a4f652dec087acef604a023ee46fcff6682fe32"
+    },
+    {
+      "path": "outputs/p1-independent-policies/after-manual-final.csv",
+      "bytes": 2068,
+      "sha256": "94373101efef8801b8c4c2251a4f652dec087acef604a023ee46fcff6682fe32"
+    },
+    {
+      "path": "outputs/p1-rkhma-unified/baseline.json",
+      "bytes": 45138,
+      "sha256": "4d569ed907c00fed88f32e1cec867ab9b0b7e11cb14282ffe0509ac447816a21"
+    },
+    {
+      "path": "outputs/p1-rkhma-unified/large-calibration-v1.txt",
+      "bytes": 2437,
+      "sha256": "2adc9a98396c9dae0382cec5ba0ffeb2c30e00a19c8f8b430d391f13ffc32743"
+    }
+  ]
+}

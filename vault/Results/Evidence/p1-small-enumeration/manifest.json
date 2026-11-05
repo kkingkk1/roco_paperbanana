@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "record_type": "p1_small_enumeration",
+  "date": "2026-11-05",
+  "hostname": "DESKTOP-UKPM2VE",
+  "project_root": "E:\\OneDrive\\project\\static_determine\\roco_paperbanana",
+  "git_branch": "master",
+  "base_git_head": "8b380c5aeaa7d6b0ccd06ce9d315ad64ea53cbff",
+  "working_tree": "未提交；按实际源码哈希识别",
+  "environment": {
+    "os": "Windows",
+    "java": "OpenJDK 21.0.4",
+    "maven": "3.9.11",
+    "powershell": "7.6.9",
+    "python": "3.13.12",
+    "priority": "Normal"
+  },
+  "problem_contract": "vault/Knowledge/问题建模.md",
+  "method_contract": "vault/Knowledge/多智能体算法与评价合同.md",
+  "input": "三个手工构造的内存实例；不使用共享Scene",
+  "seed": 42,
+  "clock": "固定为0，仅用于逻辑验收，不是墙钟性能检查",
+  "enumeration": "按手写单次观测候选，每任务选择不观测或一个候选，完整枚举所有组合",
+  "independent_checks": {
+    "java": "按0°/30°手工转换时间分别11.66/25秒，并逐一对照问题验证器",
+    "python": "独立手写候选并枚举，复核全部24个实际调度",
+    "tampered_profit_rejected": true,
+    "tampered_candidate_rejected": true,
+    "output": [
+      "contest: candidates=6 possible=27 feasible=13 optimum=14",
+      "half_second: candidates=9 possible=60 feasible=32 optimum=24",
+      "slew_boundary: candidates=4 possible=16 feasible=10 optimum=15",
+      "independent_output_check=PASS rows=24"
+    ]
+  },
+  "tests": {
+    "focused": {
+      "tests": 1,
+      "failures": 0
+    },
+    "full": {
+      "command": "mvn -o test",
+      "tests": 56,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "readme_scene": {
+      "tasks": 1000,
+      "satellites": 10,
+      "windows": 2823,
+      "attitude_records": 444817,
+      "empty_plan_feasible": true,
+      "empty_plan_profit": 0
+    }
+  },
+  "fixtures": [
+    {
+      "id": "contest",
+      "tasks": 3,
+      "satellites": 2,
+      "candidates": 6,
+      "possible_plans": 27,
+      "feasible_plans": 13,
+      "optimum": 14,
+      "results": [
+        {
+          "combination": "A1B1C1",
+          "status": "SUCCESS",
+          "profit": 14,
+          "observations": 2
+        },
+        {
+          "combination": "A1B1C2",
+          "status": "SUCCESS",
+          "profit": 14,
+          "observations": 2
+        },
+        {
+          "combination": "A1B2C1",
+          "status": "SUCCESS",
+          "profit": 14,
+          "observations": 2
+        },
+        {
+          "combination": "A1B2C2",
+          "status": "SUCCESS",
+          "profit": 14,
+          "observations": 2
+        },
+        {
+          "combination": "A2B1C1",
+          "status": "SUCCESS",
+          "profit": 14,
+          "observations": 2
+        },
+        {
+          "combination": "A2B1C2",
+          "status": "SUCCESS",
+          "profit": 14,
+          "observations": 2
+        },
+        {
+          "combination": "A2B2C1",
+          "status": "SUCCESS",
+          "profit": 14,
+          "observations": 2
+        },
+        {
+          "combination": "A2B2C2",
+          "status": "SUCCESS",
+          "profit": 14,
+          "observations": 2
+        }
+      ]
+    },
+    {
+      "id": "half_second",
+      "tasks": 4,
+      "satellites": 2,
+      "candidates": 9,
+      "possible_plans": 60,
+      "feasible_plans": 32,
+      "optimum": 24,
+      "results": [
+        {
+          "combination": "A1B1C1",
+          "status": "SUCCESS",
+          "profit": 24,
+          "observations": 3
+        },
+        {
+          "combination": "A1B1C2",
+          "status": "SUCCESS",
+          "profit": 24,
+          "observations": 3
+        },
+        {
+          "combination": "A1B2C1",
+          "status": "SUCCESS",
+          "profit": 24,
+          "observations": 3
+        },
+        {
+          "combination": "A1B2C2",
+          "status": "SUCCESS",
+          "profit": 24,
+          "observations": 3
+        },
+        {
+          "combination": "A2B1C1",
+          "status": "SUCCESS",
+          "profit": 18,
+          "observations": 2
+        },
+        {
+          "combination": "A2B1C2",
+          "status": "SUCCESS",
+          "profit": 18,
+          "observations": 2
+        },
+        {
+          "combination": "A2B2C1",
+          "status": "SUCCESS",
+          "profit": 18,
+          "observations": 2
+        },
+        {
+          "combination": "A2B2C2",
+          "status": "SUCCESS",
+          "profit": 18,
+          "observations": 2
+        }
+      ]
+    },
+    {
+      "id": "slew_boundary",
+      "tasks": 4,
+      "satellites": 1,
+      "candidates": 4,
+      "possible_plans": 16,
+      "feasible_plans": 10,
+      "optimum": 15,
+      "results": [
+        {
+          "combination": "A1B1C1",
+          "status": "SUCCESS",
+          "profit": 12,
+          "observations": 2
+        },
+        {
+          "combination": "A1B1C2",
+          "status": "SUCCESS",
+          "profit": 12,
+          "observations": 2
+        },
+        {
+          "combination": "A1B2C1",
+          "status": "SUCCESS",
+          "profit": 12,
+          "observations": 2
+        },
+        {
+          "combination": "A1B2C2",
+          "status": "SUCCESS",
+          "profit": 12,
+          "observations": 2
+        },
+        {
+          "combination": "A2B1C1",
+          "status": "SUCCESS",
+          "profit": 12,
+          "observations": 2
+        },
+        {
+          "combination": "A2B1C2",
+          "status": "SUCCESS",
+          "profit": 12,
+          "observations": 2
+        },
+        {
+          "combination": "A2B2C1",
+          "status": "SUCCESS",
+          "profit": 12,
+          "observations": 2
+        },
+        {
+          "combination": "A2B2C2",
+          "status": "SUCCESS",
+          "profit": 12,
+          "observations": 2
+        }
+      ]
+    }
+  ],
+  "combination_runs": 24,
+  "limitations": [
+    "固定时钟不证明5秒性能",
+    "三个实例的24次运行未接受重分配",
+    "不构成性能比较"
+  ],
+  "sha256": {
+    "src/test/java/method/runtime/P1EnumerationAudit.java": "08cc4a713b9b396cb8b87bdad2ee7e4d3e1c4b52b2a9ac2d50d7f19ad1960da2",
+    "src/test/java/method/runtime/P1EnumerationAcceptanceTest.java": "33acabb71854b0228be1dbcdfed64a7043e5b803f5105abb88595839abdbba37",
+    "src/main/java/method/ProblemAdapter.java": "1abb55825c77903fff411f95023bdc760bcfa622bc5b54d67eb95e8c245dd47f",
+    "src/main/java/method/runtime/Budget.java": "0db52c9f1e0f4e3c710356510962f2e05d036b0e04311d4f2958a1aacc950d42",
+    "src/main/java/method/runtime/ProblemAccess.java": "ad969e73519b06cb81f4df4290617d5c549e988be5a8f62d8952d5a9e4c5125e",
+    "src/main/java/method/runtime/SolverContracts.java": "69687b01a2b93b5657dae6fe8f680fc8ba49dced250f244f249ccfdcc8211a48",
+    "src/main/java/method/runtime/ManualStrategies.java": "b3c7d6c16f8c24ec82ebccc00ec3ca2853064bd708c5938a984d2430d3ce7ac2",
+    "src/main/java/method/runtime/TwoStageSolver.java": "f4b5a876dec2aa6d2167ca6406e04a5f0cac595a7a78a11d5401aebe88f32d6a",
+    "src/main/java/model/AttitudeRecord.java": "633cc8d3fb8fec758d2a8b4ab64d01832927d4c9da65e58ebf7f0e7016c2ac03",
+    "src/main/java/model/Task.java": "8e06fdd210dfee567c8d99ef9a8daaeb0e481faba693cd6d3ddffefaf3011a60",
+    "src/main/java/model/Satellite.java": "d7a4d39a47ff57392e28dc3539bae344a4297f71b2ae6ac8ec4d0035f6786733",
+    "src/main/java/model/TimeWindow.java": "1a9fc3a959c260629a6fc8e444ca0861b1fee90368c9b3ebec1eac01dbc40740",
+    "src/main/java/model/ProblemInstance.java": "075cd61efe9c852bb47761bbcf6c72e356ff00e5b136b458690272ea1c546f6c",
+    "src/main/java/model/ScheduledTask.java": "dce85f497b81b57c07d10c600f810701077c6a1ccb9f6a34f80b347b3a3fbb2e",
+    "src/main/java/model/SchedulingPlan.java": "cac52b1a07464923f8d071874dde40376bf587c5d885360524f03ef6f7363bb6",
+    "src/main/java/problem/ScheduleValidator.java": "526f92fab778313525d8d9b914bbf8a0c0c6d108bc997d7ed4701eabc4e61f9a",
+    "src/main/java/utils/TimeUtils.java": "f3757fe762359a9412c8aff9ca08600be47e1315b669d0555ff8f2b8f39f9ceb",
+    "vault/Results/Evidence/p1-small-enumeration/independent_oracle.py": "efc0fd595d4f84b07adbfa3b40134a7b0a154172f5d59c727924929ada794483",
+    "vault/Results/Evidence/p1-small-enumeration/data.csv": "94373101efef8801b8c4c2251a4f652dec087acef604a023ee46fcff6682fe32",
+    "vault/Results/Evidence/p1-small-enumeration/evidence.md": "38de3aba6cd55b9fa33c546e8b9b557657d938a598c37be17ebc54fb5fa7c724",
+    "vault/Results/Reports/p1-small-enumeration.md": "5a0ee8aab5fb336e71bf35919a9e4802303f2d02376b7fd2c7975a7a04e5ef2c"
+  }
+}

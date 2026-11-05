@@ -1,0 +1,986 @@
+{
+  "schema_version": 1,
+  "record_type": "p1_rkhma_reassembly",
+  "date": "2026-11-05",
+  "project_root": "E:\\OneDrive\\project\\static_determine\\roco_paperbanana",
+  "project_base_git_head": "8b380c5aeaa7d6b0ccd06ce9d315ad64ea53cbff",
+  "working_tree": "未提交；源码文件身份由哈希记录",
+  "source": {
+    "root": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping",
+    "branch": "main",
+    "git_head": "fda0333454f8273d726e136d7ed67b3207754090",
+    "working_tree": "有未提交修改；按实际工作树逐文件记录",
+    "algorithm_configuration": "410000",
+    "legacy_files": [
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\abc\\ABC.java",
+        "source_sha256": "038d565a726a5f8b852874ae820081be26ae8b4c5a16c7449bb503766e8454f0",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/abc/ABC.java",
+        "project_sha256": "963fbe9803c42bcfdb30bc6659b3a2206f4bd0c064af1a890c6143250eb2693f"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\aco\\ACOGaussGenerate.java",
+        "source_sha256": "ce4eb1e2989adae88efe8e125f787c2cff8c61bfa8bbacc0319b248797a12c26",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/aco/ACOGaussGenerate.java",
+        "project_sha256": "aaf72a4865fac2f94161255b460d5c077188583cce3b4019d3c1420aa1d51cda"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\alns\\ALNS.java",
+        "source_sha256": "7044c3652f8ea1869a1e8a0b6018251d3c0ffaa9db679d174f4c47ee62e32b61",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/alns/ALNS.java",
+        "project_sha256": "55fd7a21a8add34c9df75fa3dd4dd496c25cf2ded77ff611db2e07cdf22ed4ff"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\de\\AdaptiveFSchedule.java",
+        "source_sha256": "cb6d61df7be1a064fd8f67ba3dad83baeb4ae6afacb8fb2ba4eec3e43d1935f4",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/de/AdaptiveFSchedule.java",
+        "project_sha256": "c58f1d8d1676ebff2123a226416f60c3b451b9fcaeb5b4939cee81bb4d9c7ba8"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\de\\DEBest1.java",
+        "source_sha256": "15d6283bf5661a831463d8117d0e915c3a5a40ae8cbb5ff253f1917b4fea314e",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/de/DEBest1.java",
+        "project_sha256": "0f40c6842ff0fa817a4d30f5c2415f41a2169d12025b4ee1cc5bc8ec7e347869"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\de\\DEBest2.java",
+        "source_sha256": "04e553b9ce6d3e75f1b67034469a499fdd98a7d14e38289f76eb4f307e834e50",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/de/DEBest2.java",
+        "project_sha256": "8fb8c3cbb879813446ddbf5122514fbb55cc22e2badb126cd8b63959e911e237"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\de\\DEConfig.java",
+        "source_sha256": "c09de87183eb4853f015b712570460aeece4712c3f33d56d802b5f2bfee8b155",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/de/DEConfig.java",
+        "project_sha256": "092dae9c6c4cfd1cd5ce70aca7c8eb782e15545b01f92d1129e8a3930c082bfe"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\de\\DECurrentToBest.java",
+        "source_sha256": "69d19cfca48e83ab5a5dff2abf3e3c9a57baa6736ab30211bbb63e092937dc2b",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/de/DECurrentToBest.java",
+        "project_sha256": "0bf2f183d966a79148bf9c12941bae4670cc17616406d61bfc143747d4a5e96e"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\de\\DECurrentToRand.java",
+        "source_sha256": "5dcca21ff606b0c04c8a446b87214349b66577909fde3ab38b64a35dc0da20c9",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/de/DECurrentToRand.java",
+        "project_sha256": "93da242f3af87963bd0256d85b95b0b7228336ddb547647e35088e056f6489da"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\de\\DERand1.java",
+        "source_sha256": "ff3c048859323acb3f0ecf982df8ee766f1d8ba05ddfcc73e69419ca9a560770",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/de/DERand1.java",
+        "project_sha256": "fca7fe3b2a4201ff7c509f39af65aabaf2d314946185d54feb95f03abc2b8577"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\de\\DERand2.java",
+        "source_sha256": "662d4deb48c466a159346e57805e5f3b712dad7b409675ff97ddc2e9210bb941",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/de/DERand2.java",
+        "project_sha256": "abcaf43ef086578b92131013e67ccde19992398b8b46b6ae7ad4ffe000f251a3"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\de\\DERandToBest.java",
+        "source_sha256": "d76df6fec21078572472eccada330ca8b392fd6bedc68f5d50a3afa147be2ff8",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/de/DERandToBest.java",
+        "project_sha256": "e7ed032925fad4cba9f6d8a025ec1459d5b7e3b4d1f8791d1b5ef8f26cdc4c67"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\eda\\EDAGaussSam.java",
+        "source_sha256": "1d556eb7ba305d83acabc97162dcbe1595d98b4c8a3cb74a51831b1588d35c65",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/eda/EDAGaussSam.java",
+        "project_sha256": "56a687f01acc510990a80979de099892535cb86a4617abbf7d2ed11556b869ec"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\ga\\GeneticAlgorithmNoSelect.java",
+        "source_sha256": "3e55d76f2c198128626e6d74e5559162de12da83ef9f579388936113b48f8c6e",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/ga/GeneticAlgorithmNoSelect.java",
+        "project_sha256": "96c49f82ebe7d74ca5d1e4a2cbf797e59522c20aaa9f40923e5026d98f2af3d7"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\pso\\PSO.java",
+        "source_sha256": "75720aa0f16989f2e5f69a221e73af2ff52d946ffb6b6047b93960188880a189",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/pso/PSO.java",
+        "project_sha256": "c55eebfc570f0b47f696954352a669b44e51c87caeaef22ea20825cdefcae345"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\sa\\SACont.java",
+        "source_sha256": "ec17f79a894e4ccddbf42d44aa4ebbbf8bb7032ba113fec7feba5f873b697563",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/sa/SACont.java",
+        "project_sha256": "7cd386d193ca1c04363c4da8aeb76d734f198a9c13121ac83b7fa87d5de1738b"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\shade\\SHADELoopBrief.java",
+        "source_sha256": "21c46722fbee84377c9c7204412bae60f6546da94e4bc5cf713f8de245ece4e9",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/shade/SHADELoopBrief.java",
+        "project_sha256": "1926d3787046ac8964cb94148247399282c46d9bb92ae273de6b9b123eeda45f"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\shade\\UpdateArchive.java",
+        "source_sha256": "4cad2df89555aa0fa5bc39af69c0a9328cf7b6e17e48187779f7a3783b12bde2",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/shade/UpdateArchive.java",
+        "project_sha256": "bd19de531345dc086fb45365c0899233fff3a6b1320db6664521f4147753c6e7"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\shade\\UpdateProbSHADE.java",
+        "source_sha256": "7a1b01864390904850a2adf5f8aa8707682fee79ad5243a22869dd1ac41d7095",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/shade/UpdateProbSHADE.java",
+        "project_sha256": "b7d77a3c5c011aad08ec1062ccf32300c5e4a385bdcacb895d53954ad0c484fe"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\workspace\\ABCWorkspace.java",
+        "source_sha256": "a8215e9d0e7eac786658634ed2b9a552e10f00f7c4fd916f9993097a4cc141ad",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/workspace/ABCWorkspace.java",
+        "project_sha256": "b4bfd6dc4fd3a84d30d979b9133fcd26efdcd02c555a1f9725a361ffed17dcdb"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\workspace\\ACOWorkspace.java",
+        "source_sha256": "a5aab7b2c7472b7e69d5b3c09a83221d4a1082701bcd86809ee7bb21a1da0baf",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/workspace/ACOWorkspace.java",
+        "project_sha256": "d4134d66afb18e968d582aa1860c08be8ad89e29fa9a351a8a118b9da481e91f"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\workspace\\DEWorkspace.java",
+        "source_sha256": "78ce5e9e473653b39f4e5ef0977066d0c85a404a3a741df9d329aa2a4407b627",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/workspace/DEWorkspace.java",
+        "project_sha256": "2d171a8a3931782dea01bb2f675730a5acfd20296837296760b180a5dde2b328"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\workspace\\EDAWorkspace.java",
+        "source_sha256": "a1507d2ddd3e03a0edf6ef47a0840d49443ba75bd52061e443ce9e33c5f39a97",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/workspace/EDAWorkspace.java",
+        "project_sha256": "8e78fc4d5c779e2982c8413360867f1c412ec4e1101fbc91728d93e55030a45b"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\workspace\\GAWorkspace.java",
+        "source_sha256": "02daeb25c28ae98321de7fb13c2b9fa906f7aeed3252896de5a25d474b2e7b91",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/workspace/GAWorkspace.java",
+        "project_sha256": "c62a0872f0017811991da74ef1e9d4a64ab767fbc051ba09db2f5783890e2280"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\workspace\\PSOWorkspace.java",
+        "source_sha256": "e1fd2097848f336d06cc1a266e5a3ee2f0e8baaf2eaad82b9f36300d90730c29",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/workspace/PSOWorkspace.java",
+        "project_sha256": "77adcd937f477d84b739828853f32c2fe5d3d421d2832cfb3466f00c4a00e1a9"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\workspace\\SAWorkspace.java",
+        "source_sha256": "9691db5c933a0f6075d2eefca1605f927432d9fc6f3546062626e5abd82d6391",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/workspace/SAWorkspace.java",
+        "project_sha256": "ba16a0c600a4ed0d430fc754e6aaf3e8a0e010177fce34f48aef66f95fa44d01"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\workspace\\SHADEWorkspace.java",
+        "source_sha256": "df55f3abf5503452b1bdd0469b8a22b9e70323fcf28cc8f810d106f591ddb94d",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/workspace/SHADEWorkspace.java",
+        "project_sha256": "35335bb2b9207980c503211e2f811fe220fb9da88787f5c3684a6c95557f0401"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\algorithm\\workspace\\Workspace.java",
+        "source_sha256": "5645e2fc4437127b813e88385736f5df44754dae64a4e9092aee9297087998c0",
+        "project_file": "src/main/java/method/rkhma/legacy/algorithm/workspace/Workspace.java",
+        "project_sha256": "1e5bc058e45ad5801233fd66835349ff28ceeda9a838301af3e771295d2429ba"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\common\\AlgorithmConstants.java",
+        "source_sha256": "b99bbbe248b78e2b7fbe714514426eff6ebd4f040cf46aa742b24c38e5b338d7",
+        "project_file": "src/main/java/method/rkhma/legacy/common/AlgorithmConstants.java",
+        "project_sha256": "d9a22399cba82475ac4f9524800302d6248b685b1c2c34540d8b8986a2dfa15d"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\common\\AlgorithmParameterValidator.java",
+        "source_sha256": "70bc764ae7fe1033537a7885c872cc90b1626aab73c5463982ef5200d44415c5",
+        "project_file": "src/main/java/method/rkhma/legacy/common/AlgorithmParameterValidator.java",
+        "project_sha256": "8d6a64f6232ed64426bc5bbfe8f74167f3f5cf7749394591c08f3581c634fc50"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\common\\BoundaryHandler.java",
+        "source_sha256": "7504c07c32d0cbf04830eea209513b76b52664a0d428d38087e0fa94706d6de1",
+        "project_file": "src/main/java/method/rkhma/legacy/common/BoundaryHandler.java",
+        "project_sha256": "219da25c02317767085c28edeac454cc30c891d30a9cf7808953cbdfaffe3a79"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\common\\ConfigStringUtils.java",
+        "source_sha256": "b7bae143bb91ead3cf520d662fe3075a9dc72288c3e87439070c895c55d31bfd",
+        "project_file": "src/main/java/method/rkhma/legacy/common/ConfigStringUtils.java",
+        "project_sha256": "55dddc8db9a4ae65211148fb96ad95b4cbc0b2fedb04a844403db96334426a35"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\common\\EliteConfigArchive.java",
+        "source_sha256": "9310f4c8eeb0683fceaf8b1b57bf96237058ebb4607d61174b609dbb122bc74b",
+        "project_file": "src/main/java/method/rkhma/legacy/common/EliteConfigArchive.java",
+        "project_sha256": "f09e08ec8226102b182c1c05b83d00891482e4204986d4ff105bcb3024c89ffb"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\common\\FastGaussian.java",
+        "source_sha256": "460d76842f78374e9b4bb1e05a4d6ec26853c7b23cd5625e914a318574de8cbd",
+        "project_file": "src/main/java/method/rkhma/legacy/common/FastGaussian.java",
+        "project_sha256": "85dd06a071273c50fc676da65b39a090c88a7df06c3ce40c1aa598a65e2bcaf9"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\common\\RandomProvider.java",
+        "source_sha256": "19d7cd77817b0b95831eebbbd1739f0c88b49de7f73eee55b95f178475309778",
+        "project_file": "src/main/java/method/rkhma/legacy/common/RandomProvider.java",
+        "project_sha256": "d6d3c1cbe855de3a1269a50fbef1530410825f40ddf54fdd90bdeca9a9b64486"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\common\\ResizePop.java",
+        "source_sha256": "38c5ce5736f61a1bb50a9b9e4f13a50af439440152ee57caed3b6333f35910ae",
+        "project_file": "src/main/java/method/rkhma/legacy/common/ResizePop.java",
+        "project_sha256": "ab73867fa6ec407b0c3b8e39340cfa4d0ba560918eb7e3e2f31973870f964d26"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\common\\SearchDeadline.java",
+        "source_sha256": "0e08af659a82fec9fc49d4dfa7ae4e2ba507cd123dfa3ce18b1032cc22b33cd9",
+        "project_file": "src/main/java/method/rkhma/legacy/common/SearchDeadline.java",
+        "project_sha256": "5047dfd28786b8f386c604d956066ac7dc409e755e4cbb2597bb0e948a51c0bf"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\common\\TuningConfig.java",
+        "source_sha256": "2b06b83d865e7fb88b4280eeee5290536437375aa8ec5328cc451e2f4431119d",
+        "project_file": "src/main/java/method/rkhma/legacy/common/TuningConfig.java",
+        "project_sha256": "8a78b28fc5c9bd2a06307b0dcc932bd50ffe910129f35a3232f301c7bc38d294"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\common\\TuningDefaults.java",
+        "source_sha256": "518cf26c63df16da64a02ef00c64d43a083f17dd4624099cd886b84883e5a684",
+        "project_file": "src/main/java/method/rkhma/legacy/common/TuningDefaults.java",
+        "project_sha256": "ef8163dd8058ae4e08b187bd9e0fb35f6f981dbe7bebabaafb099564ab0140ac"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\core\\calculator\\HybridLevelCalculator.java",
+        "source_sha256": "dc789547de1a03f5767c494c2d5fdf9cfb29b3dfa26887139e503cefa0af314c",
+        "project_file": "src/main/java/method/rkhma/legacy/core/calculator/HybridLevelCalculator.java",
+        "project_sha256": "9fcda3d4e7e097d5c7499989dfafa7136515c76f9c7849d9c944020219e253ef"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\core\\config\\AlgorithmIndex.java",
+        "source_sha256": "40d2729d3645f6b335618ce22455441a22930d01e16725edb76d62f99bc19b98",
+        "project_file": "src/main/java/method/rkhma/legacy/core/config/AlgorithmIndex.java",
+        "project_sha256": "e69f991f7fd16541cf1171dc843f5da881ec3deb9ffdf79fed1b2fde355d2cb4"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\core\\config\\ConfigValidatable.java",
+        "source_sha256": "e7eeeb03859f0d8ec980eed701e97a7c09cfb0ed7b02767910f32e9bd146e67a",
+        "project_file": "src/main/java/method/rkhma/legacy/core/config/ConfigValidatable.java",
+        "project_sha256": "2861c3b40a52dfe2a4b80da2e81579fb6e27099b01e831fe14f039ce010e80f0"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\core\\config\\HybCecConfigManager.java",
+        "source_sha256": "48775538096a57fcb08361212102f347780ee178e2761be5171011e0cefa0d09",
+        "project_file": "src/main/java/method/rkhma/legacy/core/config/HybCecConfigManager.java",
+        "project_sha256": "29d3ee66547f009dfcf93e7dd48d885f30efa9e980ca8530566137f7d6a49b67"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\core\\exception\\HybCecExecutionException.java",
+        "source_sha256": "d300a4a9196789838e355ab11e8d2f3a9510d1b00c6f595e49ca4a98e71d1944",
+        "project_file": "src/main/java/method/rkhma/legacy/core/exception/HybCecExecutionException.java",
+        "project_sha256": "db000ddfd99ee001147079f1c5945ecf22135a39f05267b3370a080f7fd0d19a"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\core\\HybCec.java",
+        "source_sha256": "b1df8bf50d688d7002ae966a2b9aeb4acf0326033851f270443cfd8132092dbb",
+        "project_file": "src/main/java/method/rkhma/legacy/core/HybCec.java",
+        "project_sha256": "458ac5142a8d31c302639f1ed61f42cb2bdeece18fd294baca89bd5841d856c8"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\core\\manager\\CreditManager.java",
+        "source_sha256": "2eac24042cde00d451849e8011cbc1217afe6e904f598ea4da53482e66ba927e",
+        "project_file": "src/main/java/method/rkhma/legacy/core/manager/CreditManager.java",
+        "project_sha256": "c57691f30517b338fa644632addd3aec84d8941cf2f5a26abb38d0b7beed81f1"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\core\\manager\\FitnessManager.java",
+        "source_sha256": "204f6ff146866ba8d06b244c926bfc2594098f85728a61a7da5095ba40395618",
+        "project_file": "src/main/java/method/rkhma/legacy/core/manager/FitnessManager.java",
+        "project_sha256": "741be3ea8aa43dc7ad6aef02acfffa9844c930755c63de247b50867ff38d457b"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\core\\manager\\PopulationManager.java",
+        "source_sha256": "32a3db1300ac6fe4c955f8f373179cf8172ae866223c1ea1b78fe4f45722576d",
+        "project_file": "src/main/java/method/rkhma/legacy/core/manager/PopulationManager.java",
+        "project_sha256": "43a0de8e92567816af1cb382d149fb6d6d92387a0f60b47966deb3de648c122a"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\core\\manager\\PopulationResizer.java",
+        "source_sha256": "29e4061c3559f3b1cc1cb4e1e88f1bc89e60f9572e6abdf08dc91cf4ba5538ef",
+        "project_file": "src/main/java/method/rkhma/legacy/core/manager/PopulationResizer.java",
+        "project_sha256": "b8843339de1c9e1d580dea1fb78c93b039e06caf125286f8afda7291719b1525"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\core\\state\\HybCecState.java",
+        "source_sha256": "c3d8194f6e1a07dd765ee3cc81bf1ffcd4b2ea1ae3a29dc6263f72a5ba8d9c66",
+        "project_file": "src/main/java/method/rkhma/legacy/core/state/HybCecState.java",
+        "project_sha256": "cfcdb25e287d24ffe293ce29a9bc8bba97dcc9b3bbe22af60880f919559f6e98"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\core\\state\\StateKey.java",
+        "source_sha256": "b42065429e4f420503ca7fe44b5718faa776deb2bf860e7df9c339b8e9c6c3b1",
+        "project_file": "src/main/java/method/rkhma/legacy/core/state/StateKey.java",
+        "project_sha256": "9da2aea5586e55ffc6e8f6e0d8339966d0191ffd7d8c5b012d6740bb6d6d6420"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\core\\state\\StateUpdater.java",
+        "source_sha256": "9221dab1eaeff9ecb3635276db3b09dac6c1d407d257ab7536b1ed582f551eae",
+        "project_file": "src/main/java/method/rkhma/legacy/core/state/StateUpdater.java",
+        "project_sha256": "00112d84a9174a2c02d2dfd3c824bac681314b85813740cd80c0285635a97ee5"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\main\\AssignmentDeltaEvaluator.java",
+        "source_sha256": "301d79ed23891418c7b477c020eb8aa0f79e8ddf25bf7c9ed3a9a8d3626bf70b",
+        "project_file": "src/main/java/method/rkhma/legacy/main/AssignmentDeltaEvaluator.java",
+        "project_sha256": "cddccbb023aa3150bca36f116adb876feb5ed757699ae46c8404a289ffe2603a"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\main\\AssignmentOverlayMap.java",
+        "source_sha256": "96e4cadef7daa9cd5beb8195c0f92f308391c03ec2d56f087b57139dc0ba9321",
+        "project_file": "src/main/java/method/rkhma/legacy/main/AssignmentOverlayMap.java",
+        "project_sha256": "bf3be7d8e2a1e4daa67f894e059789251bb05ce7c6d7f130d0a3337e1a39b411"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\main\\BundleMoveEvaluator.java",
+        "source_sha256": "bee6d056794672a2e1ae3364626d190e25944764b0c84085d30f1cf7bb486988",
+        "project_file": "src/main/java/method/rkhma/legacy/main/BundleMoveEvaluator.java",
+        "project_sha256": "16e43886a8d79bfd28cec14896d50fd98a102df2954d4423c0f418461b96897e"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\main\\DeltaFastRefiner.java",
+        "source_sha256": "49c7ca777141ac8c3624afe9d39260730fa57e95da6290b73bcaea7768415445",
+        "project_file": "src/main/java/method/rkhma/legacy/main/DeltaFastRefiner.java",
+        "project_sha256": "5742bddc0d740f3670343677c3ecf6cdc0be805436c726f80730c52a1e9de15f"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\main\\ParallelPolicy.java",
+        "source_sha256": "d9a6cf6aa0c28d77b3459aadf2e4c93ee3961344d0b30108f9a86a2cf6d6bc19",
+        "project_file": "src/main/java/method/rkhma/legacy/main/ParallelPolicy.java",
+        "project_sha256": "f96c2a08c41a8a378c926657000b86e82319194195653d601a6d3ec3cd4abe0a"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\main\\ReassignmentMoveEvaluator.java",
+        "source_sha256": "cb7805c4f4e9dc97ba0752ff731be66b0fab3909a601202cc28b0e03af37fc3d",
+        "project_file": "src/main/java/method/rkhma/legacy/main/ReassignmentMoveEvaluator.java",
+        "project_sha256": "6907021466886ad2a24cc54b4e4f9ea913d0dce5b171bed146127368c92034f2"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\main\\ReassignmentMoveServices.java",
+        "source_sha256": "3ecc3b12b59a72faff242e73e4a0d69da8d11eed0cb4119c5a324b83da2ec939",
+        "project_file": "src/main/java/method/rkhma/legacy/main/ReassignmentMoveServices.java",
+        "project_sha256": "64f4a10d1d6437e4909c536925de99a2295a8a3e87a003ae59c111575defc23b"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\main\\ReassignmentOrchestrator.java",
+        "source_sha256": "70e1f9926c315c2d41c409d21197fd76689fed35b645d194d92d570482fdc69c",
+        "project_file": "src/main/java/method/rkhma/legacy/main/ReassignmentOrchestrator.java",
+        "project_sha256": "85f316a05960b97ce5a114f6ca4dd1d74f3d6439bc5504bce69b9be5e0656523"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\main\\ReplacementMoveEvaluator.java",
+        "source_sha256": "390d89ccabd834aeaa0b990541de1e528e9a8acbf647815af834595e848b1536",
+        "project_file": "src/main/java/method/rkhma/legacy/main/ReplacementMoveEvaluator.java",
+        "project_sha256": "f08469cafb0da31896a467582c4301ee4d517304e1c82982463cf5494bb241d2"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\main\\SingleAlgorithmOptimizer.java",
+        "source_sha256": "baffe01a7afd076746887753aba73b682663e25b8a7b83f1689c66a27d9b70ab",
+        "project_file": "src/main/java/method/rkhma/legacy/main/SingleAlgorithmOptimizer.java",
+        "project_sha256": "a8c4b4763cd2d300cb69f902c770049fdb0c57c5b1b5ad870bb3c8b45e3889de"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\main\\SwapMoveEvaluator.java",
+        "source_sha256": "c2d62e603d7aa6ff6d716578978a09168fd15f632964cb8a7bfb33a2e321c2aa",
+        "project_file": "src/main/java/method/rkhma/legacy/main/SwapMoveEvaluator.java",
+        "project_sha256": "5dd8a226785a5a51d153027733c70a714320b41ba6dd8fd7c0a2cb6896b43bad"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\main\\TargetSatelliteRanker.java",
+        "source_sha256": "f18b1cc3d0499302a99a51b9c99d9754dfc1eb20aa638d3c32969b9456bf8e5e",
+        "project_file": "src/main/java/method/rkhma/legacy/main/TargetSatelliteRanker.java",
+        "project_sha256": "8df4872a6d20912b2aeb77ea5a8f5967b274202519b2d272c8940b36b3638151"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\main\\TargetSatelliteSelector.java",
+        "source_sha256": "9c405581b93cae709270fbe18a1c0525d7aa8546a52ab5f7dbc44ec67f67b31b",
+        "project_file": "src/main/java/method/rkhma/legacy/main/TargetSatelliteSelector.java",
+        "project_sha256": "91e65a91ff07fb23226382a07f8e937bcb54c55883c279220e8656cb022ca7a2"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\main\\TaskAllocationCoordinator.java",
+        "source_sha256": "7ba3f2f375c9b263dbf598fc13749fb00b60b819c8b35139ba375f4a94057772",
+        "project_file": "src/main/java/method/rkhma/legacy/main/TaskAllocationCoordinator.java",
+        "project_sha256": "6d3bde0401723ea56a5d44380b2fe0d6273d9bb56b093337704ace9252e4edb3"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\main\\TaskAllocationModels.java",
+        "source_sha256": "b7a00b3b4c831455771f751609897b621b1fa10658b3e531fc9d85d27a3fd8e9",
+        "project_file": "src/main/java/method/rkhma/legacy/main/TaskAllocationModels.java",
+        "project_sha256": "d3bc78febc649d37b9e1e0af6265d256d9798c1d4e1dd4fb2bb9b3b051b8dd06"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\main\\TaskAllocationScoring.java",
+        "source_sha256": "c4b927bda343de238995477842d1e05dd554795dc97e891cac80e86045da7fc2",
+        "project_file": "src/main/java/method/rkhma/legacy/main/TaskAllocationScoring.java",
+        "project_sha256": "73a905ab84a96f6bc58b55ddf3ff3936720a9f73883b6a9c6fb47660f7b49511"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\main\\TaskSatelliteKnnCache.java",
+        "source_sha256": "eac0a698a533adefcefb8b93d9387a66aa4b7437161123d98a9276585e7a355e",
+        "project_file": "src/main/java/method/rkhma/legacy/main/TaskSatelliteKnnCache.java",
+        "project_sha256": "638ad644e64982a993ef72b462f1603a05ac4f8d6b84bfd9d451228b63a2e0be"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\model\\AttitudeRecord.java",
+        "source_sha256": "633cc8d3fb8fec758d2a8b4ab64d01832927d4c9da65e58ebf7f0e7016c2ac03",
+        "project_file": "src/main/java/method/rkhma/legacy/model/AttitudeRecord.java",
+        "project_sha256": "efd98a37e8ae21fa8e509d44a8c2f8a4ceb69eadf60d56dfe6ed7bcc8631dcdf"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\model\\Satellite.java",
+        "source_sha256": "ad032d147a4b2b6f3bc6cff0fd0af25d3896c961ca225abada873952d2d28ab3",
+        "project_file": "src/main/java/method/rkhma/legacy/model/Satellite.java",
+        "project_sha256": "1ff4ca303640bb6a9bc8ecc700d78573def6a4a42e7d9992831e52ccacc8919b"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\model\\SatelliteTaskPair.java",
+        "source_sha256": "12f26c452106aaf9f3b3658cc8290ef6e39b4cc27fbb083cbd8721a6b51afb31",
+        "project_file": "src/main/java/method/rkhma/legacy/model/SatelliteTaskPair.java",
+        "project_sha256": "ffbc169c539a8d7bd51246e6c36c6fe5678a2e4001e213be0bf5c92dfa4f6733"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\model\\ScheduledTask.java",
+        "source_sha256": "bf6c0ba99fc2ce599372dd080851ca8691f459122cef9bae382524ec271d62e2",
+        "project_file": "src/main/java/method/rkhma/legacy/model/ScheduledTask.java",
+        "project_sha256": "81b01e23fd140d96b1321533eab628eece3f7fc3c1031ec2f2944d7b6a3b5c93"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\model\\SchedulingPlan.java",
+        "source_sha256": "0d2727a89eb1634e0de58a7659f47fdadcc810cd50318267cca185b6b90d98a4",
+        "project_file": "src/main/java/method/rkhma/legacy/model/SchedulingPlan.java",
+        "project_sha256": "8382c97e14b2918dd5f856c55a10090a999d0f193ace5eb43d9da27ff6b7b8e4"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\model\\Task.java",
+        "source_sha256": "8e06fdd210dfee567c8d99ef9a8daaeb0e481faba693cd6d3ddffefaf3011a60",
+        "project_file": "src/main/java/method/rkhma/legacy/model/Task.java",
+        "project_sha256": "f65a5789f061a7b5350cfeb145edb59cef21820deabcb6eed3fa8e259003078d"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\model\\TimeWindow.java",
+        "source_sha256": "f513d57e4cfbd71cba8a6fe19353be386221b911f0144365448abc7f40a4158f",
+        "project_file": "src/main/java/method/rkhma/legacy/model/TimeWindow.java",
+        "project_sha256": "d84cfbdc881c173c6b0fb35b259519bb7b3fd0016564dd71c7bdce4ce65f39c5"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\assignment\\AbstractAssignmentStrategy.java",
+        "source_sha256": "1172d8a1082db2c5aa9ca35fb80a7dcc21280a064d9c8ad73f208b757c837fb2",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java",
+        "project_sha256": "3fbb48a71a6fa8f7ad6f03f55358dd39e51715c07127f585a18d5ec8c4981280"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\assignment\\AssignmentStrategy.java",
+        "source_sha256": "9e13eb73b6029d2421eff1dd64f4e3309870a4c8c7029075c6842c59c4ab833c",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java",
+        "project_sha256": "6a249cd1e19ff6e078b7db3f9aec1fb5a373f09c05756bf1242eba9565340e29"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\assignment\\CompositeStrategy.java",
+        "source_sha256": "9e77a9bf32dc189d8e941da19c79ab1f2693914ddd9110ffd9836ac2e63bb1f6",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/assignment/CompositeStrategy.java",
+        "project_sha256": "019393b8479d2fcbb67d8f7e4e720850f05257f0be983c4e0dfe7103860e60f2"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\assignment\\CompositeWithCapacityStrategy.java",
+        "source_sha256": "c49c9a3208b3a6db23d8593126d1bb275494cc291db24fc6c9ab3fb3f15d1d38",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/assignment/CompositeWithCapacityStrategy.java",
+        "project_sha256": "5eca53151a3b6a9f5da430966034954ce4492ce95fc34e00d2948f6329560ed1"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\assignment\\EarliestTimeStrategy.java",
+        "source_sha256": "3ef53d2c0240c5b8a491b50aba179770e7d7e56b40e286270e827d01bd173f3d",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/assignment/EarliestTimeStrategy.java",
+        "project_sha256": "a3bc9c94dc2350dfc3fddf05e23725aaa75903fc18bca1cfea518303f5b4ca5b"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\assignment\\MaxWindowCountStrategy.java",
+        "source_sha256": "72ac528ab89d8fa0b5aa309772e1f7e7acaeef6d4e955d4166db52ca2dd5dc18",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/assignment/MaxWindowCountStrategy.java",
+        "project_sha256": "5481b07cc78cf116949ee12eb9d71933c47f343147f1dc8b6a20979ca4b7948a"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\assignment\\MaxWindowLengthStrategy.java",
+        "source_sha256": "e56146bb47ac1b3bac16e2e9ebbd809d3077291d4994b5513ba4c2a1b50ec5f8",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/assignment/MaxWindowLengthStrategy.java",
+        "project_sha256": "bcd164ad39c6c7169aa89f137a249104f96a78babd9c4281e25151dc9ddc68e3"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\assignment\\MinPriorityStrategy.java",
+        "source_sha256": "d7fe310e06931e4201c50c5dce5da7fe6562b03c7700f8645fab95f498e0e570",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/assignment/MinPriorityStrategy.java",
+        "project_sha256": "6e241d5e7328ffe47c6393ea1b0ebafa49e3d91f35bc5af567332c5f5bc464d1"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\assignment\\MinRollAngleStrategy.java",
+        "source_sha256": "11af6675f4c700d18577d9109d4bed2258b518b32ec2a6ec0ac0350b793c8ac0",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/assignment/MinRollAngleStrategy.java",
+        "project_sha256": "9aeb2f1c82596b7b56723ea6967c1ef65ab66aaf33cde54f1501e1f5523836e3"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\assignment\\MinTaskCountStrategy.java",
+        "source_sha256": "13a11b9074ea069bc4f870d828983cb060c823bba37007db21fc0f2f26cb59a3",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java",
+        "project_sha256": "a4fee6af3dba9a8412e0d2d3e7e933b222309581c2dffc7b8b49661cd99a3628"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\assignment\\RandomStrategy.java",
+        "source_sha256": "02828342cf750d8383254fdc31c5da3145e961f02fa2ed133a128579553021a0",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/assignment/RandomStrategy.java",
+        "project_sha256": "5ae524861f5e830b338539862334be92b6046fcc30929344fb8a82755a1df7cf"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\crossover\\CrossoverDE.java",
+        "source_sha256": "9a86218ac80096f0cd1820f5fee8ee6b3222172ba5a99e0445d5915f08f3050c",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/crossover/CrossoverDE.java",
+        "project_sha256": "c0eda422eabe336877cedf8f9c6ea2ff9a4d9aad8d6395bae387e490184bd4b8"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\insertion\\AbstractInsertionStrategy.java",
+        "source_sha256": "fa09693e4eb1b35faa9c36dd3b000483897c7000952f44acb610a4136e5d6c9c",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/insertion/AbstractInsertionStrategy.java",
+        "project_sha256": "284e9967d18d1e1ca7f63068c32578c6d471e63765f6b7a30af8c9a85e42455b"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\insertion\\EarliestDeadlineFirstInsertion.java",
+        "source_sha256": "60ab54b23706c6e0b8875b1689fa5b45fdcd5b144c15b74c2f5d9d203ec72f29",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/insertion/EarliestDeadlineFirstInsertion.java",
+        "project_sha256": "7a529999d6520feea6912bc193231abf82a55449766cacef202371d4d9fe6566"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\insertion\\GreedyInsertion.java",
+        "source_sha256": "a0a1d94ef620d3eaea1a9af487039a18105bdc338cd24ee998da337f45812262",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/insertion/GreedyInsertion.java",
+        "project_sha256": "448e59909d2531fb46037b841bc820232c1956dc1c9c416ff9f303b5c7274f96"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\insertion\\InsertionMode.java",
+        "source_sha256": "0bc877ae60c69c9fede82d4223ce438c1b5ae4a7920f2743c9cac05cda1310ae",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/insertion/InsertionMode.java",
+        "project_sha256": "4437f546cedecfac9aa9fdee334df2ddcfa0b01f269fa6eae4d129cecea67a9d"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\insertion\\InsertionStrategy.java",
+        "source_sha256": "810b47290da6e802830411b84cc777179f18d75439677d1ff548a97baa56065d",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/insertion/InsertionStrategy.java",
+        "project_sha256": "d19654bbc1f9f05cce9f22a1dda30566068fc5cba2b5aca1cefb1ca9157b1e4f"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\insertion\\InsertionStrategyFactory.java",
+        "source_sha256": "bd1e074d06909a434a166b3f6f263bd695ecf717c8d2adca07b12b4d8186bc71",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/insertion/InsertionStrategyFactory.java",
+        "project_sha256": "2e31adc91a411a7ed60fff03bf319ba3a7c59aff9511ce86f9a4a8f95d963a73"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\insertion\\LongestWindowFirstInsertion.java",
+        "source_sha256": "c6a1ac4ebce28e38fee98e9b802db7c5ca08dd81068218d841412e765d98238f",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/insertion/LongestWindowFirstInsertion.java",
+        "project_sha256": "5342e173dccbfbe5904937f1ede74db956c3fe458cd3f83f11c0095a2cbea88a"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\insertion\\MaxRemainingCapacityInsertion.java",
+        "source_sha256": "86b913144e9f13a5ecb18586a9ac1869e4a2d8be6c602432a9c94a1dd1714d24",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/insertion/MaxRemainingCapacityInsertion.java",
+        "project_sha256": "91e51c429227875fa5f999d51208c09918f01a869520d6976e5d3c6124130cff"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\insertion\\MaxSlackInsertion.java",
+        "source_sha256": "48b956fae39f609cd58490b0103b9d2a412620acbaf1920740a75e0f8ebe4269",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/insertion/MaxSlackInsertion.java",
+        "project_sha256": "9b4d7b77db81e998e1550c9b2bddc670b7747c541a83ee1b2598ebe8bf80b584"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\insertion\\MinTransitionInsertion.java",
+        "source_sha256": "3aecbe6281a2a64e4c2f00a9cff50cf473c1134ab503eb9e18a9af7b027b20eb",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/insertion/MinTransitionInsertion.java",
+        "project_sha256": "d39927f52c1b43932c0c3ac4ff53f2a9c2d4a0de71d55dcbcfaaa0f5b7b4f95b"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\insertion\\RandomInsertion.java",
+        "source_sha256": "bda119b74e344329834ee457c8cc153bb6722972ecc88ca3816074f9c0fd5f67",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/insertion/RandomInsertion.java",
+        "project_sha256": "c12b3a7bb4d248a545ead17080b695cc22f8500e3e99952380fb755bc622be1d"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\insertion\\ShortestWindowFirstInsertion.java",
+        "source_sha256": "615936e5f194f1fe837ac43e16c01ed946acab891fbbcba53a8b81fd959b4b06",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/insertion/ShortestWindowFirstInsertion.java",
+        "project_sha256": "1e0e23acc1616ea343363a673e1016dab6555b2299ea4917212c573e06fe33b4"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\mutation\\DEUtils.java",
+        "source_sha256": "3cc895c64e4d1cb7e0a457ffb0bc8e7392d65f5e5637c78018b8bbdc1743ac02",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/mutation/DEUtils.java",
+        "project_sha256": "091b3c850eb408f1df4e5c208e55e04fef749e55e3b0eaa644be7a83adf94070"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\mutation\\MutationDEBest1.java",
+        "source_sha256": "875756711430fae2016e52a60969f37f846eb02fd9dc1ad9ec812215c7946247",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/mutation/MutationDEBest1.java",
+        "project_sha256": "ec50fd515ebbce0e64095443678b8344de8a94d78bd0506f7ec175f5b86517a0"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\mutation\\MutationDEBest2.java",
+        "source_sha256": "33f2b19efc3a48b72f64d2b4f65184a059041795f0327e6a46fe74c9d81486bc",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/mutation/MutationDEBest2.java",
+        "project_sha256": "0fbfb7495ecba4e71966d9fcc24b770f4c1c4b6a07d347ecbc0653c05ed9ab63"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\mutation\\MutationDECurrentToBest.java",
+        "source_sha256": "10fe9ad31e57beff1810080b2d52a059452c0f0e0ddb3daf5022b6f6da0dc0f2",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/mutation/MutationDECurrentToBest.java",
+        "project_sha256": "99e73b4d01769f298a9aef75e730ab890f37ae576bf509769cdb308df0e94c25"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\mutation\\MutationDECurrentToRand.java",
+        "source_sha256": "633ab714b2c14954a7efce424d247170530c59e8aa6f08a49560fa4770a766bb",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/mutation/MutationDECurrentToRand.java",
+        "project_sha256": "fed43e28adffec2553302b2ad0bd4f579396bd4168b3d29b6ba315dfd991b8bd"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\mutation\\MutationDERand1.java",
+        "source_sha256": "825b6c4198dfcf0e760453129fca0787d656c446b73c62d2b0a1e634ef3e817d",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/mutation/MutationDERand1.java",
+        "project_sha256": "aad3f3dcca1ca68e87a3d09fe4c8ce7f179c4a8c096b9a76cc59d676a812d5ec"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\mutation\\MutationDERand2.java",
+        "source_sha256": "2335e5d8da6a40943c5c61ab15cdc2bc829b010f8174b83e0749300f616ee39a",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/mutation/MutationDERand2.java",
+        "project_sha256": "784e0128657157dc6bfb52b3ef5e7d10b1b937ee6929e05d18ed13e6e05f38c2"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\mutation\\MutationDERandToBest.java",
+        "source_sha256": "2090116751fc9ecaa22440494be50578f493a002dd0499a967a8a8b5535ea919",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/mutation/MutationDERandToBest.java",
+        "project_sha256": "effe99c84f3e3e2f3b22a4685466ea66a02cb63b48a7e4799c374fb255e1d2d5"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\operator\\selection\\SurvivorSelect.java",
+        "source_sha256": "993a754a770100e057b10a3517af0668b36e121a73a44b7895a2f0a6c2a8d0a6",
+        "project_file": "src/main/java/method/rkhma/legacy/operator/selection/SurvivorSelect.java",
+        "project_sha256": "9f0437244f4b0ce9dbf18f0b66421a6ae3ca08063d75a4b0675f123f891a13d1"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\strategy\\ABCStrategy.java",
+        "source_sha256": "b23350f0bdd8231610413aefe5d606fe967204f5a92ec2b68d73d91d900732b7",
+        "project_file": "src/main/java/method/rkhma/legacy/strategy/ABCStrategy.java",
+        "project_sha256": "49647de83a054263efdbbceb85025ea38fd69fe1a0e50e3ce8c2aacb47b8a755"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\strategy\\ACOStrategy.java",
+        "source_sha256": "8696fc2458df835d58b505e03d85e1e44426f7ca462e55b463ca5f5f1da622f9",
+        "project_file": "src/main/java/method/rkhma/legacy/strategy/ACOStrategy.java",
+        "project_sha256": "c3ff3a371ca89c885ebcf468c687c460f14aa5ff7e133d47c112d2ac6c907e1d"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\strategy\\ALNSStrategy.java",
+        "source_sha256": "f8e6a274973f4fec601789c5bc7c8f5cc77afc708bca97221c6f7aefa6e79a40",
+        "project_file": "src/main/java/method/rkhma/legacy/strategy/ALNSStrategy.java",
+        "project_sha256": "7c58741262efc062c31820065ef3912a02378b0e74f163098184c15a046426d7"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\strategy\\DEBest1Strategy.java",
+        "source_sha256": "e720a86b416ad750deb519c25272342f6710de1eaf394390d1de8c34657f6907",
+        "project_file": "src/main/java/method/rkhma/legacy/strategy/DEBest1Strategy.java",
+        "project_sha256": "6e5388fd81677e39d6cbed266dd20a04b9c7ba973994ed26a509ccc7e20822fe"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\strategy\\DEBest2Strategy.java",
+        "source_sha256": "2a8ddaf2fe475a0422b9ee74a3311cf0fe0c76239151b9ce28b539e00d2a10d8",
+        "project_file": "src/main/java/method/rkhma/legacy/strategy/DEBest2Strategy.java",
+        "project_sha256": "9f99f0104f159c2413511fd4dca220871444c3611cd07c9de48179aecfe554d3"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\strategy\\DECurrentToBestStrategy.java",
+        "source_sha256": "223fd19f84f7af1206f96c191356ab739a66bbe36fe56c82c96a7bf470c6a85c",
+        "project_file": "src/main/java/method/rkhma/legacy/strategy/DECurrentToBestStrategy.java",
+        "project_sha256": "0c1ed75bf0f7cf528aa4cb9a85b8dc715cf38c8e85e07cfc029ac484ee4faea2"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\strategy\\DECurrentToRandStrategy.java",
+        "source_sha256": "8353a54a03c1a8e546e12500cff2fa3271aa89f1368459be19a8499420d72cf1",
+        "project_file": "src/main/java/method/rkhma/legacy/strategy/DECurrentToRandStrategy.java",
+        "project_sha256": "a824719729c8b48991214917066a79cb612a44b7c919c966374eaf96a05aebd6"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\strategy\\DERand1Strategy.java",
+        "source_sha256": "54a8f3cc67e74b6e612379be200fa99aaee985147d8381b64cc0be5efeff3791",
+        "project_file": "src/main/java/method/rkhma/legacy/strategy/DERand1Strategy.java",
+        "project_sha256": "af4aadf151c9a347bb090749471098c7ea63a1ad90bca8708603fdecf0cf6686"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\strategy\\DERand2Strategy.java",
+        "source_sha256": "50417d58bb7f47495400062467cd6752426797f90a31b4a953e9843a6797bbf8",
+        "project_file": "src/main/java/method/rkhma/legacy/strategy/DERand2Strategy.java",
+        "project_sha256": "00986f30aa2e1664eaeb771da338ab8395b0d4f0b99a5c8d33c20d41c94af87a"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\strategy\\DERandToBestStrategy.java",
+        "source_sha256": "034042bcffd2db9be8b8d1733809a6ea4f3022460b0ab53caa5e6728b73d831e",
+        "project_file": "src/main/java/method/rkhma/legacy/strategy/DERandToBestStrategy.java",
+        "project_sha256": "df1f48fa7e29851619de16f827d97fa2750f2d5cdb309f8c7b16999d2f2f294e"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\strategy\\EDAStrategy.java",
+        "source_sha256": "263f3a4c7ba7f7fbf0829aea086b187d7599e1b318b463f69866935470f3f753",
+        "project_file": "src/main/java/method/rkhma/legacy/strategy/EDAStrategy.java",
+        "project_sha256": "3eb470ee76e8a7cb251b7192f46cab5c588af16206ae296f0e31470873c7c1aa"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\strategy\\GAStrategy.java",
+        "source_sha256": "1c3cc3ea937a05b9ca90cd1f2d565d30856e69410ff145945f35a2d64214e708",
+        "project_file": "src/main/java/method/rkhma/legacy/strategy/GAStrategy.java",
+        "project_sha256": "5750e9bcdeb05f30aba1ac7a9986b53d59e584f43170a1a0d58a03fb8f5a2012"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\strategy\\ParentContext.java",
+        "source_sha256": "c5fb1cf4b7533ab45554f33a21c57f3a660d79a3fa085247000a2f2ebb0de891",
+        "project_file": "src/main/java/method/rkhma/legacy/strategy/ParentContext.java",
+        "project_sha256": "bf2deeaad99306245139d2ef43a58bcb616f6cf531fc7bb6717cae2f7bc52984"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\strategy\\ParentStrategy.java",
+        "source_sha256": "03bff2acf15387e977745a15e90cf00f6e7aca48c4c168bf4e091179b1ef50f6",
+        "project_file": "src/main/java/method/rkhma/legacy/strategy/ParentStrategy.java",
+        "project_sha256": "6b0ed102382962158420f3af37437e67f443dfc665732224461fa43cac34f1b1"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\strategy\\ParentUpdateResult.java",
+        "source_sha256": "1d6162ca737e1cc9632fedfc390c2eb023a739a5fb748765616b21823c869b89",
+        "project_file": "src/main/java/method/rkhma/legacy/strategy/ParentUpdateResult.java",
+        "project_sha256": "a64c73453e8f7fdd6b0df2899781c1e35013dcae278ac744156a701ebc4331f9"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\strategy\\PSOStrategy.java",
+        "source_sha256": "c452fb918b70b6a759388aec18b9f3a139bd4457c4dcb039ebe05befd07322ba",
+        "project_file": "src/main/java/method/rkhma/legacy/strategy/PSOStrategy.java",
+        "project_sha256": "30d34ea5da4331f849fd4e44c9ef19cba13d2d0f9c50c8bf6f6161bf1bbdab1d"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\strategy\\SAStrategy.java",
+        "source_sha256": "cae9cf6435d8384614d896409014635ef47d82c3d1539d4ab19bb5b92b40e897",
+        "project_file": "src/main/java/method/rkhma/legacy/strategy/SAStrategy.java",
+        "project_sha256": "144642a944d6229206fd45f38d7a20836c3258e6a59d450d7aadb696bacdfb92"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\strategy\\SHADEStrategy.java",
+        "source_sha256": "0be66cd8466805179128087e35e5a92f6d283c7d6cf3534126e73a8c0c3e003c",
+        "project_file": "src/main/java/method/rkhma/legacy/strategy/SHADEStrategy.java",
+        "project_sha256": "537d9226e92f7b07b2309a1e61ff04746d1ce0dae1a76c7f4a205172cbd5759e"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\strategy\\StrategyInput.java",
+        "source_sha256": "2bb56adaae25053e9d3a758641745d0e4451371938734be8785962104a41d75f",
+        "project_file": "src/main/java/method/rkhma/legacy/strategy/StrategyInput.java",
+        "project_sha256": "6a707c3ce5fab844451c9431f8c080822c326357c7665194361b486828ea3f3b"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\utils\\AssignTaskOperator.java",
+        "source_sha256": "42ff846a825483bb4a420c16e44b365fc25377108db70f7e5b6b3be4715e3be0",
+        "project_file": "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java",
+        "project_sha256": "99d9af967405e6b99749c354e07a4441ed77b1c0034f58e53f1caf459d0c1e48"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\utils\\CandidateArchive.java",
+        "source_sha256": "aeb90e2cba5aabaed52edc12375e95e46117384c09099c5a4dbab446e0134fdd",
+        "project_file": "src/main/java/method/rkhma/legacy/utils/CandidateArchive.java",
+        "project_sha256": "8cedba59ba62ac40c498af0953b3dd5baae9b6f355442412d1b7a26a616f8ff5"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\utils\\DecodeWorkspace.java",
+        "source_sha256": "c01d523381ec7d795ff689768bb1c83a1e83f8023ecd7897f15142db006f46ae",
+        "project_file": "src/main/java/method/rkhma/legacy/utils/DecodeWorkspace.java",
+        "project_sha256": "c7a70f111a52415004cc608d650d247024bdffd03fe1d742566d409dd681a0df"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\utils\\FitnessUtils.java",
+        "source_sha256": "ecb647a4c5695bee30b238b7d8e21f5008f26af0e3bd28315d01b008f3f65114",
+        "project_file": "src/main/java/method/rkhma/legacy/utils/FitnessUtils.java",
+        "project_sha256": "4d0c0380ce907303af495bc99cd2fe583b44dcdbe01886ded656314fd3d8f5db"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\utils\\Initialize.java",
+        "source_sha256": "8aa7854afe18a944a7c8998932c58d60e7f03fa6ecb73f08f0dbfda4d9c6f210",
+        "project_file": "src/main/java/method/rkhma/legacy/utils/Initialize.java",
+        "project_sha256": "da8889b6d9dda1d99f85f998a9d28cc8833f6246da38ff17174a54c10e78fcbb"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\utils\\ListUtils.java",
+        "source_sha256": "93d6f9059ef32b2c7286ddbe4ed49d7dd87c8c7d416ae9e747a1110484c689b7",
+        "project_file": "src/main/java/method/rkhma/legacy/utils/ListUtils.java",
+        "project_sha256": "e2465b550fba010612613052b939f85797e3ac1d0f49c71c62b2c0630446e1a1"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\utils\\PlanUtils.java",
+        "source_sha256": "1c09581598eff8016c29c12dff30912ac49a0a21708c81fbaf9aeb0574927c0f",
+        "project_file": "src/main/java/method/rkhma/legacy/utils/PlanUtils.java",
+        "project_sha256": "b94f60d72333be7ab9fb1ab6bc4dfcf93fe77ef4aa975002f6ff067f7a172828"
+      },
+      {
+        "source": "E:\\OneDrive\\project\\static_determine\\satellite-basin-hopping\\src\\main\\java\\utils\\TimeUtils.java",
+        "source_sha256": "f3757fe762359a9412c8aff9ca08600be47e1315b669d0555ff8f2b8f39f9ceb",
+        "project_file": "src/main/java/method/rkhma/legacy/utils/TimeUtils.java",
+        "project_sha256": "3be2e340dc79d4c954d4e62d5403683ccabeb6dd5729e7edfd41621e4892f210"
+      }
+    ],
+    "compiled_reference_class_sha256": {
+      "core/HybCec.class": "5bf4f63ea22eb362677e8cea643e6c080347e6f00c1b3789063a3d2095911271",
+      "main/TaskAllocationCoordinator.class": "a0f05199d67354046edc93876c7813c5f418fe480e62e8ba3cee37d1ecbfc120",
+      "main/AssignmentDeltaEvaluator.class": "ab415228ea9fa6782db244b06750f85708a483dccfd99f1b7459f8c9b91e0b41",
+      "main/DeltaFastRefiner.class": "3b6ff5e6c76b9f580dd2a9d297cada87315aa38e5c95f1130aa4e0f0b3520737",
+      "utils/PlanUtils.class": "cc46c459c7d58eca9735329b81443421cfee0210a0e778566b17da74dc2fdcec",
+      "utils/Initialize.class": "b12469e5cbb604c51ffb6209999a2f1211710ed9a839db99567e975793941274",
+      "utils/AssignTaskOperator.class": "01184f0efe44fbe99b48fb1cec2b4dcdd9fb6c53b7c599242d63fd275668616c",
+      "operator/insertion/GreedyInsertion.class": "7a9e50ace7013c60886329637d127d5ebea25dc3b7f98167b18b691d35a9bd35"
+    }
+  },
+  "runtime": {
+    "os": "Windows",
+    "java": "OpenJDK 21.0.4 Red Hat build",
+    "maven": "3.9.11",
+    "powershell": "7",
+    "priority": "Normal",
+    "cpu_cores": 1,
+    "job_memory_bytes": 2147483648,
+    "search_deadline_ms": 4500,
+    "hard_deadline_ms": 5000,
+    "production_dependencies": "Java 21 standard library"
+  },
+  "automatic_tests": {
+    "command": "mvn -o test",
+    "total": 55,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "manual_combinations": 8,
+    "combinations_with_source_modules": 19
+  },
+  "source_comparator": {
+    "java": "vault/Results/Evidence/p1-rkhma-reassembly/SourceComparator.java",
+    "sha256": "39b1e41414e0010ca027400244609f1d53803519d8ed436e30cbfecfee81b4cd",
+    "seed": 1234,
+    "population": 6,
+    "max_fitness_evaluations": 30,
+    "max_reassignment_rounds": 3,
+    "stagnation_threshold": 2,
+    "perturbation_strength": 0.1,
+    "fixture_task_counts": [
+      6,
+      501
+    ],
+    "fixture_active_window_tasks": 6,
+    "forced_move_case": true,
+    "scope": "逐项对比初始化、最终归属、操作历史、收益及观测；501任务夹具仅6任务有窗口"
+  },
+  "real_smoke": {
+    "scene": "E:\\OneDrive\\project\\static_determine\\Scene\\500-5-0-0-24",
+    "task_count": 500,
+    "satellite_count": 5,
+    "input_sha256": {
+      "tasklist.txt": "5f56a0c55c5164e060e1130d2181ef184f846b798b6a7e5aa5e4c8efcdfac76f",
+      "outputtimewindow_1.txt": "3a98a744f0f6e0f24fb2cf04c3630f812239063a9555703922fee6f41793ad2f",
+      "outputattitude_1.txt": "fabb09caafbf144be44ef51e06af4c68c38f86aeebb9f7c4913b52fd83e227f8",
+      "outputtimewindow_2.txt": "e0e36451f1cb886d7f40fe0b554ab06d13cf2707a7ca305e37daa7409e301cc5",
+      "outputattitude_2.txt": "cc36652b9706c3ac3c9bbbcf73bf7464966dd03d23ffb260c2c5b4ade13d10be",
+      "outputtimewindow_3.txt": "4042a65f2a420b818352b2e2cb85eeab3c84fa3b0d61d39dfcf53ef98dedb9f1",
+      "outputattitude_3.txt": "47f9eb8fb201bdd3f297f95c99613325ae203b99c76257f6fb5dc3e524771001",
+      "outputtimewindow_4.txt": "0994f02c042c809f871da5103caa863f21f83d7b6c73a739425a0abf22e2ea77",
+      "outputattitude_4.txt": "f88cd491d37ad7ebd12afc241427d66e64bd5cf8e8961833a7b26dc5856b00d3",
+      "outputtimewindow_5.txt": "f16dbb941d495fbf7b1ea04e76d4977d9511643d914b972cc6789257a37ad0ea",
+      "outputattitude_5.txt": "3e7f4881fe361228f340b8532bba328c5287277e8be394394632f38751d7db57"
+    },
+    "data_csv": "vault/Results/Evidence/p1-rkhma-reassembly/data.csv",
+    "data_sha256": "0ffca636bd278c6cb027c90a8e86a5f3657200c32bede0200c8c790e575da7cc",
+    "rows": 1565,
+    "runs": [
+      {
+        "combination": "A3B3C3",
+        "seed": 42,
+        "status": "SUCCESS",
+        "reason": "SEARCH_EXPIRED",
+        "profit": 2400,
+        "observations": 392,
+        "elapsed_ms": 4768.461,
+        "raw_output": "outputs/p1-rkhma-real-final-20261105.txt",
+        "raw_sha256": "9ab1c89f94a8d7517fc93ac290fabdc80ead2424390f2a13fcb625eb696ee0ea",
+        "independently_validated": true
+      },
+      {
+        "combination": "A3B1C3",
+        "seed": 42,
+        "status": "SUCCESS",
+        "reason": "SEARCH_EXPIRED",
+        "profit": 2458,
+        "observations": 394,
+        "elapsed_ms": 4643.632,
+        "raw_output": "outputs/p1-rkhma-mixed-b1-final-20261105.txt",
+        "raw_sha256": "fa0df43cfac6e40cf9167ac14e0207a443e588d7d4fbf77dff0fa88ceb1a6597",
+        "independently_validated": true
+      },
+      {
+        "combination": "A3B3C1",
+        "seed": 42,
+        "status": "SUCCESS",
+        "reason": "SEARCH_EXPIRED",
+        "profit": 2400,
+        "observations": 392,
+        "elapsed_ms": 4650.927,
+        "raw_output": "outputs/p1-rkhma-mixed-c1-final-20261105.txt",
+        "raw_sha256": "44c2a1230a925cca85b94d7921d9ddbbf39722c26ef1c3b0722a19ec01d3562e",
+        "independently_validated": true
+      },
+      {
+        "combination": "A1B3C3",
+        "seed": 42,
+        "status": "SUCCESS",
+        "reason": "SEARCH_EXPIRED",
+        "profit": 2110,
+        "observations": 387,
+        "elapsed_ms": 4685.957,
+        "raw_output": "outputs/p1-rkhma-mixed-a1-20261105.txt",
+        "raw_sha256": "f7f959fb2efcde694fdc05974bfa8580414e824311ba77c9f69c87f3f327e9d9",
+        "independently_validated": true
+      }
+    ],
+    "limitations": "单场景单种子，四次均在搜索截止时返回，不能用于性能比较"
+  },
+  "project_source_sha256": {
+    "src/main/java/main/RunManualSolver.java": "3a01914468e33246d4637cc65e5fccf513c5935718b6d4f906edb6d1db7f29f7",
+    "src/main/java/method/runtime/RkhmaRuntime.java": "b483cf7dbbceaf40c98bc14c62c5bc540840c540854a4950d2bd354866f05044",
+    "src/main/java/method/runtime/SolverContracts.java": "69687b01a2b93b5657dae6fe8f680fc8ba49dced250f244f249ccfdcc8211a48",
+    "src/main/java/method/runtime/TwoStageSolver.java": "f4b5a876dec2aa6d2167ca6406e04a5f0cac595a7a78a11d5401aebe88f32d6a",
+    "src/main/java/method/runtime/ManualStrategies.java": "b3c7d6c16f8c24ec82ebccc00ec3ca2853064bd708c5938a984d2430d3ce7ac2",
+    "src/main/java/method/runtime/ForkedSolver.java": "08314fce7386226179be0a756f811508449504e49d3b25ca2107f4d8b3a89798",
+    "src/main/java/method/runtime/ForkedWorker.java": "23c644eacc45394479a9e52d3cfdc89a6bed56ccdf7ba5a4a1e8d5733af6a6f2",
+    "src/main/java/method/rkhma/bridge/ProblemBridge.java": "db5fa707666e35362d2346f4fc946af2be8adc177aa05b702289aa743505ed3f",
+    "src/main/java/method/rkhma/bridge/GridGreedyInsertion.java": "10f578a615fe3c32696a851fb7fda7d538d98ae55a62f9664d509d3782837357",
+    "src/test/java/method/runtime/RkhmaRuntimeTest.java": "1ec7f731c09de6c98aa44607be82bebe4285c97dbd7b5994ad1ef8656659cd7b",
+    "src/test/java/method/runtime/TwoStageSolverTest.java": "a5bfd73e055fb9dae3a05ef1dcaa88470c2e981799f617fb8992f231744a940a",
+    "src/test/java/method/runtime/ForkedSolverTest.java": "57ad6b00c2787acb09a14ea15f073670fa6c5c1c82ec401d17d8e916493b31fa",
+    "scripts/run-manual.ps1": "db71b3aa8d71857bc67303266825b6f4cc8b9757b24fec9dd553d9b2a708c58b",
+    "scripts/run-manual-worker.ps1": "3643d9e061f1c79ea060f597c99f35beae25f73d5b6d515dce32dde0853122c3",
+    "scripts/P1ResourceJob.cs": "b2ec7cc536735ba0ce6afd726edbbc7de99129dea5c003996a5224558c9a1539",
+    "vault/Results/Evidence/p1-two-stage-runtime/P1SolverCheck.java": "1e86032d7538fc43dbc4b800898845f2fc0004fb875b386919a24ed036c42c5b"
+  },
+  "diagnostic_output_sha256": {
+    "outputs/p1-rkhma-real-20261105.txt": "1aa677a601a374a7be4b1d35346b3567f978185742262e2900ce5f5bc6f2dfe4",
+    "outputs/p1-rkhma-real-checkpoint-20261105.txt": "1ca4fe1685d6522a3dbef284fc54699a27b404380dbe7436fe91cb0c59c4fc7a",
+    "outputs/p1-rkhma-mixed-b1-20261105.txt": "ef191d3dc31428bc0b701f179d702d7998df29934189666282bcbdbbace85b9f",
+    "outputs/p1-rkhma-mixed-b1-local-20261105.txt": "05c103aa3a98a49cbcf1f059e72240f6175ceef86701fe569db1336f79c2a576",
+    "outputs/p1-rkhma-mixed-c1-20261105.txt": "20e5896ffb1db804732f80daefa78697a035af2ad3d2b182d1dcb1058c96f863"
+  },
+  "documents_sha256": {
+    "vault/Results/Evidence/p1-rkhma-reassembly/evidence.md": "fbdaf3f579ebf70d3735a6b7a4cd4150bc8c34be07f248310ba0dc60ce2f84e6",
+    "vault/Results/Reports/p1-rkhma-reassembly.md": "53ed8bf65c76992ce3aee58e98846909d9206f5812494182885419ee6b85e50a"
+  },
+  "documents_sha256_note": "保留RKHMA验收时的原始文档哈希；后续报告补充任务3状态说明，其当前哈希另列。",
+  "updated_documents_sha256": {
+    "vault/Results/Reports/p1-rkhma-reassembly.md": "330ea5fede6c09bc0f726581e875cf36f5eee12eb12582abe5e47735befb7848"
+  }
+}
