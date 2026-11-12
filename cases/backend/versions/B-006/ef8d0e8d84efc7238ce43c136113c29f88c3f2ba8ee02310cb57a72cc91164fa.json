@@ -1,0 +1,17 @@
+{
+  "case_id": "B-006",
+  "category": "first_improvement_swap",
+  "description": [
+    "Initialization only: Start with ascending task IDs. Trial all pairwise swaps in lexicographic index order; accept the first strictly higher-profit trial and restart. Return the best issued trial when a pass finds no improvement or the evaluation limit is reached. Reassignment is not implemented.",
+    "\n\nPurpose: Stop scanning a pass as soon as an improving swap is found."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000006.java",
+        "sha256": "aa5e9b0f7b0ef757056d156c9e7f04c855452f5c4ae3503af434ff4921b34cd1"
+      }
+    ]
+  }
+}

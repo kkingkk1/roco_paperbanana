@@ -1,0 +1,77 @@
+{
+  "case_id": "B-022",
+  "versions": [
+    {
+      "case_sha256": "62ce510044587605cc915a1a69f63294a4e7c94432dffc473c4dc669dc3f89f4",
+      "source": [
+        {
+          "location": [
+            "项目自主设计并实现：B000022.java"
+          ],
+          "version": {
+            "project_base_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2"
+          },
+          "usage_conditions": "按本项目本地案例任务实现；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "单星任务顺序完整初始化算法；评分和观测选择委托运行时签发的评价器。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "392590d5100e406f4d0d06b5194c96f347b77d4e6afa5fc432cdeabea2574c3c",
+      "source": [
+        {
+          "location": [
+            "项目自主设计并实现：B000022.java"
+          ],
+          "version": {
+            "project_base_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2"
+          },
+          "usage_conditions": "按本项目本地案例任务实现；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "单星任务顺序完整初始化算法；评分和观测选择委托运行时签发的评价器。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "62ce510044587605cc915a1a69f63294a4e7c94432dffc473c4dc669dc3f89f4",
+      "parent_snapshot": "../versions/B-022/62ce510044587605cc915a1a69f63294a4e7c94432dffc473c4dc669dc3f89f4.json",
+      "description_revision": {
+        "date": "2026-11-12",
+        "method": "按实际决策补充直接目的；源码不变。"
+      }
+    },
+    {
+      "case_sha256": "dfab152bb539a201bfc659d6abf32c7315a3ac1186cced3b0b413f35ed384e2a",
+      "source": [
+        {
+          "location": [
+            "项目自主设计并实现：B000022.java"
+          ],
+          "version": {
+            "project_base_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2"
+          },
+          "usage_conditions": "按本项目本地案例任务实现；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "单星任务顺序完整初始化算法；评分和观测选择委托运行时签发的评价器。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "392590d5100e406f4d0d06b5194c96f347b77d4e6afa5fc432cdeabea2574c3c",
+      "parent_snapshot": "../versions/B-022/392590d5100e406f4d0d06b5194c96f347b77d4e6afa5fc432cdeabea2574c3c.json",
+      "classification_revision": {
+        "date": "2026-11-12",
+        "method": "按案例实际职责标注B子库；源码和描述不变。"
+      }
+    }
+  ]
+}

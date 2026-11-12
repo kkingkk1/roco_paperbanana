@@ -1,0 +1,17 @@
+{
+  "case_id": "B-039",
+  "category": "scarcity_initial",
+  "sub_library": "initial",
+  "description": [
+    "Initialization only: Sort assigned tasks by reward density adjusted by the logarithm of candidate count, then task ID. For initial local improvements, consider missing tasks by candidate scarcity, then reward and task ID; enumerate insertion, lower-reward replacement, pairwise reversal and single-task reinsertion by feedback attempt. The runtime evaluates each edit. It does not implement reassignment."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000039.java",
+        "sha256": "07b124c3e22af00d984d717a177fc65987c0070263775b55d369552b3aae405b"
+      }
+    ]
+  }
+}

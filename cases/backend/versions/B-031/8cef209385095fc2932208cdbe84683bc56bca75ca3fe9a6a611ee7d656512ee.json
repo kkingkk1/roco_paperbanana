@@ -1,0 +1,17 @@
+{
+  "case_id": "B-031",
+  "category": "best_pending_insertion",
+  "description": [
+    "Reassignment local search only: Trial a no-release insertion for each unscheduled assigned task in descending reward and task-ID order. Return the feasible issued trial with highest profit, or null if none is feasible, respecting the evaluation limit. It does not implement initialization.",
+    "\n\nPurpose: Compare direct insertions without releasing existing observations."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000031.java",
+        "sha256": "d31b4f24f5abdae6034d7d0e76c7cfdb9427f5b40192e76ec79b2c1bc12e9bda"
+      }
+    ]
+  }
+}

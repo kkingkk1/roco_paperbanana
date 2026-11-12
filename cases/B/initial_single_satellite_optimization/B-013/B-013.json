@@ -1,0 +1,18 @@
+{
+  "case_id": "B-013",
+  "category": "tabu_swap",
+  "sub_library": "initial",
+  "description": [
+    "Initialization only: Start with ascending task IDs; choose the highest-profit pairwise swap in each pass, including non-improving moves. Forbid a swapped task pair for the next three iterations; a tabu move is eligible if it improves the global best. Return the best issued trial when no eligible move remains or the evaluation limit is reached. Reassignment is not implemented.",
+    "\n\nPurpose: Discourage immediate reversal of recent exchanges while allowing aspiration for a new best."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000013.java",
+        "sha256": "52642cf67db5027d472cc7acc86fef9af227e984c0774eb237b4e24146fb24d5"
+      }
+    ]
+  }
+}

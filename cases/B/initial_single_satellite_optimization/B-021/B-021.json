@@ -1,0 +1,18 @@
+{
+  "case_id": "B-021",
+  "category": "adjacent_swap_descent",
+  "sub_library": "initial",
+  "description": [
+    "Initialization only: Starting from ascending task IDs, test adjacent task exchanges from left to right. Accept the first strict improvement and restart; stop when an entire pass has none or the evaluation limit is reached. Reassignment is not implemented.",
+    "\n\nPurpose: Restrict exchanges to neighboring positions for a smaller neighborhood."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000021.java",
+        "sha256": "ab2501877298c35da74315d093b016f7afc8f038e08e49fc941bf16cbd351ca5"
+      }
+    ]
+  }
+}

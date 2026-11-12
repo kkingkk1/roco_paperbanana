@@ -1,0 +1,17 @@
+{
+  "case_id": "B-029",
+  "category": "candidate_span_first",
+  "description": [
+    "Initialization only: Rank tasks by the difference between latest and earliest legal candidate start, smallest first; break ties by descending reward then task ID. This span may include gaps between windows and is not the number of choices. Tasks without a candidate sort last. Evaluate once through C. Reassignment is not implemented.",
+    "\n\nPurpose: Give tasks with a smaller candidate-start span precedence."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000029.java",
+        "sha256": "ae6dceb6044382298e5a90723273fcd60ff22bbe9c19f02139287ab21314c279"
+      }
+    ]
+  }
+}

@@ -12,6 +12,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.HexFormat;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -45,6 +46,32 @@ class CaseReaderTest {
     assertEquals("alpha\ntab:\t你🚀 quote:\" slash:\\", result.description());
     assertEquals("first\tline\r\n第二\n", result.code());
     assertEquals(sha256(Files.readAllBytes(metadata)), result.caseSha256());
+    assertNull(result.subLibrary());
+  }
+
+  @Test void readsBSubLibraryAndRejectsInvalidClassification() throws IOException {
+    byte[] source = "source".getBytes(StandardCharsets.UTF_8);
+    Path bDirectory = Files.createDirectory(scratch.resolve("B-901"));
+    Files.write(bDirectory.resolve("Main.java"), source);
+    Path metadata = bDirectory.resolve("B-901.json");
+    String base = document("[\"description\"]", "single_file", entry("Main.java", sha256(source)))
+        .replace("A-901", "B-901");
+    for (String subLibrary : List.of("initial", "post_reassignment")) {
+      Files.writeString(metadata, base.replace("\"category\":\"demo\"",
+          "\"category\":\"demo\",\"sub_library\":\"" + subLibrary + "\""), StandardCharsets.UTF_8);
+      assertEquals(subLibrary, CaseReader.read(metadata).subLibrary());
+    }
+    Files.writeString(metadata, base.replace("\"category\":\"demo\"",
+        "\"category\":\"demo\",\"sub_library\":\"both\""), StandardCharsets.UTF_8);
+    assertThrows(IOException.class, () -> CaseReader.read(metadata));
+    Files.writeString(metadata, base.replace("\"category\":\"demo\"",
+        "\"category\":\"demo\",\"sub_library\":null"), StandardCharsets.UTF_8);
+    assertThrows(IOException.class, () -> CaseReader.read(metadata));
+
+    Files.write(caseDirectory.resolve("Main.java"), source);
+    Path aMetadata = metadata(document("[\"description\"]", "single_file", entry("Main.java", sha256(source)))
+        .replace("\"category\":\"demo\"", "\"category\":\"demo\",\"sub_library\":\"initial\""));
+    assertNull(CaseReader.read(aMetadata).subLibrary());
   }
 
   @Test void assemblesMultiFileCodeInListedOrderWithOriginalBoundaries() throws IOException {
@@ -178,16 +205,30 @@ class CaseReaderTest {
 
   @Test void readsTheCurrentCaseLibrary() throws IOException {
     List<Path> metadataFiles = new ArrayList<>();
+    int initialB = 0;
+    int postReassignmentB = 0;
     for (String module : List.of("A", "B", "C")) {
       Path moduleDirectory = Path.of("cases", module);
       if (!Files.isDirectory(moduleDirectory)) {
         continue;
       }
-      try (Stream<Path> directories = Files.list(moduleDirectory)) {
-        for (Path directory : directories.filter(Files::isDirectory).sorted().toList()) {
-          Path metadata = directory.resolve(directory.getFileName() + ".json");
-          assertTrue(Files.isRegularFile(metadata), metadata.toString());
-          metadataFiles.add(metadata);
+      List<Path> roots = List.of(moduleDirectory);
+      if (module.equals("B")) {
+        Set<String> groups = Set.of("initial_single_satellite_optimization",
+            "post_reassignment_adjustment");
+        try (Stream<Path> directories = Files.list(moduleDirectory)) {
+          assertEquals(groups, directories.filter(Files::isDirectory)
+              .map(path -> path.getFileName().toString()).collect(java.util.stream.Collectors.toSet()));
+        }
+        roots = groups.stream().sorted().map(moduleDirectory::resolve).toList();
+      }
+      for (Path root : roots) {
+        try (Stream<Path> directories = Files.list(root)) {
+          for (Path directory : directories.filter(Files::isDirectory).sorted().toList()) {
+            Path metadata = directory.resolve(directory.getFileName() + ".json");
+            assertTrue(Files.isRegularFile(metadata), metadata.toString());
+            metadataFiles.add(metadata);
+          }
         }
       }
     }
@@ -196,6 +237,21 @@ class CaseReaderTest {
       var result = CaseReader.read(metadata);
       assertEquals(metadata.getParent().getFileName().toString(), result.caseId());
       assertFalse(result.code().isEmpty(), result.caseId());
+      if (result.caseId().startsWith("B-")) {
+        String group = metadata.getParent().getParent().getFileName().toString();
+        switch (group) {
+          case "initial_single_satellite_optimization" ->
+              assertEquals("initial", result.subLibrary(), result.caseId());
+          case "post_reassignment_adjustment" -> assertEquals("post_reassignment", result.subLibrary(), result.caseId());
+          default -> fail("Unexpected B directory: " + group);
+        }
+      }
+      if ("initial".equals(result.subLibrary())) initialB++;
+      if ("post_reassignment".equals(result.subLibrary())) postReassignmentB++;
+    }
+    if (Files.isDirectory(Path.of("cases", "B"))) {
+      assertTrue(initialB > 0, "B initial sub-library is empty");
+      assertTrue(postReassignmentB > 0, "B post-reassignment sub-library is empty");
     }
   }
 

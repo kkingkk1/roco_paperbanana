@@ -1,0 +1,16 @@
+{
+  "case_id": "B-019",
+  "category": "best_improvement_insertion",
+  "description": [
+    "Initialization only: Starting from ascending task IDs, evaluate every single-task insertion in each pass and move to the strictly best trial. A final pass may be partial at the evaluation limit. Stop at an insertion local optimum or the limit; return the best issued trial. Reassignment is not implemented."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000019.java",
+        "sha256": "a62455f5860ec897e9bbcbd7626feeb252f2d3c21cb00e0e0b3e08338284c058"
+      }
+    ]
+  }
+}

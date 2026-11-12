@@ -1,0 +1,16 @@
+{
+  "case_id": "B-035",
+  "category": "broken_edge_repair",
+  "description": [
+    "Reassignment local search only: For each broken adjacent edge, form one repair that releases its lower-reward endpoint and another that releases its higher-reward endpoint; ties choose the previous and next endpoints respectively. Reconsider incoming unscheduled tasks followed by the released tasks. Compare the feasible issued trials and return the higher-profit one, or null if there are no broken edges or no feasible trial. It does not implement initialization."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000035.java",
+        "sha256": "90b3951e9dd6b70ceef78d66fbca4d886b0e92d2dc0536cc1504dd0a74da619d"
+      }
+    ]
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "case_id": "B-004",
+  "versions": [
+    {
+      "case_sha256": "a3ad879b72323c430c66b6dddc0c7222c91fe664a03246fce67988aeb4e198a6",
+      "source": [
+        {
+          "location": [
+            "https://github.com/Ethan19YQ/EOS-Bench/blob/ee282656e8b2f6fd0d3cf84677b40966e2780ef3/algorithms/heuristics.py"
+          ],
+          "version": {
+            "commit": "ee282656e8b2f6fd0d3cf84677b40966e2780ef3"
+          },
+          "usage_conditions": "参考公开算法思想并由本项目重新实现；来源仓库代码许可和本项目实现向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "对照来源实现的主要选择或接受规则；本案例仅覆盖单星顺序搜索，非作者代码原样复现。"
+          },
+          "external_model_use": "unknown"
+        },
+        {
+          "location": [
+            "项目自主设计并实现：B000004.java"
+          ],
+          "version": {
+            "project_base_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2"
+          },
+          "usage_conditions": "按本项目本地案例任务实现；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "单星任务顺序完整初始化算法；评分和观测选择委托运行时签发的评价器。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "c7120d646755476c067c78be7634128bbf89ce8164e85e56109be1bdd6f155f4",
+      "source": [
+        {
+          "location": [
+            "https://github.com/Ethan19YQ/EOS-Bench/blob/ee282656e8b2f6fd0d3cf84677b40966e2780ef3/algorithms/heuristics.py"
+          ],
+          "version": {
+            "commit": "ee282656e8b2f6fd0d3cf84677b40966e2780ef3"
+          },
+          "usage_conditions": "参考公开算法思想并由本项目重新实现；来源仓库代码许可和本项目实现向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "对照来源实现的主要选择或接受规则；本案例仅覆盖单星顺序搜索，非作者代码原样复现。"
+          },
+          "external_model_use": "unknown"
+        },
+        {
+          "location": [
+            "项目自主设计并实现：B000004.java"
+          ],
+          "version": {
+            "project_base_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2"
+          },
+          "usage_conditions": "按本项目本地案例任务实现；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "单星任务顺序完整初始化算法；评分和观测选择委托运行时签发的评价器。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "a3ad879b72323c430c66b6dddc0c7222c91fe664a03246fce67988aeb4e198a6",
+      "parent_snapshot": "../versions/B-004/a3ad879b72323c430c66b6dddc0c7222c91fe664a03246fce67988aeb4e198a6.json",
+      "description_revision": {
+        "date": "2026-11-12",
+        "method": "按实际决策补充直接目的；源码不变。"
+      }
+    },
+    {
+      "case_sha256": "57a966eacb6b45926d3dc6c370158716c5341db5f51fc80aaf7a03ad55ed7f31",
+      "source": [
+        {
+          "location": [
+            "https://github.com/Ethan19YQ/EOS-Bench/blob/ee282656e8b2f6fd0d3cf84677b40966e2780ef3/algorithms/heuristics.py"
+          ],
+          "version": {
+            "commit": "ee282656e8b2f6fd0d3cf84677b40966e2780ef3"
+          },
+          "usage_conditions": "参考公开算法思想并由本项目重新实现；来源仓库代码许可和本项目实现向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "对照来源实现的主要选择或接受规则；本案例仅覆盖单星顺序搜索，非作者代码原样复现。"
+          },
+          "external_model_use": "unknown"
+        },
+        {
+          "location": [
+            "项目自主设计并实现：B000004.java"
+          ],
+          "version": {
+            "project_base_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2"
+          },
+          "usage_conditions": "按本项目本地案例任务实现；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "单星任务顺序完整初始化算法；评分和观测选择委托运行时签发的评价器。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "c7120d646755476c067c78be7634128bbf89ce8164e85e56109be1bdd6f155f4",
+      "parent_snapshot": "../versions/B-004/c7120d646755476c067c78be7634128bbf89ce8164e85e56109be1bdd6f155f4.json",
+      "classification_revision": {
+        "date": "2026-11-12",
+        "method": "按案例实际职责标注B子库；源码和描述不变。"
+      }
+    }
+  ]
+}

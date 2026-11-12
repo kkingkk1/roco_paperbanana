@@ -1,0 +1,16 @@
+{
+  "case_id": "B-030",
+  "category": "reward_conflict_envelope",
+  "description": [
+    "Initialization only: For each task form an envelope from the earliest candidate start to the latest candidate end; count other task envelopes that overlap it. Rank by descending reward divided by one plus that count, then task ID, and evaluate once through C. Envelope overlap is a heuristic, not a claim of actual pairwise infeasibility. Reassignment is not implemented."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000030.java",
+        "sha256": "2071a7e255db1bd6fc79c5b5eeee8f32e60d9441d3d5b3d59700aaf64797eb25"
+      }
+    ]
+  }
+}

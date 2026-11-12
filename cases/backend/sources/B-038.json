@@ -1,0 +1,35 @@
+{
+  "case_id": "B-038",
+  "versions": [
+    {
+      "case_sha256": "8b65782c0e5c933d4f5eba108a00529bfb4424ade58d3ac5c1e1744d3cb0714b",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "已授权在本项目本地使用与整理；项目源代码外部模型使用条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "原样提取 DensitySearch 完整类体，新增独立外壳和工厂；行为仍需与项目原策略比较。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "phase_extraction": {
+        "date": "2026-11-12",
+        "parent_case_id": "B-001",
+        "parent_case_sha256": "07aeaaf10732ca96467c9642c999fe5644f91c3db467675551638b5736e80430",
+        "phase": "initial",
+        "method": "保留该阶段策略入口及依赖；原案例保留供追溯。"
+      }
+    }
+  ]
+}

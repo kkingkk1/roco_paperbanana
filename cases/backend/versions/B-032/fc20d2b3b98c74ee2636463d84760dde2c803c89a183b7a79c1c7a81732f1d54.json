@@ -1,0 +1,16 @@
+{
+  "case_id": "B-032",
+  "category": "two_for_one_repair",
+  "description": [
+    "Reassignment local search only: For each unscheduled assigned task, release every pair of scheduled tasks and reconsider the missing task before both released tasks. Select the feasible issued trial with highest profit; stop at the evaluation limit and return null if none is feasible. It does not implement initialization."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000032.java",
+        "sha256": "e50264f354f6611f5ce3dddf4b3053960c98bab76360c123fe6e05ec18d958ce"
+      }
+    ]
+  }
+}

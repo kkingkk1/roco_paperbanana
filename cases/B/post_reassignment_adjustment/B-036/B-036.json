@@ -1,0 +1,18 @@
+{
+  "case_id": "B-036",
+  "category": "incoming_first_rebuild",
+  "sub_library": "post_reassignment",
+  "description": [
+    "Reassignment local search only: Rebuild the affected satellite by ordering incoming assigned tasks first and other assigned tasks second; within each group use descending reward then task ID. Request one controlled C rebuild and return its issued trial. It does not implement initialization.",
+    "\n\nPurpose: Place incoming tasks first when a full affected-satellite rebuild is authorized."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000036.java",
+        "sha256": "73543ad411394372755b7948c50cbe4d60abd768580bff3a18e13c32a245fabd"
+      }
+    ]
+  }
+}

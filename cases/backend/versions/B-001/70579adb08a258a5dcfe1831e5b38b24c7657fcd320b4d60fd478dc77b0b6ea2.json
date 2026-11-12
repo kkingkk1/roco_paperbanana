@@ -1,0 +1,16 @@
+{
+  "case_id": "B-001",
+  "category": "density_local_search",
+  "description": [
+    "Initialization: Sort assigned tasks by descending reward divided by imaging duration, then task ID.\n\nInitialization local search:\n- Insert unscheduled tasks in density order; test replacing lower-reward observations, then single-task reinsertion and pairwise reversal.\n\nReassignment:\n- Repair: For broken edges, release the lower-reward endpoint and reconsider incoming tasks and released endpoints.\n- Search: Try incoming tasks first, then other pending tasks by reward; test insertion, replacement of lower-reward observations, reinsertion and pairwise reversal.\n- Control: Submit one edit per feedback attempt; stop when the edit sequence is exhausted. The runtime evaluates and accepts changes."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000001.java",
+        "sha256": "f177f2a77b24cc55667bd36888530573c4a8eb1fc5a2cd11e035490fadeae2a0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "case_id": "B-009",
+  "category": "first_improvement_reversal",
+  "description": [
+    "Initialization only: Start with ascending task IDs. Reverse contiguous task segments in index order; accept the first strictly higher-profit trial and restart. Stop when no reversal improves the score or the evaluation limit is reached. Reassignment is not implemented."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000009.java",
+        "sha256": "d2f4b0ebbb172013f235b07d90937d66e427bdd007527f1ba5fc9615e1805089"
+      }
+    ]
+  }
+}

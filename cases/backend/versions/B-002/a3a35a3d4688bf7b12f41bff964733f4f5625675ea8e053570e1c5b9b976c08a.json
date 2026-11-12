@@ -1,0 +1,16 @@
+{
+  "case_id": "B-002",
+  "category": "scarcity_local_search",
+  "description": [
+    "Initialization: Sort assigned tasks by descending reward-density divided by one plus log(1 + candidate count), then task ID.\n\nInitialization local search:\n- Insert unscheduled tasks in increasing candidate-count order, with reward as a tie-break; test replacement of lower-reward observations, pairwise reversal and single-task reinsertion.\n\nReassignment:\n- Repair: For broken edges, release the endpoint with more candidates; if counts tie, release the lower-reward endpoint. Reconsider incoming tasks and released endpoints.\n- Search: Try incoming tasks first, then other pending tasks by candidate scarcity and reward; test insertion, lower-reward replacement, pairwise reversal and reinsertion.\n- Control: Submit one edit per feedback attempt; stop when the edit sequence is exhausted. The runtime evaluates and accepts changes."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000002.java",
+        "sha256": "fb402e6bcadc8ef0c49aaf763c3d61efa475b24a547c3ab85a10a356b2d914cb"
+      }
+    ]
+  }
+}

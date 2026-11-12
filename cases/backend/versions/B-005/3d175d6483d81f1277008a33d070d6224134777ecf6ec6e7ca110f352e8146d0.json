@@ -1,0 +1,16 @@
+{
+  "case_id": "B-005",
+  "category": "earliest_opportunity",
+  "description": [
+    "Initialization only: Sort assigned tasks by their earliest legal candidate start, then descending reward and task ID; tasks without candidates sort last. Evaluate the resulting order once through C. This adapts the source timeliness-first ordering without its candidate caps or observation selection. It does not implement reassignment."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000005.java",
+        "sha256": "9b22d238e799fdffba20274c39656edd31ffa01988ff95e33aac0f36f55b67cf"
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "case_id": "B-023",
+  "category": "ant_sequence_search",
+  "description": [
+    "Initialization only: Construct full task orders by roulette selection using pheromone on successive task pairs. After every evaluation, evaporate pheromone and reinforce edges from the best order found so far. Return the best issued trial at the evaluation limit; stop immediately for an empty task set. Reassignment is not implemented."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000023.java",
+        "sha256": "65b28934b1678035fcd7adcdeb550279e5a3e8cbe48d6a1fd1daf42d4b6800f7"
+      }
+    ]
+  }
+}

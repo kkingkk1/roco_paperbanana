@@ -1,0 +1,17 @@
+{
+  "case_id": "B-012",
+  "category": "random_restart_first_swap",
+  "description": [
+    "Initialization only: Evaluate the ascending-ID order, then repeatedly shuffle all assigned tasks and apply first-improvement pairwise swaps. Each restart keeps its own current trial; the best trial across restarts is returned. Stop at the evaluation limit or immediately for fewer than two tasks. Reassignment is not implemented.",
+    "\n\nPurpose: Explore separate random starts while retaining the best result across them."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000012.java",
+        "sha256": "d2747cc58794b9e0be56f6cb397e06489f774bca1419fd4451a2ea712aa5c530"
+      }
+    ]
+  }
+}

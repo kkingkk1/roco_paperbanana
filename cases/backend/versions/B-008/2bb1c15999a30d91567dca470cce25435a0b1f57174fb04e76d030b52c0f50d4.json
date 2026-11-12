@@ -1,0 +1,17 @@
+{
+  "case_id": "B-008",
+  "category": "first_improvement_insertion",
+  "description": [
+    "Initialization only: Start with ascending task IDs. Move each task to each other position in index order; accept the first strictly higher-profit trial and restart. Stop when the insertion neighborhood is exhausted or the evaluation limit is reached. Reassignment is not implemented.",
+    "\n\nPurpose: Explore moves that reposition one task without otherwise changing the relative order."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000008.java",
+        "sha256": "1cecb8cc0b6eb763179620c84035bc8e7d0c86f4af01529912e6ff543db8b985"
+      }
+    ]
+  }
+}

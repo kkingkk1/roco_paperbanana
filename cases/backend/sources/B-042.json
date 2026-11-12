@@ -1,0 +1,35 @@
+{
+  "case_id": "B-042",
+  "versions": [
+    {
+      "case_sha256": "4885cf16eb78097b609f6bd2091c0f253be26a2dbf9ae8a31db206f076f84815",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "已授权在本项目本地使用与整理；项目源代码外部模型使用条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "原样提取 ScarcitySearch 完整类体，新增独立外壳和工厂；行为仍需与项目原策略比较。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "phase_extraction": {
+        "date": "2026-11-12",
+        "parent_case_id": "B-002",
+        "parent_case_sha256": "9d2eb7c4eb9d8da65933ac2f4cce6b9e0db56be1d7b2aa80c4049c560167b76b",
+        "phase": "post_reassignment",
+        "method": "保留该阶段策略入口及依赖；原案例保留供追溯。"
+      }
+    }
+  ]
+}

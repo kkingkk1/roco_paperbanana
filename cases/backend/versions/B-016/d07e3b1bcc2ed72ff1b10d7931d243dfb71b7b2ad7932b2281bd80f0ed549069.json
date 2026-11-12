@@ -1,0 +1,16 @@
+{
+  "case_id": "B-016",
+  "category": "exhaustive_order_search",
+  "description": [
+    "Initialization only: Evaluate the ascending-ID order, then enumerate the other task permutations in depth-first order. Return the best issued trial after all permutations or the evaluation limit. This is an exact order search only when enumeration completes, not an exact solver for the full scheduling problem. Reassignment is not implemented."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000016.java",
+        "sha256": "7c83698289ebcd3c28c92449b92d59324ccd216a11b92c153cad172ca8d061d8"
+      }
+    ]
+  }
+}

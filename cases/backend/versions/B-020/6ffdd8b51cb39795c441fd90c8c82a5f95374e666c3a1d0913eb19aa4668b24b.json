@@ -1,0 +1,16 @@
+{
+  "case_id": "B-020",
+  "category": "best_improvement_reversal",
+  "description": [
+    "Initialization only: Starting from ascending task IDs, evaluate contiguous-segment reversals in each pass and move to the strictly best trial. A final pass may be partial at the evaluation limit. Stop at a reversal local optimum or the limit; return the best issued trial. Reassignment is not implemented."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000020.java",
+        "sha256": "1714cace3f6c0f6f4f2e28f2e8aa0b99551d2d3c4e4e02b4be390ef399bd041d"
+      }
+    ]
+  }
+}

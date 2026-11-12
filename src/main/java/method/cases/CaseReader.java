@@ -22,9 +22,13 @@ import java.util.Objects;
 public final class CaseReader {
   private CaseReader() { }
 
-  /** 案例版本使用元数据文件实际字节的SHA-256。 */
+  /** 案例版本使用元数据文件实际字节的SHA-256；未分类或历史案例的subLibrary为空。 */
   public record CaseData(String caseId, String category, String description, String code,
-                         String caseSha256) { }
+                         String caseSha256, String subLibrary) {
+    public CaseData(String caseId, String category, String description, String code, String caseSha256) {
+      this(caseId, category, description, code, caseSha256, null);
+    }
+  }
 
   /** 读取案例目录中的元数据；源码路径相对元数据所在目录。 */
   public static CaseData read(Path metadataPath) throws IOException {
@@ -48,6 +52,14 @@ public final class CaseReader {
     String caseId = nonBlankString(metadata.get("case_id"), "case_id");
     if (root.getFileName() == null || !caseId.equals(root.getFileName().toString())) {
       throw new IOException("case_id does not match case directory: " + caseId);
+    }
+    String subLibrary = null;
+    if (caseId.startsWith("B-") && metadata.containsKey("sub_library")) {
+      subLibrary = nonBlankString(metadata.get("sub_library"), "sub_library");
+      if (!caseId.matches("B-\\d{3,}")
+          || (!subLibrary.equals("initial") && !subLibrary.equals("post_reassignment"))) {
+        throw new IOException("Invalid B sub_library: " + subLibrary);
+      }
     }
     String category = nonBlankString(metadata.get("category"), "category");
     List<?> descriptionParts = array(metadata.get("description"), "description");
@@ -98,7 +110,7 @@ public final class CaseReader {
       assembled.append(sourceText);
     }
     return new CaseData(caseId, category, description.toString(), assembled.toString(),
-        sha256(metadataBytes));
+        sha256(metadataBytes), subLibrary);
   }
 
   private static Path resolveSource(Path root, String value) throws IOException {

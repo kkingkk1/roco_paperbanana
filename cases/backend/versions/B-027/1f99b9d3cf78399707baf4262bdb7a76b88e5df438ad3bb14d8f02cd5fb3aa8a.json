@@ -1,0 +1,17 @@
+{
+  "case_id": "B-027",
+  "category": "candidate_count_first",
+  "description": [
+    "Initialization only: Rank tasks by increasing number of legal observation candidates, then descending reward and task ID. Evaluate the order once through C; zero-candidate tasks remain in the order and cannot themselves be scheduled by C. Reassignment is not implemented.",
+    "\n\nPurpose: Give tasks with fewer legal observation choices precedence."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000027.java",
+        "sha256": "0b955c1338012d57711f0c8cfef03e8357c90e8b3ada750b7512087e2ead65db"
+      }
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "case_id": "B-033",
+  "versions": [
+    {
+      "case_sha256": "fe493e793625d2c20929552ec672fac31323df175debb37b7d314f616e169fa7",
+      "source": [
+        {
+          "location": [
+            "项目自主设计并实现：B000033.java"
+          ],
+          "version": {
+            "project_base_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2"
+          },
+          "usage_conditions": "按本项目本地案例任务实现；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "单星重分配局部搜索完整算法；候选由C受控评价。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "20b0bcaade2c40f5ebaa1eb10ad7165303bb13d358f62817758b45fce7763b70",
+      "source": [
+        {
+          "location": [
+            "项目自主设计并实现：B000033.java"
+          ],
+          "version": {
+            "project_base_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2"
+          },
+          "usage_conditions": "按本项目本地案例任务实现；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "单星重分配局部搜索完整算法；候选由C受控评价。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "fe493e793625d2c20929552ec672fac31323df175debb37b7d314f616e169fa7",
+      "parent_snapshot": "../versions/B-033/fe493e793625d2c20929552ec672fac31323df175debb37b7d314f616e169fa7.json",
+      "description_revision": {
+        "date": "2026-11-12",
+        "method": "按实际决策补充直接目的；源码不变。"
+      }
+    },
+    {
+      "case_sha256": "21eace1b402d47f81e78f7a713bce688245dfc8be99b1e9dca4d703ffb042b8f",
+      "source": [
+        {
+          "location": [
+            "项目自主设计并实现：B000033.java"
+          ],
+          "version": {
+            "project_base_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2"
+          },
+          "usage_conditions": "按本项目本地案例任务实现；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "单星重分配局部搜索完整算法；候选由C受控评价。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "20b0bcaade2c40f5ebaa1eb10ad7165303bb13d358f62817758b45fce7763b70",
+      "parent_snapshot": "../versions/B-033/20b0bcaade2c40f5ebaa1eb10ad7165303bb13d358f62817758b45fce7763b70.json",
+      "phase_adaptation": {
+        "date": "2026-11-12",
+        "method": "针对新入任务与断边选择循环重排，限制于重分配阶段；旧代码与元数据保留为来源材料。"
+      }
+    }
+  ]
+}

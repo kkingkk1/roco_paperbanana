@@ -1,0 +1,16 @@
+{
+  "case_id": "B-014",
+  "category": "late_acceptance_swap",
+  "description": [
+    "Initialization only: Start with ascending task IDs and try random pairwise swaps. Accept a trial if its profit is at least the current profit or the profit stored five iterations earlier; update that history slot after the decision. Return the best issued trial at the evaluation limit; stop immediately for fewer than two tasks. Reassignment is not implemented."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000014.java",
+        "sha256": "7f57d528cfd055ca975d09486ddae92a1eaab892aa2466bb4255640bf5049d32"
+      }
+    ]
+  }
+}

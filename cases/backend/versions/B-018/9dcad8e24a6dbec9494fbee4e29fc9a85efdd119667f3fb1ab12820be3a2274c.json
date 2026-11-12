@@ -1,0 +1,17 @@
+{
+  "case_id": "B-018",
+  "category": "random_key_evolution_strategy",
+  "description": [
+    "Initialization only: Start with ascending task IDs encoded as ordered numeric keys. Add independent Gaussian noise to the current keys and evaluate the resulting order; replace the current keys on non-worse profit and return the best issued trial. Stop at the evaluation limit or immediately for fewer than two tasks. Reassignment is not implemented.",
+    "\n\nPurpose: Explore order changes through continuous-key perturbations, allowing equal-score moves."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000018.java",
+        "sha256": "0cc61f25255d53babd1130f681cac6b4a8ec1bb655dfae47c463692cf5d41fb5"
+      }
+    ]
+  }
+}

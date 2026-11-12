@@ -1,0 +1,17 @@
+{
+  "case_id": "B-033",
+  "category": "three_task_cycle_repair",
+  "description": [
+    "Reassignment local search only: For each three consecutive observations in chronological order, release the three tasks and try both cyclic reconsideration orders. Return the feasible issued trial with highest profit, or null if none is feasible, subject to the evaluation limit. It does not implement initialization.",
+    "\n\nPurpose: Explore cyclic order changes inside short consecutive portions of the existing timeline."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000033.java",
+        "sha256": "82a5c1e9a6eff46aea3849d6f01938e59dedd30b35f66ade2caa9e683d29c109"
+      }
+    ]
+  }
+}

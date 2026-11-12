@@ -1,0 +1,16 @@
+{
+  "case_id": "B-022",
+  "category": "iterated_swap_search",
+  "description": [
+    "Initialization only: Starting from ascending task IDs, perform first-improvement pairwise-swap descent. After a local optimum, perturb the current order by a random segment reversal and restart descent, retaining the best issued trial. Stop at the evaluation limit or for fewer than two tasks. Reassignment is not implemented."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000022.java",
+        "sha256": "82954f86fa0ada3902b53fca83d265f9bb30415583820c80173e2afb6dc48f6d"
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "case_id": "B-007",
+  "category": "best_improvement_swap",
+  "description": [
+    "Initialization only: Start with ascending task IDs. Evaluate pairwise swaps and choose the strictly highest-profit trial in each pass, then restart from it. A partial final pass may be used when the evaluation limit is reached. Stop at a swap local optimum or the limit. Reassignment is not implemented."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000007.java",
+        "sha256": "2588a4e6ce18287d36b588c854049a48f14da3b5d6116def50e0d5ddc2c6560b"
+      }
+    ]
+  }
+}
