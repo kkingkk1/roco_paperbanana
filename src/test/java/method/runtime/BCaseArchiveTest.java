@@ -50,7 +50,8 @@ class BCaseArchiveTest {
         "-classpath", Path.of("target", "classes").toAbsolutePath().toString(), "-d", destination.toString()));
     for (int id = 1; id <= 37; id++) {
       if (id == 3) continue;
-      String caseId = String.format("B-%03d", id);
+      String caseId = id <= 2 ? String.format("B-%03d", id)
+          : id <= 30 ? String.format("BI-%03d", id - 3) : String.format("BR-%03d", id - 30);
       Path root = id <= 2 ? Path.of("cases", "backend", "legacy_B_cases", caseId)
           : Path.of("cases", "B", id <= 30 ? "initial_single_satellite_optimization"
               : "post_reassignment_adjustment", caseId);
@@ -58,7 +59,8 @@ class BCaseArchiveTest {
     }
     for (int id : List.of(38, 39, 41, 42)) {
       String group = id <= 39 ? "initial_single_satellite_optimization" : "post_reassignment_adjustment";
-      args.add(Path.of("cases", "B", group, String.format("B-%03d", id),
+      String caseId = id <= 39 ? String.format("BI-%03d", id - 10) : String.format("BR-%03d", id - 33);
+      args.add(Path.of("cases", "B", group, caseId,
           String.format("B%06d.java", id)).toString());
     }
     assertEquals(0, compiler.run(null, null, null, args.toArray(String[]::new)));

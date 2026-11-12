@@ -1,0 +1,19 @@
+{
+  "case_id": "BI-023",
+  "category": "latest_start_deadline",
+  "sub_library": "initial",
+  "description": [
+    "Initialization only: Sort assigned tasks by latest legal candidate start (earliest first); ",
+    "tie-break by descending reward, then smaller task ID (tasks without candidates sort last). ",
+    "Issue single-pass evaluation through decoder C."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000026.java",
+        "sha256": "0532996e498aaf5e31c23d92d1f1ef28b0f6436e2d55a628633266c2165966a8"
+      }
+    ]
+  }
+}

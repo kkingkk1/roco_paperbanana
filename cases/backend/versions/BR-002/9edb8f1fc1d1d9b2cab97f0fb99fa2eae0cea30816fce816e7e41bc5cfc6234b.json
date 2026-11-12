@@ -1,0 +1,20 @@
+{
+  "case_id": "BR-002",
+  "category": "two_for_one_repair",
+  "sub_library": "post_reassignment",
+  "description": [
+    "Reassignment local search only:\n",
+    "- Operator: For each unscheduled assigned task, release every pair of scheduled observations.\n",
+    "- Reconsider: Reconsider unscheduled task before both released observations.\n",
+    "- Acceptance: Return feasible issued trial with highest profit; return null if none is feasible or evaluation limit reached."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000032.java",
+        "sha256": "e50264f354f6611f5ce3dddf4b3053960c98bab76360c123fe6e05ec18d958ce"
+      }
+    ]
+  }
+}

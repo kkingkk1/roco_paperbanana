@@ -1,0 +1,21 @@
+{
+  "case_id": "BI-010",
+  "category": "tabu_swap",
+  "sub_library": "initial",
+  "description": [
+    "Initialization only: Tabu Search.\n",
+    "- Initial Order: Ascending task IDs.\n",
+    "- Search: Select best pairwise swap per pass (including non-improving moves).\n",
+    "- Tabu & Aspiration: Forbid swapped task pair for 3 iterations; allow tabu move if it improves global best.\n",
+    "- Termination: Stop when no eligible move remains or evaluation limit is reached; return best issued trial."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000013.java",
+        "sha256": "52642cf67db5027d472cc7acc86fef9af227e984c0774eb237b4e24146fb24d5"
+      }
+    ]
+  }
+}

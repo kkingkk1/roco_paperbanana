@@ -1,0 +1,20 @@
+{
+  "case_id": "BR-003",
+  "category": "three_task_cycle_reassignment_repair",
+  "sub_library": "post_reassignment",
+  "description": [
+    "Reassignment local search only:\n",
+    "- Incoming Ordering: Sort newly assigned unscheduled tasks by descending reward, then smaller task ID.\n",
+    "- Segment Search: For each consecutive 3-observation segment, try both cyclic reorderings, placing incoming tasks first; if broken edges exist, only try segments containing an endpoint.\n",
+    "- Acceptance & Termination: Return null immediately when both incoming tasks and broken edges are absent; otherwise return the highest-profit feasible issued trial, or null if none is found within the evaluation limit."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000033.java",
+        "sha256": "67db32ff06a46db7405581edbfc9b6acce92102b39b6f19188b813b026b43f33"
+      }
+    ]
+  }
+}

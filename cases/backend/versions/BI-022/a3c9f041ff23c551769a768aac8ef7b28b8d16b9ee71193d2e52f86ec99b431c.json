@@ -1,0 +1,20 @@
+{
+  "case_id": "BI-022",
+  "category": "regret_position_insertion",
+  "sub_library": "initial",
+  "description": [
+    "Initialization only: Regret Constructive Insertion.\n",
+    "- Process: Test all remaining tasks across prefix positions (completed with uninserted tasks in ascending ID).\n",
+    "- Selection: Fix task with largest regret (best minus second-best score; tie-break: best score, then smaller task ID).\n",
+    "- Termination: Stop after full prefix built or evaluation limit reached; return best trial seen."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000025.java",
+        "sha256": "e1ea3fd794159e943303f2a77686c7e35863fc450d2a6ebe830db86f78d3d42f"
+      }
+    ]
+  }
+}

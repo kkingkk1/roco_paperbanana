@@ -1,0 +1,21 @@
+{
+  "case_id": "BI-008",
+  "category": "simulated_annealing_insertion",
+  "sub_library": "initial",
+  "description": [
+    "Initialization only: Simulated Annealing (SA).\n",
+    "- Initial Order: Ascending task IDs.\n",
+    "- Move: Random task removal and insertion at a random position.\n",
+    "- Acceptance: Always accept non-worse trials; accept worse trials with Metropolis probability exp(delta / T).\n",
+    "- Cooling & Termination: Cool geometrically after each trial; stop at evaluation limit or if <2 tasks. Return best issued trial."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000011.java",
+        "sha256": "b3e7548223de9a642123774cf30be7badfecf0c2c46f99df7767be4bb09bd300"
+      }
+    ]
+  }
+}

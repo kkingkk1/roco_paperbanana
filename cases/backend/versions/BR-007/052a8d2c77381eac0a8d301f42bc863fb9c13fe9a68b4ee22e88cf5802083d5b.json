@@ -1,0 +1,20 @@
+{
+  "case_id": "BR-007",
+  "category": "compare_scarcity_and_density_rebuild",
+  "sub_library": "post_reassignment",
+  "description": [
+    "Reassignment local search only:\n",
+    "- Rebuild Comparison: Request controlled rebuilds comparing candidate-count-first vs. reward-density-first task orders ",
+    "(use only first order if evaluation limit is 1).\n",
+    "- Acceptance: Return feasible issued trial with higher profit."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000037.java",
+        "sha256": "10a61700c5f1a106bde99baa2ba98a69085b2a4e2f7210a4a24ffb759af97ef8"
+      }
+    ]
+  }
+}

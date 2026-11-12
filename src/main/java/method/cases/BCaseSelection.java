@@ -44,14 +44,10 @@ public final class BCaseSelection {
     int initial = 0;
     int postReassignment = 0;
     for (CaseReader.CaseData candidate : eligibleCandidates) {
-      if (candidate == null || candidate.caseId() == null || !candidate.caseId().matches("B-\\d{3,}")) {
+      if (candidate == null || !CaseReader.matchesBStage(candidate.caseId(), candidate.subLibrary())) {
         throw new IllegalArgumentException("B candidate has an invalid case ID");
       }
       String subLibrary = candidate.subLibrary();
-      if (!"initial".equals(subLibrary) && !"post_reassignment".equals(subLibrary)) {
-        throw new IllegalArgumentException("B candidate is not assigned to an eligible sub-library: "
-            + candidate.caseId());
-      }
       if (subLibraries.putIfAbsent(candidate.caseId(), subLibrary) != null) {
         throw new IllegalArgumentException("B candidate ID is duplicated: " + candidate.caseId());
       }

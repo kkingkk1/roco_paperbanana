@@ -1,0 +1,18 @@
+{
+  "case_id": "BR-004",
+  "category": "low_reward_ruin_repair",
+  "sub_library": "post_reassignment",
+  "description": [
+    "Reassignment local search only: Release up to two scheduled tasks with the smallest reward. Reconsider incoming unscheduled tasks first, then other unscheduled tasks, then released tasks; each group uses descending reward and task-ID order. Trial this single edit and return it only if feasible. It does not implement initialization.",
+    "\n\nPurpose: Free low-reward observations while prioritizing incoming tasks in repair."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000034.java",
+        "sha256": "57f725f411838c263e9bbd1a8b4f41afb36e21041a23372b459c7efec094a2d7"
+      }
+    ]
+  }
+}

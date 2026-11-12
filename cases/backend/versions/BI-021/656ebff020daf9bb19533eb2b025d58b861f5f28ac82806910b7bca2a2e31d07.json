@@ -1,0 +1,18 @@
+{
+  "case_id": "BI-021",
+  "category": "greedy_position_insertion",
+  "sub_library": "initial",
+  "description": [
+    "Initialization only: Insert tasks in ascending ID order into a growing prefix. At each step try every prefix position; append the remaining tasks in ascending ID order for controlled scoring and fix the highest-scoring position. Return the best full-order trial seen, including any partial last step, at the evaluation limit. Reassignment is not implemented.",
+    "\n\nPurpose: Choose each fixed task insertion position using full-order trials."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000024.java",
+        "sha256": "957de829d6173fdaa26af6045a81eff3654f3095bba820cddc82cc3d48e7df7c"
+      }
+    ]
+  }
+}

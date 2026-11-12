@@ -1,0 +1,18 @@
+{
+  "case_id": "BI-013",
+  "category": "exhaustive_order_search",
+  "sub_library": "initial",
+  "description": [
+    "Initialization only: Evaluate the ascending-ID order, then enumerate the other task permutations in depth-first order. Return the best issued trial after all permutations or the evaluation limit. If enumeration completes, every order has been tried once; the result is the best returned trial, not an exact solution of the full scheduling problem. Reassignment is not implemented.",
+    "\n\nPurpose: Inspect distinct orders systematically; completeness depends on finishing within the evaluation limit."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000016.java",
+        "sha256": "7c83698289ebcd3c28c92449b92d59324ccd216a11b92c153cad172ca8d061d8"
+      }
+    ]
+  }
+}

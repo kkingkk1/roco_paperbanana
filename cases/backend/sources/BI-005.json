@@ -1,0 +1,132 @@
+{
+  "case_id": "BI-005",
+  "versions": [
+    {
+      "case_sha256": "4548f3d4fa179f510e8fb826b78d74b209839101d0cf193dc1a564a912d5af8e",
+      "source": [
+        {
+          "location": [
+            "项目自主设计并实现：B000008.java"
+          ],
+          "version": {
+            "project_base_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2"
+          },
+          "usage_conditions": "按本项目本地案例任务实现；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "单星任务顺序完整初始化算法；评分和观测选择委托运行时签发的评价器。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "2bb1c15999a30d91567dca470cce25435a0b1f57174fb04e76d030b52c0f50d4",
+      "source": [
+        {
+          "location": [
+            "项目自主设计并实现：B000008.java"
+          ],
+          "version": {
+            "project_base_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2"
+          },
+          "usage_conditions": "按本项目本地案例任务实现；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "单星任务顺序完整初始化算法；评分和观测选择委托运行时签发的评价器。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "4548f3d4fa179f510e8fb826b78d74b209839101d0cf193dc1a564a912d5af8e",
+      "parent_snapshot": "../versions/B-008/4548f3d4fa179f510e8fb826b78d74b209839101d0cf193dc1a564a912d5af8e.json",
+      "description_revision": {
+        "date": "2026-11-12",
+        "method": "按实际决策补充直接目的；源码不变。"
+      }
+    },
+    {
+      "case_sha256": "1f16a491652e0e306e57b957476fe39ef6dfba321ab1c81cc0b26a538c1b349b",
+      "source": [
+        {
+          "location": [
+            "项目自主设计并实现：B000008.java"
+          ],
+          "version": {
+            "project_base_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2"
+          },
+          "usage_conditions": "按本项目本地案例任务实现；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "单星任务顺序完整初始化算法；评分和观测选择委托运行时签发的评价器。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "2bb1c15999a30d91567dca470cce25435a0b1f57174fb04e76d030b52c0f50d4",
+      "parent_snapshot": "../versions/B-008/2bb1c15999a30d91567dca470cce25435a0b1f57174fb04e76d030b52c0f50d4.json",
+      "classification_revision": {
+        "date": "2026-11-12",
+        "method": "按案例实际职责标注B子库；源码和描述不变。"
+      }
+    },
+    {
+      "case_sha256": "fd84408279fd58bc63d3873de1ac63987e8f1bbcb094c05868eabb70bf0f06de",
+      "source": [
+        {
+          "location": [
+            "项目自主设计并实现：B000008.java"
+          ],
+          "version": {
+            "project_base_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2"
+          },
+          "usage_conditions": "按本项目本地案例任务实现；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "单星任务顺序完整初始化算法；评分和观测选择委托运行时签发的评价器。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "1f16a491652e0e306e57b957476fe39ef6dfba321ab1c81cc0b26a538c1b349b",
+      "parent_snapshot": "../versions/B-008/1f16a491652e0e306e57b957476fe39ef6dfba321ab1c81cc0b26a538c1b349b.json",
+      "case_id_revision": {
+        "date": "2026-11-12",
+        "method": "按B阶段子库分别编号；案例内容与源码不变。"
+      }
+    },
+    {
+      "case_sha256": "ba34f75db7f08523c0027b1c66167669f616254995866e6d9ea9e45a0fee639e",
+      "source": [
+        {
+          "location": [
+            "项目自主设计并实现：B000008.java"
+          ],
+          "version": {
+            "project_base_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2"
+          },
+          "usage_conditions": "按本项目本地案例任务实现；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "单星任务顺序完整初始化算法；评分和观测选择委托运行时签发的评价器。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "fd84408279fd58bc63d3873de1ac63987e8f1bbcb094c05868eabb70bf0f06de",
+      "description_revision": {
+        "method": "按结构化精炼模板重写 description（阶段拆分、列表化算子、显式平局/门禁/终止准则，移除冗余套话与Purpose）",
+        "date": "2026-11-12"
+      },
+      "parent_snapshot": "../versions/BI-005/fd84408279fd58bc63d3873de1ac63987e8f1bbcb094c05868eabb70bf0f06de.json"
+    }
+  ],
+  "previous_case_ids": [
+    "B-008"
+  ]
+}

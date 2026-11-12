@@ -74,6 +74,27 @@ class CaseReaderTest {
     assertNull(CaseReader.read(aMetadata).subLibrary());
   }
 
+  @Test void stagePrefixesMustMatchTheirSubLibrary() throws IOException {
+    byte[] source = "source".getBytes(StandardCharsets.UTF_8);
+    for (String id : List.of("BI-901", "BR-901", "BI-000")) {
+      Path directory = Files.createDirectory(scratch.resolve(id));
+      Files.write(directory.resolve("Main.java"), source);
+      Path metadata = directory.resolve(id + ".json");
+      String base = document("[\"description\"]", "single_file", entry("Main.java", sha256(source)))
+          .replace("A-901", id);
+      for (String phase : List.of("initial", "post_reassignment")) {
+        Files.writeString(metadata, base.replace("\"category\":\"demo\"",
+            "\"category\":\"demo\",\"sub_library\":\"" + phase + "\""), StandardCharsets.UTF_8);
+        boolean valid = id.equals("BI-901") && phase.equals("initial")
+            || id.equals("BR-901") && phase.equals("post_reassignment");
+        if (valid) assertEquals(phase, CaseReader.read(metadata).subLibrary());
+        else assertThrows(IOException.class, () -> CaseReader.read(metadata));
+      }
+      Files.writeString(metadata, base, StandardCharsets.UTF_8);
+      assertThrows(IOException.class, () -> CaseReader.read(metadata));
+    }
+  }
+
   @Test void assemblesMultiFileCodeInListedOrderWithOriginalBoundaries() throws IOException {
     byte[] first = "license".getBytes(StandardCharsets.UTF_8);
     byte[] second = "class Main {\n}\n".getBytes(StandardCharsets.UTF_8);
@@ -102,6 +123,23 @@ class CaseReaderTest {
     var result = CaseReader.read(metadata, caseDirectory);
     assertEquals("old code\n", result.code());
     assertEquals(sha256(Files.readAllBytes(metadata)), result.caseSha256());
+  }
+
+  @Test void renamedCaseCanReadAReferencedHistoricalSnapshot() throws IOException {
+    Path current = Path.of("cases", "B", "initial_single_satellite_optimization", "BI-001");
+    Path history = Path.of("cases", "backend", "versions", "B-004",
+        "57a966eacb6b45926d3dc6c370158716c5341db5f51fc80aaf7a03ad55ed7f31.json");
+    var latest = CaseReader.read(current.resolve("BI-001.json"));
+    assertThrows(IOException.class, () -> CaseReader.read(history, current));
+    assertThrows(IOException.class, () -> CaseReader.readHistorical(history, current, "B-005"));
+    assertThrows(IOException.class, () -> CaseReader.readHistorical(current.resolve("BI-001.json"), current, "BI-001"));
+    var previous = CaseReader.readHistorical(history, current, "B-004");
+    assertEquals("B-004", previous.caseId());
+    assertEquals("initial", previous.subLibrary());
+    assertTrue(previous.description().contains("profit-first"));
+    assertTrue(latest.description().contains("single-pass evaluation"));
+    assertEquals(latest.code(), previous.code());
+    assertEquals(sha256(Files.readAllBytes(history)), previous.caseSha256());
   }
 
   @Test void rejectsMissingOrModifiedSourceAndInvalidHashes() throws IOException {
@@ -237,12 +275,17 @@ class CaseReaderTest {
       var result = CaseReader.read(metadata);
       assertEquals(metadata.getParent().getFileName().toString(), result.caseId());
       assertFalse(result.code().isEmpty(), result.caseId());
-      if (result.caseId().startsWith("B-")) {
+      if (metadata.startsWith(Path.of("cases", "B"))) {
         String group = metadata.getParent().getParent().getFileName().toString();
         switch (group) {
-          case "initial_single_satellite_optimization" ->
+          case "initial_single_satellite_optimization" -> {
+              assertTrue(result.caseId().startsWith("BI-"), result.caseId());
               assertEquals("initial", result.subLibrary(), result.caseId());
-          case "post_reassignment_adjustment" -> assertEquals("post_reassignment", result.subLibrary(), result.caseId());
+          }
+          case "post_reassignment_adjustment" -> {
+              assertTrue(result.caseId().startsWith("BR-"), result.caseId());
+              assertEquals("post_reassignment", result.subLibrary(), result.caseId());
+          }
           default -> fail("Unexpected B directory: " + group);
         }
       }

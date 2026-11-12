@@ -39,6 +39,24 @@ public final class CaseReader {
 
   /** 读取指定元数据，并在指定案例目录中查找源码；适用于后台历史快照。 */
   public static CaseData read(Path metadataPath, Path caseDirectory) throws IOException {
+    return read(metadataPath, caseDirectory, null);
+  }
+
+  /** 读取改名前的历史快照；调用方须从来源记录确认旧编号与当前案例的关系。 */
+  public static CaseData readHistorical(Path metadataPath, Path caseDirectory, String historicalCaseId)
+      throws IOException {
+    Objects.requireNonNull(metadataPath, "metadataPath");
+    Objects.requireNonNull(caseDirectory, "caseDirectory");
+    if (historicalCaseId == null || historicalCaseId.isBlank()) {
+      throw new IllegalArgumentException("historicalCaseId must not be blank");
+    }
+    if (metadataPath.toRealPath().startsWith(caseDirectory.toRealPath())) {
+      throw new IOException("Historical metadata must be outside the current case directory");
+    }
+    return read(metadataPath, caseDirectory, historicalCaseId);
+  }
+
+  private static CaseData read(Path metadataPath, Path caseDirectory, String historicalCaseId) throws IOException {
     Objects.requireNonNull(metadataPath, "metadataPath");
     Objects.requireNonNull(caseDirectory, "caseDirectory");
     Path root = caseDirectory.toRealPath();
@@ -50,11 +68,18 @@ public final class CaseReader {
     Object parsed = new JsonParser(decodeUtf8(metadataBytes, metadataPath)).parse();
     Map<?, ?> metadata = object(parsed, "case metadata");
     String caseId = nonBlankString(metadata.get("case_id"), "case_id");
-    if (root.getFileName() == null || !caseId.equals(root.getFileName().toString())) {
+    String expectedId = historicalCaseId == null && root.getFileName() != null
+        ? root.getFileName().toString() : historicalCaseId;
+    if (!caseId.equals(expectedId)) {
       throw new IOException("case_id does not match case directory: " + caseId);
     }
     String subLibrary = null;
-    if (caseId.startsWith("B-") && metadata.containsKey("sub_library")) {
+    if (caseId.startsWith("BI-") || caseId.startsWith("BR-")) {
+      subLibrary = nonBlankString(metadata.get("sub_library"), "sub_library");
+      if (!matchesBStage(caseId, subLibrary)) {
+        throw new IOException("Invalid B case ID or sub_library: " + caseId + ", " + subLibrary);
+      }
+    } else if (caseId.startsWith("B-") && metadata.containsKey("sub_library")) {
       subLibrary = nonBlankString(metadata.get("sub_library"), "sub_library");
       if (!caseId.matches("B-\\d{3,}")
           || (!subLibrary.equals("initial") && !subLibrary.equals("post_reassignment"))) {
@@ -111,6 +136,11 @@ public final class CaseReader {
     }
     return new CaseData(caseId, category, description.toString(), assembled.toString(),
         sha256(metadataBytes), subLibrary);
+  }
+
+  static boolean matchesBStage(String caseId, String subLibrary) {
+    return caseId != null && (("initial".equals(subLibrary) && caseId.matches("BI-(?!0+$)\\d{3,}"))
+        || ("post_reassignment".equals(subLibrary) && caseId.matches("BR-(?!0+$)\\d{3,}")));
   }
 
   private static Path resolveSource(Path root, String value) throws IOException {

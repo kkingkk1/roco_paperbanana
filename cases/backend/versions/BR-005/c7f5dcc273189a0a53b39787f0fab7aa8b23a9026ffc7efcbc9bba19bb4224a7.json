@@ -1,0 +1,21 @@
+{
+  "case_id": "BR-005",
+  "category": "broken_edge_repair",
+  "sub_library": "post_reassignment",
+  "description": [
+    "Reassignment local search only:\n",
+    "- Broken Edge Repair: For each broken adjacent edge, evaluate releasing lower-reward endpoint vs. releasing higher-reward endpoint ",
+    "(tie-break: previous vs. next endpoint).\n",
+    "- Reconsider: Reconsider incoming unscheduled tasks followed by released endpoint.\n",
+    "- Acceptance: Return feasible issued trial with higher profit; return null if no broken edges or no feasible trial."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000035.java",
+        "sha256": "90b3951e9dd6b70ceef78d66fbca4d886b0e92d2dc0536cc1504dd0a74da619d"
+      }
+    ]
+  }
+}

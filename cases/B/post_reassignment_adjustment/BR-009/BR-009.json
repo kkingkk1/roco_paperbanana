@@ -1,0 +1,21 @@
+{
+  "case_id": "BR-009",
+  "category": "scarcity_reassignment",
+  "sub_library": "post_reassignment",
+  "description": [
+    "Reassignment local search only (Scarcity-Based Adjustment):\n",
+    "- Broken Edges: Release endpoint with more legal candidates (tie-break: lower reward).\n",
+    "- Candidate Search: Consider incoming tasks first, then pending tasks by scarcity and reward; ",
+    "enumerate insertion, lower-reward replacement, pairwise reversal, and reinsertion.\n",
+    "- Selection: Return edit selected by feedback attempt; evaluated through runtime."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000042.java",
+        "sha256": "3969f0171969ae0e4f7b8f90eadd975b72fff121587e06628b26613ea9b361ea"
+      }
+    ]
+  }
+}

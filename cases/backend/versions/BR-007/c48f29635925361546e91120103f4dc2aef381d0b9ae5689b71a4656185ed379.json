@@ -1,0 +1,18 @@
+{
+  "case_id": "BR-007",
+  "category": "compare_scarcity_and_density_rebuild",
+  "sub_library": "post_reassignment",
+  "description": [
+    "Reassignment local search only: Request controlled rebuilds using candidate-count-first and reward-density-first task orders. Compare their issued trial profits and return the higher-profit trial; if the evaluation limit is one, use only the first order. It does not implement initialization.",
+    "\n\nPurpose: Compare two contrasting priority rules during an authorized affected-satellite rebuild."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000037.java",
+        "sha256": "10a61700c5f1a106bde99baa2ba98a69085b2a4e2f7210a4a24ffb759af97ef8"
+      }
+    ]
+  }
+}

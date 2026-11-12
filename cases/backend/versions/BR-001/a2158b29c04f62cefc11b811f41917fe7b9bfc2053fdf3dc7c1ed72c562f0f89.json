@@ -1,0 +1,20 @@
+{
+  "case_id": "BR-001",
+  "category": "best_pending_insertion",
+  "sub_library": "post_reassignment",
+  "description": [
+    "Reassignment local search only:\n",
+    "- Candidate Tasks: Unscheduled assigned tasks ordered by descending reward, then smaller task ID.\n",
+    "- Operator: Trial direct insertion without releasing scheduled observations.\n",
+    "- Acceptance: Return feasible issued trial with highest profit; return null if none is feasible or evaluation limit reached."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000031.java",
+        "sha256": "d31b4f24f5abdae6034d7d0e76c7cfdb9427f5b40192e76ec79b2c1bc12e9bda"
+      }
+    ]
+  }
+}

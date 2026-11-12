@@ -4,8 +4,8 @@
 案例的字段、分类、去重、来源关联和接口检查见[案例入库与接口适配](../vault/Knowledge/案例入库与接口适配.md)。
 
 - `A/`、`C/`：分别保存对应模块的正式案例，每条案例使用独立目录。
-- `B/initial_single_satellite_optimization/`：初始单星优化案例，每条案例使用独立目录。
-- `B/post_reassignment_adjustment/`：重分配后单星局部调整案例，每条案例使用独立目录。
+- `B/initial_single_satellite_optimization/`：初始单星优化案例，编号从`BI-001`开始。
+- `B/post_reassignment_adjustment/`：重分配后单星局部调整案例，编号从`BR-001`开始。
 - `backend/材料台账.md`：已核查材料、待查材料和搜集方向。
 - `backend/legacy_B_cases/`：拆分或改造前的B来源案例，不计入阶段子库。
 - `backend/sources/`：按`case_id`和案例版本记录来源与使用条件。
@@ -27,11 +27,11 @@ var example = CaseReader.read(Path.of("cases", "A", "A-001", "A-001.json"));
 var description = example.description();
 var code = example.code();
 var caseVersion = example.caseSha256();
-var bExample = CaseReader.read(Path.of("cases", "B", "initial_single_satellite_optimization", "B-004", "B-004.json"));
+var bExample = CaseReader.read(Path.of("cases", "B", "initial_single_satellite_optimization", "BI-001", "BI-001.json"));
 var bSubLibrary = bExample.subLibrary();
 ```
 
-读取器校验案例目录身份、源码路径和文件哈希，并保留源码原有空白；文件缺失、格式错误或校验失败时抛出`IOException`。B子库标记仅接受`initial`和`post_reassignment`；无标记的历史材料返回空值。历史快照若使用源码清单，可调用`CaseReader.read(snapshotPath, caseDirectory)`指定案例目录；旧版内嵌代码行数组的快照不能通过该接口读取。读取器不加载后台来源，也不判断外发许可。
+读取器校验案例目录身份、源码路径和文件哈希，并保留源码原有空白；文件缺失、格式错误或校验失败时抛出`IOException`。`BI`对应`initial`，`BR`对应`post_reassignment`；新编号与子库标记不匹配时报错，无标记的历史材料返回空值。历史快照若使用源码清单，可调用`CaseReader.read(snapshotPath, caseDirectory)`指定案例目录；如果快照编号与当前目录不同，先从后台来源记录确认对应关系，再调用`CaseReader.readHistorical(snapshotPath, caseDirectory, historicalCaseId)`。旧版内嵌代码行数组的快照不能通过该接口读取。读取器不加载后台来源，也不判断外发许可。
 
 `method.cases.BCaseSelection`可计算已过滤B候选的返回数量，并校验选中ID来自两个子库且无重复。调用方须先完成来源使用条件等过滤；该工具不判断案例能否发往外部模型，也未实现Retriever调用或案例包冻结。
 

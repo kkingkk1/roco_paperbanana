@@ -1,0 +1,18 @@
+{
+  "case_id": "BI-012",
+  "category": "beam_order_search",
+  "sub_library": "initial",
+  "description": [
+    "Initialization only: Build task prefixes in a beam of width three. Complete each prefix with remaining tasks in ascending ID order and score the full order through C; keep the highest-scoring prefixes per depth and return the best issued trial. Stop at the evaluation limit. Reassignment is not implemented.",
+    "\n\nPurpose: Limit the number of prefixes retained at each depth while comparing several alternatives."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000015.java",
+        "sha256": "02d1d8372bd0cff0c096d31e4de0db9dbd31c502d418e230264548dbe78a89d6"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "case_id": "BI-021",
+  "category": "greedy_position_insertion",
+  "sub_library": "initial",
+  "description": [
+    "Initialization only: Greedy Constructive Insertion.\n",
+    "- Process: Iteratively insert tasks (ascending ID) into growing prefix.\n",
+    "- Position Scoring: Test all prefix insertion positions, completing uninserted tasks in ascending ID; ",
+    "fix position maximizing full schedule score.\n",
+    "- Termination: Stop after full prefix built or evaluation limit reached; return best trial seen."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000024.java",
+        "sha256": "957de829d6173fdaa26af6045a81eff3654f3095bba820cddc82cc3d48e7df7c"
+      }
+    ]
+  }
+}

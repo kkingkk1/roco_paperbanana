@@ -41,8 +41,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /** 比较RKHMA分阶段入口与未拆分版本，依赖源码另行逐文件检查。 */
 class BPhaseSplitTest {
-  private static final Path INITIAL = Path.of("cases", "B", "initial_single_satellite_optimization", "B-040", "src");
-  private static final Path REASSIGN = Path.of("cases", "B", "post_reassignment_adjustment", "B-043", "src");
+  private static final Path INITIAL = Path.of("cases", "B", "initial_single_satellite_optimization", "BI-030", "src");
+  private static final Path REASSIGN = Path.of("cases", "B", "post_reassignment_adjustment", "BR-010", "src");
   private static Class<?> initialType;
   private static Class<?> reassignmentType;
 

@@ -1,0 +1,96 @@
+{
+  "case_id": "BI-028",
+  "versions": [
+    {
+      "case_sha256": "8b65782c0e5c933d4f5eba108a00529bfb4424ade58d3ac5c1e1744d3cb0714b",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "已授权在本项目本地使用与整理；项目源代码外部模型使用条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "原样提取 DensitySearch 完整类体，新增独立外壳和工厂；行为仍需与项目原策略比较。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "phase_extraction": {
+        "date": "2026-11-12",
+        "parent_case_id": "B-001",
+        "parent_case_sha256": "07aeaaf10732ca96467c9642c999fe5644f91c3db467675551638b5736e80430",
+        "phase": "initial",
+        "method": "保留该阶段策略入口及依赖；原案例保留供追溯。"
+      }
+    },
+    {
+      "case_sha256": "41654ffacfc9ac86e96d4418c12edb4a577aeb1eee7b8c76b35463192b2782da",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "已授权在本项目本地使用与整理；项目源代码外部模型使用条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "原样提取 DensitySearch 完整类体，新增独立外壳和工厂；行为仍需与项目原策略比较。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "8b65782c0e5c933d4f5eba108a00529bfb4424ade58d3ac5c1e1744d3cb0714b",
+      "parent_snapshot": "../versions/B-038/8b65782c0e5c933d4f5eba108a00529bfb4424ade58d3ac5c1e1744d3cb0714b.json",
+      "case_id_revision": {
+        "date": "2026-11-12",
+        "method": "按B阶段子库分别编号；案例内容与源码不变。"
+      }
+    },
+    {
+      "case_sha256": "3cc66e1d0f69a3f1cc0f56fe4f4096fc2b8e0aeca2c61109aebe040c2dfb1ccf",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "已授权在本项目本地使用与整理；项目源代码外部模型使用条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "原样提取 DensitySearch 完整类体，新增独立外壳和工厂；行为仍需与项目原策略比较。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "41654ffacfc9ac86e96d4418c12edb4a577aeb1eee7b8c76b35463192b2782da",
+      "description_revision": {
+        "method": "按结构化精炼模板重写 description（阶段拆分、列表化算子、显式平局/门禁/终止准则，移除冗余套话与Purpose）",
+        "date": "2026-11-12"
+      },
+      "parent_snapshot": "../versions/BI-028/41654ffacfc9ac86e96d4418c12edb4a577aeb1eee7b8c76b35463192b2782da.json"
+    }
+  ],
+  "previous_case_ids": [
+    "B-038"
+  ]
+}

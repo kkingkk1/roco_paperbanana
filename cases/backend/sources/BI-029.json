@@ -1,0 +1,125 @@
+{
+  "case_id": "BI-029",
+  "versions": [
+    {
+      "case_sha256": "7d84f06c99f625401fcf613ec08a410ca4db77d69908e4add27effa54fcdd5c9",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "已授权在本项目本地使用与整理；项目源代码外部模型使用条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "原样提取 ScarcitySearch 完整类体，新增独立外壳和工厂；行为仍需与项目原策略比较。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "phase_extraction": {
+        "date": "2026-11-12",
+        "parent_case_id": "B-002",
+        "parent_case_sha256": "9d2eb7c4eb9d8da65933ac2f4cce6b9e0db56be1d7b2aa80c4049c560167b76b",
+        "phase": "initial",
+        "method": "保留该阶段策略入口及依赖；原案例保留供追溯。"
+      }
+    },
+    {
+      "case_sha256": "156693babcf871d3b2bf0c0812d7dc3c937fced05dc2a29be9effe27b99e2cf4",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "已授权在本项目本地使用与整理；项目源代码外部模型使用条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "原样提取 ScarcitySearch 完整类体，新增独立外壳和工厂；行为仍需与项目原策略比较。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "7d84f06c99f625401fcf613ec08a410ca4db77d69908e4add27effa54fcdd5c9",
+      "parent_snapshot": "../versions/B-039/7d84f06c99f625401fcf613ec08a410ca4db77d69908e4add27effa54fcdd5c9.json",
+      "case_id_revision": {
+        "date": "2026-11-12",
+        "method": "按B阶段子库分别编号；案例内容与源码不变。"
+      }
+    },
+    {
+      "case_sha256": "a9f5d8613d2d0ef2f95fa1c5b66fc4706b3fb528f7e04ff37d6419d9a4721793",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "已授权在本项目本地使用与整理；项目源代码外部模型使用条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "原样提取 ScarcitySearch 完整类体，新增独立外壳和工厂；行为仍需与项目原策略比较。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "156693babcf871d3b2bf0c0812d7dc3c937fced05dc2a29be9effe27b99e2cf4",
+      "description_revision": {
+        "method": "按结构化精炼模板重写 description（阶段拆分、列表化算子、显式平局/门禁/终止准则，移除冗余套话与Purpose）",
+        "date": "2026-11-12"
+      },
+      "parent_snapshot": "../versions/BI-029/156693babcf871d3b2bf0c0812d7dc3c937fced05dc2a29be9effe27b99e2cf4.json"
+    },
+    {
+      "case_sha256": "44f40b36ef9eb895ed9d9a2a1b2175d0fe0fc452dff2a89944ecc9d315914162",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "已授权在本项目本地使用与整理；项目源代码外部模型使用条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "原样提取 ScarcitySearch 完整类体，新增独立外壳和工厂；行为仍需与项目原策略比较。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "a9f5d8613d2d0ef2f95fa1c5b66fc4706b3fb528f7e04ff37d6419d9a4721793",
+      "parent_snapshot": "../versions/BI-029/a9f5d8613d2d0ef2f95fa1c5b66fc4706b3fb528f7e04ff37d6419d9a4721793.json",
+      "description_revision": {
+        "date": "2026-11-12",
+        "method": "依据案例源码修正算子、试评返回值、阶段基准和终止条件；源码不变。"
+      }
+    }
+  ],
+  "previous_case_ids": [
+    "B-039"
+  ]
+}

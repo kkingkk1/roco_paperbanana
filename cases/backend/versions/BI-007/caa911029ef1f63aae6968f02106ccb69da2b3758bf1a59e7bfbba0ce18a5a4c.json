@@ -1,0 +1,18 @@
+{
+  "case_id": "BI-007",
+  "category": "variable_neighborhood_descent",
+  "sub_library": "initial",
+  "description": [
+    "Initialization only: Start with ascending task IDs. Search swap, insertion and contiguous reversal neighborhoods in that order; accept the first strictly higher-profit trial and restart from swaps. Stop after all three neighborhoods fail or the evaluation limit is reached. Reassignment is not implemented.",
+    "\n\nPurpose: Move between different order neighborhoods after a local optimum."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000010.java",
+        "sha256": "4d4b30d51220764ab98f3ae27c9a626b3c8e25732da522276ce6c74e7db6e7fe"
+      }
+    ]
+  }
+}

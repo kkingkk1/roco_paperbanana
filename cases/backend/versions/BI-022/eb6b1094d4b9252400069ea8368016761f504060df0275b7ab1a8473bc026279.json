@@ -1,0 +1,18 @@
+{
+  "case_id": "BI-022",
+  "category": "regret_position_insertion",
+  "sub_library": "initial",
+  "description": [
+    "Initialization only: For each remaining task, trial its insertion positions in the current prefix and complete the order with remaining tasks in ascending ID order. Fix the task whose best and second-best trial scores have the largest difference, breaking ties by best score then task ID. Return the best full-order trial seen, including a partial last step, at the evaluation limit. Reassignment is not implemented.",
+    "\n\nPurpose: Prefer tasks whose best and second-best tested positions differ most in score."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000025.java",
+        "sha256": "e1ea3fd794159e943303f2a77686c7e35863fc450d2a6ebe830db86f78d3d42f"
+      }
+    ]
+  }
+}

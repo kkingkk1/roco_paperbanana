@@ -1,0 +1,21 @@
+{
+  "case_id": "BR-008",
+  "category": "density_reassignment",
+  "sub_library": "post_reassignment",
+  "description": [
+    "Reassignment local search only (Density-Based Adjustment):\n",
+    "- Broken Edges: Release lower-reward endpoints; reconsider incoming tasks and released endpoints.\n",
+    "- Candidate Search: Enumerate incoming and pending tasks by reward; test insertion, lower-reward replacement, ",
+    "reinsertion, and pairwise reversal.\n",
+    "- Selection: Return edit selected by feedback attempt; evaluated through runtime."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000041.java",
+        "sha256": "1042f923a5a39c00401ece7084c7b7e4b1fc70cee02a60f61ab1e5faeb80c975"
+      }
+    ]
+  }
+}

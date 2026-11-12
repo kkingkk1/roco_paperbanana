@@ -1,0 +1,141 @@
+{
+  "case_id": "BR-010",
+  "versions": [
+    {
+      "case_sha256": "e9097b122643285e4034e4af9753229696425863e88817f49ea7df44dd3fd004",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/RkhmaHybridSearch.java",
+            "src/main/java/method/runtime/RkhmaAllocation.java",
+            "src/main/java/method/rkhma/"
+          ],
+          "version": {
+            "project_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2",
+            "file_sha256": {
+              "src/main/java/method/runtime/RkhmaHybridSearch.java": "59f593b1b8e39b3fcbde69988aecd6bd1ee1de9182c973336d5ad0a1f74601a7",
+              "src/main/java/method/runtime/RkhmaAllocation.java": "e07786710ddf9a46b4dd29f26652f5e95633456e96263a61171fdf5e009afc0e"
+            },
+            "source_tree": "逐文件SHA-256绑定在案例元数据中"
+          },
+          "usage_conditions": "已授权在本项目本地迁移、使用和整理；来源与本项目代码向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "B入口、A共享协调入口及method.rkhma依赖源码按当前项目版本原样保存；需要项目运行时与问题模型。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "phase_extraction": {
+        "date": "2026-11-12",
+        "parent_case_id": "B-003",
+        "parent_case_sha256": "058e374ef2e77f1ef66cee6199f7c68c3a241f6af1b9d5e69e06a8c8ca5525b2",
+        "phase": "post_reassignment",
+        "method": "保留该阶段策略入口及依赖；原案例保留供追溯。"
+      }
+    },
+    {
+      "case_sha256": "25fdc0bc142d0d8bf5fd2414f1553314f68dd37cb185bb4c358b41131f473bf2",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/RkhmaHybridSearch.java",
+            "src/main/java/method/runtime/RkhmaAllocation.java",
+            "src/main/java/method/rkhma/"
+          ],
+          "version": {
+            "project_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2",
+            "file_sha256": {
+              "src/main/java/method/runtime/RkhmaHybridSearch.java": "59f593b1b8e39b3fcbde69988aecd6bd1ee1de9182c973336d5ad0a1f74601a7",
+              "src/main/java/method/runtime/RkhmaAllocation.java": "e07786710ddf9a46b4dd29f26652f5e95633456e96263a61171fdf5e009afc0e"
+            },
+            "source_tree": "逐文件SHA-256绑定在案例元数据中"
+          },
+          "usage_conditions": "已授权在本项目本地迁移、使用和整理；来源与本项目代码向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "B入口、A共享协调入口及method.rkhma依赖源码按当前项目版本原样保存；需要项目运行时与问题模型。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "e9097b122643285e4034e4af9753229696425863e88817f49ea7df44dd3fd004",
+      "parent_snapshot": "../versions/B-043/e9097b122643285e4034e4af9753229696425863e88817f49ea7df44dd3fd004.json",
+      "case_id_revision": {
+        "date": "2026-11-12",
+        "method": "按B阶段子库分别编号；案例内容与源码不变。"
+      }
+    },
+    {
+      "case_sha256": "882ceb87804b53ff5363081221d9d88a635e46eb4235282fec4eb69a69c8e9d7",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/RkhmaHybridSearch.java",
+            "src/main/java/method/runtime/RkhmaAllocation.java",
+            "src/main/java/method/rkhma/"
+          ],
+          "version": {
+            "project_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2",
+            "file_sha256": {
+              "src/main/java/method/runtime/RkhmaHybridSearch.java": "59f593b1b8e39b3fcbde69988aecd6bd1ee1de9182c973336d5ad0a1f74601a7",
+              "src/main/java/method/runtime/RkhmaAllocation.java": "e07786710ddf9a46b4dd29f26652f5e95633456e96263a61171fdf5e009afc0e"
+            },
+            "source_tree": "逐文件SHA-256绑定在案例元数据中"
+          },
+          "usage_conditions": "已授权在本项目本地迁移、使用和整理；来源与本项目代码向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "B入口、A共享协调入口及method.rkhma依赖源码按当前项目版本原样保存；需要项目运行时与问题模型。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "25fdc0bc142d0d8bf5fd2414f1553314f68dd37cb185bb4c358b41131f473bf2",
+      "description_revision": {
+        "method": "按结构化精炼模板重写 description（阶段拆分、列表化算子、显式平局/门禁/终止准则，移除冗余套话与Purpose）",
+        "date": "2026-11-12"
+      },
+      "parent_snapshot": "../versions/BR-010/25fdc0bc142d0d8bf5fd2414f1553314f68dd37cb185bb4c358b41131f473bf2.json"
+    },
+    {
+      "case_sha256": "3dc8dc7d3dcbb8d82641a218deb2f48bff84c3b62757cfe78c576756cc0ac8a5",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/RkhmaHybridSearch.java",
+            "src/main/java/method/runtime/RkhmaAllocation.java",
+            "src/main/java/method/rkhma/"
+          ],
+          "version": {
+            "project_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2",
+            "file_sha256": {
+              "src/main/java/method/runtime/RkhmaHybridSearch.java": "59f593b1b8e39b3fcbde69988aecd6bd1ee1de9182c973336d5ad0a1f74601a7",
+              "src/main/java/method/runtime/RkhmaAllocation.java": "e07786710ddf9a46b4dd29f26652f5e95633456e96263a61171fdf5e009afc0e"
+            },
+            "source_tree": "逐文件SHA-256绑定在案例元数据中"
+          },
+          "usage_conditions": "已授权在本项目本地迁移、使用和整理；来源与本项目代码向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "B入口、A共享协调入口及method.rkhma依赖源码按当前项目版本原样保存；需要项目运行时与问题模型。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "882ceb87804b53ff5363081221d9d88a635e46eb4235282fec4eb69a69c8e9d7",
+      "parent_snapshot": "../versions/BR-010/882ceb87804b53ff5363081221d9d88a635e46eb4235282fec4eb69a69c8e9d7.json",
+      "description_revision": {
+        "date": "2026-11-12",
+        "method": "依据案例源码修正算子、试评返回值、阶段基准和终止条件；源码不变。"
+      }
+    }
+  ],
+  "previous_case_ids": [
+    "B-043"
+  ]
+}

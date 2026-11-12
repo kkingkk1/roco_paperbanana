@@ -1,0 +1,18 @@
+{
+  "case_id": "BI-008",
+  "category": "simulated_annealing_insertion",
+  "sub_library": "initial",
+  "description": [
+    "Initialization only: Start with ascending task IDs; repeatedly remove a random task and insert it at another random position. Accept non-worse trials and accept worse trials with a temperature-dependent probability; cool geometrically after every trial and return the best issued trial. Stop at the evaluation limit or when fewer than two tasks exist. Reassignment is not implemented.",
+    "\n\nPurpose: Allow some worsening moves while retaining the best order found."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000011.java",
+        "sha256": "b3e7548223de9a642123774cf30be7badfecf0c2c46f99df7767be4bb09bd300"
+      }
+    ]
+  }
+}
