@@ -1,6 +1,6 @@
 # 知识库状态
 
-更新日期：2026-11-05。
+更新日期：2026-11-07。
 
 ## 项目定位
 
@@ -16,7 +16,8 @@
 - [来源记录](Knowledge/Source-Provenance.md)：代码迁移范围、首尾规则与指定数据生成器。
 - [算法设计方法参照](Knowledge/算法设计方法参照.md)：已有文献核查及项目迁移边界。
 - [方法与评价合同](Knowledge/多智能体算法与评价合同.md)：已确认的接口、运行、演化、数据及评价规则。
-- [主计划](Plan/面向成像卫星任务调度的多智能体协作自动算法设计.md)：六部分研究主计划及P0—P4阶段路线；各阶段计划见[总索引](02-Index.md)，当前任务与验收见[P1阶段计划](Plan/mechanisms/P1-可运行求解器起点.md)。
+- [案例入库与接口适配](Knowledge/案例入库与接口适配.md)：案例位置、去重与接口检查；材料及使用条件见后台台账。
+- [主计划](Plan/面向成像卫星任务调度的多智能体协作自动算法设计.md)：六部分研究主计划及P0—P4阶段路线；各阶段计划见[总索引](02-Index.md)，当前任务与验收见[P2阶段计划](Plan/mechanisms/P2-五角色协作演化.md)。
 - [初始化验收](Results/Reports/problem-template-initialization.md)：既有16项测试和单个真实场景的证据。
 - [P1问题层适配](Results/Reports/p1-problem-adaptation.md)：内部网格、候选迭代与首尾检查的验收。
 - [P1两阶段运行时](Results/Reports/p1-two-stage-runtime.md)：8个手工组合、资源限制与真实场景烟测。

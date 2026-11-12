@@ -1,0 +1,23 @@
+{
+  "case_id": "A-019",
+  "category": "gap_mtg",
+  "description": [
+    "Generalized assignment branch-and-bound (MTG):\n",
+    "- Bounding: Compute knapsack-based upper and lower bounds.\n",
+    "- Branching: Branch by fixing or forbidding task-resource assignments; prune subproblems dominated by current best solution.\n",
+    "- Configuration: Set back=-1 for exact search. Supports up to 10 resources and 100 tasks."
+  ],
+  "code": {
+    "format": "file_markers",
+    "files": [
+      {
+        "path": "src/LICENSE.txt",
+        "sha256": "eb6dc08eb2962eb5a82a0ea6d92016c041ecb1ac6004ecd8b7ab4b8bf88b1bda"
+      },
+      {
+        "path": "src/mtg.f",
+        "sha256": "bd5a1660077bb704db0b334eec7392e3d1003832df833c8f63bd6870e2de007d"
+      }
+    ]
+  }
+}

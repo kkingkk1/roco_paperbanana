@@ -1,0 +1,405 @@
+{
+  "case_id": "A-019",
+  "previous_case_ids": [
+    "A-000019"
+  ],
+  "versions": [
+    {
+      "case_sha256": "d497447f3af652aa77e736e8add41f3f0e856a45db199ee8ba7bd9bb8198969a",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/d4/bb/f8a43ec75014fec16b6ba843eb2b7c21c31fad3b93cb835c7278d2201148/mknapsack-1.1.12.tar.gz",
+          "version": {
+            "release": "mknapsack 1.1.12, 2023-04-07",
+            "archive_sha256": "176d161bf30db094ede1f829981b4c7578a3677e908702c3cad65146575db83b",
+            "source_file": "mknapsack-1.1.12/mknapsack/_algos.f",
+            "source_file_sha256": "7fe74411d87a5cecefead93c4cc04380e6b6f932af6f8040ff5cdd4a808aab3a",
+            "selected_procedures": [
+              "chmtg",
+              "defpck",
+              "dmind",
+              "feas",
+              "gha",
+              "ghbcd",
+              "ghx",
+              "gr1",
+              "gr2",
+              "heur",
+              "kpmax",
+              "kpmin",
+              "mtg",
+              "pen0",
+              "pen1",
+              "prepen",
+              "skp1",
+              "sorti",
+              "sortr",
+              "termin",
+              "trin",
+              "ubfjv",
+              "ubrs",
+              "ydef",
+              "yuse"
+            ]
+          },
+          "usage_conditions": "源码包自带Jesse Myrberg的MIT声明，要求保留版权及许可；Fortran程序注明参考Martello和Toth的1990年著作，原Fortran代码权利及其与包级MIT声明的关系尚未核实。保留包内许可全文和原程序署名；不得作为无来源声明的外发提示。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核对源码包SHA-256、静态调用闭包和原始声明；提取全部调用过程后使用本机gfortran编译，并在独立3任务2资源夹具中核对目标值和容量。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "f334e61fa92f2b1e9af763e7b5179e99b90e210253eb2c63a9adc06cc14694a6",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/d4/bb/f8a43ec75014fec16b6ba843eb2b7c21c31fad3b93cb835c7278d2201148/mknapsack-1.1.12.tar.gz",
+          "version": {
+            "release": "mknapsack 1.1.12, 2023-04-07",
+            "archive_sha256": "176d161bf30db094ede1f829981b4c7578a3677e908702c3cad65146575db83b",
+            "source_file": "mknapsack-1.1.12/mknapsack/_algos.f",
+            "source_file_sha256": "7fe74411d87a5cecefead93c4cc04380e6b6f932af6f8040ff5cdd4a808aab3a",
+            "selected_procedures": [
+              "chmtg",
+              "defpck",
+              "dmind",
+              "feas",
+              "gha",
+              "ghbcd",
+              "ghx",
+              "gr1",
+              "gr2",
+              "heur",
+              "kpmax",
+              "kpmin",
+              "mtg",
+              "pen0",
+              "pen1",
+              "prepen",
+              "skp1",
+              "sorti",
+              "sortr",
+              "termin",
+              "trin",
+              "ubfjv",
+              "ubrs",
+              "ydef",
+              "yuse"
+            ]
+          },
+          "usage_conditions": "源码包自带Jesse Myrberg的MIT声明，要求保留版权及许可；Fortran程序注明参考Martello和Toth的1990年著作，原Fortran代码权利及其与包级MIT声明的关系尚未核实。保留包内许可全文和原程序署名；不得作为无来源声明的外发提示。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核对源码包SHA-256、静态调用闭包和原始声明；提取全部调用过程后使用本机gfortran编译，并在独立3任务2资源夹具中核对目标值和容量。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "d497447f3af652aa77e736e8add41f3f0e856a45db199ee8ba7bd9bb8198969a"
+    },
+    {
+      "case_sha256": "fade57e052b00606665c7196f445003a64f5fde98ad60bda10f0a8f388ebe68d",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/d4/bb/f8a43ec75014fec16b6ba843eb2b7c21c31fad3b93cb835c7278d2201148/mknapsack-1.1.12.tar.gz",
+          "version": {
+            "release": "mknapsack 1.1.12, 2023-04-07",
+            "archive_sha256": "176d161bf30db094ede1f829981b4c7578a3677e908702c3cad65146575db83b",
+            "source_file": "mknapsack-1.1.12/mknapsack/_algos.f",
+            "source_file_sha256": "7fe74411d87a5cecefead93c4cc04380e6b6f932af6f8040ff5cdd4a808aab3a",
+            "selected_procedures": [
+              "chmtg",
+              "defpck",
+              "dmind",
+              "feas",
+              "gha",
+              "ghbcd",
+              "ghx",
+              "gr1",
+              "gr2",
+              "heur",
+              "kpmax",
+              "kpmin",
+              "mtg",
+              "pen0",
+              "pen1",
+              "prepen",
+              "skp1",
+              "sorti",
+              "sortr",
+              "termin",
+              "trin",
+              "ubfjv",
+              "ubrs",
+              "ydef",
+              "yuse"
+            ]
+          },
+          "usage_conditions": "源码包自带Jesse Myrberg的MIT声明，要求保留版权及许可；Fortran程序注明参考Martello和Toth的1990年著作，原Fortran代码权利及其与包级MIT声明的关系尚未核实。保留包内许可全文和原程序署名；不得作为无来源声明的外发提示。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核对源码包SHA-256、静态调用闭包和原始声明；提取全部调用过程后使用本机gfortran编译，并在独立3任务2资源夹具中核对目标值和容量。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "f334e61fa92f2b1e9af763e7b5179e99b90e210253eb2c63a9adc06cc14694a6"
+    },
+    {
+      "case_sha256": "76d648bf41d85ed7c061233d691a9a02a107f23484d9f18a8cdd3331880d9f56",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/d4/bb/f8a43ec75014fec16b6ba843eb2b7c21c31fad3b93cb835c7278d2201148/mknapsack-1.1.12.tar.gz",
+          "version": {
+            "release": "mknapsack 1.1.12, 2023-04-07",
+            "archive_sha256": "176d161bf30db094ede1f829981b4c7578a3677e908702c3cad65146575db83b",
+            "source_file": "mknapsack-1.1.12/mknapsack/_algos.f",
+            "source_file_sha256": "7fe74411d87a5cecefead93c4cc04380e6b6f932af6f8040ff5cdd4a808aab3a",
+            "selected_procedures": [
+              "chmtg",
+              "defpck",
+              "dmind",
+              "feas",
+              "gha",
+              "ghbcd",
+              "ghx",
+              "gr1",
+              "gr2",
+              "heur",
+              "kpmax",
+              "kpmin",
+              "mtg",
+              "pen0",
+              "pen1",
+              "prepen",
+              "skp1",
+              "sorti",
+              "sortr",
+              "termin",
+              "trin",
+              "ubfjv",
+              "ubrs",
+              "ydef",
+              "yuse"
+            ]
+          },
+          "usage_conditions": "源码包自带Jesse Myrberg的MIT声明，要求保留版权及许可；Fortran程序注明参考Martello和Toth的1990年著作，原Fortran代码权利及其与包级MIT声明的关系尚未核实。保留包内许可全文和原程序署名；不得作为无来源声明的外发提示。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核对源码包SHA-256、静态调用闭包和原始声明；提取全部调用过程后使用本机gfortran编译，并在独立3任务2资源夹具中核对目标值和容量。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "fade57e052b00606665c7196f445003a64f5fde98ad60bda10f0a8f388ebe68d"
+    },
+    {
+      "case_sha256": "33e50e1d8db3b4a7186889cdd96dab2a5bbdf8a1ea7d0d1ef7dde8e4df11cc53",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/d4/bb/f8a43ec75014fec16b6ba843eb2b7c21c31fad3b93cb835c7278d2201148/mknapsack-1.1.12.tar.gz",
+          "version": {
+            "release": "mknapsack 1.1.12, 2023-04-07",
+            "archive_sha256": "176d161bf30db094ede1f829981b4c7578a3677e908702c3cad65146575db83b",
+            "source_file": "mknapsack-1.1.12/mknapsack/_algos.f",
+            "source_file_sha256": "7fe74411d87a5cecefead93c4cc04380e6b6f932af6f8040ff5cdd4a808aab3a",
+            "selected_procedures": [
+              "chmtg",
+              "defpck",
+              "dmind",
+              "feas",
+              "gha",
+              "ghbcd",
+              "ghx",
+              "gr1",
+              "gr2",
+              "heur",
+              "kpmax",
+              "kpmin",
+              "mtg",
+              "pen0",
+              "pen1",
+              "prepen",
+              "skp1",
+              "sorti",
+              "sortr",
+              "termin",
+              "trin",
+              "ubfjv",
+              "ubrs",
+              "ydef",
+              "yuse"
+            ]
+          },
+          "usage_conditions": "源码包自带Jesse Myrberg的MIT声明，要求保留版权及许可；Fortran程序注明参考Martello和Toth的1990年著作，原Fortran代码权利及其与包级MIT声明的关系尚未核实。保留包内许可全文和原程序署名；不得作为无来源声明的外发提示。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核对源码包SHA-256、静态调用闭包和原始声明；提取全部调用过程后使用本机gfortran编译，并在独立3任务2资源夹具中核对目标值和容量。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "76d648bf41d85ed7c061233d691a9a02a107f23484d9f18a8cdd3331880d9f56"
+    },
+    {
+      "case_sha256": "4f4064185870dbb9c16fd12b097884acfbf3d1ffce1926eaecb7327c3e50d06f",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/d4/bb/f8a43ec75014fec16b6ba843eb2b7c21c31fad3b93cb835c7278d2201148/mknapsack-1.1.12.tar.gz",
+          "version": {
+            "release": "mknapsack 1.1.12, 2023-04-07",
+            "archive_sha256": "176d161bf30db094ede1f829981b4c7578a3677e908702c3cad65146575db83b",
+            "source_file": "mknapsack-1.1.12/mknapsack/_algos.f",
+            "source_file_sha256": "7fe74411d87a5cecefead93c4cc04380e6b6f932af6f8040ff5cdd4a808aab3a",
+            "selected_procedures": [
+              "chmtg",
+              "defpck",
+              "dmind",
+              "feas",
+              "gha",
+              "ghbcd",
+              "ghx",
+              "gr1",
+              "gr2",
+              "heur",
+              "kpmax",
+              "kpmin",
+              "mtg",
+              "pen0",
+              "pen1",
+              "prepen",
+              "skp1",
+              "sorti",
+              "sortr",
+              "termin",
+              "trin",
+              "ubfjv",
+              "ubrs",
+              "ydef",
+              "yuse"
+            ]
+          },
+          "usage_conditions": "源码包自带Jesse Myrberg的MIT声明，要求保留版权及许可；Fortran程序注明参考Martello和Toth的1990年著作，原Fortran代码权利及其与包级MIT声明的关系尚未核实。保留包内许可全文和原程序署名；不得作为无来源声明的外发提示。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核对源码包SHA-256、静态调用闭包和原始声明；提取全部调用过程后使用本机gfortran编译，并在独立3任务2资源夹具中核对目标值和容量。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "33e50e1d8db3b4a7186889cdd96dab2a5bbdf8a1ea7d0d1ef7dde8e4df11cc53"
+    },
+    {
+      "case_sha256": "3249b71d9af83f3c1193a90a9cdf87b998f102f31daa84097041a4b7aac2e8ec",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/d4/bb/f8a43ec75014fec16b6ba843eb2b7c21c31fad3b93cb835c7278d2201148/mknapsack-1.1.12.tar.gz",
+          "version": {
+            "release": "mknapsack 1.1.12, 2023-04-07",
+            "archive_sha256": "176d161bf30db094ede1f829981b4c7578a3677e908702c3cad65146575db83b",
+            "source_file": "mknapsack-1.1.12/mknapsack/_algos.f",
+            "source_file_sha256": "7fe74411d87a5cecefead93c4cc04380e6b6f932af6f8040ff5cdd4a808aab3a",
+            "selected_procedures": [
+              "chmtg",
+              "defpck",
+              "dmind",
+              "feas",
+              "gha",
+              "ghbcd",
+              "ghx",
+              "gr1",
+              "gr2",
+              "heur",
+              "kpmax",
+              "kpmin",
+              "mtg",
+              "pen0",
+              "pen1",
+              "prepen",
+              "skp1",
+              "sorti",
+              "sortr",
+              "termin",
+              "trin",
+              "ubfjv",
+              "ubrs",
+              "ydef",
+              "yuse"
+            ]
+          },
+          "usage_conditions": "源码包自带Jesse Myrberg的MIT声明，要求保留版权及许可；Fortran程序注明参考Martello和Toth的1990年著作，原Fortran代码权利及其与包级MIT声明的关系尚未核实。保留包内许可全文和原程序署名；不得作为无来源声明的外发提示。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核对源码包SHA-256、静态调用闭包和原始声明；提取全部调用过程后使用本机gfortran编译，并在独立3任务2资源夹具中核对目标值和容量。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "4f4064185870dbb9c16fd12b097884acfbf3d1ffce1926eaecb7327c3e50d06f",
+      "description_revision": {
+        "method": "按结构化精炼模板重写 description（阶段拆分、列表化算子、显式平局/门禁/终止准则）",
+        "date": "2026-11-12"
+      }
+    },
+    {
+      "case_sha256": "cded143393c4c45bae78039d3832e53e9279212f61b2329c23f7a5e1fd60b453",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/d4/bb/f8a43ec75014fec16b6ba843eb2b7c21c31fad3b93cb835c7278d2201148/mknapsack-1.1.12.tar.gz",
+          "version": {
+            "release": "mknapsack 1.1.12, 2023-04-07",
+            "archive_sha256": "176d161bf30db094ede1f829981b4c7578a3677e908702c3cad65146575db83b",
+            "source_file": "mknapsack-1.1.12/mknapsack/_algos.f",
+            "source_file_sha256": "7fe74411d87a5cecefead93c4cc04380e6b6f932af6f8040ff5cdd4a808aab3a",
+            "selected_procedures": [
+              "chmtg",
+              "defpck",
+              "dmind",
+              "feas",
+              "gha",
+              "ghbcd",
+              "ghx",
+              "gr1",
+              "gr2",
+              "heur",
+              "kpmax",
+              "kpmin",
+              "mtg",
+              "pen0",
+              "pen1",
+              "prepen",
+              "skp1",
+              "sorti",
+              "sortr",
+              "termin",
+              "trin",
+              "ubfjv",
+              "ubrs",
+              "ydef",
+              "yuse"
+            ]
+          },
+          "usage_conditions": "源码包自带Jesse Myrberg的MIT声明，要求保留版权及许可；Fortran程序注明参考Martello和Toth的1990年著作，原Fortran代码权利及其与包级MIT声明的关系尚未核实。保留包内许可全文和原程序署名；不得作为无来源声明的外发提示。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核对源码包SHA-256、静态调用闭包和原始声明；提取全部调用过程后使用本机gfortran编译，并在独立3任务2资源夹具中核对目标值和容量。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "3249b71d9af83f3c1193a90a9cdf87b998f102f31daa84097041a4b7aac2e8ec",
+      "parent_snapshot": "../versions/A-019/3249b71d9af83f3c1193a90a9cdf87b998f102f31daa84097041a4b7aac2e8ec.json",
+      "storage_migration": "inline_lines_to_source_files"
+    }
+  ]
+}

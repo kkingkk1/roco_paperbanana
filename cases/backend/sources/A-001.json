@@ -1,0 +1,449 @@
+{
+  "case_id": "A-001",
+  "previous_case_ids": [
+    "A-000001"
+  ],
+  "versions": [
+    {
+      "case_sha256": "fb68f60e8b5a99e8c67f7f6de4dc63f3e3c0a28c1f8209323c2ef38d2566a002",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "从本项目手工策略源码按原样提取类体，仅新增独立外壳和工厂入口；allocationByCandidates"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "b0d8a113464b4cf2904f60cb55d5e59bfdce256c01e3f64da5468f8ee3204456",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "从本项目手工策略源码按原样提取类体，仅新增独立外壳和工厂入口；allocationByCandidates"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "fb68f60e8b5a99e8c67f7f6de4dc63f3e3c0a28c1f8209323c2ef38d2566a002"
+    },
+    {
+      "case_sha256": "96a7e72245b2c3ec361f6437973f65e289329d0d9646841882eb82524a49b93c",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "从本项目手工策略源码按原样提取类体，仅新增独立外壳和工厂入口；allocationByCandidates"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "b0d8a113464b4cf2904f60cb55d5e59bfdce256c01e3f64da5468f8ee3204456"
+    },
+    {
+      "case_sha256": "a5e3c849837cdca41fdc00054f5e69e64c8ea202a1a931f9cb07b126b3d120f4",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "从本项目手工策略源码按原样提取类体，仅新增独立外壳和工厂入口；allocationByCandidates"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "96a7e72245b2c3ec361f6437973f65e289329d0d9646841882eb82524a49b93c"
+    },
+    {
+      "case_sha256": "90bed4a5b9b62260fb176981da7be39b013898d9c888dc2327507f36ac405948",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "从本项目手工策略源码按原样提取类体，仅新增独立外壳和工厂入口；allocationByCandidates"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "a5e3c849837cdca41fdc00054f5e69e64c8ea202a1a931f9cb07b126b3d120f4"
+    },
+    {
+      "case_sha256": "c16f2c48c87bbbbdaf064cbc2c719d009cbbc0b249a5fbdeb70340b742e5a914",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "从本项目手工策略源码按原样提取类体，仅新增独立外壳和工厂入口；allocationByCandidates"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "90bed4a5b9b62260fb176981da7be39b013898d9c888dc2327507f36ac405948"
+    },
+    {
+      "case_sha256": "c890cc1db5a4af4af095667ff40ff8a9948cc5770db52859402a04c7da5d0e32",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "从本项目手工策略源码按原样提取类体，仅新增独立外壳和工厂入口；allocationByCandidates"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "c16f2c48c87bbbbdaf064cbc2c719d009cbbc0b249a5fbdeb70340b742e5a914"
+    },
+    {
+      "case_sha256": "6f9143fad49fa3835c506d9ef548d26c3124b22db6a497f4cbce30e55bab12b4",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "从本项目手工策略源码按原样提取类体，仅新增独立外壳和工厂入口；allocationByCandidates"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "c890cc1db5a4af4af095667ff40ff8a9948cc5770db52859402a04c7da5d0e32"
+    },
+    {
+      "case_sha256": "aa96c50338f073954da84e3b5fdbf02c5e96019fa520b8603d9b93d612b1ff71",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "从本项目手工策略源码按原样提取类体，仅新增独立外壳和工厂入口；allocationByCandidates"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "6f9143fad49fa3835c506d9ef548d26c3124b22db6a497f4cbce30e55bab12b4"
+    },
+    {
+      "case_sha256": "62abf1e475af3be3504c717863b832fd2a11b3a3945975c4e937ef0f52fe392f",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "从本项目手工策略源码按原样提取类体，仅新增独立外壳和工厂入口；allocationByCandidates"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "aa96c50338f073954da84e3b5fdbf02c5e96019fa520b8603d9b93d612b1ff71",
+      "description_revision": {
+        "method": "Gemini draft, locally edited and checked against the case code and runtime",
+        "configured_model": "gemini-3.8-flash-high",
+        "reported_model": "gemini-3.8-flash-n",
+        "input_scope": "description and editing instructions only",
+        "date": "2026-11-10"
+      }
+    },
+    {
+      "case_sha256": "86c2974e17a30b73700ca0d66cc0ab5989f8b1ea323fafa7abea3b71da374646",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "从本项目手工策略源码按原样提取类体，仅新增独立外壳和工厂入口；allocationByCandidates"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "62abf1e475af3be3504c717863b832fd2a11b3a3945975c4e937ef0f52fe392f",
+      "description_revision": {
+        "method": "Antigravity CLI response, rewrapped and checked locally against the case code and runtime",
+        "client": "Google Antigravity CLI",
+        "configured_model": "gemini-3.8-flash-high",
+        "cli_reported_model": "gemini-3.8-flash-high",
+        "input_scope": "description and editing instructions only",
+        "network_route": "local HTTPS proxy on port 7897; no CPA connection observed",
+        "date": "2026-11-10"
+      }
+    },
+    {
+      "case_sha256": "df45e0ffd8b02de73a65ad1ec8f5f41bbe65abb292dbc0ed41b81b6731785271",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "从本项目手工策略源码按原样提取类体，仅新增独立外壳和工厂入口；allocationByCandidates"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "86c2974e17a30b73700ca0d66cc0ab5989f8b1ea323fafa7abea3b71da374646",
+      "description_revision": {
+        "method": "Antigravity CLI source-based draft, corrected in two follow-ups and edited locally",
+        "client": "Google Antigravity CLI",
+        "configured_model": "gemini-3.8-flash-high",
+        "cli_reported_model": "gemini-3.8-flash-high",
+        "input_scope": "A-001 code and seven relevant project source excerpts; prior description excluded",
+        "code_transmission": "User explicitly requested source-code submission for this rewrite",
+        "review": "Corrected observation-candidate counts, initialization fallback, swap conditions and ordering",
+        "network_route": "local HTTPS proxy on port 7897; no CPA connection observed",
+        "date": "2026-11-10"
+      }
+    },
+    {
+      "case_sha256": "ba63c88220af635daa90c1c26e15f7079b96d5f8ac645f02e6010909573a01a6",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "从本项目手工策略源码按原样提取类体，仅新增独立外壳和工厂入口；allocationByCandidates"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "df45e0ffd8b02de73a65ad1ec8f5f41bbe65abb292dbc0ed41b81b6731785271",
+      "description_revision": {
+        "method": "本地增加初始化标识，并将初始化和重分配分段；策略规则不变。",
+        "date": "2026-11-11"
+      }
+    },
+    {
+      "case_sha256": "b50da2843fdaaa3195b2f118e1f4e4118fa775df3d4be19ce0e97fca21365409",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "从本项目手工策略源码按原样提取类体，仅新增独立外壳和工厂入口；allocationByCandidates"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "ba63c88220af635daa90c1c26e15f7079b96d5f8ac645f02e6010909573a01a6",
+      "description_revision": {
+        "method": "按结构化精炼模板重写 description（阶段拆分、列表化算子、显式平局/门禁/重启），作为全库标准范例",
+        "date": "2026-11-11"
+      }
+    },
+    {
+      "case_sha256": "e94007616709f8b86e281d514eb8003c37d7501cff619ffe7cb2cdd16c275330",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "从本项目手工策略源码按原样提取类体，仅新增独立外壳和工厂入口；allocationByCandidates"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "b50da2843fdaaa3195b2f118e1f4e4118fa775df3d4be19ce0e97fca21365409",
+      "parent_snapshot": "../versions/A-001/b50da2843fdaaa3195b2f118e1f4e4118fa775df3d4be19ce0e97fca21365409.json",
+      "storage_migration": "inline_lines_to_source_files"
+    },
+    {
+      "case_sha256": "b5e67e3d3024c16cb479b7ec39784fd0a6a9cc3a79ddc9ebc0c08de3ff9d7982",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "从本项目手工策略源码按原样提取类体，仅新增独立外壳和工厂入口；allocationByCandidates"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "e94007616709f8b86e281d514eb8003c37d7501cff619ffe7cb2cdd16c275330",
+      "parent_snapshot": "../versions/A-001/e94007616709f8b86e281d514eb8003c37d7501cff619ffe7cb2cdd16c275330.json",
+      "description_revision": {
+        "method": "澄清未调度任务排序仅适用于迁移，交换遍历所有有归属的任务；算法代码不变。",
+        "date": "2026-11-12"
+      }
+    }
+  ]
+}

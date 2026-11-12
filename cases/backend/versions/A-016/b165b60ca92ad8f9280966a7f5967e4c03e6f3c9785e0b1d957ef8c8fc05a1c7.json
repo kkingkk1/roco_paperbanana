@@ -1,0 +1,17 @@
+{
+  "case_id": "A-016",
+  "category": "window_conflict_load",
+  "description": [
+    "Initialization only: Assign tasks (descending reward, then task ID) to candidate satellite with fewest raw-window overlaps with already assigned tasks; ",
+    "tie-break by lowest assigned duration, then smaller satellite ID. Unassigned if no candidates."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000016.java",
+        "sha256": "c695407641bb909aad8606d6eaf7428a1e4b1fbf1cab9121b31ab9b92d161752"
+      }
+    ]
+  }
+}

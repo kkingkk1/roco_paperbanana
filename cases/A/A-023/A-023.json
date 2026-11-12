@@ -1,0 +1,38 @@
+{
+  "case_id": "A-023",
+  "category": "min_cost_flow_matching",
+  "description": [
+    "Successive shortest path matching: Formulate bipartite assignment as minimum-cost flow. ",
+    "Normalize costs with non-negative offset; initialize dual node potentials. ",
+    "Iteratively augment along shortest source-to-sink paths (Dijkstra) and update potentials until flow saturation."
+  ],
+  "code": {
+    "format": "file_markers",
+    "files": [
+      {
+        "path": "src/LICENSE.txt",
+        "sha256": "74de38034c000100f549482994fd1a84c9e61ba2e47ad48a7624b67bb65892ae"
+      },
+      {
+        "path": "src/src/lib.rs",
+        "sha256": "98ae9dc7e503da071909e665cba8de05c0ccaddda893fb187ae22e86061d8a33"
+      },
+      {
+        "path": "src/src/types.rs",
+        "sha256": "cb31ef66dd133f5a443c7e58b65d77804ddc4c1724e9f875a63eafda756a6905"
+      },
+      {
+        "path": "src/src/utils.rs",
+        "sha256": "830463dcf59f44e9cab8f69d4a3c437e82d50df1973c027febdecc9b996d5023"
+      },
+      {
+        "path": "src/src/lap/mod.rs",
+        "sha256": "1c3402d645462a8f87ba3cc7be93d3dbcaaef3c88185ee41f54dde5331c98cc8"
+      },
+      {
+        "path": "src/src/lap/ssp.rs",
+        "sha256": "1cb4d5243722179e7e10e5a6d87efe85d219905c13f7e349db2be67e8cf09575"
+      }
+    ]
+  }
+}

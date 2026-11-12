@@ -1,0 +1,33 @@
+{
+  "case_id": "A-020",
+  "category": "greedy_weighted_matching",
+  "description": [
+    "Greedy bipartite matching: Sort all finite task-resource edges by ascending cost; ",
+    "iteratively match edge endpoints if both remain unmatched. Unmatched tasks or resources stay unassigned."
+  ],
+  "code": {
+    "format": "file_markers",
+    "files": [
+      {
+        "path": "src/LICENSE.txt",
+        "sha256": "74de38034c000100f549482994fd1a84c9e61ba2e47ad48a7624b67bb65892ae"
+      },
+      {
+        "path": "src/src/lib.rs",
+        "sha256": "e5d38fec63e0e3b36ce2b3fee61c57e5e333e0ce40fc0e5e6afa80a62e634d01"
+      },
+      {
+        "path": "src/src/types.rs",
+        "sha256": "cb31ef66dd133f5a443c7e58b65d77804ddc4c1724e9f875a63eafda756a6905"
+      },
+      {
+        "path": "src/src/lap/mod.rs",
+        "sha256": "e63c43129092c10c5f465968b5dd783eafe6c934f5711bff26918babc162d534"
+      },
+      {
+        "path": "src/src/lap/greedy.rs",
+        "sha256": "125ec9e1e360b01c635c14af81d70fac1eeeadac00dbea2bd01fc3a26d53a3a7"
+      }
+    ]
+  }
+}

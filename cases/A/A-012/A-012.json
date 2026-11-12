@@ -1,0 +1,18 @@
+{
+  "case_id": "A-012",
+  "category": "sequential_auction",
+  "description": [
+    "Initialization only: Iteratively assign task-satellite pair with highest bid = reward * feasible candidate count / ",
+    "(1 + assigned duration + task duration); tie-break by smaller task ID, then smaller satellite ID. ",
+    "Update load dynamically after each assignment; unassigned if no candidates."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000012.java",
+        "sha256": "8c17e444fb6efd19f2dfb02991a0bcef4d9ac38642a80265d95a7d9de96bac82"
+      }
+    ]
+  }
+}

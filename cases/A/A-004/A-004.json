@@ -1,0 +1,29 @@
+{
+  "case_id": "A-004",
+  "category": "minimum_task_count",
+  "description": [
+    "Initialization only: Assign tasks (descending reward) to the accommodating satellite with ",
+    "the fewest currently assigned tasks. Unassigned if none."
+  ],
+  "code": {
+    "format": "file_markers",
+    "files": [
+      {
+        "path": "src/method/rkhma/legacy/utils/CaseA000004.java",
+        "sha256": "477fca40faf19cc0054e7a008aa6b80e71d4b2f5b992c4109a739fd94789b5cf"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java",
+        "sha256": "6a249cd1e19ff6e078b7db3f9aec1fb5a373f09c05756bf1242eba9565340e29"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java",
+        "sha256": "3fbb48a71a6fa8f7ad6f03f55358dd39e51715c07127f585a18d5ec8c4981280"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java",
+        "sha256": "a4fee6af3dba9a8412e0d2d3e7e933b222309581c2dffc7b8b49661cd99a3628"
+      }
+    ]
+  }
+}

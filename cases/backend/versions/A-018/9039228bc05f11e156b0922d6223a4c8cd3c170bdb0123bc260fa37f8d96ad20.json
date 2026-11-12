@@ -1,0 +1,24 @@
+{
+  "case_id": "A-018",
+  "category": "gap_mthg",
+  "description": [
+    "Generalized assignment heuristic (MTHG):\n",
+    "- Assignment: Iteratively assign tasks ordered by descending regret (best minus second-best profit gap), updating remaining capacities.\n",
+    "- Refinement: If upper bound is unmet, evaluate alternative desynchronized scores (resource consumption, profit ratio, remaining capacity); ",
+    "retain superior feasible solution.\n",
+    "- Bounds: Supports up to 50 resources and 500 tasks."
+  ],
+  "code": {
+    "format": "file_markers",
+    "files": [
+      {
+        "path": "src/LICENSE.txt",
+        "sha256": "eb6dc08eb2962eb5a82a0ea6d92016c041ecb1ac6004ecd8b7ab4b8bf88b1bda"
+      },
+      {
+        "path": "src/mthg.f",
+        "sha256": "58bf71c3eb8951f21059d63d5ac837b30b24daa599215ec942de29ac3c000f73"
+      }
+    ]
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "case_id": "A-017",
+  "previous_case_ids": [
+    "A-000017"
+  ],
+  "versions": [
+    {
+      "case_sha256": "eb8204941b8fd091da763871dc7f3649706ceb305cf8121ca98017d356ab6c0f",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；窗口冲突选择夹具或跨星交换最佳改善夹具；A000017经完整运行时和合法性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "3920bbf368d28c1fccc2a7f3e044e13afeff755aa737d9d517fe86bca70f177e",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；窗口冲突选择夹具或跨星交换最佳改善夹具；A000017经完整运行时和合法性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "eb8204941b8fd091da763871dc7f3649706ceb305cf8121ca98017d356ab6c0f"
+    },
+    {
+      "case_sha256": "76cb8dda623ef65034d368550facb47d7f312b2144b8cdebbe9b35f96d6c93e8",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；窗口冲突选择夹具或跨星交换最佳改善夹具；A000017经完整运行时和合法性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "3920bbf368d28c1fccc2a7f3e044e13afeff755aa737d9d517fe86bca70f177e"
+    },
+    {
+      "case_sha256": "be250972d74cae812b1df076d6fb0f96ccd447efb60069d5c5e25402ae6984d1",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；窗口冲突选择夹具或跨星交换最佳改善夹具；A000017经完整运行时和合法性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "76cb8dda623ef65034d368550facb47d7f312b2144b8cdebbe9b35f96d6c93e8"
+    },
+    {
+      "case_sha256": "42bebd6bdafb0e87d4a0f4b079941a362c6b32a7b88abb24c56a5eec4ab748f4",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；窗口冲突选择夹具或跨星交换最佳改善夹具；A000017经完整运行时和合法性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "be250972d74cae812b1df076d6fb0f96ccd447efb60069d5c5e25402ae6984d1"
+    },
+    {
+      "case_sha256": "758b76f2a4309d9add58fe7c8c87d5d3df9b5efb8752d2afd71457edc4689031",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；窗口冲突选择夹具或跨星交换最佳改善夹具；A000017经完整运行时和合法性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "42bebd6bdafb0e87d4a0f4b079941a362c6b32a7b88abb24c56a5eec4ab748f4"
+    },
+    {
+      "case_sha256": "48bcc1865db476e8df4286f2d25c9845d87ab427f81e655565f7159fa7cfafb8",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；窗口冲突选择夹具或跨星交换最佳改善夹具；A000017经完整运行时和合法性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "758b76f2a4309d9add58fe7c8c87d5d3df9b5efb8752d2afd71457edc4689031"
+    },
+    {
+      "case_sha256": "7fb02995f238e0182dd85e2a117f4f8bbeb8f74b55dad17e13ca8d86ec335f92",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；窗口冲突选择夹具或跨星交换最佳改善夹具；A000017经完整运行时和合法性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "48bcc1865db476e8df4286f2d25c9845d87ab427f81e655565f7159fa7cfafb8"
+    },
+    {
+      "case_sha256": "5936bbbedead2e269a960cb6e64e8dca98f7e7f68d5223816523335d673546a4",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；窗口冲突选择夹具或跨星交换最佳改善夹具；A000017经完整运行时和合法性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "7fb02995f238e0182dd85e2a117f4f8bbeb8f74b55dad17e13ca8d86ec335f92",
+      "description_revision": {
+        "method": "按结构化精炼模板重写 description（阶段拆分、列表化算子、显式平局/门禁/终止准则）",
+        "date": "2026-11-12"
+      }
+    },
+    {
+      "case_sha256": "177f071f20132d70e2b7b1c736b72be497e89c1b15cd3d6e3c48dab6eba7bc6b",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；窗口冲突选择夹具或跨星交换最佳改善夹具；A000017经完整运行时和合法性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "5936bbbedead2e269a960cb6e64e8dca98f7e7f68d5223816523335d673546a4",
+      "parent_snapshot": "../versions/A-017/5936bbbedead2e269a960cb6e64e8dca98f7e7f68d5223816523335d673546a4.json",
+      "storage_migration": "inline_lines_to_source_files"
+    },
+    {
+      "case_sha256": "b3e3a851db73b40e4336b7f1f1268a027a885d50e504ff6a4112f1453cfa9f68",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；窗口冲突选择夹具或跨星交换最佳改善夹具；A000017经完整运行时和合法性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "177f071f20132d70e2b7b1c736b72be497e89c1b15cd3d6e3c48dab6eba7bc6b",
+      "parent_snapshot": "../versions/A-017/177f071f20132d70e2b7b1c736b72be497e89c1b15cd3d6e3c48dab6eba7bc6b.json",
+      "description_revision": {
+        "method": "删除超时后必定返回已验证检查点的表述；不同超时路径的运行合同不变。",
+        "date": "2026-11-12"
+      }
+    }
+  ]
+}

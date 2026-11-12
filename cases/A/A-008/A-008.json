@@ -1,0 +1,29 @@
+{
+  "case_id": "A-008",
+  "category": "maximum_window_length",
+  "description": [
+    "Initialization only: Assign tasks (descending reward) to the satellite with the most ",
+    "interior attitude records across accommodating windows. Unassigned if none."
+  ],
+  "code": {
+    "format": "file_markers",
+    "files": [
+      {
+        "path": "src/method/rkhma/legacy/utils/CaseA000008.java",
+        "sha256": "bf24f9d8b24cd3135eebdca042a41b2294f01cd908daa862109f2bf3c6e3f4d4"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java",
+        "sha256": "6a249cd1e19ff6e078b7db3f9aec1fb5a373f09c05756bf1242eba9565340e29"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java",
+        "sha256": "3fbb48a71a6fa8f7ad6f03f55358dd39e51715c07127f585a18d5ec8c4981280"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/MaxWindowLengthStrategy.java",
+        "sha256": "bcd164ad39c6c7169aa89f137a249104f96a78babd9c4281e25151dc9ddc68e3"
+      }
+    ]
+  }
+}

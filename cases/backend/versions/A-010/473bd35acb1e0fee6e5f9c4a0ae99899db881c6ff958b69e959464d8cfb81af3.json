@@ -1,0 +1,216 @@
+{
+  "case_id": "A-010",
+  "category": "composite_reassignment",
+  "description": [
+    "Initialization: Assign tasks (descending reward) to satellite with highest composite score ",
+    "(window records, window count, load, overlap ratio, adjusted by scarcity).\n\n",
+    "Reassignment (unobserved tasks ranked by reward, candidate satellites, window count, and dynamic task key):\n",
+    "- Target Ranking: Rank non-owner satellites by window count, total duration, earliest start, and feedback score; filter by feasible candidates.\n",
+    "- Migration: Trial top target satellites for highest internal-score gain.\n",
+    "- Replacement: If migration fails, replace overlapping/nearby lower-reward observations for top-K tasks (or multi-task removal).\n",
+    "- Exchange: Assign task while relocating conflicting task to another satellite.\n",
+    "- Bundling: Assign clusters of tasks with nearby window starts to a shared satellite.\n",
+    "- Acceptance: Accept moves with largest positive internal-score gain; may trigger full-satellite recalibration."
+  ],
+  "code": {
+    "format": "file_markers",
+    "files": [
+      {
+        "path": "src/method/runtime/RkhmaAllocation.java",
+        "sha256": "e07786710ddf9a46b4dd29f26652f5e95633456e96263a61171fdf5e009afc0e"
+      },
+      {
+        "path": "src/method/rkhma/bridge/ProblemBridge.java",
+        "sha256": "db5fa707666e35362d2346f4fc946af2be8adc177aa05b702289aa743505ed3f"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/AlgorithmConstants.java",
+        "sha256": "d9a22399cba82475ac4f9524800302d6248b685b1c2c34540d8b8986a2dfa15d"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/AlgorithmParameterValidator.java",
+        "sha256": "8d6a64f6232ed64426bc5bbfe8f74167f3f5cf7749394591c08f3581c634fc50"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/BoundaryHandler.java",
+        "sha256": "219da25c02317767085c28edeac454cc30c891d30a9cf7808953cbdfaffe3a79"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/ConfigStringUtils.java",
+        "sha256": "55dddc8db9a4ae65211148fb96ad95b4cbc0b2fedb04a844403db96334426a35"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/EliteConfigArchive.java",
+        "sha256": "f09e08ec8226102b182c1c05b83d00891482e4204986d4ff105bcb3024c89ffb"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/FastGaussian.java",
+        "sha256": "85dd06a071273c50fc676da65b39a090c88a7df06c3ce40c1aa598a65e2bcaf9"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/RandomProvider.java",
+        "sha256": "d6d3c1cbe855de3a1269a50fbef1530410825f40ddf54fdd90bdeca9a9b64486"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/ResizePop.java",
+        "sha256": "ab73867fa6ec407b0c3b8e39340cfa4d0ba560918eb7e3e2f31973870f964d26"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/SearchDeadline.java",
+        "sha256": "5047dfd28786b8f386c604d956066ac7dc409e755e4cbb2597bb0e948a51c0bf"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/TuningConfig.java",
+        "sha256": "8a78b28fc5c9bd2a06307b0dcc932bd50ffe910129f35a3232f301c7bc38d294"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/TuningDefaults.java",
+        "sha256": "e5917fce0c1b23931e669f76c3d4684013b8f7efcc068af8b5f38f9846b7587f"
+      },
+      {
+        "path": "src/method/rkhma/legacy/utils/AssignTaskOperator.java",
+        "sha256": "80c6bf2b06e88fc94b1731409da536318303416c28cfb7eeb045a79628a57381"
+      },
+      {
+        "path": "src/method/rkhma/legacy/utils/CandidateArchive.java",
+        "sha256": "8cedba59ba62ac40c498af0953b3dd5baae9b6f355442412d1b7a26a616f8ff5"
+      },
+      {
+        "path": "src/method/rkhma/legacy/utils/DecodeWorkspace.java",
+        "sha256": "c7a70f111a52415004cc608d650d247024bdffd03fe1d742566d409dd681a0df"
+      },
+      {
+        "path": "src/method/rkhma/legacy/utils/FitnessUtils.java",
+        "sha256": "4d0c0380ce907303af495bc99cd2fe583b44dcdbe01886ded656314fd3d8f5db"
+      },
+      {
+        "path": "src/method/rkhma/legacy/utils/Initialize.java",
+        "sha256": "da8889b6d9dda1d99f85f998a9d28cc8833f6246da38ff17174a54c10e78fcbb"
+      },
+      {
+        "path": "src/method/rkhma/legacy/utils/ListUtils.java",
+        "sha256": "7a9105491ad79f01066b5b445138e587de7e9e8d98b3d2f6e5babe003acc25bc"
+      },
+      {
+        "path": "src/method/rkhma/legacy/utils/PlanUtils.java",
+        "sha256": "368ec50b79bf5a933140474e4e27392e70c04c15af2aba9fc3842850b4bf5385"
+      },
+      {
+        "path": "src/method/rkhma/legacy/utils/TimeUtils.java",
+        "sha256": "3be2e340dc79d4c954d4e62d5403683ccabeb6dd5729e7edfd41621e4892f210"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java",
+        "sha256": "3fbb48a71a6fa8f7ad6f03f55358dd39e51715c07127f585a18d5ec8c4981280"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java",
+        "sha256": "6a249cd1e19ff6e078b7db3f9aec1fb5a373f09c05756bf1242eba9565340e29"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/CompositeStrategy.java",
+        "sha256": "019393b8479d2fcbb67d8f7e4e720850f05257f0be983c4e0dfe7103860e60f2"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/CompositeWithCapacityStrategy.java",
+        "sha256": "5eca53151a3b6a9f5da430966034954ce4492ce95fc34e00d2948f6329560ed1"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/EarliestTimeStrategy.java",
+        "sha256": "a3bc9c94dc2350dfc3fddf05e23725aaa75903fc18bca1cfea518303f5b4ca5b"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/MaxWindowCountStrategy.java",
+        "sha256": "5481b07cc78cf116949ee12eb9d71933c47f343147f1dc8b6a20979ca4b7948a"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/MaxWindowLengthStrategy.java",
+        "sha256": "bcd164ad39c6c7169aa89f137a249104f96a78babd9c4281e25151dc9ddc68e3"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/MinPriorityStrategy.java",
+        "sha256": "6e241d5e7328ffe47c6393ea1b0ebafa49e3d91f35bc5af567332c5f5bc464d1"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/MinRollAngleStrategy.java",
+        "sha256": "9aeb2f1c82596b7b56723ea6967c1ef65ab66aaf33cde54f1501e1f5523836e3"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java",
+        "sha256": "a4fee6af3dba9a8412e0d2d3e7e933b222309581c2dffc7b8b49661cd99a3628"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/RandomStrategy.java",
+        "sha256": "5ae524861f5e830b338539862334be92b6046fcc30929344fb8a82755a1df7cf"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/AssignmentDeltaEvaluator.java",
+        "sha256": "49e3de3a4b0a2b9d12711b7cd514a79294c402ba786b179c0178094cede21dd2"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/AssignmentOverlayMap.java",
+        "sha256": "bf3be7d8e2a1e4daa67f894e059789251bb05ce7c6d7f130d0a3337e1a39b411"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/BundleMoveEvaluator.java",
+        "sha256": "2774c980df5828567f52d52f2ad78c6d206f86db7d0ae37810c9480c4adf8cd8"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/DeltaFastRefiner.java",
+        "sha256": "2cb724afbcf9b141f394885bf6f020a2f980b3054e37a1630c248bb3fb9a4e9e"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/ParallelPolicy.java",
+        "sha256": "f96c2a08c41a8a378c926657000b86e82319194195653d601a6d3ec3cd4abe0a"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/ReassignmentMoveEvaluator.java",
+        "sha256": "6907021466886ad2a24cc54b4e4f9ea913d0dce5b171bed146127368c92034f2"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/ReassignmentMoveServices.java",
+        "sha256": "1b899efaf1c8f420fd8a60a6cd18803746e17b86082330dd9fe945f2f9f45336"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/ReassignmentOrchestrator.java",
+        "sha256": "85f316a05960b97ce5a114f6ca4dd1d74f3d6439bc5504bce69b9be5e0656523"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/ReplacementMoveEvaluator.java",
+        "sha256": "d61afce353f2dc3a9e027864bb54f451d03823b43d02e016183635f3da6221b1"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/SingleAlgorithmOptimizer.java",
+        "sha256": "a8c4b4763cd2d300cb69f902c770049fdb0c57c5b1b5ad870bb3c8b45e3889de"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/SwapMoveEvaluator.java",
+        "sha256": "3165eac2e1758a66ddf9dc8ef6730effe951bcdb7f78aa053fb8b094cd2eff6d"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/TargetSatelliteRanker.java",
+        "sha256": "8df4872a6d20912b2aeb77ea5a8f5967b274202519b2d272c8940b36b3638151"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/TargetSatelliteSelector.java",
+        "sha256": "91e65a91ff07fb23226382a07f8e937bcb54c55883c279220e8656cb022ca7a2"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/TaskAllocationCoordinator.java",
+        "sha256": "695d28ca96eac8b34813c24880c0ce5807fd8e363c69ce43a0ad00e132ec01fa"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/TaskAllocationModels.java",
+        "sha256": "d3bc78febc649d37b9e1e0af6265d256d9798c1d4e1dd4fb2bb9b3b051b8dd06"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/TaskAllocationScoring.java",
+        "sha256": "73a905ab84a96f6bc58b55ddf3ff3936720a9f73883b6a9c6fb47660f7b49511"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/TaskSatelliteKnnCache.java",
+        "sha256": "638ad644e64982a993ef72b462f1603a05ac4f8d6b84bfd9d451228b63a2e0be"
+      }
+    ]
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "case_id": "A-012",
+  "previous_case_ids": [
+    "A-000012"
+  ],
+  "versions": [
+    {
+      "case_sha256": "99bc7e438207af86456b1044af72488c01a4bace85d0b1d61db7dd35e8b460cc",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；合法候选与无候选任务夹具；匹配、精确负载和不同决策规则的针对性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "2cb5d60e7df9754d27bf5d1772a3549fa1d2ae5507e473f76ddd0123d58a1c81",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；合法候选与无候选任务夹具；匹配、精确负载和不同决策规则的针对性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "99bc7e438207af86456b1044af72488c01a4bace85d0b1d61db7dd35e8b460cc"
+    },
+    {
+      "case_sha256": "a784067555eb098256e1fb16ed41ea42cfe01f07ada08c17f818396907563f2e",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；合法候选与无候选任务夹具；匹配、精确负载和不同决策规则的针对性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "2cb5d60e7df9754d27bf5d1772a3549fa1d2ae5507e473f76ddd0123d58a1c81"
+    },
+    {
+      "case_sha256": "e65da056b7cc29de045e3ca06b47cfe0d0406e2b062bbf5638c7fd7b2dc8b126",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；合法候选与无候选任务夹具；匹配、精确负载和不同决策规则的针对性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "a784067555eb098256e1fb16ed41ea42cfe01f07ada08c17f818396907563f2e"
+    },
+    {
+      "case_sha256": "06c782ad5b5fa7a83000f0bd71b6cee1c0211996000f8665fa01361c8b799428",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；合法候选与无候选任务夹具；匹配、精确负载和不同决策规则的针对性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "e65da056b7cc29de045e3ca06b47cfe0d0406e2b062bbf5638c7fd7b2dc8b126"
+    },
+    {
+      "case_sha256": "68028ccfd275a6b196bc6d0c183799129227491f09236c5525577dc03a98fe79",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；合法候选与无候选任务夹具；匹配、精确负载和不同决策规则的针对性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "06c782ad5b5fa7a83000f0bd71b6cee1c0211996000f8665fa01361c8b799428"
+    },
+    {
+      "case_sha256": "70cb13e3473c8b9af37bcc10cb38fa41082bbbb63b8757f26c8928639fc15957",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；合法候选与无候选任务夹具；匹配、精确负载和不同决策规则的针对性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "68028ccfd275a6b196bc6d0c183799129227491f09236c5525577dc03a98fe79"
+    },
+    {
+      "case_sha256": "45c665f41cbc62f768a15152cbf2ee2b691d01553547759f0c1835a5d86ded0a",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；合法候选与无候选任务夹具；匹配、精确负载和不同决策规则的针对性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "70cb13e3473c8b9af37bcc10cb38fa41082bbbb63b8757f26c8928639fc15957",
+      "description_revision": {
+        "method": "按结构化精炼模板重写 description（阶段拆分、列表化算子、显式平局/门禁/终止准则）",
+        "date": "2026-11-12"
+      }
+    },
+    {
+      "case_sha256": "c37b03fa9a3c4181f4a6910ea3435f7b85fa982953cfb58d88e12c0f8b712cc5",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；合法候选与无候选任务夹具；匹配、精确负载和不同决策规则的针对性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "45c665f41cbc62f768a15152cbf2ee2b691d01553547759f0c1835a5d86ded0a",
+      "parent_snapshot": "../versions/A-012/45c665f41cbc62f768a15152cbf2ee2b691d01553547759f0c1835a5d86ded0a.json",
+      "storage_migration": "inline_lines_to_source_files"
+    }
+  ]
+}

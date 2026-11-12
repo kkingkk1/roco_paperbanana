@@ -1,0 +1,18 @@
+{
+  "case_id": "A-014",
+  "category": "matching_then_load",
+  "description": [
+    "Initialization only: Match tasks (descending reward, ascending task ID) to distinct satellites via augmenting paths (one-to-one). ",
+    "Assign remaining tasks to candidate satellite with minimum assigned duration; tie-break by smaller satellite ID. ",
+    "Unassigned if no candidates."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000014.java",
+        "sha256": "0ba23611643987806954736fea3418d8e858021897e9420a72433b5a9a57ba80"
+      }
+    ]
+  }
+}

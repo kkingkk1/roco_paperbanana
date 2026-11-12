@@ -1,0 +1,351 @@
+{
+  "case_id": "A-025",
+  "previous_case_ids": [
+    "A-000025"
+  ],
+  "versions": [
+    {
+      "case_sha256": "c11d573f97854638cc68177e58c71dc41b7b13443730df77a82b96351ceae915",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/24/f4/4524de82706ab2151bfa8f6c6d46db62561f9a6522651c144a27b6c06711/fastlap-0.4.0.tar.gz",
+          "version": {
+            "release": "fastlap 0.4.0, 2026-09-18",
+            "archive_sha256": "7c4e92d7d60043ed33dafbac77c79b99329ef8d364456cb4f7ff6a6f5aca8dcf",
+            "source_file_sha256": {
+              "LICENSE": "74de38034c000100f549482994fd1a84c9e61ba2e47ad48a7624b67bb65892ae",
+              "src/types.rs": "cb31ef66dd133f5a443c7e58b65d77804ddc4c1724e9f875a63eafda756a6905",
+              "src/lap/bottleneck.rs": "c287de9f2ef890efe2fcfd923f09b92a1f646bb3a6afdc5eca3baf5da3de03a1",
+              "src/utils.rs": "913cc6a0caf4fc2afe1b79f956b0a1de60223b1b634157a0400c88be7d7d5a11"
+            }
+          },
+          "usage_conditions": "源码包LICENSE为MIT，要求在副本或实质部分保留版权及许可声明；案例code保留该声明。仅在遵守许可条件时允许外发；本项目禁止来源声明进入提示的场景不能发送包含该声明的完整代码。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "依发布包逐文件核对来源散列；保留对应算法，提取其需要的通用辅助，编译独立Rust crate并运行源内及构造夹具测试。每条对30个3×3矩阵检查对应目标与归属。"
+          },
+          "external_model_use": "allowed",
+          "source_free_prompt_allowed": false
+        },
+        {
+          "location": "本项目本轮为选取源码新增Rust模块声明，并从原utils保留辅助函数部分；完整整理结果保存于案例code",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；新增模块声明无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "独立编译及逐案例夹具测试；算法文件保持源码包原文。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "3abbea18ad745e38b2f4b1f28f5b3650152478f5da0ebdb01085b7d7dddba612",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/24/f4/4524de82706ab2151bfa8f6c6d46db62561f9a6522651c144a27b6c06711/fastlap-0.4.0.tar.gz",
+          "version": {
+            "release": "fastlap 0.4.0, 2026-09-18",
+            "archive_sha256": "7c4e92d7d60043ed33dafbac77c79b99329ef8d364456cb4f7ff6a6f5aca8dcf",
+            "source_file_sha256": {
+              "LICENSE": "74de38034c000100f549482994fd1a84c9e61ba2e47ad48a7624b67bb65892ae",
+              "src/types.rs": "cb31ef66dd133f5a443c7e58b65d77804ddc4c1724e9f875a63eafda756a6905",
+              "src/lap/bottleneck.rs": "c287de9f2ef890efe2fcfd923f09b92a1f646bb3a6afdc5eca3baf5da3de03a1",
+              "src/utils.rs": "913cc6a0caf4fc2afe1b79f956b0a1de60223b1b634157a0400c88be7d7d5a11"
+            }
+          },
+          "usage_conditions": "源码包LICENSE为MIT，要求在副本或实质部分保留版权及许可声明；案例code保留该声明。仅在遵守许可条件时允许外发；本项目禁止来源声明进入提示的场景不能发送包含该声明的完整代码。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "依发布包逐文件核对来源散列；保留对应算法，提取其需要的通用辅助，编译独立Rust crate并运行源内及构造夹具测试。每条对30个3×3矩阵检查对应目标与归属。"
+          },
+          "external_model_use": "allowed",
+          "source_free_prompt_allowed": false
+        },
+        {
+          "location": "本项目本轮为选取源码新增Rust模块声明，并从原utils保留辅助函数部分；完整整理结果保存于案例code",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；新增模块声明无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "独立编译及逐案例夹具测试；算法文件保持源码包原文。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "c11d573f97854638cc68177e58c71dc41b7b13443730df77a82b96351ceae915"
+    },
+    {
+      "case_sha256": "530bd33099556a3f73001156dfb9521fb7a6d2861f2c54c910eeef6253804ce5",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/24/f4/4524de82706ab2151bfa8f6c6d46db62561f9a6522651c144a27b6c06711/fastlap-0.4.0.tar.gz",
+          "version": {
+            "release": "fastlap 0.4.0, 2026-09-18",
+            "archive_sha256": "7c4e92d7d60043ed33dafbac77c79b99329ef8d364456cb4f7ff6a6f5aca8dcf",
+            "source_file_sha256": {
+              "LICENSE": "74de38034c000100f549482994fd1a84c9e61ba2e47ad48a7624b67bb65892ae",
+              "src/types.rs": "cb31ef66dd133f5a443c7e58b65d77804ddc4c1724e9f875a63eafda756a6905",
+              "src/lap/bottleneck.rs": "c287de9f2ef890efe2fcfd923f09b92a1f646bb3a6afdc5eca3baf5da3de03a1",
+              "src/utils.rs": "913cc6a0caf4fc2afe1b79f956b0a1de60223b1b634157a0400c88be7d7d5a11"
+            }
+          },
+          "usage_conditions": "源码包LICENSE为MIT，要求在副本或实质部分保留版权及许可声明；案例code保留该声明。仅在遵守许可条件时允许外发；本项目禁止来源声明进入提示的场景不能发送包含该声明的完整代码。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "依发布包逐文件核对来源散列；保留对应算法，提取其需要的通用辅助，编译独立Rust crate并运行源内及构造夹具测试。每条对30个3×3矩阵检查对应目标与归属。"
+          },
+          "external_model_use": "allowed",
+          "source_free_prompt_allowed": false
+        },
+        {
+          "location": "本项目本轮为选取源码新增Rust模块声明，并从原utils保留辅助函数部分；完整整理结果保存于案例code",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；新增模块声明无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "独立编译及逐案例夹具测试；算法文件保持源码包原文。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "3abbea18ad745e38b2f4b1f28f5b3650152478f5da0ebdb01085b7d7dddba612"
+    },
+    {
+      "case_sha256": "b78ac7a623b9f9e47822113e59112f3bf1a42341a85ce17dca8e089ca51965a4",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/24/f4/4524de82706ab2151bfa8f6c6d46db62561f9a6522651c144a27b6c06711/fastlap-0.4.0.tar.gz",
+          "version": {
+            "release": "fastlap 0.4.0, 2026-09-18",
+            "archive_sha256": "7c4e92d7d60043ed33dafbac77c79b99329ef8d364456cb4f7ff6a6f5aca8dcf",
+            "source_file_sha256": {
+              "LICENSE": "74de38034c000100f549482994fd1a84c9e61ba2e47ad48a7624b67bb65892ae",
+              "src/types.rs": "cb31ef66dd133f5a443c7e58b65d77804ddc4c1724e9f875a63eafda756a6905",
+              "src/lap/bottleneck.rs": "c287de9f2ef890efe2fcfd923f09b92a1f646bb3a6afdc5eca3baf5da3de03a1",
+              "src/utils.rs": "913cc6a0caf4fc2afe1b79f956b0a1de60223b1b634157a0400c88be7d7d5a11"
+            }
+          },
+          "usage_conditions": "源码包LICENSE为MIT，要求在副本或实质部分保留版权及许可声明；案例code保留该声明。仅在遵守许可条件时允许外发；本项目禁止来源声明进入提示的场景不能发送包含该声明的完整代码。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "依发布包逐文件核对来源散列；保留对应算法，提取其需要的通用辅助，编译独立Rust crate并运行源内及构造夹具测试。每条对30个3×3矩阵检查对应目标与归属。"
+          },
+          "external_model_use": "allowed",
+          "source_free_prompt_allowed": false
+        },
+        {
+          "location": "本项目本轮为选取源码新增Rust模块声明，并从原utils保留辅助函数部分；完整整理结果保存于案例code",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；新增模块声明无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "独立编译及逐案例夹具测试；算法文件保持源码包原文。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "530bd33099556a3f73001156dfb9521fb7a6d2861f2c54c910eeef6253804ce5"
+    },
+    {
+      "case_sha256": "40f16b9c9f7a4ea2335c17d61fcc5674c07a8344e22c815ed149731dc58b33ab",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/24/f4/4524de82706ab2151bfa8f6c6d46db62561f9a6522651c144a27b6c06711/fastlap-0.4.0.tar.gz",
+          "version": {
+            "release": "fastlap 0.4.0, 2026-09-18",
+            "archive_sha256": "7c4e92d7d60043ed33dafbac77c79b99329ef8d364456cb4f7ff6a6f5aca8dcf",
+            "source_file_sha256": {
+              "LICENSE": "74de38034c000100f549482994fd1a84c9e61ba2e47ad48a7624b67bb65892ae",
+              "src/types.rs": "cb31ef66dd133f5a443c7e58b65d77804ddc4c1724e9f875a63eafda756a6905",
+              "src/lap/bottleneck.rs": "c287de9f2ef890efe2fcfd923f09b92a1f646bb3a6afdc5eca3baf5da3de03a1",
+              "src/utils.rs": "913cc6a0caf4fc2afe1b79f956b0a1de60223b1b634157a0400c88be7d7d5a11"
+            }
+          },
+          "usage_conditions": "源码包LICENSE为MIT，要求在副本或实质部分保留版权及许可声明；案例code保留该声明。仅在遵守许可条件时允许外发；本项目禁止来源声明进入提示的场景不能发送包含该声明的完整代码。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "依发布包逐文件核对来源散列；保留对应算法，提取其需要的通用辅助，编译独立Rust crate并运行源内及构造夹具测试。每条对30个3×3矩阵检查对应目标与归属。"
+          },
+          "external_model_use": "allowed",
+          "source_free_prompt_allowed": false
+        },
+        {
+          "location": "本项目本轮为选取源码新增Rust模块声明，并从原utils保留辅助函数部分；完整整理结果保存于案例code",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；新增模块声明无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "独立编译及逐案例夹具测试；算法文件保持源码包原文。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "b78ac7a623b9f9e47822113e59112f3bf1a42341a85ce17dca8e089ca51965a4"
+    },
+    {
+      "case_sha256": "5ed6730769bd1d0cf4ec0e228f783755a73eb815c2bd059ee30bb6155d3d8597",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/24/f4/4524de82706ab2151bfa8f6c6d46db62561f9a6522651c144a27b6c06711/fastlap-0.4.0.tar.gz",
+          "version": {
+            "release": "fastlap 0.4.0, 2026-09-18",
+            "archive_sha256": "7c4e92d7d60043ed33dafbac77c79b99329ef8d364456cb4f7ff6a6f5aca8dcf",
+            "source_file_sha256": {
+              "LICENSE": "74de38034c000100f549482994fd1a84c9e61ba2e47ad48a7624b67bb65892ae",
+              "src/types.rs": "cb31ef66dd133f5a443c7e58b65d77804ddc4c1724e9f875a63eafda756a6905",
+              "src/lap/bottleneck.rs": "c287de9f2ef890efe2fcfd923f09b92a1f646bb3a6afdc5eca3baf5da3de03a1",
+              "src/utils.rs": "913cc6a0caf4fc2afe1b79f956b0a1de60223b1b634157a0400c88be7d7d5a11"
+            }
+          },
+          "usage_conditions": "源码包LICENSE为MIT，要求在副本或实质部分保留版权及许可声明；案例code保留该声明。仅在遵守许可条件时允许外发；本项目禁止来源声明进入提示的场景不能发送包含该声明的完整代码。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "依发布包逐文件核对来源散列；保留对应算法，提取其需要的通用辅助，编译独立Rust crate并运行源内及构造夹具测试。每条对30个3×3矩阵检查对应目标与归属。"
+          },
+          "external_model_use": "allowed",
+          "source_free_prompt_allowed": false
+        },
+        {
+          "location": "本项目本轮为选取源码新增Rust模块声明，并从原utils保留辅助函数部分；完整整理结果保存于案例code",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；新增模块声明无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "独立编译及逐案例夹具测试；算法文件保持源码包原文。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "40f16b9c9f7a4ea2335c17d61fcc5674c07a8344e22c815ed149731dc58b33ab"
+    },
+    {
+      "case_sha256": "7ef2e3c3413087b04197bd4cc4c48f5c16ef5da3232219fa2c7b3ab893264c49",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/24/f4/4524de82706ab2151bfa8f6c6d46db62561f9a6522651c144a27b6c06711/fastlap-0.4.0.tar.gz",
+          "version": {
+            "release": "fastlap 0.4.0, 2026-09-18",
+            "archive_sha256": "7c4e92d7d60043ed33dafbac77c79b99329ef8d364456cb4f7ff6a6f5aca8dcf",
+            "source_file_sha256": {
+              "LICENSE": "74de38034c000100f549482994fd1a84c9e61ba2e47ad48a7624b67bb65892ae",
+              "src/types.rs": "cb31ef66dd133f5a443c7e58b65d77804ddc4c1724e9f875a63eafda756a6905",
+              "src/lap/bottleneck.rs": "c287de9f2ef890efe2fcfd923f09b92a1f646bb3a6afdc5eca3baf5da3de03a1",
+              "src/utils.rs": "913cc6a0caf4fc2afe1b79f956b0a1de60223b1b634157a0400c88be7d7d5a11"
+            }
+          },
+          "usage_conditions": "源码包LICENSE为MIT，要求在副本或实质部分保留版权及许可声明；案例code保留该声明。仅在遵守许可条件时允许外发；本项目禁止来源声明进入提示的场景不能发送包含该声明的完整代码。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "依发布包逐文件核对来源散列；保留对应算法，提取其需要的通用辅助，编译独立Rust crate并运行源内及构造夹具测试。每条对30个3×3矩阵检查对应目标与归属。"
+          },
+          "external_model_use": "allowed",
+          "source_free_prompt_allowed": false
+        },
+        {
+          "location": "本项目本轮为选取源码新增Rust模块声明，并从原utils保留辅助函数部分；完整整理结果保存于案例code",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；新增模块声明无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "独立编译及逐案例夹具测试；算法文件保持源码包原文。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "5ed6730769bd1d0cf4ec0e228f783755a73eb815c2bd059ee30bb6155d3d8597",
+      "description_revision": {
+        "method": "按结构化精炼模板重写 description（阶段拆分、列表化算子、显式平局/门禁/终止准则）",
+        "date": "2026-11-12"
+      }
+    },
+    {
+      "case_sha256": "0717a7fe9845fed6ec94b0460f9280995a58abcd4901843702467dd1db0be651",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/24/f4/4524de82706ab2151bfa8f6c6d46db62561f9a6522651c144a27b6c06711/fastlap-0.4.0.tar.gz",
+          "version": {
+            "release": "fastlap 0.4.0, 2026-09-18",
+            "archive_sha256": "7c4e92d7d60043ed33dafbac77c79b99329ef8d364456cb4f7ff6a6f5aca8dcf",
+            "source_file_sha256": {
+              "LICENSE": "74de38034c000100f549482994fd1a84c9e61ba2e47ad48a7624b67bb65892ae",
+              "src/types.rs": "cb31ef66dd133f5a443c7e58b65d77804ddc4c1724e9f875a63eafda756a6905",
+              "src/lap/bottleneck.rs": "c287de9f2ef890efe2fcfd923f09b92a1f646bb3a6afdc5eca3baf5da3de03a1",
+              "src/utils.rs": "913cc6a0caf4fc2afe1b79f956b0a1de60223b1b634157a0400c88be7d7d5a11"
+            }
+          },
+          "usage_conditions": "源码包LICENSE为MIT，要求在副本或实质部分保留版权及许可声明；案例code保留该声明。仅在遵守许可条件时允许外发；本项目禁止来源声明进入提示的场景不能发送包含该声明的完整代码。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "依发布包逐文件核对来源散列；保留对应算法，提取其需要的通用辅助，编译独立Rust crate并运行源内及构造夹具测试。每条对30个3×3矩阵检查对应目标与归属。"
+          },
+          "external_model_use": "allowed",
+          "source_free_prompt_allowed": false
+        },
+        {
+          "location": "本项目本轮为选取源码新增Rust模块声明，并从原utils保留辅助函数部分；完整整理结果保存于案例code",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；新增模块声明无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "独立编译及逐案例夹具测试；算法文件保持源码包原文。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "7ef2e3c3413087b04197bd4cc4c48f5c16ef5da3232219fa2c7b3ab893264c49",
+      "parent_snapshot": "../versions/A-025/7ef2e3c3413087b04197bd4cc4c48f5c16ef5da3232219fa2c7b3ab893264c49.json",
+      "storage_migration": "inline_lines_to_source_files"
+    },
+    {
+      "case_sha256": "85679f3aa0ea2fae8eed9cc2a7af23e969eb6016342a13952e3cb8ba405c92f9",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/24/f4/4524de82706ab2151bfa8f6c6d46db62561f9a6522651c144a27b6c06711/fastlap-0.4.0.tar.gz",
+          "version": {
+            "release": "fastlap 0.4.0, 2026-09-18",
+            "archive_sha256": "7c4e92d7d60043ed33dafbac77c79b99329ef8d364456cb4f7ff6a6f5aca8dcf",
+            "source_file_sha256": {
+              "LICENSE": "74de38034c000100f549482994fd1a84c9e61ba2e47ad48a7624b67bb65892ae",
+              "src/types.rs": "cb31ef66dd133f5a443c7e58b65d77804ddc4c1724e9f875a63eafda756a6905",
+              "src/lap/bottleneck.rs": "c287de9f2ef890efe2fcfd923f09b92a1f646bb3a6afdc5eca3baf5da3de03a1",
+              "src/utils.rs": "913cc6a0caf4fc2afe1b79f956b0a1de60223b1b634157a0400c88be7d7d5a11"
+            }
+          },
+          "usage_conditions": "源码包LICENSE为MIT，要求在副本或实质部分保留版权及许可声明；案例code保留该声明。仅在遵守许可条件时允许外发；本项目禁止来源声明进入提示的场景不能发送包含该声明的完整代码。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "依发布包逐文件核对来源散列；保留对应算法，提取其需要的通用辅助，编译独立Rust crate并运行源内及构造夹具测试。每条对30个3×3矩阵检查对应目标与归属。"
+          },
+          "external_model_use": "allowed",
+          "source_free_prompt_allowed": false
+        },
+        {
+          "location": "本项目本轮为选取源码新增Rust模块声明，并从原utils保留辅助函数部分；完整整理结果保存于案例code",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；新增模块声明无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "独立编译及逐案例夹具测试；算法文件保持源码包原文。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "0717a7fe9845fed6ec94b0460f9280995a58abcd4901843702467dd1db0be651",
+      "parent_snapshot": "../versions/A-025/0717a7fe9845fed6ec94b0460f9280995a58abcd4901843702467dd1db0be651.json",
+      "description_revision": {
+        "method": "按来源说明完美匹配阈值搜索，以及无法完美匹配时最高阈值回退的限制；算法代码不变。",
+        "date": "2026-11-12"
+      }
+    }
+  ]
+}

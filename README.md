@@ -4,7 +4,7 @@
 在统一求解条件下，评价其相对手工起点的收益与实际成本。
 智能体在研发阶段检索方法、规划设计、生成代码、分析执行结果并协作改进，最终运行生成并冻结的求解器。
 
-当前已实现问题输入、候选迭代、完整调度验证、两阶段手工运行时和可互换的RKHMA A/B/C模块。
+当前已实现问题输入、候选迭代、完整调度验证、两阶段手工运行时、可互换的RKHMA A/B/C模块，以及案例读取与完整性校验。
 P1工程验收已完成；P2的五角色协作演化系统尚未实现。
 
 ## 研究路线
@@ -14,7 +14,7 @@ P1工程验收已完成；P2的五角色协作演化系统尚未实现。
 Retriever每次独立演化只初始化检索一次；A/B/C分别保留反思与长期记忆，协同经验另存。
 
 冻结代码求解实例时，统一目标流程为A初始归属、B/C单星搜索，再基于已有调度由A重分配并由B/C更新。每个A/B/C版本都支持两个阶段，实例内不调用LLM。
-后台采用候选记录、评价记录和运行级公共信息；公共信息每次运行只存一份，案例`source`仅留后台。
+后台采用候选记录、评价记录和运行级公共信息；公共信息每次运行只存一份。正式案例按决策逻辑去重，元数据和完整算法源码存于独立的[案例目录](cases/README.md)；入库时不要求已适配本项目接口或预先证明收益更高，案例`source`仅留后台。
 
 阶段状态与路线见[主计划P0—P4](vault/Plan/面向成像卫星任务调度的多智能体协作自动算法设计.md)，接口、先导配置及评价规则见[方法与评价合同](vault/Knowledge/多智能体算法与评价合同.md)。
 已完成的起点验收见[P1：可运行求解器起点](vault/Plan/mechanisms/P1-可运行求解器起点.md)；后续协作演化工作见[P2阶段计划](vault/Plan/mechanisms/P2-五角色协作演化.md)。
@@ -43,7 +43,7 @@ mvn -o test
 
 ```powershell
 java -Xmx2g -cp target/classes main.InspectScene `
-  'E:\OneDrive\project\static_determine\Scene\1000-10-0-0-12' `
+  'F:\OneDrive\project\static_determine\Scene\1000-10-0-0-12' `
   1000 10
 ```
 
@@ -55,7 +55,7 @@ java -Xmx2g -cp target/classes main.InspectScene `
 
 ```powershell
 .\scripts\run-manual.ps1 `
-  -Scene 'E:\OneDrive\project\static_determine\Scene\500-5-0-0-24' `
+  -Scene 'F:\OneDrive\project\static_determine\Scene\500-5-0-0-24' `
   -Tasks 500 -Satellites 5 -Combination A1B1C1 -Seed 42
 ```
 

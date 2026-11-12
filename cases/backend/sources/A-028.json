@@ -1,0 +1,297 @@
+{
+  "case_id": "A-028",
+  "previous_case_ids": [
+    "A-000028"
+  ],
+  "versions": [
+    {
+      "case_sha256": "988a7c142d09be330f9168c62ed8eb1bec64a5113f72c33f0cb471a9c66dd536",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/f1/e4/4fb52371a0bda9e641e72fa3d160502bc0197b1ae93bbd383dce6ee15065/sbma-1.0.2.tar.gz",
+          "version": {
+            "release": "sbma 1.0.2, 2026-09-23",
+            "archive_sha256": "3bec5e75cc2659d2b2aef4f9a9aa23b5d6b7983b44a04e2dcddd2ddbfbf620f9",
+            "source_file_sha256": {
+              "pyproject.toml": "8d392a2eed635fdd451593a57764cecb3f7e1a9739ea17bd5f03454b1f3d2bfe",
+              "setup.py": "41d070a73b038c3344bfc9dac7a02b2f757575579ea192c32fa44942c0b553cc",
+              "src/sbma/__init__.py": "f5455221ec2ed0c1df8720123cbabb991c85c1fe8ab932c0fdada9a17e3b85d9",
+              "src/sbma/solver.py": "48806dd4284d9208b6787bbbe608af2bb4781733f239e79103ee029df0b9607e",
+              "src/sbma/_solver.cpp": "2d241e885ae9205902a7cecd139352f2bb97483369d45232318f43d80edd2e26",
+              "src/sbma/_starting_point.cpp": "78d0e421f537fb59a2788e6ee932d22434a779f74db53dfff46600b991251d20",
+              "src/sbma/_auxiliaries.cpp": "38c78549fcd9994a914e3051b891f7943d9bcfe7d6322e6106a8090ea6fd7f5c",
+              "src/sbma/_util.cpp": "2e0667b626fed8860b3f43f75aeee5a2e1b81415652de791c92aacd9ca36808f",
+              "src/sbma/_util.hpp": "1997165db17a7ba6ae5ff25dfc8e0c1a9ce2973b044a1d60ed4b7551b1f93234"
+            }
+          },
+          "usage_conditions": "PyPI项目元数据声明MIT；本次读取的源码包未发现独立LICENSE文件或完整版权声明，确切的版权声明和使用条件尚待核实。本地研究整理，未确认前不作为外发合格候选。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "校验官方源码包SHA-256；完整保存所需Python/C++源文件，在target中用现有MSVC、Python和NumPy编译，不安装软件；30个6任务3资源夹具检查归属数量、唯一性与返回得分。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "93d8cd6d3d773c9d00b55d7af484f8d9f5f4ce98b2e5e45d92129e02f6de1152",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/f1/e4/4fb52371a0bda9e641e72fa3d160502bc0197b1ae93bbd383dce6ee15065/sbma-1.0.2.tar.gz",
+          "version": {
+            "release": "sbma 1.0.2, 2026-09-23",
+            "archive_sha256": "3bec5e75cc2659d2b2aef4f9a9aa23b5d6b7983b44a04e2dcddd2ddbfbf620f9",
+            "source_file_sha256": {
+              "pyproject.toml": "8d392a2eed635fdd451593a57764cecb3f7e1a9739ea17bd5f03454b1f3d2bfe",
+              "setup.py": "41d070a73b038c3344bfc9dac7a02b2f757575579ea192c32fa44942c0b553cc",
+              "src/sbma/__init__.py": "f5455221ec2ed0c1df8720123cbabb991c85c1fe8ab932c0fdada9a17e3b85d9",
+              "src/sbma/solver.py": "48806dd4284d9208b6787bbbe608af2bb4781733f239e79103ee029df0b9607e",
+              "src/sbma/_solver.cpp": "2d241e885ae9205902a7cecd139352f2bb97483369d45232318f43d80edd2e26",
+              "src/sbma/_starting_point.cpp": "78d0e421f537fb59a2788e6ee932d22434a779f74db53dfff46600b991251d20",
+              "src/sbma/_auxiliaries.cpp": "38c78549fcd9994a914e3051b891f7943d9bcfe7d6322e6106a8090ea6fd7f5c",
+              "src/sbma/_util.cpp": "2e0667b626fed8860b3f43f75aeee5a2e1b81415652de791c92aacd9ca36808f",
+              "src/sbma/_util.hpp": "1997165db17a7ba6ae5ff25dfc8e0c1a9ce2973b044a1d60ed4b7551b1f93234"
+            }
+          },
+          "usage_conditions": "PyPI项目元数据声明MIT；本次读取的源码包未发现独立LICENSE文件或完整版权声明，确切的版权声明和使用条件尚待核实。本地研究整理，未确认前不作为外发合格候选。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "校验官方源码包SHA-256；完整保存所需Python/C++源文件，在target中用现有MSVC、Python和NumPy编译，不安装软件；30个6任务3资源夹具检查归属数量、唯一性与返回得分。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "988a7c142d09be330f9168c62ed8eb1bec64a5113f72c33f0cb471a9c66dd536"
+    },
+    {
+      "case_sha256": "eec2455d56b17f18372b23d5259c013f22a2b345e169e28013e58eca71ac90d4",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/f1/e4/4fb52371a0bda9e641e72fa3d160502bc0197b1ae93bbd383dce6ee15065/sbma-1.0.2.tar.gz",
+          "version": {
+            "release": "sbma 1.0.2, 2026-09-23",
+            "archive_sha256": "3bec5e75cc2659d2b2aef4f9a9aa23b5d6b7983b44a04e2dcddd2ddbfbf620f9",
+            "source_file_sha256": {
+              "pyproject.toml": "8d392a2eed635fdd451593a57764cecb3f7e1a9739ea17bd5f03454b1f3d2bfe",
+              "setup.py": "41d070a73b038c3344bfc9dac7a02b2f757575579ea192c32fa44942c0b553cc",
+              "src/sbma/__init__.py": "f5455221ec2ed0c1df8720123cbabb991c85c1fe8ab932c0fdada9a17e3b85d9",
+              "src/sbma/solver.py": "48806dd4284d9208b6787bbbe608af2bb4781733f239e79103ee029df0b9607e",
+              "src/sbma/_solver.cpp": "2d241e885ae9205902a7cecd139352f2bb97483369d45232318f43d80edd2e26",
+              "src/sbma/_starting_point.cpp": "78d0e421f537fb59a2788e6ee932d22434a779f74db53dfff46600b991251d20",
+              "src/sbma/_auxiliaries.cpp": "38c78549fcd9994a914e3051b891f7943d9bcfe7d6322e6106a8090ea6fd7f5c",
+              "src/sbma/_util.cpp": "2e0667b626fed8860b3f43f75aeee5a2e1b81415652de791c92aacd9ca36808f",
+              "src/sbma/_util.hpp": "1997165db17a7ba6ae5ff25dfc8e0c1a9ce2973b044a1d60ed4b7551b1f93234"
+            }
+          },
+          "usage_conditions": "PyPI项目元数据声明MIT；本次读取的源码包未发现独立LICENSE文件或完整版权声明，确切的版权声明和使用条件尚待核实。本地研究整理，未确认前不作为外发合格候选。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "校验官方源码包SHA-256；完整保存所需Python/C++源文件，在target中用现有MSVC、Python和NumPy编译，不安装软件；30个6任务3资源夹具检查归属数量、唯一性与返回得分。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "93d8cd6d3d773c9d00b55d7af484f8d9f5f4ce98b2e5e45d92129e02f6de1152"
+    },
+    {
+      "case_sha256": "7af66d2028de5876784f81bdc6f583a8a7b9d50195392b47a7906d0658416e16",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/f1/e4/4fb52371a0bda9e641e72fa3d160502bc0197b1ae93bbd383dce6ee15065/sbma-1.0.2.tar.gz",
+          "version": {
+            "release": "sbma 1.0.2, 2026-09-23",
+            "archive_sha256": "3bec5e75cc2659d2b2aef4f9a9aa23b5d6b7983b44a04e2dcddd2ddbfbf620f9",
+            "source_file_sha256": {
+              "pyproject.toml": "8d392a2eed635fdd451593a57764cecb3f7e1a9739ea17bd5f03454b1f3d2bfe",
+              "setup.py": "41d070a73b038c3344bfc9dac7a02b2f757575579ea192c32fa44942c0b553cc",
+              "src/sbma/__init__.py": "f5455221ec2ed0c1df8720123cbabb991c85c1fe8ab932c0fdada9a17e3b85d9",
+              "src/sbma/solver.py": "48806dd4284d9208b6787bbbe608af2bb4781733f239e79103ee029df0b9607e",
+              "src/sbma/_solver.cpp": "2d241e885ae9205902a7cecd139352f2bb97483369d45232318f43d80edd2e26",
+              "src/sbma/_starting_point.cpp": "78d0e421f537fb59a2788e6ee932d22434a779f74db53dfff46600b991251d20",
+              "src/sbma/_auxiliaries.cpp": "38c78549fcd9994a914e3051b891f7943d9bcfe7d6322e6106a8090ea6fd7f5c",
+              "src/sbma/_util.cpp": "2e0667b626fed8860b3f43f75aeee5a2e1b81415652de791c92aacd9ca36808f",
+              "src/sbma/_util.hpp": "1997165db17a7ba6ae5ff25dfc8e0c1a9ce2973b044a1d60ed4b7551b1f93234"
+            }
+          },
+          "usage_conditions": "PyPI项目元数据声明MIT；本次读取的源码包未发现独立LICENSE文件或完整版权声明，确切的版权声明和使用条件尚待核实。本地研究整理，未确认前不作为外发合格候选。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "校验官方源码包SHA-256；完整保存所需Python/C++源文件，在target中用现有MSVC、Python和NumPy编译，不安装软件；30个6任务3资源夹具检查归属数量、唯一性与返回得分。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "eec2455d56b17f18372b23d5259c013f22a2b345e169e28013e58eca71ac90d4"
+    },
+    {
+      "case_sha256": "9943b083e66ae9b0811a8dad424285d0a9afdd5f3e6cf90b3767c60d2c02586c",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/f1/e4/4fb52371a0bda9e641e72fa3d160502bc0197b1ae93bbd383dce6ee15065/sbma-1.0.2.tar.gz",
+          "version": {
+            "release": "sbma 1.0.2, 2026-09-23",
+            "archive_sha256": "3bec5e75cc2659d2b2aef4f9a9aa23b5d6b7983b44a04e2dcddd2ddbfbf620f9",
+            "source_file_sha256": {
+              "pyproject.toml": "8d392a2eed635fdd451593a57764cecb3f7e1a9739ea17bd5f03454b1f3d2bfe",
+              "setup.py": "41d070a73b038c3344bfc9dac7a02b2f757575579ea192c32fa44942c0b553cc",
+              "src/sbma/__init__.py": "f5455221ec2ed0c1df8720123cbabb991c85c1fe8ab932c0fdada9a17e3b85d9",
+              "src/sbma/solver.py": "48806dd4284d9208b6787bbbe608af2bb4781733f239e79103ee029df0b9607e",
+              "src/sbma/_solver.cpp": "2d241e885ae9205902a7cecd139352f2bb97483369d45232318f43d80edd2e26",
+              "src/sbma/_starting_point.cpp": "78d0e421f537fb59a2788e6ee932d22434a779f74db53dfff46600b991251d20",
+              "src/sbma/_auxiliaries.cpp": "38c78549fcd9994a914e3051b891f7943d9bcfe7d6322e6106a8090ea6fd7f5c",
+              "src/sbma/_util.cpp": "2e0667b626fed8860b3f43f75aeee5a2e1b81415652de791c92aacd9ca36808f",
+              "src/sbma/_util.hpp": "1997165db17a7ba6ae5ff25dfc8e0c1a9ce2973b044a1d60ed4b7551b1f93234"
+            }
+          },
+          "usage_conditions": "PyPI项目元数据声明MIT；本次读取的源码包未发现独立LICENSE文件或完整版权声明，确切的版权声明和使用条件尚待核实。本地研究整理，未确认前不作为外发合格候选。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "校验官方源码包SHA-256；完整保存所需Python/C++源文件，在target中用现有MSVC、Python和NumPy编译，不安装软件；30个6任务3资源夹具检查归属数量、唯一性与返回得分。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "7af66d2028de5876784f81bdc6f583a8a7b9d50195392b47a7906d0658416e16"
+    },
+    {
+      "case_sha256": "041681c0c487c2c8d5885eb6bcaf87524ead377a6a4058f5cbc4b13825017a0d",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/f1/e4/4fb52371a0bda9e641e72fa3d160502bc0197b1ae93bbd383dce6ee15065/sbma-1.0.2.tar.gz",
+          "version": {
+            "release": "sbma 1.0.2, 2026-09-23",
+            "archive_sha256": "3bec5e75cc2659d2b2aef4f9a9aa23b5d6b7983b44a04e2dcddd2ddbfbf620f9",
+            "source_file_sha256": {
+              "pyproject.toml": "8d392a2eed635fdd451593a57764cecb3f7e1a9739ea17bd5f03454b1f3d2bfe",
+              "setup.py": "41d070a73b038c3344bfc9dac7a02b2f757575579ea192c32fa44942c0b553cc",
+              "src/sbma/__init__.py": "f5455221ec2ed0c1df8720123cbabb991c85c1fe8ab932c0fdada9a17e3b85d9",
+              "src/sbma/solver.py": "48806dd4284d9208b6787bbbe608af2bb4781733f239e79103ee029df0b9607e",
+              "src/sbma/_solver.cpp": "2d241e885ae9205902a7cecd139352f2bb97483369d45232318f43d80edd2e26",
+              "src/sbma/_starting_point.cpp": "78d0e421f537fb59a2788e6ee932d22434a779f74db53dfff46600b991251d20",
+              "src/sbma/_auxiliaries.cpp": "38c78549fcd9994a914e3051b891f7943d9bcfe7d6322e6106a8090ea6fd7f5c",
+              "src/sbma/_util.cpp": "2e0667b626fed8860b3f43f75aeee5a2e1b81415652de791c92aacd9ca36808f",
+              "src/sbma/_util.hpp": "1997165db17a7ba6ae5ff25dfc8e0c1a9ce2973b044a1d60ed4b7551b1f93234"
+            }
+          },
+          "usage_conditions": "PyPI项目元数据声明MIT；本次读取的源码包未发现独立LICENSE文件或完整版权声明，确切的版权声明和使用条件尚待核实。本地研究整理，未确认前不作为外发合格候选。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "校验官方源码包SHA-256；完整保存所需Python/C++源文件，在target中用现有MSVC、Python和NumPy编译，不安装软件；30个6任务3资源夹具检查归属数量、唯一性与返回得分。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "9943b083e66ae9b0811a8dad424285d0a9afdd5f3e6cf90b3767c60d2c02586c"
+    },
+    {
+      "case_sha256": "eaa853c1c20ff6acfef3964369deb705c010f4a60e2e2eef0e574d77c0547b25",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/f1/e4/4fb52371a0bda9e641e72fa3d160502bc0197b1ae93bbd383dce6ee15065/sbma-1.0.2.tar.gz",
+          "version": {
+            "release": "sbma 1.0.2, 2026-09-23",
+            "archive_sha256": "3bec5e75cc2659d2b2aef4f9a9aa23b5d6b7983b44a04e2dcddd2ddbfbf620f9",
+            "source_file_sha256": {
+              "pyproject.toml": "8d392a2eed635fdd451593a57764cecb3f7e1a9739ea17bd5f03454b1f3d2bfe",
+              "setup.py": "41d070a73b038c3344bfc9dac7a02b2f757575579ea192c32fa44942c0b553cc",
+              "src/sbma/__init__.py": "f5455221ec2ed0c1df8720123cbabb991c85c1fe8ab932c0fdada9a17e3b85d9",
+              "src/sbma/solver.py": "48806dd4284d9208b6787bbbe608af2bb4781733f239e79103ee029df0b9607e",
+              "src/sbma/_solver.cpp": "2d241e885ae9205902a7cecd139352f2bb97483369d45232318f43d80edd2e26",
+              "src/sbma/_starting_point.cpp": "78d0e421f537fb59a2788e6ee932d22434a779f74db53dfff46600b991251d20",
+              "src/sbma/_auxiliaries.cpp": "38c78549fcd9994a914e3051b891f7943d9bcfe7d6322e6106a8090ea6fd7f5c",
+              "src/sbma/_util.cpp": "2e0667b626fed8860b3f43f75aeee5a2e1b81415652de791c92aacd9ca36808f",
+              "src/sbma/_util.hpp": "1997165db17a7ba6ae5ff25dfc8e0c1a9ce2973b044a1d60ed4b7551b1f93234"
+            }
+          },
+          "usage_conditions": "PyPI项目元数据声明MIT；本次读取的源码包未发现独立LICENSE文件或完整版权声明，确切的版权声明和使用条件尚待核实。本地研究整理，未确认前不作为外发合格候选。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "校验官方源码包SHA-256；完整保存所需Python/C++源文件，在target中用现有MSVC、Python和NumPy编译，不安装软件；30个6任务3资源夹具检查归属数量、唯一性与返回得分。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "041681c0c487c2c8d5885eb6bcaf87524ead377a6a4058f5cbc4b13825017a0d",
+      "description_revision": {
+        "method": "按结构化精炼模板重写 description（阶段拆分、列表化算子、显式平局/门禁/终止准则）",
+        "date": "2026-11-12"
+      }
+    },
+    {
+      "case_sha256": "3be33779e39ac20e81f3dc20f99a6c74e11c0524d28ea348e0554c562d274493",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/f1/e4/4fb52371a0bda9e641e72fa3d160502bc0197b1ae93bbd383dce6ee15065/sbma-1.0.2.tar.gz",
+          "version": {
+            "release": "sbma 1.0.2, 2026-09-23",
+            "archive_sha256": "3bec5e75cc2659d2b2aef4f9a9aa23b5d6b7983b44a04e2dcddd2ddbfbf620f9",
+            "source_file_sha256": {
+              "pyproject.toml": "8d392a2eed635fdd451593a57764cecb3f7e1a9739ea17bd5f03454b1f3d2bfe",
+              "setup.py": "41d070a73b038c3344bfc9dac7a02b2f757575579ea192c32fa44942c0b553cc",
+              "src/sbma/__init__.py": "f5455221ec2ed0c1df8720123cbabb991c85c1fe8ab932c0fdada9a17e3b85d9",
+              "src/sbma/solver.py": "48806dd4284d9208b6787bbbe608af2bb4781733f239e79103ee029df0b9607e",
+              "src/sbma/_solver.cpp": "2d241e885ae9205902a7cecd139352f2bb97483369d45232318f43d80edd2e26",
+              "src/sbma/_starting_point.cpp": "78d0e421f537fb59a2788e6ee932d22434a779f74db53dfff46600b991251d20",
+              "src/sbma/_auxiliaries.cpp": "38c78549fcd9994a914e3051b891f7943d9bcfe7d6322e6106a8090ea6fd7f5c",
+              "src/sbma/_util.cpp": "2e0667b626fed8860b3f43f75aeee5a2e1b81415652de791c92aacd9ca36808f",
+              "src/sbma/_util.hpp": "1997165db17a7ba6ae5ff25dfc8e0c1a9ce2973b044a1d60ed4b7551b1f93234"
+            }
+          },
+          "usage_conditions": "PyPI项目元数据声明MIT；本次读取的源码包未发现独立LICENSE文件或完整版权声明，确切的版权声明和使用条件尚待核实。本地研究整理，未确认前不作为外发合格候选。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "校验官方源码包SHA-256；完整保存所需Python/C++源文件，在target中用现有MSVC、Python和NumPy编译，不安装软件；30个6任务3资源夹具检查归属数量、唯一性与返回得分。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "eaa853c1c20ff6acfef3964369deb705c010f4a60e2e2eef0e574d77c0547b25",
+      "parent_snapshot": "../versions/A-028/eaa853c1c20ff6acfef3964369deb705c010f4a60e2e2eef0e574d77c0547b25.json",
+      "storage_migration": "inline_lines_to_source_files"
+    },
+    {
+      "case_sha256": "d34e8d2e134d7d67b04ee8035093dcb983644f0c5c73696ec817095b882e3ac7",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/f1/e4/4fb52371a0bda9e641e72fa3d160502bc0197b1ae93bbd383dce6ee15065/sbma-1.0.2.tar.gz",
+          "version": {
+            "release": "sbma 1.0.2, 2026-09-23",
+            "archive_sha256": "3bec5e75cc2659d2b2aef4f9a9aa23b5d6b7983b44a04e2dcddd2ddbfbf620f9",
+            "source_file_sha256": {
+              "pyproject.toml": "8d392a2eed635fdd451593a57764cecb3f7e1a9739ea17bd5f03454b1f3d2bfe",
+              "setup.py": "41d070a73b038c3344bfc9dac7a02b2f757575579ea192c32fa44942c0b553cc",
+              "src/sbma/__init__.py": "f5455221ec2ed0c1df8720123cbabb991c85c1fe8ab932c0fdada9a17e3b85d9",
+              "src/sbma/solver.py": "48806dd4284d9208b6787bbbe608af2bb4781733f239e79103ee029df0b9607e",
+              "src/sbma/_solver.cpp": "2d241e885ae9205902a7cecd139352f2bb97483369d45232318f43d80edd2e26",
+              "src/sbma/_starting_point.cpp": "78d0e421f537fb59a2788e6ee932d22434a779f74db53dfff46600b991251d20",
+              "src/sbma/_auxiliaries.cpp": "38c78549fcd9994a914e3051b891f7943d9bcfe7d6322e6106a8090ea6fd7f5c",
+              "src/sbma/_util.cpp": "2e0667b626fed8860b3f43f75aeee5a2e1b81415652de791c92aacd9ca36808f",
+              "src/sbma/_util.hpp": "1997165db17a7ba6ae5ff25dfc8e0c1a9ce2973b044a1d60ed4b7551b1f93234"
+            }
+          },
+          "usage_conditions": "PyPI项目元数据声明MIT；本次读取的源码包未发现独立LICENSE文件或完整版权声明，确切的版权声明和使用条件尚待核实。本地研究整理，未确认前不作为外发合格候选。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "校验官方源码包SHA-256；完整保存所需Python/C++源文件，在target中用现有MSVC、Python和NumPy编译，不安装软件；30个6任务3资源夹具检查归属数量、唯一性与返回得分。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "3be33779e39ac20e81f3dc20f99a6c74e11c0524d28ea348e0554c562d274493",
+      "parent_snapshot": "../versions/A-028/3be33779e39ac20e81f3dc20f99a6c74e11c0524d28ea348e0554c562d274493.json",
+      "description_revision": {
+        "method": "明确资源任务数是固定配额，且评分初始化对应默认路径；算法代码不变。",
+        "date": "2026-11-12"
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "case_id": "A-027",
+  "category": "cost_scaling_matching",
+  "description": [
+    "Cost-scaling push-relabel matching:\n",
+    "- Scaling: Decrease epsilon across cost-scaling phases, pushing flow along admissible residual edges or relabeling dual node potentials.\n",
+    "- Completion: Complete terminal matching via shortest augmenting paths; trigger cold-start completion if step or phase limit is reached."
+  ],
+  "code": {
+    "format": "file_markers",
+    "files": [
+      {
+        "path": "src/LICENSE.txt",
+        "sha256": "74de38034c000100f549482994fd1a84c9e61ba2e47ad48a7624b67bb65892ae"
+      },
+      {
+        "path": "src/src/lib.rs",
+        "sha256": "98ae9dc7e503da071909e665cba8de05c0ccaddda893fb187ae22e86061d8a33"
+      },
+      {
+        "path": "src/src/types.rs",
+        "sha256": "cb31ef66dd133f5a443c7e58b65d77804ddc4c1724e9f875a63eafda756a6905"
+      },
+      {
+        "path": "src/src/utils.rs",
+        "sha256": "830463dcf59f44e9cab8f69d4a3c437e82d50df1973c027febdecc9b996d5023"
+      },
+      {
+        "path": "src/src/lap/mod.rs",
+        "sha256": "19fe2cfe23b317e0e3309368d422a308c116e4dfe756258e309ef1a164f55200"
+      },
+      {
+        "path": "src/src/lap/cost_scaling.rs",
+        "sha256": "6d4235ba0375f65ab98b9400719756b98e24c7b3e2a4d9952a486f0ba47874f4"
+      }
+    ]
+  }
+}

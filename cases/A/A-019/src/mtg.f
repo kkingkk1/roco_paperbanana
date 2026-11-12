@@ -1,0 +1,2884 @@
+      subroutine chmtg(n,m,p,w,c,jdimr,jdimc,jdimpc,z)
+
+c*********************************************************************72
+c
+cc CHMTG checks the input data for MTG.
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer p(jdimr,jdimc),w(jdimr,jdimc),c(jdimr),z
+
+      if ( m .le. 1 ) z = - 1
+      if ( m .gt. jdimr ) z = - 1
+      if ( z .lt. 0 ) return
+      if ( n .le. 1 ) z = - 2
+      if ( n .gt. jdimc ) z = - 2
+      if ( z .lt. 0 ) return
+      if ( m .le. jdimpc) go to 10
+      z = - 3
+      return
+   10 do 50 i=1,m
+        if ( c(i) .gt. 0 ) go to 20
+        z = - 4
+        return
+   20   min = c(i) + 1
+        do 40 j=1,n
+          if ( p(i,j) .gt. 0 .and. w(i,j) .gt. 0 ) go to 30
+          z = - 4
+          return
+   30     if ( w(i,j) .lt. min ) min = w(i,j)
+   40   continue
+        if ( c(i) .lt. min ) z = - 6
+   50 continue
+      do 70 j=1,n
+        do 60 i=1,m
+          if ( w(i,j) .le. c(i) ) go to 70
+   60   continue
+        z = - 5
+        return
+   70 continue
+      return
+      end
+      subroutine defpck(m,jdimpc)
+
+c*********************************************************************72
+c
+cc DEFPCK defines the vectors for packing.
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer y
+      common /pack/ mask1(30),itwo(30),mask,y(150,100)
+      do i=1,m
+        itwo(i) = 2**(i-1)
+        mask1(i) = 2**(jdimpc) - 1 - itwo(i)
+      end do
+      mask = 1
+      return
+      end
+      subroutine dmind(n,m,p,w,mind,jdimr,jdimc,ind,pwv)
+
+c*********************************************************************72
+c
+cc DMIND defines pointers to the sorted items for 0-1 single knapsack problems.
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer p(jdimr,jdimc),w(jdimr,jdimc),mind(jdimr,jdimc)
+      integer ind(jdimc)
+      real    pwv(jdimc)
+
+      do i=1,m
+        do j=1,n
+          pwv(j) = float(p(i,j))/float(w(i,j))
+          ind(j) = j
+        end do
+        call sortr(n,pwv,ind,jdimc)
+        do j=1,n
+          mind(i,j) = ind(j)
+        end do
+      end do
+
+      return
+      end
+      subroutine feas(n,m,p,w,c,xstar,jfi,jdimr,jdimc)
+
+c*********************************************************************72
+c
+cc FEAS checks for infeasibility.
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer p(jdimr,jdimc),w(jdimr,jdimc),c(jdimr),xstar(jdimc)
+
+      jfi = 0
+
+      do j=1,n
+        xstar(j) = 0
+        kinf = 0
+        do 10 i=1,m
+          if ( w(i,j) .le. c(i) ) go to 10
+          kinf = kinf + 1
+          p(i,j) = 0
+   10   continue
+        if ( kinf .eq. m ) jfi = 1
+      end do
+
+      return
+      end
+      subroutine gha(p,w,c,n,m,z,xstar,iub,best,kvst,inf,
+     &               jdimr,jdimc,kw,mw,pen,first,second,bb)
+
+c*********************************************************************72
+c
+cc GHA applies the approximate algorithm gh with function (a).
+c
+c and
+c define the infinite value  inf .
+c
+c if iub = z the solution is optimal;
+c if z = kvst no feasible solution was found.
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer p(jdimr,jdimc),w(jdimr,jdimc),c(jdimr),xstar(jdimc),
+     &        best(jdimc),z
+      integer kw(jdimr),mw(jdimr),pen(jdimc),first(jdimc),
+     &        second(jdimc),bb(jdimc)
+      integer fmax,smax
+      inf = 0
+      do i=1,m
+        kw(i) = c(i)
+        mw(i) = 0
+        if ( c(i) .gt. inf ) inf = c(i)
+      end do
+      iub = 0
+      z = 0
+      kvst = 0
+      do 40 j=1,n
+        ipmin = p(1,j)
+        fmax = p(1,j)
+        if = 1
+        smax = 0
+        do 30 i=2,m
+          if ( p(i,j) .lt. ipmin ) ipmin = p(i,j)
+          if ( smax .ge. p(i,j) ) go to 30
+          if ( fmax .ge. p(i,j) ) go to 20
+          smax = fmax
+          is = if
+          fmax = p(i,j)
+          if = i
+          go to 30
+   20     smax = p(i,j)
+          is = i
+   30   continue
+        kvst = kvst + ipmin
+        first(j) = if
+        best(j) = if
+        second(j) = is
+        pen(j) = fmax - smax
+        if ( smax .eq. 0 ) pen(j) = - 1
+        bb(j) = j
+        iub = iub + fmax
+        if ( w(if,j) .gt. mw(if) ) mw(if) = w(if,j)
+        if ( w(is,j) .gt. mw(is) ) mw(is) = w(is,j)
+   40 continue
+      if ( kvst .gt. 0 ) kvst = kvst - 1
+      if ( iub .gt. inf ) inf = iub
+      do 50 j=1,n
+        if ( pen(j) .eq. (- 1) ) pen(j) = inf
+   50 continue
+      nb = n
+   60 maxpen = - 1
+      do 70 jj=1,nb
+        j = bb(jj)
+        if ( pen(j) .le. maxpen ) go to 70
+        maxpen = pen(j)
+        jjm = jj
+   70 continue
+      jo = bb(jjm)
+      io = first(jo)
+      z = z + p(io,jo)
+      xstar(jo) = io
+      bb(jjm) = bb(nb)
+      nb = nb - 1
+      if ( nb .eq. 0 ) return
+      kw(io) = kw(io) - w(io,jo)
+      if ( mw(io) .le. kw(io) ) go to 60
+      do 120 jj=1,nb
+        j = bb(jj)
+        if ( w(io,j) .le. kw(io) ) go to 120
+        if ( first(j) .ne. io ) go to 80
+        if ( pen(j) .eq. inf ) go to 130
+        first(j) = second(j)
+        go to 90
+   80   if ( second(j) .ne. io ) go to 120
+   90   index = first(j)
+        w(index,j) = w(index,j) + inf
+        newsec = 0
+        do 100 i=1,m
+          if ( w(i,j) .gt. kw(i) ) go to 100
+          if ( p(i,j) .le. newsec ) go to 100
+          newsec = p(i,j)
+          is = i
+  100   continue
+        w(index,j) = w(index,j) - inf
+        if ( newsec .eq. 0 ) go to 110
+        second(j) = is
+        pen(j) = p(index,j) - newsec
+        if ( w(is,j) .gt. mw(is) ) mw(is) = w(is,j)
+        go to 120
+  110   pen(j) = inf
+  120 continue
+      go to 60
+  130 z = kvst
+      return
+      end
+      subroutine ghbcd(p,w,c,n,m,z,xstar,inf,jdimr,jdimc,xsp,
+     &           dmyr1,dmyr2,dmyr3,dmyr4,dmyr5,
+     &           dmyc2,dmyc3,dmyc4,dmycr1,dmya)
+
+c*********************************************************************72
+c
+cc GHBCD applies the approximate algorithm GH with functions (b), (c) and (d).
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer p(jdimr,jdimc),w(jdimr,jdimc),c(jdimr),xstar(jdimc),z
+      integer vsp,xsp(jdimc)
+      integer dmyr1(jdimr),dmyr2(jdimr),dmyr3(jdimr),dmyr4(jdimr),
+     &        dmyr5(jdimr),dmyc2(jdimc),dmyc3(jdimc),dmyc4(jdimc),
+     &        dmya(jdimr,jdimc)
+      real    dmycr1(jdimc)
+
+      jj = 2
+      a1 = 1.
+      a2 = 0.
+      a3 = 0.
+      a4 = 0.
+      a5 = 1.
+   10 call ghx(p,w,c,n,m,vsp,xsp,a1,a2,a3,a4,a5,inf,jdimr,jdimc,
+     &         dmyr1,dmyr2,dmyr3,dmyr4,dmyr5,dmyc2,dmyc3,dmyc4,
+     &         dmycr1,dmya)
+      if ( vsp .le. z ) go to 30
+      z = vsp
+      do 20 j=1,n
+         xstar(j) = xsp(j)
+   20 continue
+   30 if ( jj .eq. 3 ) go to 40
+      if ( jj .eq. 4 ) go to 50
+      jj = 3
+      a1 = 1.
+      a2 = 0.
+      a3 = 1.
+      a4 = 0.
+      a5 = 0.
+      go to 10
+   40 jj = 4
+      a1 = 0.
+      a2 = 1.
+      a3 = 0.
+      a4 = 1.
+      a5 = 0.
+      go to 10
+   50 return
+      end
+      subroutine ghx(p,w,c,n,m,z,xstar,a1,a2,a3,a4,a5,inf,jdimr,jdimc,
+     &               kw,mw,minw,kchan,kwr,first,second,bb,pen,wl)
+
+c*********************************************************************72
+c
+cc GHX applies the approximate algorithm gh with function (b) or (c) or (d).
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer p(jdimr,jdimc),w(jdimr,jdimc),xstar(jdimc),c(jdimr),z
+      integer kw(jdimr),mw(jdimr),minw(jdimr),kchan(jdimr),kwr(jdimr),
+     &        first(jdimc),second(jdimc),bb(jdimc),wl(jdimr,jdimc)
+      real    pen(jdimc),maxpen
+
+      do i=1,m
+        kw(i) = c(i)
+        mw(i) = 0
+        minw(i) = inf
+        do j=1,n
+          wl(i,j) = w(i,j)
+          if ( wl(i,j) .lt. minw(i) ) minw(i) = wl(i,j)
+        end do
+        kwr(i) = kw(i) - minw(i)
+      end do
+
+      z = 0
+      do 60 j=1,n
+        fmax = - inf
+        if = 0
+        smax = - inf
+        do 40 i=1,m
+          if ( wl(i,j) .gt. kw(i) ) go to 40
+          if ( wl(i,j) .gt. kwr(i) ) wl(i,j) = kw(i)
+          rwl = wl(i,j)
+          rp = p(i,j)
+          rkw = kw(i)
+          s = (- a1*rwl + a2*rp)/(a3*rkw + a4*rwl + a5)
+          if ( smax .ge. s ) go to 40
+          if ( fmax .ge. s ) go to 30
+          smax = fmax
+          is = if
+          fmax = s
+          if = i
+          go to 40
+   30     smax = s
+          is = i
+   40   continue
+        first(j) = if
+        second(j) = is
+        pen(j) = fmax - smax
+        bb(j) = j
+        if ( wl(if,j) .gt. mw(if) ) mw(if) = wl(if,j)
+        if ( smax .gt. float(- inf) ) go to 50
+        pen(j) = inf
+        go to 60
+   50   if ( wl(is,j) .gt. mw(is) ) mw(is) = wl(is,j)
+   60 continue
+      nb = n
+   70 maxpen = - 1
+      do 80 jj=1,nb
+        j = bb(jj)
+        if ( pen(j) .le. maxpen ) go to 80
+        maxpen = pen(j)
+        jjm = jj
+   80 continue
+      jo = bb(jjm)
+      io = first(jo)
+      z = z + p(io,jo)
+      xstar(jo) = io
+      bb(jjm) = bb(nb)
+      nb = nb - 1
+      kw(io) = kw(io) - w(io,jo)
+      if ( nb .eq. 0 ) go to 210
+      kk = 0
+      do 110 i=1,m
+        kchan(i) = 0
+        if ( wl(i,jo) .gt. minw(i) ) go to 100
+        minw(i) = inf
+        do 90 jj=1,nb
+          j = bb(jj)
+          if ( wl(i,j) .lt. minw(i) ) minw(i) = wl(i,j)
+   90   continue
+        if ( minw(i) + mw(i) .le. kw(i) ) go to 100
+        kk = 1
+        kchan(i) = 1
+  100   kwr(i) = kw(i) - minw(i)
+  110 continue
+      if ( mw(io) .le. kw(io) ) go to 120
+      kk = 1
+      kchan(io) = 1
+  120 if ( kk .eq. 0 ) go to 70
+      do 190 jj=1,nb
+        j = bb(jj)
+        jf = first(j)
+        if ( pen(j) .lt. float(inf) ) go to 130
+        if ( wl(jf,j) .gt. kw(jf) ) go to 200
+        go to 190
+  130   if ( kchan(jf) .eq. 0 ) go to 140
+        if ( wl(jf,j) .gt. kwr(jf) ) go to 150
+  140   js = second(j)
+        if ( kchan(js) .eq. 0 ) go to 190
+        if ( wl(js,j) .le. kwr(js) ) go to 190
+  150   fmax = - inf
+        smax = - inf
+        if = 0
+        do 170 i=1,m
+          if ( wl(i,j) .gt. kw(i) ) go to 170
+          if ( wl(i,j) .gt. kwr(i) ) wl(i,j) = kw(i)
+          rwl = wl(i,j)
+          rp = p(i,j)
+          rkw = kw(i)
+          s = (- a1*rwl + a2*rp)/(a3*rkw + a4*rwl + a5)
+          if ( smax .ge. s ) go to 170
+          if ( fmax .ge. s ) go to 160
+          smax = fmax
+          is = if
+          fmax = s
+          if = i
+          go to 170
+  160     smax = s
+          is = i
+  170   continue
+        first(j) = if
+        second(j) = is
+        pen(j) = fmax - smax
+        if ( wl(if,j) .gt. mw(if) ) mw(if) = wl(if,j)
+        if ( smax .gt. float(- inf) ) go to 180
+        pen(j) = inf
+        go to 190
+  180   if ( wl(is,j) .gt. mw(is) ) mw(is) = wl(is,j)
+  190 continue
+      go to 70
+  200 z = 0
+      return
+c
+c try to improve on the current solution z.
+c
+  210 do 230 j=1,n
+        if = xstar(j)
+        maxp = p(if,j)
+        do 220 i=1,m
+          if ( w(i,j) .gt. kw(i) ) go to 220
+          if ( p(i,j) .le. maxp ) go to 220
+          maxp = p(i,j)
+          if = i
+  220   continue
+        ip = xstar(j)
+        if ( if .eq. ip ) go to 230
+        xstar(j) = if
+        z = z + p(if,j) - p(ip,j)
+        kw(ip) = kw(ip) + w(ip,j)
+        kw(if) = kw(if) - w(if,j)
+  230 continue
+
+      return
+      end
+      subroutine gr1(p,w,c,n,m,z,xstar,iub,best,b,a,nr,kq,kvst,
+     &               jdimr,jdimc)
+
+c*********************************************************************72
+c
+cc GR1 reduces a maximization gap.
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer p(jdimr,jdimc),w(jdimr,jdimc),c(jdimr),xstar(jdimc),
+     &        best(jdimc),b(jdimc),a(jdimr,jdimc),kq(jdimr),z
+      integer po,bej
+
+      nr = n
+      do i=1,m
+        kq(i) = c(i)
+      end do
+
+      do j=1,n
+        b(j) = 1
+        do i=1,m
+          a(i,j) = 0
+        end do
+      end do
+
+      if ( z .eq. kvst ) return
+      m1 = m - 1
+      jgap = iub - z
+   40 nvr = n*m
+      nrold = nr
+      do 90 j=1,n
+        if ( b(j) .eq. 1 ) go to 50
+        nvr = nvr - m
+        go to 90
+   50   bej = best(j)
+        po = p(bej,j)
+        nf = 0
+        do 80 i=1,m
+          if ( w(i,j) .gt. kq(i) ) go to 60
+          if ( po - p(i,j) .lt. jgap ) go to 70
+   60     a(i,j) = - 1
+          nf = nf + 1
+          go to 80
+   70     ib = i
+   80   continue
+        if ( nf .ge. m ) go to 100
+        nvr = nvr - nf
+        if ( nf .lt. m1 ) go to 90
+        b(j) = 0
+        a(ib,j) = 1
+        kq(ib) = kq(ib) - w(ib,j)
+        nr = nr - 1
+        nvr = nvr - 1
+   90 continue
+      if ( nr .eq. 0 ) return
+      if ( nr .lt. nrold ) go to 40
+      return
+  100 nr = 0
+      nvr = 0
+      return
+      end
+      subroutine gr2(n,m,p,w,q,b,a,mind,pak,kap,pakl,ip,ir,il,if,nr,
+     &               z,xstar,jub,x,v,flrep,kvst,jdimr,jdimc,jnlev,in)
+
+c*********************************************************************72
+c
+cc GR2 reduces a maximization gap.
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer p(jdimr,jdimc),w(jdimr,jdimc),q(jdimr),b(jdimc),
+     &        a(jdimr,jdimc),mind(jdimr,jdimc),pak(jdimr,jdimc),
+     &        kap(jdimr,jdimc),pakl(jdimr),ip(jdimr),ir(jdimr),
+     &        il(jdimr),if(jdimr),xstar(jdimc),x(jdimr,jdimc),
+     &        v(jnlev,jdimr),flrep(jdimr),z
+      integer in(jdimr)
+      do i=1,m
+        flrep(i) = 0
+      end do
+
+      if ( z .eq. kvst ) return
+      call prepen(n,m,p,w,q,b,a,mind,pak,kap,pakl,ip,ir,il,if,
+     &            jdimr,jdimc)
+      jgap = jub - z
+      nvr = 0
+      ipnr0 = 0
+      do 210 j=1,n
+        if ( b(j) .eq. 0 ) go to 210
+        n1 = 0
+        na = 0
+        isum = 0
+        do 140 i=1,m
+          if ( a(i,j) .eq. (- 1) ) go to 140
+          if ( w(i,j) .gt. q(i) ) go to 120
+          if ( x(i,j) .eq. 0 ) go to 90
+c
+c compute the loss lam of knapsack i if x(i,j) = 0 .
+c
+          jj = kap(i,j)
+          kl = il(i)
+          kp = ip(i)
+          kr = ir(i)
+          if ( jj - (kl + 1) ) 40,20,130
+   20     if ( kl + 1 .eq. pakl(i) ) go to 30
+          jkl = pak(i,kl+2)
+          rub = float(kp) + float(p(i,jkl)*kr)/float(w(i,jkl))
+          go to 80
+   30     rub = kp
+          go to 80
+   40     kp = kp - p(i,j)
+          kr = kr + w(i,j)
+          la = kl + 1
+          l2 = pakl(i)
+          if ( la .le. l2 ) go to 50
+          rub = kp
+          go to 80
+   50     do 60 jl=la,l2
+            jj = pak(i,jl)
+            if ( w(i,jj) .gt. kr ) go to 70
+            kr = kr - w(i,jj)
+            kp = kp + p(i,jj)
+   60     continue
+          rub = kp
+          go to 80
+   70     rub = float(kp) + float(p(i,jj)*kr)/float(w(i,jj))
+   80     iub = rub
+          lam = v( 1,i) - (iub + if(i))
+          if ( lam .ge. jgap ) go to 150
+          if ( lam .le. 0 ) go to 130
+          isum = isum + lam
+          n1 = n1 + 1
+          in(n1) = i
+          if ( isum .ge. jgap ) go to 170
+          go to 130
+c
+c compute the loss lam of knapsack i if x(i,j) = 1 .
+c
+   90     jj = kap(i,j)
+          kl = il(i)
+          if ( jj .le. kl ) go to 130
+          kr = ir(i) - w(i,j)
+          kp = ip(i) + p(i,j)
+  100     if ( kr .ge. 0 ) go to 110
+          jkl = pak(i,kl)
+          kr = kr + w(i,jkl)
+          kp = kp - p(i,jkl)
+          kl = kl - 1
+          go to 100
+  110     jkl = pak(i,kl+1)
+          rub = float(kp) + float(p(i,jkl)*kr)/float(w(i,jkl))
+          iub = rub
+          lam = v(1,i) - (iub + if(i))
+          if ( lam .lt. jgap ) go to 130
+          a(i,j) = - 1
+          flrep(i) = 1
+          go to 140
+  120     a(i,j) = - 1
+          flrep(i) = 1
+          go to 140
+  130     na = na + 1
+          ib = i
+  140   continue
+        if ( na .eq. 0 ) go to 310
+        if ( na .gt. 1 ) go to 200
+        i = ib
+  150   b(j) = 0
+        do ii=1,m
+          a(ii,j) = - 1
+          flrep(ii) = 1
+        end do
+        a(i,j) = 1
+        nr = nr - 1
+        q(i) = q(i) - w(i,j)
+        ipnr0 = ipnr0 + p(i,j)
+        go to 210
+
+  170   do i=1,m
+          if ( a(i,j) .ne. (- 1) ) then
+            a(i,j) = - 1
+            flrep(i) = flrep(i) + 1
+          end if
+        end do
+
+        do ii=1,n1
+          i = in(ii)
+          a(i,j) = 0
+          flrep(i) = flrep(i) - 1
+        end do
+
+        na = n1
+  200   nvr = nvr + na
+  210 continue
+      do i=1,m
+        if ( flrep(i) .gt. 1 ) flrep(i) = 1
+      end do
+      if ( nr .gt. 1 ) return
+      if ( nr .eq. 0 ) go to 260
+      max = - 1
+      do j=1,n
+        if ( b(j) .eq. 1 ) go to 240
+      end do
+
+  240 b(j) = 0
+      nr = 0
+      do 250 i=1,m
+        if ( a(i,j) .eq. (- 1) ) go to 250
+        if ( w(i,j) .gt. q(i) ) go to 250
+        if ( p(i,j) .le. max ) go to 250
+        max = p(i,j)
+        ii = i
+  250 continue
+      if ( max .lt. 0 ) return
+      a(ii,j) = 1
+      q(ii) = q(ii) - w(ii,j)
+      ipnr0 = ipnr0 + p(ii,j)
+  260 do i=1,m
+        ipnr0 = ipnr0 + if(i)
+      end do
+
+      if ( ipnr0 .le. z ) return
+      z = ipnr0
+      do 300 j=1,n
+        do i=1,m
+          if ( a(i,j) .eq. 1 ) go to 290
+        end do
+  290   xstar(j) = i
+  300 continue
+      return
+  310 nr = 0
+      return
+      end
+      subroutine heur(p,w,c,n,m,z,xstar,iub,jub,best,kvst,inf,
+     &                jdimr,jdimc,dmyr1,dmyr2,dmyr3,dmyr4,dmyr5,
+     &                dmyc1,dmyc2,dmyc3,dmyc4,dmycr1,a)
+
+c*********************************************************************72
+c
+cc HEUR determines the best initial heuristic solution.
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer p(jdimr,jdimc),w(jdimr,jdimc),c(jdimr),z,xstar(jdimc),
+     &        best(jdimc)
+      integer dmyr1(jdimr),dmyr2(jdimr),dmyr3(jdimr),dmyr4(jdimr),
+     &        dmyr5(jdimr)
+      integer dmyc1(jdimc),dmyc2(jdimc),dmyc3(jdimc),dmyc4(jdimc)
+      real    dmycr1(jdimc)
+      integer a(jdimr,jdimc)
+c
+c first heuristic solution.
+c
+      call gha(p,w,c,n,m,z,xstar,iub,best,kvst,inf,
+     &         jdimr,jdimc,dmyr1,dmyr2,dmyc1,dmyc2,dmyc3,dmyc4)
+      jub = iub
+      if ( z .eq. jub ) return
+c
+c second heuristic solution.
+c
+      call ghbcd(p,w,c,n,m,z,xstar,inf,
+     &           jdimr,jdimc,dmyc1,dmyr1,dmyr2,dmyr3,dmyr4,dmyr5,
+     &           dmyc2,dmyc3,dmyc4,dmycr1,a)
+      return
+      end
+      subroutine kpmax(ng,pg,wg,cg,zg,xg,mubf,
+     &                 jdimc1,jdimc,xxg,min,psign,wsign,zsign)
+
+c*********************************************************************72
+c
+cc KPMAX solves a 0-1 single knapsack problem using an initial solution.
+c
+c  Discussion:
+c
+c    ZG is an initial value of the solution.
+c
+c    This is a modified version of MT1.
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer pg(jdimc1),wg(jdimc1),xg(jdimc),cg,zg
+      integer xxg(jdimc),min(jdimc),psign(jdimc),wsign(jdimc),
+     &        zsign(jdimc)
+      integer cgs,cgf,diff,profit,r,t
+c
+c initialize.
+c
+      cgf = cg
+      ip = 0
+      cgs = cg
+      do ll=1,ng
+        if ( wg(ll) .gt. cgs ) go to 20
+        ip = ip + pg(ll)
+        cgs = cgs - wg(ll)
+      end do
+   20 ll = ll - 1
+      if ( cgs .eq. 0 ) go to 50
+      pg(ng+1) = 0
+      wg(ng+1) = cg + 1
+      lim = ip + cgs*pg(ll+2)/wg(ll+2)
+      a = wg(ll+1) - cgs
+      lim1 = float(ip) - a*float(pg(ll))/float(wg(ll)) +
+     &       float(pg(ll+1))
+      if ( lim1 .gt. lim ) lim = lim1
+      if ( lim .le. zg ) return
+      lem = ip + cgs*pg(ll+1)/wg(ll+1)
+      if ( lem .le. mubf ) go to 400
+      mink = cg + 1
+      min(ng) = mink
+      do 30 j=2,ng
+        kk = ng + 2 - j
+        if ( wg(kk) .lt. mink ) mink = wg(kk)
+        min(kk-1) = mink
+   30 continue
+      do 40 j=1,ng
+        xxg(j) = 0
+   40 continue
+      profit = 0
+      lold = ng
+      ii = 1
+      go to 170
+   50 if ( zg .ge. ip ) return
+      zg = ip
+      do j=1,ll
+        xg(j) = 1
+      end do
+      nn = ll + 1
+      do j=nn,ng
+        xg(j) = 0
+      end do
+      return
+c
+c try to insert the ii-th item into the current solution.
+c
+   80 if ( wg(ii) .le. cg ) go to 90
+      ii1 = ii+1
+      if ( zg .ge. cg*pg(ii1)/wg(ii1) + profit ) go to 280
+      ii = ii1
+      go to 80
+c
+c build a new current solution.
+c
+   90 ip = psign(ii)
+      cgs = cg - wsign(ii)
+      in = zsign(ii)
+      do 100 ll=in,ng
+        if ( wg(ll) .gt. cgs ) go to 160
+        ip = ip + pg(ll)
+        cgs = cgs - wg(ll)
+  100 continue
+      ll = ng
+  110 if ( zg .ge. ip + profit ) go to 280
+      zg = ip + profit
+      nn = ii - 1
+      do 120 j=1,nn
+        xg(j) = xxg(j)
+  120 continue
+      do 130 j=ii,ll
+        xg(j) = 1
+  130 continue
+      if ( ll .eq. ng ) go to 150
+      nn = ll + 1
+      do 140 j=nn,ng
+        xg(j) = 0
+  140 continue
+  150 if ( zg .ne. lim ) go to 280
+      cg = cgf
+      return
+  160 ll = ll - 1
+      if ( cgs .eq. 0 ) go to 110
+      if ( zg .ge. profit + ip + cgs*pg(ll+1)/wg(ll+1) ) go to 280
+c
+c save the current solution.
+c
+  170 wsign(ii) = cg - cgs
+      psign(ii) = ip
+      zsign(ii) = ll + 1
+      xxg(ii) = 1
+      nn = ll - 1
+      if ( nn .lt. ii) go to 190
+      do 180 j=ii,nn
+        wsign(j+1) = wsign(j) - wg(j)
+        psign(j+1) = psign(j) - pg(j)
+        zsign(j+1) = ll + 1
+        xxg(j+1) = 1
+  180 continue
+  190 j1 = ll + 1
+      do j=j1,lold
+        wsign(j) = 0
+        psign(j) = 0
+        zsign(j) = j
+      end do
+      lold = ll
+      cg = cgs
+      profit = profit + ip
+      if ( ll - (ng - 2) ) 240, 220, 210
+  210 ii = ng
+      go to 250
+  220 if ( cg .lt. wg(ng) ) go to 230
+      cg = cg - wg(ng)
+      profit = profit + pg(ng)
+      xxg(ng) = 1
+  230 ii = ng - 1
+      go to 250
+  240 ii = ll + 2
+      if ( cg .ge. min(ii-1) ) go to 80
+c
+c save the current optimal solution.
+c
+  250 if ( zg .ge. profit ) go to 270
+      zg = profit
+      do j=1,ng
+        xg(j) = xxg(j)
+      end do
+      if ( zg .ne. lim ) go to 270
+      cg = cgf
+      return
+  270 if ( xxg(ng) .eq. 0 ) go to 280
+      xxg(ng) = 0
+      cg = cg + wg(ng)
+      profit = profit - pg(ng)
+c
+c backtrack.
+c
+  280 nn = ii - 1
+      if ( nn .eq. 0 ) return
+      do 290 jj=1,nn
+        index = ii - jj
+        if ( xxg(index) .eq. 1 ) go to 300
+  290 continue
+      return
+  300 kk = ii - jj
+      r = cg
+      cg = cg + wg(kk)
+      profit = profit - pg(kk)
+      xxg(kk) = 0
+      if ( r .lt. min(kk) ) go to 310
+      ii = kk + 1
+      go to 80
+  310 nn = kk + 1
+      ii = kk
+c
+c try to substitute the nn-th item for the kk-th.
+c
+  320 if ( zg .ge. profit + cg*pg(nn)/wg(nn) ) go to 280
+      diff = wg(nn) - wg(kk)
+      if ( diff ) 380, 330, 340
+  330 nn = nn + 1
+      go to 320
+  340 if ( diff .gt. r ) go to 330
+      if ( zg .ge. profit + pg(nn) ) go to 330
+      zg = profit + pg(nn)
+      do 350 j=1,kk
+        xg(j) = xxg(j)
+  350 continue
+      jj = kk + 1
+      do 360 j=jj,ng
+        xg(j) = 0
+  360 continue
+      xg(nn) = 1
+      if ( zg .ne. lim ) go to 370
+      cg = cgf
+      return
+  370 r = r - diff
+      kk = nn
+      nn = nn + 1
+      go to 320
+  380 t = r - diff
+      if ( t .lt. min(nn) ) go to 330
+      if ( zg .ge. profit + pg(nn) + t*pg(nn+1)/wg(nn+1) ) go to 280
+      cg = cg - wg(nn)
+      profit = profit + pg(nn)
+      xxg(nn) = 1
+      ii = nn + 1
+      wsign(nn) = wg(nn)
+      psign(nn) = pg(nn)
+      zsign(nn) = ii
+      n1 = nn + 1
+      do 390 j=n1,lold
+        wsign(j) = 0
+        psign(j) = 0
+        zsign(j) = j
+  390 continue
+      lold = nn
+      go to 80
+  400 zg = mubf
+      do 410 j=1,ng
+        xg(j) = 0
+  410 continue
+      return
+      end
+      subroutine kpmin(kk,pen,u,d,zp,iy,kubf,
+     &                 jdimc,jdimc1,p,w,ind,ix,pw,
+     &                 dmyc1,dmyc2,dmyc3,dmyc4,dmyc5)
+
+c*********************************************************************72
+c
+cc KPMIN solves a 0-1 single knapsack problem in minimization form.
+c
+c  It uses a subroutine, kpmax, for the corresponding maximization form.
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer pen(jdimc),u(jdimc),iy(jdimc),d,zp
+      integer p(jdimc1),w(jdimc1),ind(jdimc),ix(jdimc),ds,su,spen
+      real    pw(jdimc)
+      integer dmyc1(jdimc),dmyc2(jdimc),dmyc3(jdimc),dmyc4(jdimc),
+     &        dmyc5(jdimc)
+
+      su = 0
+      spen = 0
+
+      do k=1,kk
+        su = su + u(k)
+        pw(k) = float(pen(k))/float(u(k))
+        ix(k) = k
+        spen = spen + pen(k)
+      end do
+
+      ds = su - d
+      i = 0
+      iu = 0
+      ip = 0
+
+      call sortr(kk,pw,ix,jdimc)
+
+      do jk=1,kk
+
+        k = ix(jk)
+        iy(k) = 1
+
+        if ( u(k) .le. ds ) then
+          i = i + 1
+          p(i) = pen(k)
+          w(i) = u(k)
+          ip = ip + p(i)
+          iu = iu + w(i)
+          ind(i) = k
+        end if
+
+      end do
+
+      if ( iu .le. ds ) go to 60
+      izm = 0
+
+      if ( i .eq. 0 ) then
+        zp = spen - izm
+        return
+      end if
+
+      izm = - 1
+      call kpmax(i,p,w,ds,izm,ix,spen-kubf,
+     &           jdimc+1,jdimc,dmyc1,dmyc2,dmyc3,dmyc4,dmyc5)
+   30 do j=1,i
+        k = ind(j)
+        iy(k) = 1 - ix(j)
+      end do
+      zp = spen - izm
+      return
+
+   60 do j=1,i
+        ix(j) = 1
+      end do
+      izm = ip
+      go to 30
+
+      end
+      subroutine mtg ( n, m, p, w, c, minmax, z, xstar, back, jck, jb )
+
+c*********************************************************************72
+c
+cc MTG solves the generalized assignment problem
+c
+c opt z = p(1,1)*x(1,1) + ... + p(1,n)*x(1,n) +
+c                         ...                 +
+c         p(m,1)*x(m,1) + ... + p(m,n)*x(m,n)
+c
+c     (where  opt = min  if  minmax = 1 ,  opt = max  if  minmax = 2 )
+c
+c subject to:
+c
+c       w(i,1)*x(i,1) + ... + w(i,n)*x(i,n) .le. c(i)  for i=1,...,m,
+c       x(1,j) + ... + x(m,j) = 1                      for j=1,...,n,
+c       x(i,j) = 0 or 1                     for i=1,...,m, j=1,...,n.
+c
+c the program implements the branch-and-bound algorithm described
+c in sections  7.3 - 7.5 .
+c
+c the input problem must satisfy the conditions
+c
+c   1) 2 .le. m .le. jdimr ;
+c   2) 2 .le. n .le. jdimc
+c      ( jdimr  and  jdimc  are defined by the first two executable
+c       statements);
+c   3) m .le. jdimpc
+c      ( jdimpc , defined by the third executable statement, is used
+c       for packing array  y , and cannot be greater than
+c       (number of bits of the host) - 2 ; if a higher value is
+c       desired, subroutines ydef and yuse must be re-structured
+c       accordingly);
+c   4) p(i,j), w(i,j) and c(i) positive integers;
+c   5) w(i,j) .le. c(i) for at least one i, for j=1,...,n;
+c   6) c(i) .ge. min (w(i,j)) for i=1,...,m.
+c
+c in addition, it is required that
+c
+c   7) (maximum level of the decision-tree) .le. jnlev .
+c      ( jnlev  is defined by the fourth executable statement.)
+c
+c mtg calls 24 procedures: chmtg, defpck, dmind, feas, gha, ghbcd,
+c                          ghx, gr1, gr2, heur, kpmax, kpmin, pen0,
+c                          pen1, prepen, skp1, sorti, sortr, termin,
+c                          trin, ubfjv, ubrs, ydef and yuse.
+c if not present in the library of the host, the user must supply an
+c integer function  iand ( i1, i2 )  which sets  iand to the bit-by-bit
+c logical and of  i1  and  i2 . such function is used in subroutines
+c ydef and yuse.
+c
+c communication to the program is  achieved solely through the
+c parameter list of mtg.
+c no machine-dependent constant is used.
+c the program is written in 1967 american national standard fortran
+c and is accepted by the pfort verifier (pfort is the portable
+c subset of ansi defined by the association for computing machinery).
+c the program has been tested on a digital vax 11/780 and an h.p.
+c 9000/840.
+c
+c mtg needs
+c   17 arrays ( c ,  dd ,  ud ,  q ,  pakl ,  ip ,  ir ,  il ,  if ,
+c               wobbl ,  kq ,  flrep ,  dmyr1 ,  dmyr2 ,  dmyr3 ,
+c               dmyr4  and  dmyr5 )  of length at least  m ;
+c   25 arrays ( xstar ,  xs ,  bs ,  b ,  ka ,  xxs ,  iobbl ,  jobbl ,
+c               best ,  xjjub ,  ds ,  dmyc1 ,  dmyc2 ,  dmyc3 ,
+c               dmyc4 ,  dmyc5 ,  dmyc6 ,  dmyc7 ,  dmyc8 ,  dmyc9 ,
+c               dmyc10 ,  dmyc11 ,  dmyc12 , dmyc13  and  dmycr1 ) of
+c               length at least  n ;
+c    4 arrays ( ps ,  ws ,  dmycc1  and  dmycc2 )  of length at least
+c               n + 1 ;
+c    6 arrays ( e ,  cc ,  cs ,  type ,  us  and  ubl ) of length at
+c               least  jnlev ;
+c    7 arrays ( p ,  w ,  a ,  x ,  pak ,  kap  and  mind ) of length
+c               at least  m x n ;
+c    5 arrays ( d ,  vs ,  v ,  lb  and  ub )  of length at least
+c               jnlev x m ;
+c    1 array  ( y )  of length at least  jnlev x n ;
+c    2 arrays ( mask1  and  itwo ) of length at least  jdimpc .
+c
+c the arrays are currently dimensioned to allow problems for which
+c       m .le. 10 ,
+c       n .le. 100 ,
+c   jnlev .le. 150 ,
+c on a 32-bit computer (so, in the calling program, arrays  p  and  w
+c must be dimensioned at  (10,100) ). changing such limits necessitates
+c changing the dimensions of all the arrays in subroutine mtg and in
+c common /pack/ (which is included in subroutines mtg, ydef and yuse),
+c as well as the four first executable statements.
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+c meaning of the input parameters:
+c
+c n        = number of items;
+c
+c m        = number of knapsacks;
+c
+c p(i,j)   = profit of item  j  if assigned to knapsack  i
+c            (i=1,...,m; j=1,...,n);
+c w(i,j)   = weight of item  j  if assigned to knapsack  i
+c            (i=1,...,m; j=1,...,n);
+c c(i)     = capacity of knapsack  i  (i=1,...,m);
+c minmax   = 1 if the objective function must be minimized,
+c          = 2 if the objective function must be maximized;
+c back     = - 1 if exact solution is required,
+c          = maximum number of backtrackings to be performed,
+c            if heuristic solution is required;
+c jck      = 1 if check on the input data is desired,
+c          = 0 otherwise.
+c
+c meaning of the output parameters:
+c z        = value of the optimal solution if z .gt. 0 ,
+c          = 0 if no feasible solution exists,
+c          = error in the input data (when jck=1) if z .lt. 0 : condi-
+c            tion  - z  is violated;
+c xstar(j) = knapsack where item  j  is inserted in the solution found;
+c jb       = lower bound (if minmax=1) or upper bound (if minmax=2)
+c            on the optimal solution value.
+c
+c all the parameters are integer. on return of mtg all the input
+c parameters are unchanged, with the following two exceptions.  back
+c gives the number of backtrackings performed;  p(i,j)  is set to  0
+c for all pairs  (i,j)  such that  w(i,j) .gt. c(i) .
+c
+c meaning of the main internal variables:
+c b(j)   = 0 if the assignment of item  j  is fixed,
+c        = 1 otherwise;
+c a(i,j) =   1 if assignment of item  j  to knapsack  i  is fixed,
+c        = - 1 if assignment of item  j  to knapsack  i  is prohibited,
+c        =   0 otherwise;
+c x(i,j) =   current solution of the relaxed problem;
+c y(l,j) =   packed solution of the relaxed problem for item  j  at
+c            level  l  of the branch-decision tree.
+c
+cf2py intent(in) n, m, p, w, c, minmax, back, jck
+cf2py intent(out) z, xstar, jb
+      integer       p(10,100),w(10,100),c(10),xstar(100),z,back
+      integer       h,s,r,u,su,vc,sb,t,qh,zbound,vjjub,penalt
+      integer       dd(10),ud(10),q(10),pakl(10),ip(10),ir(10),il(10),
+     &              if(10),wobbl(10),kq(10),flrep(10)
+      integer       xs(100),bs(100),b(100),ka(100),xxs(100),iobbl(100),
+     &              jobbl(100),best(100),xjjub(100)
+      real          ds(100)
+      integer       ps(101),ws(101)
+      integer       e(150),cc(150),cs(150),type(150),us(150),ubl(150)
+      integer       a(10,100),x(10,100),pak(10,100),kap(10,100),
+     &              mind(10,100)
+      integer       d(150,10),vs(150,10),v(150,10),lb(150,10),ub(150,10)
+      integer       y
+      integer       dmyr1(10),dmyr2(10),dmyr3(10),dmyr4(10),dmyr5(10)
+      integer       dmyc1(100),dmyc2(100),dmyc3(100),dmyc4(100),
+     &              dmyc5(100),dmyc6(100),dmyc7(100),dmyc8(100),
+     &              dmyc9(100),dmyc10(100),dmyc11(100),dmyc12(100),
+     &              dmyc13(100)
+      integer       dmycc1(101),dmycc2(101)
+      real          dmycr1(100)
+
+      common /pack/ mask1(30),itwo(30),mask,y(150,100)
+c
+c definition of the internal parameters.
+c
+      jdimr = 10
+      jdimc = 100
+      jdimpc = 30
+      jnlev = 150
+      z = 0
+      if ( jck .eq. 1 ) call chmtg(n,m,p,w,c,jdimr,jdimc,jdimpc,z)
+      if ( z .lt. 0 ) return
+c
+c step 1 (initialize).
+c
+      numnod = 0
+      invst = 0
+      imult = - 1
+      jb = 0
+      if ( minmax .eq. 2 ) go to 10
+c
+c transform the minimization problem into a maximization problem.
+c
+      call trin(p,n,m,invst,lam,jdimr,jdimc)
+      imult = 1
+c
+c solve the maximization problem.
+c
+c check for infeasibility.
+c
+   10 call feas(n,m,p,w,c,xstar,jfi,jdimr,jdimc)
+      if ( jfi .eq. 1 ) go to 880
+c
+c heuristics
+c
+      call heur(p,w,c,n,m,z,xstar,iub,jub,best,kvst,inf,
+     &         jdimr,jdimc,dmyr1,dmyr2,dmyr3,dmyr4,dmyr5,
+     &         dmyc1,dmyc2,dmyc3,dmyc4,dmycr1,a)
+      if ( z .ge. jub ) go to 880
+      if ( back .eq. 0 ) go to 880
+c
+c first reduction.
+c
+      call gr1(p,w,c,n,m,z,xstar,iub,best,b,a,nr,kq,kvst,jdimr,jdimc)
+      if ( nr .eq. 0 ) go to 880
+      kub = iub
+c
+c define the vectors for packing y.
+c
+      call defpck(m,jdimpc)
+c
+c compute the initial martello-toth bound (su) for the root node.
+c
+      call dmind(n,m,p,w,mind,jdimr,jdimc,dmyc1,dmycr1)
+      do i=1,m
+        flrep(i) = 1
+        q(i) = kq(i)
+      end do
+   30 su = 0
+      do 130 i=1,m
+        if ( flrep(i) .eq. 1 ) go to 40
+        su = su + v(1,i)
+        go to 130
+   40   lb(1,i) = 1
+        v(1,i) = 0
+        kk = 0
+        isum = 0
+        jspr = 0
+        do 60 jj=1,n
+          j = mind(i,jj)
+          xs(j) = 0
+          if ( a(i,j) .eq. (- 1) ) go to 60
+          if ( b(j) .eq. 1 ) go to 50
+          xs(j) = 1
+          jspr = jspr + p(i,j)
+          go to 60
+   50     if ( w(i,j) .gt. q(i) ) go to 60
+          kk = kk + 1
+          ws(kk) = w(i,j)
+          isum = isum + ws(kk)
+          ps(kk) = p(i,j)
+          bs(kk) = j
+   60   continue
+        if ( isum .gt. q(i) ) go to 80
+        if ( kk .eq. 0 ) go to 90
+        do j=1,kk
+          xxs(j) = 1
+          v(1,i) = v(1,i) + ps(j)
+        end do
+        go to 90
+   80   mubf = - 1
+        call kpmax(kk,ps,ws,q(i),v(1,i),xxs,mubf,
+     &             jdimc+1,jdimc,dmyc1,dmyc2,dmyc3,dmyc4,dmyc5)
+   90   v(1,i) = v(1,i) + jspr
+        su = su + v(1,i)
+        if ( kk .eq. 0 ) go to 110
+        do j=1,kk
+          index = bs(j)
+          xs(index) = xxs(j)
+        end do
+  110   do j=1,n
+          x(i,j) = xs(j)
+          call ydef(1,i,j,xs(j))
+        end do
+  130 continue
+      l = 1
+      cc(1) = 1
+      d(1,1) = 1
+      ub(1,1) = su
+      jub = su
+      if ( jub .gt. kub ) jub = kub
+      if ( jub .le. z ) go to 880
+      l = 2
+c
+c step 2 (forward step).
+c
+  140 if ( numnod .eq. back ) go to 880
+      numnod = numnod + 1
+      if ( numnod .gt. 1 ) go to 150
+c
+c compute the fisher-jaikumar-van wassenhove bound (jjub).
+c
+      call ubfjv(n,m,p,w,q,b,a,jjub,xjjub,vjjub,z,inf,
+     &           jdimr,jdimc,jdimc+1,dmyc1,dmyc2,dmyc3,dmycc1,
+     &           dmycc2,dmycr1,dmyc4,dmyc5,dmyc6,dmyc7,dmyc8,dmyc9,
+     &           dmyc10,dmyc11,dmyr1,dmyr2,dmyr3,dmyc12,pak)
+      go to 160
+c
+c compute the improved ross-soland bound (jjub).
+c
+  150 call ubrs(n,m,p,w,q,b,a,jjub,xjjub,vjjub,z,inf,
+     &          jdimr,jdimc,jdimc+1,dmyr1,dmyc1,dmyc2,dmyc3,dmyc4,
+     &          dmyc5,dmyc6,dmyc7,dmyc8,dmyc9,dmyc10,dmyc11,
+     &          dmyc12,dmyc13,dmycc1,dmycc2,dmycr1)
+  160 if ( jjub .le. z ) go to 690
+      if ( jjub .ne. vjjub ) go to 180
+      z = vjjub
+      do j=1,n
+        xstar(j) = xjjub(j)
+      end do
+      go to 680
+  180 ubl(l-1) = jjub
+      if ( l .lt. jnlev ) go to 190
+      z = - 7
+      go to 880
+c
+c search for implied assignments.
+c
+  190 kobbl = 0
+
+      do i=1,m
+        wobbl(i) = 0
+      end do
+
+      rz = 0
+      do 280 s=1,n
+        ka(s) = 1
+        if ( b(s) .eq. 0 ) go to 280
+        rptot = 0
+        rp1 = 0
+        ka(s) = 0
+        kfeas = 0
+        do 220 i=1,m
+          rsum = float(p(i,s))/float(w(i,s))
+          if ( x(i,s) .eq. 0 ) go to 210
+          ka(s) = ka(s) + 1
+          rp1 = rp1 + rsum
+          rptot = rptot + rsum
+          kfeas = kfeas + 1
+          ifeas = i
+          go to 220
+  210     rptot = rptot + rsum
+          if ( a(i,s) .eq. (- 1) ) go to 220
+          if ( w(i,s) .gt. q(i) ) go to 220
+          kfeas = kfeas + 1
+          ifeas = i
+  220   continue
+        if ( kfeas .eq. 0 ) go to 690
+        if ( kfeas .gt. 1 ) go to 240
+        wobbl(ifeas) = wobbl(ifeas) + w(ifeas,s)
+        if ( wobbl(ifeas) .gt. q(ifeas) ) go to 690
+        if ( x(ifeas,s) .eq. 1 ) go to 230
+        rz = inf
+        j = s
+        jt = 0
+        go to 280
+c
+c item s must be inserted into knapsack ifeas.
+c
+  230   kobbl = kobbl + 1
+        iobbl(kobbl) = ifeas
+        jobbl(kobbl) = s
+        go to 260
+  240   if ( ka(s) - 1 ) 250,280,260
+  250   ak = rptot/float(m)
+        go to 270
+  260   ak = rp1
+  270   ds(s) = ak
+        if ( ak .le. rz ) go to 280
+        rz = ak
+        j = s
+        jt = ka(s)
+  280 continue
+      if ( rz .le. 0. ) go to 650
+      if ( kobbl .eq. 0 ) go to 310
+c
+c kobbl particular forward steps.
+c
+      do 300 i=1,kobbl
+        l1 = l - 1
+        ik = iobbl(i)
+        jk = jobbl(i)
+        e(l) = jk
+        cs(l) = 1
+        d(l,1) = ik
+        cc(l) = 1
+        b(jk) = 0
+        a(ik,jk) = 1
+        q(ik) = q(ik) - w(ik,jk)
+        index = cc(l1)
+        index = d(l1,index)
+        ub(l,ik) = ub(l1,index)
+        ubl(l) = ubl(l1)
+        type(l) = 1
+        do ii=1,m
+          lb(l,ii) = lb(l1,ii)
+          v(l,ii) = v(l1,ii)
+        end do
+        l = l + 1
+  300 continue
+      go to 190
+  310 if ( z .eq. kvst ) go to 390
+c
+c compute the penalities for the improved martello-toth bound.
+c
+      call prepen(n,m,p,w,q,b,a,mind,pak,kap,pakl,ip,ir,il,if,
+     &            jdimr,jdimc)
+      izmax = - inf
+      rzmax = - inf
+      zbound = 0
+      index = cc(l-1)
+      index = d(l-1,index)
+      iub = ub(l-1,index)
+      do 370 jj=1,n
+        if ( ka(jj) .eq. 1 ) go to 370
+        if ( ka(jj) .eq. 0 ) go to 320
+        call pen1(jj,m,p,w,x,v,l-1,pak,kap,pakl,ip,ir,il,if,penalt,
+     &            jfo,iub,z,jdimr,jdimc,jnlev)
+        if ( jfo .eq. 0 ) go to 330
+        izmax = inf
+        rzmax = inf
+        j = jj
+        jt = ka(jj)
+        go to 330
+  320   call pen0(jj,m,p,w,q,a,v,l-1,pak,kap,pakl,ip,ir,il,if,
+     &            penalt,jfo,iub,z,inf,jdimr,jdimc,jnlev)
+        if ( jfo .gt. 1 ) go to 330
+        izmax = inf
+        rzmax = inf
+        j = jj
+        jt = 0
+  330   if ( penalt .le. zbound ) go to 340
+        if ( iub - penalt .le. z ) go to 690
+        zbound = penalt
+  340   if ( penalt .lt. izmax ) go to 370
+        if ( penalt .eq. izmax ) go to 350
+        izmax = penalt
+        rzmax = ds(jj)
+        go to 360
+  350   if ( ds(jj) .le. rzmax ) go to 370
+        rzmax = ds(jj)
+  360   j = jj
+        jt = ka(jj)
+  370 continue
+c
+c compute the improved martello-toth bound (iub - zbound).
+c
+      if ( ubl(l-1) .gt. iub - zbound ) ubl(l-1) = iub - zbound
+      if ( numnod .gt. 1 ) go to 390
+      jklim = iub - zbound
+      if ( jub .gt. ubl(1) ) jub = ubl(1)
+      if ( jub .gt. jklim ) jub = jklim
+c
+c second reduction (executed only for the root node).
+c
+      call gr2(n,m,p,w,q,b,a,mind,pak,kap,pakl,ip,ir,il,if,nr,z,
+     &         xstar,ub(1,1),x,v,flrep,kvst,jdimr,jdimc,jnlev,dmyr1)
+      if ( nr .eq. 0 ) go to 880
+c
+c check for re-execution.
+c
+      do 380 i=1,m
+        if ( flrep(i) .eq. 0 ) go to 380
+        numnod = 0
+        kub = jub
+        go to 30
+  380 continue
+c
+c forward step on item j.
+c
+  390 e(l) = j
+      type(l) = jt
+      t = 0
+      vc = 0
+      if ( type(l) .gt. 0 ) go to 420
+      do 410 i=1,m
+        if ( w(i,j) .gt. q(i) ) go to 400
+        if ( a(i,j) .eq. (- 1) ) go to 400
+        t = t + 1
+        d(l,t) = i
+  400   vc = vc + v(l-1,i)
+  410 continue
+      if ( t .eq. 0 ) go to 690
+      go to 450
+  420 do 440 i=1,m
+        if ( x(i,j) .eq. 0 ) go to 430
+        t = t + 1
+        d(l,t) = i
+        go to 440
+  430   vc = vc + v(l-1,i)
+  440 continue
+  450 cs(l) = t
+c
+c step 3 (bound).
+c
+c compute the initial martello-toth bound for the son nodes.
+c
+      kk = 0
+      do 560 r=1,t
+        h = d(l,r)
+        qh = q(h)
+        if (type(l) .eq. 0 ) qh = qh - w(h,j)
+        jw = w(h,j)
+        w(h,j) = inf
+        u = 0
+        sb = 0
+        isu = 0
+        do 480 js=1,n
+          s = mind(h,js)
+          if ( b(s) .eq. 0 ) go to 460
+          if ( w(h,s) .gt. qh ) go to 470
+          if ( a(h,s) .ne. 0 ) go to 470
+          u = u + 1
+          ps(u) = p(h,s)
+          ws(u) = w(h,s)
+          sb = sb + ws(u)
+          bs(u) = s
+          go to 480
+  460     if ( a(h,s) .ne. 1 ) go to 470
+          call ydef(l,h,s,1)
+          isu = isu + p(h,s)
+          go to 480
+  470     call ydef(l,h,s,0)
+  480   continue
+        if ( type(l) .gt. 0 ) go to 490
+        call ydef(l,h,j,1)
+        isu = isu + p(h,j)
+  490   index = cc(l-1)
+        ihs = d(l-1,index)
+        ksu = z - ub(l-1,ihs) + v(l-1,h) - isu
+        su = ksu
+        if ( sb .gt. qh ) go to 510
+        su = 0
+        if ( u .eq. 0 ) go to 540
+        do s=1,u
+          xs(s) = 1
+          su = su + ps(s)
+        end do
+        go to 520
+  510   mubf = - 1
+        call kpmax(u,ps,ws,qh,su,xs,mubf,
+     &             jdimc+1,jdimc,dmyc1,dmyc2,dmyc3,dmyc4,dmyc5)
+  520   do s=1,u
+          js = bs(s)
+          call ydef(l,h,js,xs(s))
+        end do
+  540   if ( su .gt. ksu ) go to 550
+        if ( type(l) .eq. 0 ) go to 550
+        kk = kk + 1
+        if ( kk .eq. 1 ) go to 550
+        w(h,j) = jw
+        go to 690
+  550   su = su + isu
+        vs(l,h) = su
+        if ( type(l) .gt. 0 ) vc = vc + su
+        w(h,j) = jw
+  560 continue
+c
+c step 4 (sort the son nodes).
+c
+      us(l) = vc
+      jsign = 1
+      if ( type(l) .eq. 0 ) jsign = - 1
+      do r=1,t
+        h = d(l,r)
+        jadd = v(l-1,h) - vs(l,h)
+        ub(l,h) = vc + jadd*jsign
+        dd(r) = h
+        ud(h) = ub(l,h)
+      end do
+
+      call sorti(t,ud,dd,jdimr)
+
+      do r=1,t
+        d(l,r) = dd(r)
+      end do
+c
+c step 5 (first branching from a node).
+c
+      l1 = l - 1
+      cc(l) = 1
+      h = d(l,1)
+      if ( ub(l,h) .le. z  ) go to 690
+
+      do i=1,m
+        lb(l,i) = lb(l1,i)
+        v(l,i) = v(l1,i)
+      end do
+
+      if ( type(l) .eq. 0 ) go to 620
+
+      do u=2,t
+        r = d(l,u)
+        lb(l,r) = l
+        v(l,r) = vs(l,r)
+        do s=1,n
+          call yuse(l,r,s,x(r,s))
+        end do
+      end do
+
+      go to 640
+  620 lb(l,h) = l
+      v(l,h) = vs(l,h)
+      do s=1,n
+        call yuse(l,h,s,x(h,s))
+      end do
+  640 a(h,j) = 1
+      b(j) = 0
+      q(h) = q(h) - w(h,j)
+      l = l + 1
+      go to 140
+c
+c step 6 (update the current optimal solution).
+c
+  650 l1 = l - 1
+      index = cc(l1)
+      h = d(l1,index)
+      if ( z .ge. ub(l1,h) ) go to 690
+      z = ub(l1,h)
+      do 670 j=1,n
+        do 660 i=1,m
+          if ( x(i,j) .ne. 1 ) go to 660
+          xstar(j) = i
+          go to 670
+  660   continue
+  670 continue
+  680 if ( z .eq. jub ) go to 880
+c
+c step 7 (backtrack and branching for the subsequent son nodes).
+c
+  690 l = l - 1
+      if ( l .le. 1 ) go to 880
+      index = cc(l)
+      h = d(l,index)
+      j = e(l)
+      l1 = l - 1
+      if ( cc(l) .eq. cs(l) ) go to 700
+      jh = d(l,index+1)
+      if ( ubl(l1) .le. z ) go to 700
+      if ( ub(l,jh) .gt. z ) go to 780
+      go to 710
+  700 if ( b(j) .eq. 1 ) go to 720
+  710 a(h,j) = 0
+      b(j) = 1
+      q(h) = q(h) + w(h,j)
+  720 t = cs(l)
+      if ( type(l) .gt. 0 ) go to 750
+      ls = lb(l1,h)
+      lb(l,h) = ls
+      v(l,h) = v(l1,h)
+      do 730 u=1,t
+        index = d(l,u)
+        a(index,j) = 0
+  730 continue
+      do s=1,n
+        call yuse(ls,h,s,x(h,s))
+      end do
+      go to 690
+  750 do 770 u=1,t
+        r = d(l,u)
+        if ( r .eq. h ) go to 770
+        ls = lb(l1,r)
+        lb(l,r) = ls
+        v(l,r) = v(l1,r)
+        a(r,j) = 0
+        do 760 s=1,n
+          call yuse(ls,r,s,x(r,s))
+  760   continue
+  770 continue
+      go to 690
+  780 a(h,j) = - 1
+      q(h) = q(h) + w(h,j)
+      if ( type(l) .gt. 0 ) go to 810
+      ls = lb(l1,h)
+      lb(l,h) = ls
+      v(l,h) = v(l1,h)
+      do s=1,n
+        call yuse(ls,h,s,x(h,s))
+      end do
+      cc(l) = cc(l) + 1
+      index = cc(l)
+      h = d(l,index)
+      lb(l,h) = l
+      v(l,h) = vs(l,h)
+      do s=1,n
+        call yuse(l,h,s,x(h,s))
+      end do
+      go to 850
+  810 lb(l,h) = l
+      v(l,h) = vs(l,h)
+      do s=1,n
+        call yuse(l,h,s,x(h,s))
+      end do
+      cc(l) = cc(l) + 1
+      index = cc(l)
+      h = d(l,index)
+      ls = lb(l1,h)
+      lb(l,h) = ls
+      v(l,h) = v(l1,h)
+      do s=1,n
+        call yuse(ls,h,s,x(h,s))
+      end do
+      if ( cc(l) .lt. cs(l) ) go to 850
+      if ( us(l) .le. z ) go to 850
+      if ( cs(l) .eq. m ) go to 850
+      do 840 r=1,m
+        if ( a(r,j) .eq. (- 1) ) go to 840
+        if ( w(r,j) .le. q(r) ) go to 860
+  840 continue
+  850 a(h,j) = 1
+      q(h) = q(h) - w(h,j)
+      go to 870
+  860 a(h,j) = 0
+      b(j) = 1
+  870 l = l + 1
+      go to 140
+c
+c terminate.
+c
+  880 call termin(jfi,invst,jub,imult,z,kvst,numnod,minmax,
+     &            m,n,p,lam,jdimr,jdimc,jb,back)
+      return
+      end
+      subroutine pen0(j,m,p,w,q,a,v,l1,pak,kap,pakl,ip,ir,il,if,
+     &                penalt,jfo,jub,jz,inf,jdimr,jdimc,jnlev)
+
+c*********************************************************************72
+c
+cc PEN0 computes the penalty for an item which was assigned to no knapsack.
+c
+c jfo = 1 iff item  j  can be inserted in only one knapsack.
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer p(jdimr,jdimc),w(jdimr,jdimc),q(jdimr),a(jdimr,jdimc),
+     &        v(jnlev,jdimr),pak(jdimr,jdimc),kap(jdimr,jdimc),
+     &        pakl(jdimr),ip(jdimr),ir(jdimr),il(jdimr),if(jdimr)
+      integer penalt,pmin
+      pmin = inf
+      jfo = 0
+      do 80 i=1,m
+        if ( a(i,j) .eq. (- 1) ) go to 80
+        if ( w(i,j) .gt. q(i) ) go to 80
+        jfo = jfo + 1
+        jj = kap(i,j)
+        kl = il(i)
+        if ( jj .le. kl ) go to 70
+        kr = ir(i) - w(i,j)
+        kp = ip(i) + p(i,j)
+   10   if ( kr .ge. 0 ) go to 20
+        jkl = pak(i,kl)
+        kr = kr + w(i,jkl)
+        kp = kp - p(i,jkl)
+        kl = kl - 1
+        go to 10
+   20   krtot = q(i) - w(i,j)
+        w(i,j) = w(i,j) + inf
+   30   kl = kl + 1
+        if ( kl .le. pakl(i) ) go to 40
+        rub = kp
+        go to 60
+   40   jkl = pak(i,kl)
+        if ( w(i,jkl) .gt. kr ) go to 50
+        kr = kr - w(i,jkl)
+        kp = kp + p(i,jkl)
+        go to 30
+   50   if ( w(i,jkl) .gt. krtot ) go to 30
+        rub = float(kp) + float(p(i,jkl)*kr)/float(w(i,jkl))
+   60   iub = rub
+        w(i,j) = w(i,j) - inf
+        lam = v(l1,i) - ( iub + if(i) )
+        if ( lam .le. 0 ) go to 70
+        if ( lam .lt. pmin ) pmin = lam
+        if ( jub - lam .le. jz ) jfo = jfo - 1
+        go to 80
+   70   pmin = 0
+   80 continue
+      penalt = pmin
+      return
+      end
+      subroutine pen1(j,m,p,w,x,v,l1,pak,kap,pakl,ip,ir,il,if,penalt,
+     &                jfo,jub,jz,jdimr,jdimc,jnlev)
+
+c*********************************************************************72
+c
+cc PEN1 computes the penalty for an item assigned to more than one knapsack.
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer p(jdimr,jdimc),w(jdimr,jdimc),x(jdimr,jdimc),
+     &        v(jnlev,jdimr),pak(jdimr,jdimc),kap(jdimr,jdimc),
+     &        pakl(jdimr),ip(jdimr),ir(jdimr),il(jdimr),if(jdimr)
+      integer penalt,psum,pmax
+      psum = 0
+      pmax = 0
+      jfo = 0
+      do 80 i=1,m
+        if ( x(i,j) .eq. 0 ) go to 80
+        jj = kap(i,j)
+        kl = il(i)
+        kp = ip(i)
+        kr = ir(i)
+        if ( jj - (kl + 1) ) 30,10,80
+   10   if ( kl + 1 .eq. pakl(i) ) go to 20
+        jkl = pak(i,kl+2)
+        rub = float(kp) + float(p(i,jkl)*kr)/float(w(i,jkl))
+        go to 70
+   20   rub = kp
+        go to 70
+   30   kp = kp - p(i,j)
+        kr = kr + w(i,j)
+        la = kl + 1
+        l2 = pakl(i)
+        if ( la .le. l2 ) go to 40
+        rub = kp
+        go to 70
+   40   do 50 jl=la,l2
+          jj = pak(i,jl)
+          if ( w(i,jj) .gt. kr ) go to 60
+          kr = kr - w(i,jj)
+          kp = kp + p(i,jj)
+   50   continue
+        rub = kp
+        go to 70
+   60   rub = float(kp) + float(p(i,jj)*kr)/float(w(i,jj))
+   70   iub = rub
+        lam = v(l1,i) - (iub + if(i))
+        if ( lam .le. 0 ) go to 80
+        psum = psum + lam
+        if ( lam .gt. pmax ) pmax = lam
+        if ( jub - lam .le. jz ) jfo = i
+   80 continue
+      penalt = psum - pmax
+      return
+      end
+      subroutine prepen(n,m,p,w,q,b,a,mind,pak,kap,pakl,ip,ir,il,if,
+     &                  jdimr,jdimc)
+
+c*********************************************************************72
+c
+cc PREPEN determines  pak ,  kap  and  pakl (pointers for computing penalties)
+c and  ip ,  ir ,  il  and  if (greedy initial solutions).
+c if = profit of fixed items;
+c il = break item (last which fits);
+c ip = profit of the first  il  items;
+c ir = residual capacity corresponding to  ip .
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer p(jdimr,jdimc),w(jdimr,jdimc),q(jdimr),b(jdimc),
+     &        a(jdimr,jdimc),mind(jdimr,jdimc),pak(jdimr,jdimc),
+     &        kap(jdimr,jdimc),pakl(jdimr),ip(jdimr),ir(jdimr),
+     &        il(jdimr),if(jdimr)
+
+      do 60 i=1,m
+        k = 0
+        isfix = 0
+        do 20 js=1,n
+          j = mind(i,js)
+          if ( b(j) .eq. 0 ) go to 10
+          if ( w(i,j) .gt. q(i) ) go to 20
+          if ( a(i,j) .eq. (- 1) ) go to 20
+          k = k + 1
+          pak(i,k) = j
+          kap(i,j) = k
+          go to 20
+   10     if ( a(i,j) .eq. 1 ) isfix = isfix + p(i,j)
+   20   continue
+        pakl(i) = k
+        lk = 0
+        ipk = 0
+        irk = q(i)
+        if ( k .eq. 0 ) go to 50
+        do 30 jk=1,k
+          j = pak(i,jk)
+          if ( w(i,j) .gt. irk ) go to 40
+          irk = irk - w(i,j)
+          ipk = ipk + p(i,j)
+   30   continue
+        lk = k
+        go to 50
+   40   lk = jk - 1
+   50   ip(i) = ipk
+        ir(i) = irk
+        il(i) = lk
+        if(i) = isfix
+   60 continue
+      return
+      end
+      subroutine skp1(n,p,w,kqi,vsti,i,kqri,b,a,x,y,u,jstep,
+     &               jdimr,jdimc,jdimc1,kpunt,jp,kx,kp,kw,r,dmyc1,
+     &               dmyc2,dmyc3,dmyc4,dmyc5)
+
+c*********************************************************************72
+c
+cc SKP1 solves a 0-1 single knapsack problem.
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer p(jdimr,jdimc),w(jdimr,jdimc),b(jdimc),
+     &        a(jdimr,jdimc),u(jdimc),vsti,x(jdimr,jdimc),y(jdimc)
+      integer kpunt(jdimc),jp(jdimc),kp(jdimc1),kw(jdimc1),kx(jdimc)
+      integer dmyc1(jdimc),dmyc2(jdimc),dmyc3(jdimc),dmyc4(jdimc),
+     &        dmyc5(jdimc)
+      real    r(jdimc)
+      kn = 0
+      ksw = 0
+      do 10 j=1,n
+        if ( b(j) .le. 0 ) go to 10
+        if ( a(i,j) .ne. 0 ) go to 10
+        if ( w(i,j) .gt. kqi ) go to 10
+        kkp = p(i,j) - u(j)
+        if ( kkp .le. 0 ) go to 10
+        kn = kn + 1
+        r(kn) = float(kkp)/float(w(i,j))
+        jp(kn) = kn
+        kpunt(kn) = j
+        ksw = ksw + w(i,j)
+   10 continue
+
+      if ( jstep .ne. 4 ) go to 30
+
+      do j=1,n
+        y(j) = 0
+      end do
+
+   30 kqri = kqi
+      if ( kn .eq. 0 ) return
+      if ( ksw .gt. kqi ) go to 50
+
+      do kj=1,kn
+        j = kpunt(kj)
+        vsti = vsti + (p(i,j) - u(j))
+        kqri = kqri - w(i,j)
+        if ( jstep .eq. 2 ) x(i,j) = 1
+        if ( jstep .eq. 4 ) y(j) = 1
+      end do
+
+      return
+   50 call sortr(kn,r,jp,jdimc)
+
+      do kj=1,kn
+        k = jp(kj)
+        j = kpunt(k)
+        kp(kj) = p(i,j) - u(j)
+        kw(kj) = w(i,j)
+        jp(kj) = j
+      end do
+
+      mubf = 0
+      jvsti = - 1
+      call kpmax(kn,kp,kw,kqi,jvsti,kx,mubf,jdimc+1,jdimc,
+     &           dmyc1,dmyc2,dmyc3,dmyc4,dmyc5)
+      vsti = vsti + jvsti
+      kqri = kqi
+
+      do kj=1,kn
+        j = jp(kj)
+        if ( jstep .eq. 2 ) x(i,j) = kx(kj)
+        if ( jstep .eq. 4 ) y(j) = kx(kj)
+        kqri = kqri - kx(kj)*w(i,j)
+      end do
+
+      return
+      end
+      subroutine sorti(n,a,v,jda)
+
+c*********************************************************************72
+c
+cc SORTI sorts the integer array a by decreasing values (derived from
+c subroutine sortzv of the c.e.r.n. library).
+c
+c jda           = length of array a;
+c n             = number of elements of a to be sorted;
+c v(i) (input)  = pointer to the i-th element to be sorted;
+c v(i) (output) = pointer to the i-th element of the sorted array.
+c
+c on return, array a is unchanged.
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer v(n),iu(20),il(20)
+      integer a(jda),t
+      ii = 1
+      jj = n
+      if ( n .le. 1 ) return
+      m = 1
+      i = ii
+      j = jj
+   10 if ( i .ge. j ) go to 80
+   20 k = i
+      ij = (j + i)/2
+      iv = v(ij)
+      t = a(iv)
+      ki = v(i)
+      if ( a(ki) .ge. t ) go to 30
+      v(ij) = ki
+      v(i) = iv
+      iv = v(ij)
+      t = a(iv)
+   30 l = j
+      ki = v(j)
+      if ( a(ki) .le. t ) go to 50
+      v(ij) = ki
+      v(j) = iv
+      iv = v(ij)
+      t = a(iv)
+      ki = v(i)
+      if ( a(ki) .ge. t ) go to 50
+      v(ij) = ki
+      v(i) = iv
+      iv = v(ij)
+      t = a(iv)
+      go to 50
+   40 v(l) = v(k)
+      v(k) = ivt
+   50 l = l - 1
+      ki = v(l)
+      if ( a(ki) .lt. t ) go to 50
+      ivt = ki
+   60 k = k + 1
+      ki = v(k)
+      if ( a(ki) .gt. t ) go to 60
+      if ( k .le. l ) go to 40
+      if ( l - i .le. j - k ) go to 70
+      il(m) = i
+      iu(m) = l
+      i = k
+      m = m + 1
+      go to 90
+   70 il(m) = k
+      iu(m) = j
+      j = l
+      m = m + 1
+      go to 90
+   80 m = m - 1
+      if ( m .eq. 0 ) return
+      i = il(m)
+      j = iu(m)
+   90 if ( j - i .ge. ii ) go to 20
+      if ( i .eq. ii ) go to 10
+      i = i - 1
+  100 i = i + 1
+      if ( i .eq. j ) go to 80
+      iv = v(i+1)
+      t = a(iv)
+      ki = v(i)
+      if ( a(ki) .ge. t ) go to 100
+      k = i
+  110 v(k+1) = v(k)
+      k = k - 1
+      ki = v(k)
+      if ( t .gt. a(ki) ) go to 110
+      v(k+1) = iv
+      go to 100
+      end
+      subroutine sortr(n,a,v,jda)
+
+c*********************************************************************72
+c
+cc SORTR index-sorts the real array a by decreasing values.
+c
+c jda           = length of array a;
+c n             = number of elements of a to be sorted;
+c v(i) (input)  = pointer to the i-th element to be sorted;
+c v(i) (output) = pointer to the i-th element of the sorted array.
+c
+c on return, array a is unchanged.
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer v(n),iu(20),il(20)
+      real    a(jda)
+      ii = 1
+      jj = n
+      if ( n .le. 1 ) return
+      m = 1
+      i = ii
+      j = jj
+   10 if ( i .ge. j ) go to 80
+   20 k = i
+      ij = (j + i)/2
+      iv = v(ij)
+      t = a(iv)
+      ki = v(i)
+      if ( a(ki) .ge. t ) go to 30
+      v(ij) = ki
+      v(i) = iv
+      iv = v(ij)
+      t = a(iv)
+   30 l = j
+      ki = v(j)
+      if ( a(ki) .le. t ) go to 50
+      v(ij) = ki
+      v(j) = iv
+      iv = v(ij)
+      t = a(iv)
+      ki = v(i)
+      if ( a(ki) .ge. t ) go to 50
+      v(ij) = ki
+      v(i) = iv
+      iv = v(ij)
+      t = a(iv)
+      go to 50
+   40 v(l) = v(k)
+      v(k) = ivt
+   50 l = l - 1
+      ki = v(l)
+      if ( a(ki) .lt. t ) go to 50
+      ivt = ki
+   60 k = k + 1
+      ki = v(k)
+      if ( a(ki) .gt. t ) go to 60
+      if ( k .le. l ) go to 40
+      if ( l - i .le. j - k ) go to 70
+      il(m) = i
+      iu(m) = l
+      i = k
+      m = m + 1
+      go to 90
+   70 il(m) = k
+      iu(m) = j
+      j = l
+      m = m + 1
+      go to 90
+   80 m = m - 1
+      if ( m .eq. 0 ) return
+      i = il(m)
+      j = iu(m)
+   90 if ( j - i .ge. ii ) go to 20
+      if ( i .eq. ii ) go to 10
+      i = i - 1
+  100 i = i + 1
+      if ( i .eq. j ) go to 80
+      iv = v(i+1)
+      t = a(iv)
+      ki = v(i)
+      if ( a(ki) .ge. t ) go to 100
+      k = i
+  110 v(k+1) = v(k)
+      k = k - 1
+      ki = v(k)
+      if ( t .gt. a(ki) ) go to 110
+      v(k+1) = iv
+      go to 100
+      end
+      subroutine termin(jfi,invst,jub,imult,z,kvst,numnod,minmax,
+     &                  m,n,p,lam,jdimr,jdimc,jb,back)
+
+c*********************************************************************72
+c
+cc TERMIN terminates execution.
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer z,p(jdimr,jdimc),back
+      integer zm
+      if ( jfi .eq. 1 ) go to 10
+      if ( jub .lt. z ) jub = z
+      jb = invst - jub*imult
+      if ( z .eq. (-7) ) go to 10
+      zm = z
+      z = 0
+      if ( zm .gt. kvst ) z = invst - zm*imult
+      back = numnod
+   10 if ( minmax .eq. 2 ) return
+c
+c  Restore the original minimization problem.
+c
+      do i=1,m
+        do j=1,n
+          if ( p(i,j) .gt. 0 ) p(i,j) = lam - p(i,j)
+        end do
+      end do
+
+      return
+      end
+      subroutine trin(p,n,m,invst,lam,jdimr,jdimc)
+
+c*********************************************************************72
+c
+cc TRIN transforms an gap in minimization form to an equivalent instance in maximization form.
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer p(jdimr,jdimc)
+      invst = 0
+      max = 0
+      do 20 j=1,n
+        do i=1,m
+          if ( p(i,j) .gt. max ) max = p(i,j)
+        end do
+   20 continue
+      lam = max + 1
+      do 40 j=1,n
+        do 30 i=1,m
+          p(i,j) = lam - p(i,j)
+   30   continue
+        invst = invst + lam
+   40 continue
+      return
+      end
+      subroutine ubfjv(n,m,p,w,q,b,a,jfjvu,xrs,vfjv,vstar,inf,
+     &                 jdimr,jdimc,jdimc1,dmyc1,dmyc2,dmyc3,dmycc1,
+     &                 dmycc2,dmycr1,dmyc4,dmyc5,dmyc6,dmyc7,dmyc8,
+     &                 u,nots,y,vst,kq,kqr,miny,x)
+
+c*********************************************************************72
+c
+cc UBFJV computes the fisher-jaikumar-van wassenhove upper bound.
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer p(jdimr,jdimc),w(jdimr,jdimc),q(jdimr),b(jdimc),
+     &        a(jdimr,jdimc),xrs(jdimc)
+      integer vstar,vfjv
+      integer u(jdimc),vst(jdimr),kq(jdimr),kqr(jdimr),
+     &        nots(jdimc),y(jdimc),delta,vsti
+      integer x(jdimr,jdimc),miny(jdimc)
+      integer dmyc1(jdimc),dmyc2(jdimc),dmyc3(jdimc),dmyc4(jdimc),
+     &        dmyc5(jdimc),dmyc6(jdimc),dmyc7(jdimc),dmyc8(jdimc),
+     &        dmycc1(jdimc1),dmycc2(jdimc1)
+      real    dmycr1(jdimc)
+c
+c step 1.
+c
+      vfjv = 0
+
+      do i=1,m
+        kq(i) = q(i)
+        vst(i) = 0
+        do j=1,n
+          x(i,j) = 0
+        end do
+      end do
+
+      jfjvu = 0
+
+      do 50 j=1,n
+        u(j) = 0
+        if ( b(j) .eq. 1 ) go to 50
+        do i=1,m
+          if ( a(i,j) .eq. 1 ) go to 40
+        end do
+   40   jfjvu = jfjvu + p(i,j)
+   50 continue
+
+   60 jrep = 0
+      do 110 j=1,n
+        if ( b(j) .le. 0 ) go to 110
+        max = - 1
+        max2 = - 1
+        do 80 i=1,m
+          if ( a (i,j) .eq. (- 1) ) go to 80
+          if ( w(i,j) .gt. kq(i) ) go to 80
+          if ( p(i,j) .le. max2 ) go to 80
+          if ( p(i,j) .gt. max ) go to 70
+          max2 = p(i,j)
+          go to 80
+   70     max2 = max
+          max = p(i,j)
+          imax = i
+   80   continue
+        jfjvu = jfjvu - u(j)
+        u(j) = max2
+        if ( max .gt. 0 ) go to 90
+        jfjvu = - 1
+        go to 360
+   90   if ( max2 .le. 0 ) go to 100
+        jfjvu = jfjvu + u(j)
+        go to 110
+  100   kq(imax) = kq(imax) - w(imax,j)
+        jfjvu = jfjvu + p(imax,j)
+        b(j) = - imax
+        jrep = 1
+  110 continue
+      if ( jrep .eq. 1 ) go to 60
+c
+c step 2.
+c
+      do 120 i=1,m
+        call skp1(n,p,w,kq(i),vst(i),i,kqr(i),b,a,x,y,u,2,
+     &           jdimr,jdimc,jdimc+1,dmyc1,dmyc2,dmyc3,dmycc1,dmycc2,
+     &           dmycr1,dmyc4,dmyc5,dmyc6,dmyc7,dmyc8)
+        jfjvu = jfjvu + vst(i)
+  120 continue
+c
+c step 3.
+c
+  130 if ( jfjvu .le. vstar ) go to 360
+c
+c initialize nots.
+c
+      jns = 0
+      do 150 j=1,n
+        if ( b(j) .le. 0 ) go to 150
+        do 140 i=1,m
+          if ( x(i,j) .eq. 1 ) go to 150
+  140   continue
+        jns = jns + 1
+        nots(jns) = j
+  150 continue
+c
+c iterative part.
+c
+  160 if ( jns .gt. 0 ) go to 240
+      do 230 j=1,n
+        if ( b(j) .eq. 0 ) go to 200
+        if ( b(j) .gt. 0 ) go to 170
+        i = - b(j)
+        go to 190
+  170   do 180 i=1,m
+          if ( x(i,j) .eq. 1 ) go to 190
+  180   continue
+  190   xrs(j) = i
+        vfjv = vfjv + p(i,j)
+        go to 230
+  200   do 210 i=1,m
+          if ( a(i,j) .eq. 1 ) go to 220
+  210   continue
+  220   xrs(j) = i
+        vfjv = vfjv + p(i,j)
+  230 continue
+      go to 360
+  240 max = - 1
+      do 260 jj=1,jns
+        j = nots(jj)
+        do 250 i=1,m
+          if ( p(i,j) - u(j) .ne. 0 ) go to 250
+          if ( w(i,j) .gt. kqr(i) ) go to 250
+          if ( p(i,j) .le. max ) go to 250
+          max = p(i,j)
+          imax = i
+          jmax = j
+          jjmax = jj
+  250   continue
+  260 continue
+      if ( max .lt. 0 ) go to 270
+      x(imax,jmax) = 1
+      kqr(imax) = kqr(imax) - w(imax,jmax)
+      nots(jjmax) = nots(jns)
+      jns = jns - 1
+      go to 160
+c
+c step 4.
+c
+  270 do 330 jj=1,jns
+        j = nots(jj)
+        min = inf
+        min2 = min
+        do 300 i=1,m
+          if ( a(i,j) .ne. 0 ) go to 300
+          if ( w(i,j) .gt. kq(i) ) go to 300
+          a(i,j) = - 2
+          kqi = kq(i) - w(i,j)
+          vsti = p(i,j) - u(j)
+          call skp1(n,p,w,kqi,vsti,i,kqri,b,a,x,y,u,4,
+     &             jdimr,jdimc,jdimc+1,dmyc1,dmyc2,dmyc3,dmycc1,dmycc2,
+     &             dmycr1,dmyc4,dmyc5,dmyc6,dmyc7,dmyc8)
+          a(i,j) = 0
+          y(j) = 1
+          delta = vst(i) - vsti
+          if ( delta .ge. min2 ) go to 300
+          if ( delta .lt. min ) go to 280
+          min2 = delta
+          if ( min2 .le. 0 ) go to 330
+          go to 300
+  280     min2 = min
+          min = delta
+          minz = vsti
+          minkq = kqri
+          mini = i
+          do 290 k=1,n
+            miny(k) = y(k)
+  290     continue
+          if ( min2 .le. 0 ) go to 330
+  300   continue
+        jstar = j
+        istar = mini
+        do 320 k=1,n
+          if ( miny(k) .eq. 0 ) go to 320
+          do 310 i=1,m
+            if ( i .eq. istar ) go to 310
+            if ( x(i,k) .eq. 1 ) go to 330
+  310     continue
+  320   continue
+        go to 340
+  330 continue
+      go to 360
+c
+c step 5.
+c
+  340 u(jstar) = u(jstar) - min2
+      vst(istar) = minz + min2
+      kqr(istar) = minkq
+      do 350 j=1,n
+        x(istar,j) = miny(j)
+  350 continue
+      jfjvu = jfjvu - min
+      go to 130
+c
+c return.
+c
+  360 do 370 j=1,n
+        if ( b(j) .lt. 0 ) b(j) = 1
+  370 continue
+      return
+      end
+      subroutine ubrs(n,m,p,w,q,b,a,jrsu,xrs,vrs,z,inf,
+     &                jdimr,jdimc,jdimc1,qh,penrs,pen,u,xk,
+     &                dmyc1,dmyc2,dmyc3,dmyc4,dmyc5,dmyc6,dmyc7,
+     &                ismax,kpoint,dmycc1,dmycc2,dmycr1)
+
+c*********************************************************************72
+c
+cc UBRS computes the improved ross-soland upper bound.
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer p(jdimr,jdimc),w(jdimr,jdimc),q(jdimr),b(jdimc),
+     &        a(jdimr,jdimc),xrs(jdimc),vrs,z
+      integer qh(jdimr),penrs(jdimc),pen(jdimc),u(jdimc),xk(jdimc),
+     &        ismax(jdimc),kpoint(jdimc)
+      integer dmyc1(jdimc),dmyc2(jdimc),dmyc3(jdimc),dmyc4(jdimc),
+     &        dmyc5(jdimc),dmyc6(jdimc),dmyc7(jdimc)
+      integer dmycc1(jdimc1),dmycc2(jdimc1)
+      real    dmycr1(jdimc)
+      integer fmax,smax,d
+      do i=1,m
+        qh(i) = 0
+      end do
+      jv = 0
+      mind = inf
+      do 60 j=1,n
+        if ( b(j) .eq. 1 ) go to 30
+        do 20 i=1,m
+          if ( a(i,j) .ne. 1 ) go to 20
+          jv = jv + p(i,j)
+          xrs(j) = i
+          ismax(j) = 0
+          go to 60
+   20   continue
+   30   fmax = - inf
+        if = 0
+        smax = - 2*inf
+        do 50 i=1,m
+          if ( a(i,j) .eq. (- 1) ) go to 50
+          if ( w(i,j) .gt. q(i) ) go to 50
+          if ( smax .ge. p(i,j) ) go to 50
+          if ( fmax .ge. p(i,j) ) go to 40
+          smax = fmax
+          is = if
+          fmax = p(i,j)
+          if = i
+          go to 50
+   40     smax = p(i,j)
+          is = i
+   50   continue
+        if ( if .eq. 0 ) go to 160
+        xrs(j) = if
+        ismax(j) = is
+        jv = jv + fmax
+        qh(if) = qh(if) + w(if,j)
+        penrs(j) = fmax - smax
+        if ( fmax - smax .lt. mind ) mind = fmax - smax
+   60 continue
+      do 70 i=1,m
+        if ( qh(i) .gt. q(i) ) go to 80
+   70 continue
+      jrsu = jv
+      vrs = jv
+      return
+   80 jrsu = jv - mind
+      vrs = 0
+      if ( jrsu .le. z ) return
+c
+c compute the minimum penalty for each unsatisfied knapsack.
+c
+      jrsu = jv
+      do 120 i=1,m
+        if ( qh(i) .le. q(i) ) go to 120
+        d = qh(i) - q(i)
+        kk = 0
+        mind = inf
+        do 90 j=1,n
+          if ( b(j) .eq. 0 ) go to 90
+          if ( xrs(j) .ne. i ) go to 90
+          kk = kk + 1
+          pen(kk) = penrs(j)
+          u(kk) = w(i,j)
+          if ( pen(kk) .lt. mind ) mind = pen(kk)
+          kpoint(kk) = j
+   90   continue
+        if ( jrsu - mind .le. z ) go to 110
+        kubf = jrsu - z
+        call kpmin(kk,pen,u,d,mind,xk,kubf,
+     &             jdimc,jdimc+1,dmycc1,dmycc2,dmyc6,dmyc7,dmycr1,
+     &             dmyc1,dmyc2,dmyc3,dmyc4,dmyc5)
+        do 100 kj=1,kk
+          if ( xk(kj) .eq. 0 ) go to 100
+          j = kpoint(kj)
+          ismax(j) = - ismax(j)
+  100   continue
+  110   jrsu = jrsu - mind
+        if ( jrsu .le. z ) return
+  120 continue
+c
+c try to obtain a feasible and optimal solution.
+c
+      do 130 i=1,m
+        qh(i) = 0
+  130 continue
+      do 150 j=1,n
+        if ( b(j) .eq. 0 ) go to 150
+        if ( ismax(j) .ge. 0 ) go to 140
+        xrs(j) = - ismax(j)
+  140   i = xrs(j)
+        qh(i) = qh(i) + w(i,j)
+        if ( qh(i) .gt. q(i) ) return
+  150 continue
+      vrs = jrsu
+      return
+c
+c infeasibility.
+c
+  160 jrsu = 0
+      vrs = - 1
+      return
+      end
+      subroutine ydef(l,i,j,ny)
+
+c*********************************************************************72
+c
+cc YDEF sets y(l,i,j) = NY.
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer       y
+      common /pack/ mask1(30),itwo(30),mask,y(150,100)
+      iylj = y(l,j)
+      imask1 = mask1(i)
+      y(l,j) = iand ( iylj, imask1 ) + ny*itwo(i)
+      return
+      end
+      subroutine yuse(l,i,j,ny)
+
+c*********************************************************************72
+c
+cc YUSE sets ny = y(l,i,j) .
+c
+c  Modified:
+c
+c    06 December 2009
+c
+c  Author:
+c
+c    Silvano Mortello, Paolo Toth
+c
+c  Reference:
+c
+c    Silvano Martello, Paolo Toth,
+c    Knapsack Problems: Algorithms and Computer Implementations,
+c    Wiley, 1990,
+c    ISBN: 0-471-92420-2,
+c    LC: QA267.7.M37.
+c
+      integer       y
+      common /pack/ mask1(30),itwo(30),mask,y(150,100)
+      iyit = y(l,j)/itwo(i)
+      imask = mask
+
+      ny = iand ( iyit, imask )
+
+      return
+      end

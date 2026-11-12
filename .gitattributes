@@ -1,3 +1,10 @@
 # 保持改前源码的字节与验收记录中的 SHA-256 一致。
 /vault/Results/Evidence/p1-problem-adaptation/baseline/ProblemInstance.java text eol=lf
 /vault/Results/Evidence/p1-problem-adaptation/baseline/ScheduleValidator.java text eol=lf
+
+# 案例哈希依据文件原始字节，检出时保留源码与版本记录的换行。
+/cases/A/** -text
+/cases/B/** -text
+/cases/C/** -text
+/cases/backend/sources/*.json -text
+/cases/backend/versions/** -text

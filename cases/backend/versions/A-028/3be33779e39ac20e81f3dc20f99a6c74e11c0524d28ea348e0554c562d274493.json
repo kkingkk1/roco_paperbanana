@@ -1,0 +1,51 @@
+{
+  "case_id": "A-028",
+  "category": "score_based_multi_assignment",
+  "description": [
+    "Score-based multi-capacity assignment:\n",
+    "- Assignment: Order tasks by best score + regret (best minus second-best score); greedily assign each to its highest-scoring resource with available slots.\n",
+    "- Local Search: Optionally evaluate pairwise task swaps across resources; accept moves yielding strictly positive total-score improvement.\n",
+    "- Termination: Stop on zero improvement, time limit, iteration limit, or minimum-gain threshold."
+  ],
+  "code": {
+    "format": "file_markers",
+    "files": [
+      {
+        "path": "src/pyproject.toml",
+        "sha256": "8d392a2eed635fdd451593a57764cecb3f7e1a9739ea17bd5f03454b1f3d2bfe"
+      },
+      {
+        "path": "src/setup.py",
+        "sha256": "41d070a73b038c3344bfc9dac7a02b2f757575579ea192c32fa44942c0b553cc"
+      },
+      {
+        "path": "src/src/sbma/__init__.py",
+        "sha256": "f5455221ec2ed0c1df8720123cbabb991c85c1fe8ab932c0fdada9a17e3b85d9"
+      },
+      {
+        "path": "src/src/sbma/solver.py",
+        "sha256": "48806dd4284d9208b6787bbbe608af2bb4781733f239e79103ee029df0b9607e"
+      },
+      {
+        "path": "src/src/sbma/_solver.cpp",
+        "sha256": "a389f69c1190137ed1f8446f8fb361df4a48c64e05c960b585dc459630bca416"
+      },
+      {
+        "path": "src/src/sbma/_starting_point.cpp",
+        "sha256": "6234a485075f5835ed7d4d94dd495877af35d40453df3127e3da43f67d35afa8"
+      },
+      {
+        "path": "src/src/sbma/_auxiliaries.cpp",
+        "sha256": "38c78549fcd9994a914e3051b891f7943d9bcfe7d6322e6106a8090ea6fd7f5c"
+      },
+      {
+        "path": "src/src/sbma/_util.cpp",
+        "sha256": "2e0667b626fed8860b3f43f75aeee5a2e1b81415652de791c92aacd9ca36808f"
+      },
+      {
+        "path": "src/src/sbma/_util.hpp",
+        "sha256": "bc7a151cd99627fb4202fda2cc8fe6411ab0011bcca539961c577f27ec2eb082"
+      }
+    ]
+  }
+}

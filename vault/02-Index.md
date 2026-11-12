@@ -1,6 +1,6 @@
 # 项目知识索引
 
-更新日期：2026-11-05。
+更新日期：2026-11-07。
 
 ## 顶层入口
 
@@ -17,6 +17,7 @@
 - [P0-研究合同与既有起点](Plan/mechanisms/P0-研究合同与既有起点.md)
 - [P1-可运行求解器起点](Plan/mechanisms/P1-可运行求解器起点.md)——已完成工程验收。
 - [P2-五角色协作演化](Plan/mechanisms/P2-五角色协作演化.md)
+- [P2-任务1-准备案例与检索协议](Plan/mechanisms/P2-任务1-准备案例与检索协议.md)
 - [P3-小预算先导与冻结选型](Plan/mechanisms/P3-小预算先导与冻结选型.md)
 - [P4-正式实验与研究主张](Plan/mechanisms/P4-正式实验与研究主张.md)
 
@@ -25,6 +26,7 @@
 - [问题建模与输入协议](Knowledge/问题建模.md)
 - [来源、迁移范围与表示边界](Knowledge/Source-Provenance.md)
 - [方法与评价合同](Knowledge/多智能体算法与评价合同.md)
+- [案例入库与接口适配](Knowledge/案例入库与接口适配.md)及[后台材料台账](../cases/backend/材料台账.md)
 - [算法设计方法参照](Knowledge/算法设计方法参照.md)
 - [演化机制示例与汇报提纲](Writing/演化机制示例与汇报提纲.md)——讲解用假设成绩，不是运行证据。
 

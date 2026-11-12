@@ -1,0 +1,22 @@
+{
+  "case_id": "A-011",
+  "category": "feedback_price_migration",
+  "description": [
+    "Initialization: Assign tasks (descending reward, then task ID) to candidate satellite with lowest assigned duration; ",
+    "tie-break by smaller ID. Unassigned if no candidates.\n\n",
+    "Reassignment (test unobserved task-satellite pairs from base schedule):\n",
+    "- Pair Sorting: Sort candidate pairs by descending (reward - penalty), then ascending task and satellite ID (penalties start at 0).\n",
+    "- Penalty Update: Increment pair penalty if trial is infeasible or task fails to be scheduled on target.\n",
+    "- Acceptance: Select feasible trial with highest total reward strictly above current schedule; retain first on tie.\n",
+    "- Termination: Stop when no candidate improves or timeout expires (retain best verified checkpoint)."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000011.java",
+        "sha256": "43b8a47ea5680dfaa7ba77262288f6e0dca5f906bce381638e99d768af4346c1"
+      }
+    ]
+  }
+}

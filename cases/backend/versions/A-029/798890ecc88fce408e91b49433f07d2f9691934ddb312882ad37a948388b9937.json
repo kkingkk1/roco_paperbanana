@@ -1,0 +1,35 @@
+{
+  "case_id": "A-029",
+  "category": "asymmetric_greedy_local_search",
+  "description": [
+    "Asymmetric matching with local search:\n",
+    "- Initialization: Invert costs to benefits; greedily assign each row to its highest-benefit unoccupied column.\n",
+    "- Local Search: Evaluate row swaps versus replacements with unused columns; apply move type with superior positive gain (batch non-overlapping row swaps).\n",
+    "- Termination: Stop when no move yields positive gain, or upon hitting iteration/stagnation limits."
+  ],
+  "code": {
+    "format": "file_markers",
+    "files": [
+      {
+        "path": "src/LICENSE",
+        "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+      },
+      {
+        "path": "src/asymmetric_greedy_search/__init__.py",
+        "sha256": "8c909869f013e2863b3bdc7102808475fb7c5ec0e724e315a1decdbd1db5aee2"
+      },
+      {
+        "path": "src/asymmetric_greedy_search/core.py",
+        "sha256": "6fc9bef0112dd00b9543d13e2b1cc7bbc21012e99c453858b3f0de40204f5a3f"
+      },
+      {
+        "path": "src/asymmetric_greedy_search/backend_numpy.py",
+        "sha256": "934955c4f1214d5f5fbd967b82df489e2854f4fbf5aadab4119af2fdba4d35a8"
+      },
+      {
+        "path": "src/asymmetric_greedy_search/backend_numba.py",
+        "sha256": "1daf2a8cf28f62964214748c96390c1ce38ef39e5daa202735aeaa9017024b4b"
+      }
+    ]
+  }
+}

@@ -1,0 +1,370 @@
+{
+  "case_id": "A-004",
+  "previous_case_ids": [
+    "A-000004"
+  ],
+  "versions": [
+    {
+      "case_sha256": "5a684718ce20213cdac462c73be07b98cae182380c3a6c72c8ea699ac538ba30",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/rkhma/legacy/utils/Initialize.java",
+            "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/CompositeStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/CompositeWithCapacityStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/EarliestTimeStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/MaxWindowCountStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/MaxWindowLengthStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/MinPriorityStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/MinRollAngleStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/RandomStrategy.java",
+            "src/main/java/method/rkhma/legacy/common/RandomProvider.java",
+            "src/main/java/method/rkhma/legacy/common/TuningConfig.java",
+            "src/main/java/method/rkhma/legacy/common/TuningDefaults.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/rkhma/legacy/utils/Initialize.java": "da8889b6d9dda1d99f85f998a9d28cc8833f6246da38ff17174a54c10e78fcbb",
+              "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java": "80c6bf2b06e88fc94b1731409da536318303416c28cfb7eeb045a79628a57381",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java": "3fbb48a71a6fa8f7ad6f03f55358dd39e51715c07127f585a18d5ec8c4981280",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java": "6a249cd1e19ff6e078b7db3f9aec1fb5a373f09c05756bf1242eba9565340e29",
+              "src/main/java/method/rkhma/legacy/operator/assignment/CompositeStrategy.java": "019393b8479d2fcbb67d8f7e4e720850f05257f0be983c4e0dfe7103860e60f2",
+              "src/main/java/method/rkhma/legacy/operator/assignment/CompositeWithCapacityStrategy.java": "5eca53151a3b6a9f5da430966034954ce4492ce95fc34e00d2948f6329560ed1",
+              "src/main/java/method/rkhma/legacy/operator/assignment/EarliestTimeStrategy.java": "a3bc9c94dc2350dfc3fddf05e23725aaa75903fc18bca1cfea518303f5b4ca5b",
+              "src/main/java/method/rkhma/legacy/operator/assignment/MaxWindowCountStrategy.java": "5481b07cc78cf116949ee12eb9d71933c47f343147f1dc8b6a20979ca4b7948a",
+              "src/main/java/method/rkhma/legacy/operator/assignment/MaxWindowLengthStrategy.java": "bcd164ad39c6c7169aa89f137a249104f96a78babd9c4281e25151dc9ddc68e3",
+              "src/main/java/method/rkhma/legacy/operator/assignment/MinPriorityStrategy.java": "6e241d5e7328ffe47c6393ea1b0ebafa49e3d91f35bc5af567332c5f5bc464d1",
+              "src/main/java/method/rkhma/legacy/operator/assignment/MinRollAngleStrategy.java": "9aeb2f1c82596b7b56723ea6967c1ef65ab66aaf33cde54f1501e1f5523836e3",
+              "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java": "a4fee6af3dba9a8412e0d2d3e7e933b222309581c2dffc7b8b49661cd99a3628",
+              "src/main/java/method/rkhma/legacy/operator/assignment/RandomStrategy.java": "5ae524861f5e830b338539862334be92b6046fcc30929344fb8a82755a1df7cf",
+              "src/main/java/method/rkhma/legacy/common/RandomProvider.java": "d6d3c1cbe855de3a1269a50fbef1530410825f40ddf54fdd90bdeca9a9b64486",
+              "src/main/java/method/rkhma/legacy/common/TuningConfig.java": "8a78b28fc5c9bd2a06307b0dcc932bd50ffe910129f35a3232f301c7bc38d294",
+              "src/main/java/method/rkhma/legacy/common/TuningDefaults.java": "e5917fce0c1b23931e669f76c3d4684013b8f7efcc068af8b5f38f9846b7587f"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "项目RKHMA移植源码的初始分配策略 1；固定入口为本次新增，其余逐文件保留。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "09c6bb135f20f89b5dd10da06c702c73cead15ad9e03dfc58e083486303aa7cd",
+      "parent_case_sha256": "5a684718ce20213cdac462c73be07b98cae182380c3a6c72c8ea699ac538ba30",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/rkhma/legacy/utils/Initialize.java",
+            "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/rkhma/legacy/utils/Initialize.java": "da8889b6d9dda1d99f85f998a9d28cc8833f6246da38ff17174a54c10e78fcbb",
+              "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java": "80c6bf2b06e88fc94b1731409da536318303416c28cfb7eeb045a79628a57381",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java": "6a249cd1e19ff6e078b7db3f9aec1fb5a373f09c05756bf1242eba9565340e29",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java": "3fbb48a71a6fa8f7ad6f03f55358dd39e51715c07127f585a18d5ec8c4981280",
+              "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java": "a4fee6af3dba9a8412e0d2d3e7e933b222309581c2dffc7b8b49661cd99a3628"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "基于项目来源初始化排序和分配循环整理独立驱动，并原样保留本条策略及辅助；50个实例、7策略、两种缓存配置合计700次来源结果对照通过。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "491bcb87531e8e826ebd985f32d61f89f06bd4658548109d26e0638541052982",
+      "parent_case_sha256": "09c6bb135f20f89b5dd10da06c702c73cead15ad9e03dfc58e083486303aa7cd",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/rkhma/legacy/utils/Initialize.java",
+            "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/rkhma/legacy/utils/Initialize.java": "da8889b6d9dda1d99f85f998a9d28cc8833f6246da38ff17174a54c10e78fcbb",
+              "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java": "80c6bf2b06e88fc94b1731409da536318303416c28cfb7eeb045a79628a57381",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java": "6a249cd1e19ff6e078b7db3f9aec1fb5a373f09c05756bf1242eba9565340e29",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java": "3fbb48a71a6fa8f7ad6f03f55358dd39e51715c07127f585a18d5ec8c4981280",
+              "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java": "a4fee6af3dba9a8412e0d2d3e7e933b222309581c2dffc7b8b49661cd99a3628"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "基于项目来源初始化排序和分配循环整理独立驱动，并原样保留本条策略及辅助；50个实例、7策略、两种缓存配置合计700次来源结果对照通过。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "2620aae18e99ad65f15f4a3e3bf20f2b1c0281248ed3b40b3767aa7b2a63d3a1",
+      "parent_case_sha256": "491bcb87531e8e826ebd985f32d61f89f06bd4658548109d26e0638541052982",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/rkhma/legacy/utils/Initialize.java",
+            "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/rkhma/legacy/utils/Initialize.java": "da8889b6d9dda1d99f85f998a9d28cc8833f6246da38ff17174a54c10e78fcbb",
+              "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java": "80c6bf2b06e88fc94b1731409da536318303416c28cfb7eeb045a79628a57381",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java": "6a249cd1e19ff6e078b7db3f9aec1fb5a373f09c05756bf1242eba9565340e29",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java": "3fbb48a71a6fa8f7ad6f03f55358dd39e51715c07127f585a18d5ec8c4981280",
+              "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java": "a4fee6af3dba9a8412e0d2d3e7e933b222309581c2dffc7b8b49661cd99a3628"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "基于项目来源初始化排序和分配循环整理独立驱动，并原样保留本条策略及辅助；50个实例、7策略、两种缓存配置合计700次来源结果对照通过。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "3f89fbf240423d7f95918fd0a3054c7911b2b2618cd82cc0a5f55e2ec7366ba8",
+      "parent_case_sha256": "2620aae18e99ad65f15f4a3e3bf20f2b1c0281248ed3b40b3767aa7b2a63d3a1",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/rkhma/legacy/utils/Initialize.java",
+            "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/rkhma/legacy/utils/Initialize.java": "da8889b6d9dda1d99f85f998a9d28cc8833f6246da38ff17174a54c10e78fcbb",
+              "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java": "80c6bf2b06e88fc94b1731409da536318303416c28cfb7eeb045a79628a57381",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java": "6a249cd1e19ff6e078b7db3f9aec1fb5a373f09c05756bf1242eba9565340e29",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java": "3fbb48a71a6fa8f7ad6f03f55358dd39e51715c07127f585a18d5ec8c4981280",
+              "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java": "a4fee6af3dba9a8412e0d2d3e7e933b222309581c2dffc7b8b49661cd99a3628"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "基于项目来源初始化排序和分配循环整理独立驱动，并原样保留本条策略及辅助；50个实例、7策略、两种缓存配置合计700次来源结果对照通过。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "809a3364065729653b879b3f06ddccaa4578070faadfb7a7a5e5fc28ecda3c70",
+      "parent_case_sha256": "3f89fbf240423d7f95918fd0a3054c7911b2b2618cd82cc0a5f55e2ec7366ba8",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/rkhma/legacy/utils/Initialize.java",
+            "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/rkhma/legacy/utils/Initialize.java": "da8889b6d9dda1d99f85f998a9d28cc8833f6246da38ff17174a54c10e78fcbb",
+              "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java": "80c6bf2b06e88fc94b1731409da536318303416c28cfb7eeb045a79628a57381",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java": "6a249cd1e19ff6e078b7db3f9aec1fb5a373f09c05756bf1242eba9565340e29",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java": "3fbb48a71a6fa8f7ad6f03f55358dd39e51715c07127f585a18d5ec8c4981280",
+              "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java": "a4fee6af3dba9a8412e0d2d3e7e933b222309581c2dffc7b8b49661cd99a3628"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "基于项目来源初始化排序和分配循环整理独立驱动，并原样保留本条策略及辅助；50个实例、7策略、两种缓存配置合计700次来源结果对照通过。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "ad43a80db8591f935a74247e9a986b2033ab6763cf1d2438b36a36a6d12ccb8d",
+      "parent_case_sha256": "809a3364065729653b879b3f06ddccaa4578070faadfb7a7a5e5fc28ecda3c70",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/rkhma/legacy/utils/Initialize.java",
+            "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/rkhma/legacy/utils/Initialize.java": "da8889b6d9dda1d99f85f998a9d28cc8833f6246da38ff17174a54c10e78fcbb",
+              "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java": "80c6bf2b06e88fc94b1731409da536318303416c28cfb7eeb045a79628a57381",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java": "6a249cd1e19ff6e078b7db3f9aec1fb5a373f09c05756bf1242eba9565340e29",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java": "3fbb48a71a6fa8f7ad6f03f55358dd39e51715c07127f585a18d5ec8c4981280",
+              "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java": "a4fee6af3dba9a8412e0d2d3e7e933b222309581c2dffc7b8b49661cd99a3628"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "基于项目来源初始化排序和分配循环整理独立驱动，并原样保留本条策略及辅助；50个实例、7策略、两种缓存配置合计700次来源结果对照通过。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "5569ef4a4223acaa881f19a52e4dea376002cdf42592d4291e8c706b947f448a",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/rkhma/legacy/utils/Initialize.java",
+            "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/rkhma/legacy/utils/Initialize.java": "da8889b6d9dda1d99f85f998a9d28cc8833f6246da38ff17174a54c10e78fcbb",
+              "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java": "80c6bf2b06e88fc94b1731409da536318303416c28cfb7eeb045a79628a57381",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java": "6a249cd1e19ff6e078b7db3f9aec1fb5a373f09c05756bf1242eba9565340e29",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java": "3fbb48a71a6fa8f7ad6f03f55358dd39e51715c07127f585a18d5ec8c4981280",
+              "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java": "a4fee6af3dba9a8412e0d2d3e7e933b222309581c2dffc7b8b49661cd99a3628"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "基于项目来源初始化排序和分配循环整理独立驱动，并原样保留本条策略及辅助；50个实例、7策略、两种缓存配置合计700次来源结果对照通过。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "ad43a80db8591f935a74247e9a986b2033ab6763cf1d2438b36a36a6d12ccb8d",
+      "description_revision": {
+        "method": "按结构化精炼模板重写 description（阶段拆分、列表化算子、显式平局/门禁/终止准则）",
+        "date": "2026-11-12"
+      }
+    },
+    {
+      "case_sha256": "c9fb1183ca10b1b6a739864ab63e7dee1781e23db08e47468d6c03398705c18e",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/rkhma/legacy/utils/Initialize.java",
+            "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/rkhma/legacy/utils/Initialize.java": "da8889b6d9dda1d99f85f998a9d28cc8833f6246da38ff17174a54c10e78fcbb",
+              "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java": "80c6bf2b06e88fc94b1731409da536318303416c28cfb7eeb045a79628a57381",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java": "6a249cd1e19ff6e078b7db3f9aec1fb5a373f09c05756bf1242eba9565340e29",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java": "3fbb48a71a6fa8f7ad6f03f55358dd39e51715c07127f585a18d5ec8c4981280",
+              "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java": "a4fee6af3dba9a8412e0d2d3e7e933b222309581c2dffc7b8b49661cd99a3628"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "基于项目来源初始化排序和分配循环整理独立驱动，并原样保留本条策略及辅助；50个实例、7策略、两种缓存配置合计700次来源结果对照通过。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "5569ef4a4223acaa881f19a52e4dea376002cdf42592d4291e8c706b947f448a",
+      "parent_snapshot": "../versions/A-004/5569ef4a4223acaa881f19a52e4dea376002cdf42592d4291e8c706b947f448a.json",
+      "storage_migration": "inline_lines_to_source_files"
+    },
+    {
+      "case_sha256": "c502b503637f2d889ddacfaf4f15a8ba87cfa69941cff104f5dece654b8cc7a7",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/rkhma/legacy/utils/Initialize.java",
+            "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/rkhma/legacy/utils/Initialize.java": "da8889b6d9dda1d99f85f998a9d28cc8833f6246da38ff17174a54c10e78fcbb",
+              "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java": "80c6bf2b06e88fc94b1731409da536318303416c28cfb7eeb045a79628a57381",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java": "6a249cd1e19ff6e078b7db3f9aec1fb5a373f09c05756bf1242eba9565340e29",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java": "3fbb48a71a6fa8f7ad6f03f55358dd39e51715c07127f585a18d5ec8c4981280",
+              "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java": "a4fee6af3dba9a8412e0d2d3e7e933b222309581c2dffc7b8b49661cd99a3628"
+            }
+          },
+          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "基于项目来源初始化排序和分配循环整理独立驱动，并原样保留本条策略及辅助；50个实例、7策略、两种缓存配置合计700次来源结果对照通过。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "c9fb1183ca10b1b6a739864ab63e7dee1781e23db08e47468d6c03398705c18e",
+      "parent_snapshot": "../versions/A-004/c9fb1183ca10b1b6a739864ab63e7dee1781e23db08e47468d6c03398705c18e.json",
+      "description_revision": {
+        "method": "删除与实际候选遍历顺序不符的平局规则；保留来源的主要选择思想和算法代码。",
+        "date": "2026-11-12"
+      }
+    }
+  ]
+}

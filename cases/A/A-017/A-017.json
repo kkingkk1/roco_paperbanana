@@ -1,0 +1,26 @@
+{
+  "case_id": "A-017",
+  "category": "best_improvement_move",
+  "description": [
+    "Initialization: Assign tasks (descending reward, then task ID) to candidate satellite with ",
+    "lowest assigned duration; tie-break by smaller ID. Unassigned if no candidates.\n",
+    "\n",
+    "Reassignment (best-improvement local search from base schedule):\n",
+    "- Migration: Trial unobserved-task migrations to non-owner satellites with candidates ",
+    "(ascending task ID, then satellite ID).\n",
+    "- Swap: Trial swaps between tasks on different satellites with mutual candidates ",
+    "(ascending task IDs).\n",
+    "- Acceptance: Select feasible trial with highest total reward strictly above current ",
+    "schedule; retain first on tie. Restart search from Migration upon acceptance.\n",
+    "- Termination: Stop if no move improves or the search budget expires."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000017.java",
+        "sha256": "da131106264df0f060f94bb5efe82847adf8617b88233e65f54ba35208855720"
+      }
+    ]
+  }
+}

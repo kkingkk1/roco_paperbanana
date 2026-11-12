@@ -1,0 +1,315 @@
+{
+  "case_id": "A-011",
+  "previous_case_ids": [
+    "A-000011"
+  ],
+  "versions": [
+    {
+      "case_sha256": "e9c1b78298960486ebe0d268e7e0f57ea09bf16eca0c15b2087f44386c84abfe",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现 A000011；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "编译、受控试评价格更新夹具和 TwoStageSolver 合法性检查"
+          },
+          "external_model_use": "unknown"
+        },
+        {
+          "location": "https://arxiv.org/html/2607.25835v1#S5.SS2",
+          "version": "arXiv:2607.25835v1，2026-07-28，第5.2节",
+          "usage_conditions": "论文页面标示 CC BY 4.0；使用时须满足署名等条件，论文许可不自动等于作者代码许可。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核查第5.2节与 Algorithm 1；本案例只参考未排入请求的价格反馈，属于不同的完整实现。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "872fbcda65fc515348c9d5a425d18da497fd2947ef19812a429c169fe20c9088",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现 A000011；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "编译、受控试评价格更新夹具和 TwoStageSolver 合法性检查"
+          },
+          "external_model_use": "unknown"
+        },
+        {
+          "location": "https://arxiv.org/html/2607.25835v1#S5.SS2",
+          "version": "arXiv:2607.25835v1，2026-07-28，第5.2节",
+          "usage_conditions": "论文页面标示 CC BY 4.0；使用时须满足署名等条件，论文许可不自动等于作者代码许可。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核查第5.2节与 Algorithm 1；本案例只参考未排入请求的价格反馈，属于不同的完整实现。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "e9c1b78298960486ebe0d268e7e0f57ea09bf16eca0c15b2087f44386c84abfe"
+    },
+    {
+      "case_sha256": "ca49c2a358ffb1682e2731c2021a5a4955343726126597ed589798dfa2339945",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现 A000011；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "编译、受控试评价格更新夹具和 TwoStageSolver 合法性检查"
+          },
+          "external_model_use": "unknown"
+        },
+        {
+          "location": "https://arxiv.org/html/2607.25835v1#S5.SS2",
+          "version": "arXiv:2607.25835v1，2026-07-28，第5.2节",
+          "usage_conditions": "论文页面标示 CC BY 4.0；使用时须满足署名等条件，论文许可不自动等于作者代码许可。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核查第5.2节与 Algorithm 1；本案例只参考未排入请求的价格反馈，属于不同的完整实现。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "872fbcda65fc515348c9d5a425d18da497fd2947ef19812a429c169fe20c9088"
+    },
+    {
+      "case_sha256": "70216c20e3a9746c586d6251cbf0e85723d9bd82fa547bcc8211b22a3c8bcf1a",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现 A000011；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "编译、受控试评价格更新夹具和 TwoStageSolver 合法性检查"
+          },
+          "external_model_use": "unknown"
+        },
+        {
+          "location": "https://arxiv.org/html/2607.25835v1#S5.SS2",
+          "version": "arXiv:2607.25835v1，2026-07-28，第5.2节",
+          "usage_conditions": "论文页面标示 CC BY 4.0；使用时须满足署名等条件，论文许可不自动等于作者代码许可。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核查第5.2节与 Algorithm 1；本案例只参考未排入请求的价格反馈，属于不同的完整实现。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "ca49c2a358ffb1682e2731c2021a5a4955343726126597ed589798dfa2339945"
+    },
+    {
+      "case_sha256": "c5c53ac98fbd9e73e1e974135f55bb200f6d8a104fb145bebac288f6e9b73197",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现 A000011；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "编译、受控试评价格更新夹具和 TwoStageSolver 合法性检查"
+          },
+          "external_model_use": "unknown"
+        },
+        {
+          "location": "https://arxiv.org/html/2607.25835v1#S5.SS2",
+          "version": "arXiv:2607.25835v1，2026-07-28，第5.2节",
+          "usage_conditions": "论文页面标示 CC BY 4.0；使用时须满足署名等条件，论文许可不自动等于作者代码许可。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核查第5.2节与 Algorithm 1；本案例只参考未排入请求的价格反馈，属于不同的完整实现。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "70216c20e3a9746c586d6251cbf0e85723d9bd82fa547bcc8211b22a3c8bcf1a"
+    },
+    {
+      "case_sha256": "a88195991daac44eaf6fc17caa2f78aa641668b9660feb332575380faa2a8310",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现 A000011；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "编译、受控试评价格更新夹具和 TwoStageSolver 合法性检查"
+          },
+          "external_model_use": "unknown"
+        },
+        {
+          "location": "https://arxiv.org/html/2607.25835v1#S5.SS2",
+          "version": "arXiv:2607.25835v1，2026-07-28，第5.2节",
+          "usage_conditions": "论文页面标示 CC BY 4.0；使用时须满足署名等条件，论文许可不自动等于作者代码许可。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核查第5.2节与 Algorithm 1；本案例只参考未排入请求的价格反馈，属于不同的完整实现。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "c5c53ac98fbd9e73e1e974135f55bb200f6d8a104fb145bebac288f6e9b73197"
+    },
+    {
+      "case_sha256": "002abfdf8bda023d84656c4cf499b9b5ae441dc7c6c4c6b281c144106b940513",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现 A000011；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "编译、受控试评价格更新夹具和 TwoStageSolver 合法性检查"
+          },
+          "external_model_use": "unknown"
+        },
+        {
+          "location": "https://arxiv.org/html/2607.25835v1#S5.SS2",
+          "version": "arXiv:2607.25835v1，2026-07-28，第5.2节",
+          "usage_conditions": "论文页面标示 CC BY 4.0；使用时须满足署名等条件，论文许可不自动等于作者代码许可。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核查第5.2节与 Algorithm 1；本案例只参考未排入请求的价格反馈，属于不同的完整实现。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "a88195991daac44eaf6fc17caa2f78aa641668b9660feb332575380faa2a8310"
+    },
+    {
+      "case_sha256": "cf4c39270517a0042a0795b00af6351048cde34eafb15aeb77233cf265301672",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现 A000011；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "编译、受控试评价格更新夹具和 TwoStageSolver 合法性检查"
+          },
+          "external_model_use": "unknown"
+        },
+        {
+          "location": "https://arxiv.org/html/2607.25835v1#S5.SS2",
+          "version": "arXiv:2607.25835v1，2026-07-28，第5.2节",
+          "usage_conditions": "论文页面标示 CC BY 4.0；使用时须满足署名等条件，论文许可不自动等于作者代码许可。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核查第5.2节与 Algorithm 1；本案例只参考未排入请求的价格反馈，属于不同的完整实现。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "002abfdf8bda023d84656c4cf499b9b5ae441dc7c6c4c6b281c144106b940513"
+    },
+    {
+      "case_sha256": "8b3e9632b33ce97362ff4d4d4e73e03b64b90ff7fa1be9f9d1b2af5960274ab3",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现 A000011；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "编译、受控试评价格更新夹具和 TwoStageSolver 合法性检查"
+          },
+          "external_model_use": "unknown"
+        },
+        {
+          "location": "https://arxiv.org/html/2607.25835v1#S5.SS2",
+          "version": "arXiv:2607.25835v1，2026-07-28，第5.2节",
+          "usage_conditions": "论文页面标示 CC BY 4.0；使用时须满足署名等条件，论文许可不自动等于作者代码许可。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核查第5.2节与 Algorithm 1；本案例只参考未排入请求的价格反馈，属于不同的完整实现。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "cf4c39270517a0042a0795b00af6351048cde34eafb15aeb77233cf265301672",
+      "description_revision": {
+        "method": "按结构化精炼模板重写 description（阶段拆分、列表化算子、显式平局/门禁/终止准则）",
+        "date": "2026-11-12"
+      }
+    },
+    {
+      "case_sha256": "6c66bb9f66a936ae39cbf557826bfee750473dacc2021884f125665f8963066c",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现 A000011；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "编译、受控试评价格更新夹具和 TwoStageSolver 合法性检查"
+          },
+          "external_model_use": "unknown"
+        },
+        {
+          "location": "https://arxiv.org/html/2607.25835v1#S5.SS2",
+          "version": "arXiv:2607.25835v1，2026-07-28，第5.2节",
+          "usage_conditions": "论文页面标示 CC BY 4.0；使用时须满足署名等条件，论文许可不自动等于作者代码许可。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核查第5.2节与 Algorithm 1；本案例只参考未排入请求的价格反馈，属于不同的完整实现。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "8b3e9632b33ce97362ff4d4d4e73e03b64b90ff7fa1be9f9d1b2af5960274ab3",
+      "parent_snapshot": "../versions/A-011/8b3e9632b33ce97362ff4d4d4e73e03b64b90ff7fa1be9f9d1b2af5960274ab3.json",
+      "storage_migration": "inline_lines_to_source_files"
+    },
+    {
+      "case_sha256": "a4d9183c835ad7fb57a4f037d7ac9d5ab21eacd0e03a9ee1b6d96012ec7cd003",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现 A000011；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "编译、受控试评价格更新夹具和 TwoStageSolver 合法性检查"
+          },
+          "external_model_use": "unknown"
+        },
+        {
+          "location": "https://arxiv.org/html/2607.25835v1#S5.SS2",
+          "version": "arXiv:2607.25835v1，2026-07-28，第5.2节",
+          "usage_conditions": "论文页面标示 CC BY 4.0；使用时须满足署名等条件，论文许可不自动等于作者代码许可。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核查第5.2节与 Algorithm 1；本案例只参考未排入请求的价格反馈，属于不同的完整实现。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "6c66bb9f66a936ae39cbf557826bfee750473dacc2021884f125665f8963066c",
+      "parent_snapshot": "../versions/A-011/6c66bb9f66a936ae39cbf557826bfee750473dacc2021884f125665f8963066c.json",
+      "description_revision": {
+        "method": "删除超时后必定返回已验证检查点的表述；不同超时路径的运行合同不变。",
+        "date": "2026-11-12"
+      }
+    }
+  ]
+}

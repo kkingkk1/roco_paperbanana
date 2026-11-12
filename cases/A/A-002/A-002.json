@@ -1,0 +1,28 @@
+{
+  "case_id": "A-002",
+  "category": "scarcity_load",
+  "description": [
+    "Initialization: Assign tasks (ascending eligible satellite count, then ID) to satellite ",
+    "minimizing (assigned duration + task duration) / max(window capacity, 1e-12); tie-break by ",
+    "smaller ID. Unassigned if no candidates. (Window capacity: sum of durations of windows ",
+    "with candidates).\n",
+    "\n",
+    "Reassignment:\n",
+    "- Migration: Process unobserved tasks by ascending alternative count, descending reward, ",
+    "then task ID; test non-owner satellites with candidates by observed duration / max(window ",
+    "capacity, 1e-12), then smaller ID.\n",
+    "- Swap: After migrations exhaust, test pairs from all owned tasks ordered by descending ",
+    "reward, then task ID; require distinct owners and mutual candidates.\n",
+    "- Acceptance: Require feasibility and strictly higher profit; restart from Migration.\n",
+    "- Termination: Move exhaustion or timeout."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000002.java",
+        "sha256": "666d0c5ab783254458ee9b5a39baa71b3605b126be2b23f796e8793aa4fe478a"
+      }
+    ]
+  }
+}

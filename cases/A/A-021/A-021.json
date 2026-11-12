@@ -1,0 +1,37 @@
+{
+  "case_id": "A-021",
+  "category": "hungarian_matching",
+  "description": [
+    "Hungarian matching (Kuhn-Munkres): Reduce cost matrix by row and column minima; mark independent zeros. ",
+    "Iteratively cover zeros, update dual potential values, and augment matching along alternating starred and primed zeros."
+  ],
+  "code": {
+    "format": "file_markers",
+    "files": [
+      {
+        "path": "src/LICENSE.txt",
+        "sha256": "74de38034c000100f549482994fd1a84c9e61ba2e47ad48a7624b67bb65892ae"
+      },
+      {
+        "path": "src/src/lib.rs",
+        "sha256": "98ae9dc7e503da071909e665cba8de05c0ccaddda893fb187ae22e86061d8a33"
+      },
+      {
+        "path": "src/src/types.rs",
+        "sha256": "cb31ef66dd133f5a443c7e58b65d77804ddc4c1724e9f875a63eafda756a6905"
+      },
+      {
+        "path": "src/src/utils.rs",
+        "sha256": "830463dcf59f44e9cab8f69d4a3c437e82d50df1973c027febdecc9b996d5023"
+      },
+      {
+        "path": "src/src/lap/mod.rs",
+        "sha256": "ef332d8d53b619722ff164b8409e285d08d538e9d091ab149222bded0d9cbe4a"
+      },
+      {
+        "path": "src/src/lap/hungarian.rs",
+        "sha256": "3a8119c9ecdd97b009528036f2ac6e0e334c557d316a48139f6621436d4f2067"
+      }
+    ]
+  }
+}

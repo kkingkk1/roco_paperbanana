@@ -1,0 +1,171 @@
+{
+  "case_id": "A-015",
+  "previous_case_ids": [
+    "A-000015"
+  ],
+  "versions": [
+    {
+      "case_sha256": "8af53a7672eb2ba923bb722f898b795e95a45a8ea88bdf1e0876752b31c3c8cf",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；合法候选与无候选任务夹具；匹配、精确负载和不同决策规则的针对性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "7cf3aa4b8c625f3382aee6316a2da3ac4b2339ad84903e2612b46d2cb54d34a4",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；合法候选与无候选任务夹具；匹配、精确负载和不同决策规则的针对性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "8af53a7672eb2ba923bb722f898b795e95a45a8ea88bdf1e0876752b31c3c8cf"
+    },
+    {
+      "case_sha256": "7074e1afa7a40e05c391aea57d1db27a0d5c2621d6201b09ba357fe678af19ff",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；合法候选与无候选任务夹具；匹配、精确负载和不同决策规则的针对性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "7cf3aa4b8c625f3382aee6316a2da3ac4b2339ad84903e2612b46d2cb54d34a4"
+    },
+    {
+      "case_sha256": "fe3e08c478bf77c6515ae8eeb2f043ccf83fe0543e7e56885fec429d840f7fc9",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；合法候选与无候选任务夹具；匹配、精确负载和不同决策规则的针对性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "7074e1afa7a40e05c391aea57d1db27a0d5c2621d6201b09ba357fe678af19ff"
+    },
+    {
+      "case_sha256": "8f13207068ca0cd9625168fd3cb731cf1f031959fe0cb22212762ecc5e7197a9",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；合法候选与无候选任务夹具；匹配、精确负载和不同决策规则的针对性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "fe3e08c478bf77c6515ae8eeb2f043ccf83fe0543e7e56885fec429d840f7fc9"
+    },
+    {
+      "case_sha256": "f50981eb5c5102c0e915902f5184766a78697ca753dbfaa54796742fb4de63db",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；合法候选与无候选任务夹具；匹配、精确负载和不同决策规则的针对性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "8f13207068ca0cd9625168fd3cb731cf1f031959fe0cb22212762ecc5e7197a9"
+    },
+    {
+      "case_sha256": "37ed4aaa77e7c88e878ec0ab325869e68b24052dd09a4a6caec57fb8b49c2540",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；合法候选与无候选任务夹具；匹配、精确负载和不同决策规则的针对性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "f50981eb5c5102c0e915902f5184766a78697ca753dbfaa54796742fb4de63db",
+      "description_revision": {
+        "method": "按结构化精炼模板重写 description（阶段拆分、列表化算子、显式平局/门禁/终止准则）",
+        "date": "2026-11-12"
+      }
+    },
+    {
+      "case_sha256": "35b43a0021228f7908cbae7f5baa8fc54fba4111734f6190bf8039dad0a1b181",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；合法候选与无候选任务夹具；匹配、精确负载和不同决策规则的针对性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "37ed4aaa77e7c88e878ec0ab325869e68b24052dd09a4a6caec57fb8b49c2540",
+      "parent_snapshot": "../versions/A-015/37ed4aaa77e7c88e878ec0ab325869e68b24052dd09a4a6caec57fb8b49c2540.json",
+      "storage_migration": "inline_lines_to_source_files"
+    },
+    {
+      "case_sha256": "60c75e44fc3da2d9c7be134e28a8fc3e335d50d3280121893966899db521edb3",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；合法候选与无候选任务夹具；匹配、精确负载和不同决策规则的针对性检查。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "35b43a0021228f7908cbae7f5baa8fc54fba4111734f6190bf8039dad0a1b181",
+      "parent_snapshot": "../versions/A-015/35b43a0021228f7908cbae7f5baa8fc54fba4111734f6190bf8039dad0a1b181.json",
+      "description_revision": {
+        "method": "修正预算耗尽时的描述，不将超时异常写成正常返回空分配；算法代码不变。",
+        "date": "2026-11-12"
+      }
+    }
+  ]
+}

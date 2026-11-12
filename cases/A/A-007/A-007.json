@@ -1,0 +1,29 @@
+{
+  "case_id": "A-007",
+  "category": "earliest_window",
+  "description": [
+    "Initialization only: Assign tasks (descending reward) to the satellite whose first ",
+    "accommodating window starts earliest. Unassigned if none."
+  ],
+  "code": {
+    "format": "file_markers",
+    "files": [
+      {
+        "path": "src/method/rkhma/legacy/utils/CaseA000007.java",
+        "sha256": "9d824a17456be8501a40e6174bcaddfa1564ae1b0092e0fe15fef9af43bc4a5e"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java",
+        "sha256": "6a249cd1e19ff6e078b7db3f9aec1fb5a373f09c05756bf1242eba9565340e29"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java",
+        "sha256": "3fbb48a71a6fa8f7ad6f03f55358dd39e51715c07127f585a18d5ec8c4981280"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/EarliestTimeStrategy.java",
+        "sha256": "a3bc9c94dc2350dfc3fddf05e23725aaa75903fc18bca1cfea518303f5b4ca5b"
+      }
+    ]
+  }
+}

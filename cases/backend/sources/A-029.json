@@ -1,0 +1,342 @@
+{
+  "case_id": "A-029",
+  "previous_case_ids": [
+    "A-000029"
+  ],
+  "versions": [
+    {
+      "case_sha256": "62beaffd1f7d804e073d6abdf8e5b25dffca62cdec038c2b4efd64f30d919409",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/23/52/8e24a250235085069494970ff706001a1840aceefeed6836b2ef7a31583b/asymmetric_greedy_search-0.1.0.tar.gz",
+          "version": {
+            "release": "asymmetric-greedy-search 0.1.0, 2025-06-20",
+            "archive_sha256": "8bc0ce7588ba18825b25df3e6f684944b333fab3f5cf55ca9ff9c1e742511c1f",
+            "source_file_sha256": {
+              "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+              "asymmetric_greedy_search/__init__.py": "0324cf6ea93957357c87325dddf753aee645a461e6d1421c692b0dac753d52ad",
+              "asymmetric_greedy_search/core.py": "8ba5a5f14269822985c8e7a774c7395095abd98dccf05bae1639b95c2ea6822b",
+              "asymmetric_greedy_search/backend_numpy.py": "87a6236dc254bbe30b076cdfad132f2bec670f11f9d85de11192c9f0b5214930",
+              "asymmetric_greedy_search/backend_numba.py": "6293d34b28502e46e7b556991e654a4b4bfad6dda67def14bc85e1016b313251"
+            }
+          },
+          "usage_conditions": "源码包包含GPL-3.0许可证全文；本地参考保留原始声明，后续复制、分发、修改及外发须满足对应条款。项目源码无独立许可证，GPL代码与后续用途的关系尚未核实；禁止在不允许来源声明的提示中发送完整代码。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "源码包SHA-256及所含许可证；NumPy后端以30个4×5矩阵分别测试最大化和最小化，核对一对一约束及迭代后不劣于来源初始匹配；可选Numba后端未验证。"
+          },
+          "external_model_use": "unknown",
+          "source_free_prompt_allowed": false,
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "PyPI页面分类标记MIT，但源码包LICENSE为GPL-3.0全文；两种声明不一致，实际适用许可及后续使用条件未确定。",
+              "evidence": "https://pypi.org/project/asymmetric-greedy-search/0.1.0/；源码包内LICENSE",
+              "external_model_use": "unknown"
+            }
+          ]
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "23f9749f37f769cd0ca7b10f66588b5296285e5947dc873d78f5546cffeff782",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/23/52/8e24a250235085069494970ff706001a1840aceefeed6836b2ef7a31583b/asymmetric_greedy_search-0.1.0.tar.gz",
+          "version": {
+            "release": "asymmetric-greedy-search 0.1.0, 2025-06-20",
+            "archive_sha256": "8bc0ce7588ba18825b25df3e6f684944b333fab3f5cf55ca9ff9c1e742511c1f",
+            "source_file_sha256": {
+              "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+              "asymmetric_greedy_search/__init__.py": "0324cf6ea93957357c87325dddf753aee645a461e6d1421c692b0dac753d52ad",
+              "asymmetric_greedy_search/core.py": "8ba5a5f14269822985c8e7a774c7395095abd98dccf05bae1639b95c2ea6822b",
+              "asymmetric_greedy_search/backend_numpy.py": "87a6236dc254bbe30b076cdfad132f2bec670f11f9d85de11192c9f0b5214930",
+              "asymmetric_greedy_search/backend_numba.py": "6293d34b28502e46e7b556991e654a4b4bfad6dda67def14bc85e1016b313251"
+            }
+          },
+          "usage_conditions": "源码包包含GPL-3.0许可证全文；本地参考保留原始声明，后续复制、分发、修改及外发须满足对应条款。项目源码无独立许可证，GPL代码与后续用途的关系尚未核实；禁止在不允许来源声明的提示中发送完整代码。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "源码包SHA-256及所含许可证；NumPy后端以30个4×5矩阵分别测试最大化和最小化，核对一对一约束及迭代后不劣于来源初始匹配；可选Numba后端未验证。"
+          },
+          "external_model_use": "unknown",
+          "source_free_prompt_allowed": false,
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "PyPI页面分类标记MIT，但源码包LICENSE为GPL-3.0全文；两种声明不一致，实际适用许可及后续使用条件未确定。",
+              "evidence": "https://pypi.org/project/asymmetric-greedy-search/0.1.0/；源码包内LICENSE",
+              "external_model_use": "unknown"
+            }
+          ]
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "62beaffd1f7d804e073d6abdf8e5b25dffca62cdec038c2b4efd64f30d919409"
+    },
+    {
+      "case_sha256": "dc8f91db1ec8da716bddefa82823a3897331e15a4718d43cfd3e65ff4a100ce9",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/23/52/8e24a250235085069494970ff706001a1840aceefeed6836b2ef7a31583b/asymmetric_greedy_search-0.1.0.tar.gz",
+          "version": {
+            "release": "asymmetric-greedy-search 0.1.0, 2025-06-20",
+            "archive_sha256": "8bc0ce7588ba18825b25df3e6f684944b333fab3f5cf55ca9ff9c1e742511c1f",
+            "source_file_sha256": {
+              "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+              "asymmetric_greedy_search/__init__.py": "0324cf6ea93957357c87325dddf753aee645a461e6d1421c692b0dac753d52ad",
+              "asymmetric_greedy_search/core.py": "8ba5a5f14269822985c8e7a774c7395095abd98dccf05bae1639b95c2ea6822b",
+              "asymmetric_greedy_search/backend_numpy.py": "87a6236dc254bbe30b076cdfad132f2bec670f11f9d85de11192c9f0b5214930",
+              "asymmetric_greedy_search/backend_numba.py": "6293d34b28502e46e7b556991e654a4b4bfad6dda67def14bc85e1016b313251"
+            }
+          },
+          "usage_conditions": "源码包包含GPL-3.0许可证全文；本地参考保留原始声明，后续复制、分发、修改及外发须满足对应条款。项目源码无独立许可证，GPL代码与后续用途的关系尚未核实；禁止在不允许来源声明的提示中发送完整代码。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "源码包SHA-256及所含许可证；NumPy后端以30个4×5矩阵分别测试最大化和最小化，核对一对一约束及迭代后不劣于来源初始匹配；可选Numba后端未验证。"
+          },
+          "external_model_use": "unknown",
+          "source_free_prompt_allowed": false,
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "PyPI页面分类标记MIT，但源码包LICENSE为GPL-3.0全文；两种声明不一致，实际适用许可及后续使用条件未确定。",
+              "evidence": "https://pypi.org/project/asymmetric-greedy-search/0.1.0/；源码包内LICENSE",
+              "external_model_use": "unknown"
+            }
+          ]
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "23f9749f37f769cd0ca7b10f66588b5296285e5947dc873d78f5546cffeff782"
+    },
+    {
+      "case_sha256": "f49b4c37ae238c8ffcb7e2128a76e4660e3556a17302beb574c09bd5df3884d9",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/23/52/8e24a250235085069494970ff706001a1840aceefeed6836b2ef7a31583b/asymmetric_greedy_search-0.1.0.tar.gz",
+          "version": {
+            "release": "asymmetric-greedy-search 0.1.0, 2025-06-20",
+            "archive_sha256": "8bc0ce7588ba18825b25df3e6f684944b333fab3f5cf55ca9ff9c1e742511c1f",
+            "source_file_sha256": {
+              "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+              "asymmetric_greedy_search/__init__.py": "0324cf6ea93957357c87325dddf753aee645a461e6d1421c692b0dac753d52ad",
+              "asymmetric_greedy_search/core.py": "8ba5a5f14269822985c8e7a774c7395095abd98dccf05bae1639b95c2ea6822b",
+              "asymmetric_greedy_search/backend_numpy.py": "87a6236dc254bbe30b076cdfad132f2bec670f11f9d85de11192c9f0b5214930",
+              "asymmetric_greedy_search/backend_numba.py": "6293d34b28502e46e7b556991e654a4b4bfad6dda67def14bc85e1016b313251"
+            }
+          },
+          "usage_conditions": "源码包包含GPL-3.0许可证全文；本地参考保留原始声明，后续复制、分发、修改及外发须满足对应条款。项目源码无独立许可证，GPL代码与后续用途的关系尚未核实；禁止在不允许来源声明的提示中发送完整代码。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "源码包SHA-256及所含许可证；NumPy后端以30个4×5矩阵分别测试最大化和最小化，核对一对一约束及迭代后不劣于来源初始匹配；可选Numba后端未验证。"
+          },
+          "external_model_use": "unknown",
+          "source_free_prompt_allowed": false,
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "PyPI页面分类标记MIT，但源码包LICENSE为GPL-3.0全文；两种声明不一致，实际适用许可及后续使用条件未确定。",
+              "evidence": "https://pypi.org/project/asymmetric-greedy-search/0.1.0/；源码包内LICENSE",
+              "external_model_use": "unknown"
+            }
+          ]
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "dc8f91db1ec8da716bddefa82823a3897331e15a4718d43cfd3e65ff4a100ce9"
+    },
+    {
+      "case_sha256": "b5c6769b80aa104d81d5d7e0fc95cbaf9c8374f6c1411b33a61efa86d57f9148",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/23/52/8e24a250235085069494970ff706001a1840aceefeed6836b2ef7a31583b/asymmetric_greedy_search-0.1.0.tar.gz",
+          "version": {
+            "release": "asymmetric-greedy-search 0.1.0, 2025-06-20",
+            "archive_sha256": "8bc0ce7588ba18825b25df3e6f684944b333fab3f5cf55ca9ff9c1e742511c1f",
+            "source_file_sha256": {
+              "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+              "asymmetric_greedy_search/__init__.py": "0324cf6ea93957357c87325dddf753aee645a461e6d1421c692b0dac753d52ad",
+              "asymmetric_greedy_search/core.py": "8ba5a5f14269822985c8e7a774c7395095abd98dccf05bae1639b95c2ea6822b",
+              "asymmetric_greedy_search/backend_numpy.py": "87a6236dc254bbe30b076cdfad132f2bec670f11f9d85de11192c9f0b5214930",
+              "asymmetric_greedy_search/backend_numba.py": "6293d34b28502e46e7b556991e654a4b4bfad6dda67def14bc85e1016b313251"
+            }
+          },
+          "usage_conditions": "源码包包含GPL-3.0许可证全文；本地参考保留原始声明，后续复制、分发、修改及外发须满足对应条款。项目源码无独立许可证，GPL代码与后续用途的关系尚未核实；禁止在不允许来源声明的提示中发送完整代码。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "源码包SHA-256及所含许可证；NumPy后端以30个4×5矩阵分别测试最大化和最小化，核对一对一约束及迭代后不劣于来源初始匹配；可选Numba后端未验证。"
+          },
+          "external_model_use": "unknown",
+          "source_free_prompt_allowed": false,
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "PyPI页面分类标记MIT，但源码包LICENSE为GPL-3.0全文；两种声明不一致，实际适用许可及后续使用条件未确定。",
+              "evidence": "https://pypi.org/project/asymmetric-greedy-search/0.1.0/；源码包内LICENSE",
+              "external_model_use": "unknown"
+            }
+          ]
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "f49b4c37ae238c8ffcb7e2128a76e4660e3556a17302beb574c09bd5df3884d9"
+    },
+    {
+      "case_sha256": "7289e2a8a3b1919054b0a9baa1c8dee6051677f900a69c7292ad513139142042",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/23/52/8e24a250235085069494970ff706001a1840aceefeed6836b2ef7a31583b/asymmetric_greedy_search-0.1.0.tar.gz",
+          "version": {
+            "release": "asymmetric-greedy-search 0.1.0, 2025-06-20",
+            "archive_sha256": "8bc0ce7588ba18825b25df3e6f684944b333fab3f5cf55ca9ff9c1e742511c1f",
+            "source_file_sha256": {
+              "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+              "asymmetric_greedy_search/__init__.py": "0324cf6ea93957357c87325dddf753aee645a461e6d1421c692b0dac753d52ad",
+              "asymmetric_greedy_search/core.py": "8ba5a5f14269822985c8e7a774c7395095abd98dccf05bae1639b95c2ea6822b",
+              "asymmetric_greedy_search/backend_numpy.py": "87a6236dc254bbe30b076cdfad132f2bec670f11f9d85de11192c9f0b5214930",
+              "asymmetric_greedy_search/backend_numba.py": "6293d34b28502e46e7b556991e654a4b4bfad6dda67def14bc85e1016b313251"
+            }
+          },
+          "usage_conditions": "源码包包含GPL-3.0许可证全文；本地参考保留原始声明，后续复制、分发、修改及外发须满足对应条款。项目源码无独立许可证，GPL代码与后续用途的关系尚未核实；禁止在不允许来源声明的提示中发送完整代码。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "源码包SHA-256及所含许可证；NumPy后端以30个4×5矩阵分别测试最大化和最小化，核对一对一约束及迭代后不劣于来源初始匹配；可选Numba后端未验证。"
+          },
+          "external_model_use": "unknown",
+          "source_free_prompt_allowed": false,
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "PyPI页面分类标记MIT，但源码包LICENSE为GPL-3.0全文；两种声明不一致，实际适用许可及后续使用条件未确定。",
+              "evidence": "https://pypi.org/project/asymmetric-greedy-search/0.1.0/；源码包内LICENSE",
+              "external_model_use": "unknown"
+            }
+          ]
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "b5c6769b80aa104d81d5d7e0fc95cbaf9c8374f6c1411b33a61efa86d57f9148"
+    },
+    {
+      "case_sha256": "9a23128e3f18d65b05f620fd1ee4c295fbcbb2c9b6e8da70607d9f09b4e6ad71",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/23/52/8e24a250235085069494970ff706001a1840aceefeed6836b2ef7a31583b/asymmetric_greedy_search-0.1.0.tar.gz",
+          "version": {
+            "release": "asymmetric-greedy-search 0.1.0, 2025-06-20",
+            "archive_sha256": "8bc0ce7588ba18825b25df3e6f684944b333fab3f5cf55ca9ff9c1e742511c1f",
+            "source_file_sha256": {
+              "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+              "asymmetric_greedy_search/__init__.py": "0324cf6ea93957357c87325dddf753aee645a461e6d1421c692b0dac753d52ad",
+              "asymmetric_greedy_search/core.py": "8ba5a5f14269822985c8e7a774c7395095abd98dccf05bae1639b95c2ea6822b",
+              "asymmetric_greedy_search/backend_numpy.py": "87a6236dc254bbe30b076cdfad132f2bec670f11f9d85de11192c9f0b5214930",
+              "asymmetric_greedy_search/backend_numba.py": "6293d34b28502e46e7b556991e654a4b4bfad6dda67def14bc85e1016b313251"
+            }
+          },
+          "usage_conditions": "源码包包含GPL-3.0许可证全文；本地参考保留原始声明，后续复制、分发、修改及外发须满足对应条款。项目源码无独立许可证，GPL代码与后续用途的关系尚未核实；禁止在不允许来源声明的提示中发送完整代码。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "源码包SHA-256及所含许可证；NumPy后端以30个4×5矩阵分别测试最大化和最小化，核对一对一约束及迭代后不劣于来源初始匹配；可选Numba后端未验证。"
+          },
+          "external_model_use": "unknown",
+          "source_free_prompt_allowed": false,
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "PyPI页面分类标记MIT，但源码包LICENSE为GPL-3.0全文；两种声明不一致，实际适用许可及后续使用条件未确定。",
+              "evidence": "https://pypi.org/project/asymmetric-greedy-search/0.1.0/；源码包内LICENSE",
+              "external_model_use": "unknown"
+            }
+          ]
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "7289e2a8a3b1919054b0a9baa1c8dee6051677f900a69c7292ad513139142042",
+      "description_revision": {
+        "method": "按结构化精炼模板重写 description（阶段拆分、列表化算子、显式平局/门禁/终止准则）",
+        "date": "2026-11-12"
+      }
+    },
+    {
+      "case_sha256": "798890ecc88fce408e91b49433f07d2f9691934ddb312882ad37a948388b9937",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/23/52/8e24a250235085069494970ff706001a1840aceefeed6836b2ef7a31583b/asymmetric_greedy_search-0.1.0.tar.gz",
+          "version": {
+            "release": "asymmetric-greedy-search 0.1.0, 2025-06-20",
+            "archive_sha256": "8bc0ce7588ba18825b25df3e6f684944b333fab3f5cf55ca9ff9c1e742511c1f",
+            "source_file_sha256": {
+              "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+              "asymmetric_greedy_search/__init__.py": "0324cf6ea93957357c87325dddf753aee645a461e6d1421c692b0dac753d52ad",
+              "asymmetric_greedy_search/core.py": "8ba5a5f14269822985c8e7a774c7395095abd98dccf05bae1639b95c2ea6822b",
+              "asymmetric_greedy_search/backend_numpy.py": "87a6236dc254bbe30b076cdfad132f2bec670f11f9d85de11192c9f0b5214930",
+              "asymmetric_greedy_search/backend_numba.py": "6293d34b28502e46e7b556991e654a4b4bfad6dda67def14bc85e1016b313251"
+            }
+          },
+          "usage_conditions": "源码包包含GPL-3.0许可证全文；本地参考保留原始声明，后续复制、分发、修改及外发须满足对应条款。项目源码无独立许可证，GPL代码与后续用途的关系尚未核实；禁止在不允许来源声明的提示中发送完整代码。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "源码包SHA-256及所含许可证；NumPy后端以30个4×5矩阵分别测试最大化和最小化，核对一对一约束及迭代后不劣于来源初始匹配；可选Numba后端未验证。"
+          },
+          "external_model_use": "unknown",
+          "source_free_prompt_allowed": false,
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "PyPI页面分类标记MIT，但源码包LICENSE为GPL-3.0全文；两种声明不一致，实际适用许可及后续使用条件未确定。",
+              "evidence": "https://pypi.org/project/asymmetric-greedy-search/0.1.0/；源码包内LICENSE",
+              "external_model_use": "unknown"
+            }
+          ]
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "9a23128e3f18d65b05f620fd1ee4c295fbcbb2c9b6e8da70607d9f09b4e6ad71",
+      "parent_snapshot": "../versions/A-029/9a23128e3f18d65b05f620fd1ee4c295fbcbb2c9b6e8da70607d9f09b4e6ad71.json",
+      "storage_migration": "inline_lines_to_source_files"
+    },
+    {
+      "case_sha256": "ba8d653bfc213b4b6b5a8a5187d2b36d6ccb86cb20cbe593edc56937dbad2cad",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/23/52/8e24a250235085069494970ff706001a1840aceefeed6836b2ef7a31583b/asymmetric_greedy_search-0.1.0.tar.gz",
+          "version": {
+            "release": "asymmetric-greedy-search 0.1.0, 2025-06-20",
+            "archive_sha256": "8bc0ce7588ba18825b25df3e6f684944b333fab3f5cf55ca9ff9c1e742511c1f",
+            "source_file_sha256": {
+              "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+              "asymmetric_greedy_search/__init__.py": "0324cf6ea93957357c87325dddf753aee645a461e6d1421c692b0dac753d52ad",
+              "asymmetric_greedy_search/core.py": "8ba5a5f14269822985c8e7a774c7395095abd98dccf05bae1639b95c2ea6822b",
+              "asymmetric_greedy_search/backend_numpy.py": "87a6236dc254bbe30b076cdfad132f2bec670f11f9d85de11192c9f0b5214930",
+              "asymmetric_greedy_search/backend_numba.py": "6293d34b28502e46e7b556991e654a4b4bfad6dda67def14bc85e1016b313251"
+            }
+          },
+          "usage_conditions": "源码包包含GPL-3.0许可证全文；本地参考保留原始声明，后续复制、分发、修改及外发须满足对应条款。项目源码无独立许可证，GPL代码与后续用途的关系尚未核实；禁止在不允许来源声明的提示中发送完整代码。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "源码包SHA-256及所含许可证；NumPy后端以30个4×5矩阵分别测试最大化和最小化，核对一对一约束及迭代后不劣于来源初始匹配；可选Numba后端未验证。"
+          },
+          "external_model_use": "unknown",
+          "source_free_prompt_allowed": false,
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "PyPI页面分类标记MIT，但源码包LICENSE为GPL-3.0全文；两种声明不一致，实际适用许可及后续使用条件未确定。",
+              "evidence": "https://pypi.org/project/asymmetric-greedy-search/0.1.0/；源码包内LICENSE",
+              "external_model_use": "unknown"
+            }
+          ]
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "798890ecc88fce408e91b49433f07d2f9691934ddb312882ad37a948388b9937",
+      "parent_snapshot": "../versions/A-029/798890ecc88fce408e91b49433f07d2f9691934ddb312882ad37a948388b9937.json",
+      "description_revision": {
+        "method": "修正归一化与可选成本反转的先后及适用条件；算法代码不变。",
+        "date": "2026-11-12"
+      }
+    }
+  ]
+}
