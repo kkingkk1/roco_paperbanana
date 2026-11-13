@@ -1,0 +1,17 @@
+{
+  "case_id": "C-057",
+  "category": "first_cascading_retime",
+  "description": [
+    "Initialization: Insert each task at earliest completion. If blocked, re-time previously inserted tasks together and accept the first feasible assignment retaining all of them.\n\n",
+    "Reassignment: Remove released observations and use the same rule on reconsidered tasks. Only observations inserted during this call may be re-timed or replaced; other observations stay fixed."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000057.java",
+        "sha256": "25104fd5d36c7619bf3c1ba356a9b0d10ea24b34d1247695b86eb6a1c67b9f39"
+      }
+    ]
+  }
+}

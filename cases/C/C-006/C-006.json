@@ -1,0 +1,17 @@
+{
+  "case_id": "C-006",
+  "category": "longest_window",
+  "description": [
+    "Initialization: Process B order. Choose a feasible observation in the longest raw window; tie-break by observation completion, then start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000006.java",
+        "sha256": "0450667a199a0d3dc0d48a54eb1b8e0a88b885aea3dcd886caace08dee644437"
+      }
+    ]
+  }
+}

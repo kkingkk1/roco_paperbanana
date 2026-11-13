@@ -1,0 +1,17 @@
+{
+  "case_id": "C-037",
+  "category": "chronological_append",
+  "description": [
+    "Initialization: Process B order. Only append a feasible observation after the existing timeline; choose earliest completion.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000037.java",
+        "sha256": "1541d800bd7861b74ec65fd05e7388caaeb2bfa120d28ce1feff27258195ede5"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "case_id": "C-051",
+  "category": "first_single_retime",
+  "description": [
+    "Initialization: Insert each task at earliest completion. If blocked, temporarily remove one previously inserted task and find the first feasible placement of both tasks.\n\n",
+    "Reassignment: Remove released observations and use the same rule on reconsidered tasks. Only observations inserted during this call may be re-timed or replaced; other observations stay fixed."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000051.java",
+        "sha256": "1f5891fd483de6ed3d8418be7df70f8d004bbc5697c955da16ce77ae8d9a4d8f"
+      }
+    ]
+  }
+}

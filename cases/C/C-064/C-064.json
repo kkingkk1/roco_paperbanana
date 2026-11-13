@@ -1,0 +1,17 @@
+{
+  "case_id": "C-064",
+  "category": "first_margin_descent",
+  "description": [
+    "Initialization: Construct by earliest completion, then repeatedly accept the first feasible single-observation re-timing that strictly increases the minimum adjacent transformation margin.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks. Re-timing can change only observations inserted during this call; other observations stay fixed. Return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000064.java",
+        "sha256": "be7ade6e2243a6bdd02f1bab5d0af4ae429b9a9b4b6fa9e074fad562640ba7db"
+      }
+    ]
+  }
+}

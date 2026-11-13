@@ -1,0 +1,17 @@
+{
+  "case_id": "C-073",
+  "category": "iterated_slew_retiming",
+  "description": [
+    "Initialization: Construct by earliest completion and run first-improvement re-timing descent. Perform up to eight random single-task perturbations per inserted task, followed by descent, retaining the best total adjacent transformation time. Use the supplied random generator.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks. Re-timing can change only observations inserted during this call; other observations stay fixed. Return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000073.java",
+        "sha256": "7057a4f8743cebbcba39660051e897b1fcd8711f51687dad0c7b8bae1f1fe3d7"
+      }
+    ]
+  }
+}

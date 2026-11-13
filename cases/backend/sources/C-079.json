@@ -1,0 +1,39 @@
+{
+  "case_id": "C-079",
+  "versions": [
+    {
+      "case_sha256": "1436604daad240ccbc2cdd5b7f09bd0ce4047793ca07c401aaf09bb870cf8502",
+      "source": [
+        {
+          "location": [
+            "cases/C/C-065/C000065.java"
+          ],
+          "version": {
+            "case_sha256": "b146944c98519661a5cc61d66186435540de1c76e1a18502ff123d78ffc8ea9a"
+          },
+          "usage_conditions": "基于本项目C-065改写决策或搜索控制；外发条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "比较共同接口与本案例实际搜索决策；不同决策及边界见案例描述。"
+          },
+          "external_model_use": "unknown"
+        },
+        {
+          "location": [
+            "项目本轮实现：cases/C/C-079/C000079.java"
+          ],
+          "version": {
+            "project_base_commit": "7e0b47d605138e227ce899c655ce877df523028e"
+          },
+          "usage_conditions": "按本项目本地案例任务实现或归档；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "完整源码可单独从项目运行时与问题公共接口编译；以小型1秒和非1秒网格夹具检查合法性、编辑权限和运行时接入。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    }
+  ]
+}

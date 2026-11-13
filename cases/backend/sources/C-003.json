@@ -1,0 +1,86 @@
+{
+  "case_id": "C-003",
+  "versions": [
+    {
+      "case_sha256": "17c915018d10952687792bb350483836c1aca0a141c07932d824179bc3b3be21",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/RkhmaGreedyDecoder.java",
+            "src/main/java/method/rkhma/legacy/operator/insertion/GreedyInsertion.java",
+            "src/main/java/method/rkhma/bridge/GridGreedyInsertion.java",
+            "src/main/java/method/rkhma/bridge/ProblemBridge.java"
+          ],
+          "version": {
+            "project_base_commit": "7e0b47d605138e227ce899c655ce877df523028e"
+          },
+          "usage_conditions": "按本项目本地案例任务整理；来源代码及向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "保留项目源码及其相关源码；入口仅改类名。归档和当前解码器在1秒及非1秒网格的构造和局部编辑夹具上对照。"
+          },
+          "external_model_use": "unknown"
+        },
+        {
+          "location": [
+            "项目本轮实现：cases/C/C-003/src/method/runtime/C000003.java"
+          ],
+          "version": {
+            "project_base_commit": "7e0b47d605138e227ce899c655ce877df523028e"
+          },
+          "usage_conditions": "按本项目本地案例任务实现或归档；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "完整源码可单独从项目运行时与问题公共接口编译；以小型1秒和非1秒网格夹具检查合法性、编辑权限和运行时接入。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "ef7ba97779a1a024f6bf6277684478de17d7d9f06db52a6861dcf37a8c9533d2",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/RkhmaGreedyDecoder.java",
+            "src/main/java/method/rkhma/legacy/operator/insertion/GreedyInsertion.java",
+            "src/main/java/method/rkhma/bridge/GridGreedyInsertion.java",
+            "src/main/java/method/rkhma/bridge/ProblemBridge.java"
+          ],
+          "version": {
+            "project_base_commit": "7e0b47d605138e227ce899c655ce877df523028e"
+          },
+          "usage_conditions": "按本项目本地案例任务整理；来源代码及向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "以项目RKHMA解码器及相关源码为来源；本版入口增加当前预算检查，两个附带插入类的注释按实际相邻时间间隔评分修正，旧版源码已冻结。"
+          },
+          "external_model_use": "unknown"
+        },
+        {
+          "location": [
+            "项目本轮实现：cases/C/C-003/src/method/runtime/C000003.java"
+          ],
+          "version": {
+            "project_base_commit": "7e0b47d605138e227ce899c655ce877df523028e"
+          },
+          "usage_conditions": "按本项目本地案例任务实现或归档；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "本版代码保留原贪心与非1秒桥接决策；构造、局部编辑及重建入口检查当前预算。来源兼容插入扫描不逐候选检查预算。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "17c915018d10952687792bb350483836c1aca0a141c07932d824179bc3b3be21",
+      "parent_snapshot": "../versions/C-003/17c915018d10952687792bb350483836c1aca0a141c07932d824179bc3b3be21.json",
+      "description_revision": {
+        "date": "2026-11-12",
+        "method": "入口增加当前预算检查；更正两个附带插入策略对相邻时间间隔的源码注释，不改变其决策。"
+      },
+      "parent_case_directory": "../versions/C-003/17c915018d10952687792bb350483836c1aca0a141c07932d824179bc3b3be21/C-003"
+    }
+  ]
+}

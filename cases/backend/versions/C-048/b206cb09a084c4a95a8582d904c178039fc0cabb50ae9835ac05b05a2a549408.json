@@ -1,0 +1,17 @@
+{
+  "case_id": "C-048",
+  "category": "exhaustive_reward_selection",
+  "description": [
+    "Initialization: Enumerate feasible observation placements and skip choices in B order; choose the feasible timeline with highest total reward, then lexicographic task inclusion and earlier starts.\n\n",
+    "Reassignment: Apply the same search after removing released observations. Unreleased observations stay fixed. Return no change if no complete feasible change is found."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000048.java",
+        "sha256": "d1be42e5dfef72a96ca12dd4f7e0e1b41bccd321d65bd2e1d1d4dd1088eeaa57"
+      }
+    ]
+  }
+}

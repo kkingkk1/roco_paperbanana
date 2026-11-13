@@ -1,0 +1,17 @@
+{
+  "case_id": "C-047",
+  "category": "exhaustive_priority_selection",
+  "description": [
+    "Initialization: Enumerate feasible observation placements and skip choices in B order; among fully feasible timelines, prefer task inclusion lexicographically in that order, then earlier starts.\n\n",
+    "Reassignment: Apply the same search after removing released observations. Unreleased observations stay fixed. Return no change if no complete feasible change is found."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000047.java",
+        "sha256": "2213ce392f65ca4956eb2546959fa1bebda2a1bf598e144155ffe545f76c551f"
+      }
+    ]
+  }
+}

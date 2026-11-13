@@ -1,0 +1,17 @@
+{
+  "case_id": "C-049",
+  "category": "reward_beam",
+  "description": [
+    "Initialization: Enumerate insertion and skip branches in B order, retain up to four distinct partial timelines by reward, then B-order inclusion and earlier starts; return the first fully feasible final timeline.\n\n",
+    "Reassignment: Apply the same search after removing released observations. Unreleased observations stay fixed. Return no change if no complete feasible change is found."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000049.java",
+        "sha256": "cb643df956461034cbd23e2e28c2d624148866b1c4debd138d5be4c2b1407734"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "case_id": "C-011",
+  "category": "next_task_options",
+  "description": [
+    "Initialization: Process B order. Maximize the feasible observation count of the first later unscheduled task after inserting the current observation. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000011.java",
+        "sha256": "c76413c601249f1956b9a1bb27737ae2610efe9d499c0bb5cd277f9be6cccefd"
+      }
+    ]
+  }
+}

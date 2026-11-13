@@ -1,0 +1,17 @@
+{
+  "case_id": "C-031",
+  "category": "minimum_positive_future_options",
+  "description": [
+    "Initialization: Process B order. Maximize the minimum positive feasible observation count among later tasks, ignoring those with zero options. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000031.java",
+        "sha256": "0ca6be22c973c17fc709adc45964f6e10c3cebf6e8002cdfffc28609927c23ad"
+      }
+    ]
+  }
+}

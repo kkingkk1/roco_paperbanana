@@ -1,0 +1,17 @@
+{
+  "case_id": "C-042",
+  "category": "earliest_finish_rollout",
+  "description": [
+    "Initialization: Process B order. For each feasible current observation, greedily simulate later tasks in B order with earliest-completion insertions; choose the largest simulated later reward. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000042.java",
+        "sha256": "db3f1c7f2a23dc42b39112fa2aa36e5044953ff72f070a939744c41c34e9f59d"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "case_id": "C-066",
+  "category": "repeated_earliest_insertion",
+  "description": [
+    "Initialization: Repeatedly scan B order and insert unscheduled tasks at earliest completion until a complete pass inserts none.\n\n",
+    "Reassignment: Remove released observations and repeat the same insertion scan on reconsidered tasks; unreleased observations stay fixed. Return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000066.java",
+        "sha256": "8a25f71e147151b7f5b4223cd3dec12aa56a4599d912e30ba762b9d94be90199"
+      }
+    ]
+  }
+}

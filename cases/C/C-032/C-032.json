@@ -1,0 +1,17 @@
+{
+  "case_id": "C-032",
+  "category": "future_scarcest_task_options",
+  "description": [
+    "Initialization: Process B order. Among later tasks with feasible options before insertion, select the one with the fewest options, breaking ties by B order; maximize its remaining options. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000032.java",
+        "sha256": "08506708652d8ff177ac3c8ba56a6c0a86d10896da806bf5636d39ddfd35e8ad"
+      }
+    ]
+  }
+}

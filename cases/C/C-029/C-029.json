@@ -1,0 +1,17 @@
+{
+  "case_id": "C-029",
+  "category": "future_reward_weighted_options",
+  "description": [
+    "Initialization: Process B order. Maximize the sum of later tasks’ feasible observation counts weighted by their input rewards. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000029.java",
+        "sha256": "f64ee4b9580d06e5f19187eddbf91923089bbaf13d50118e65863336588da03b"
+      }
+    ]
+  }
+}

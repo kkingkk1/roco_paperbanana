@@ -1,0 +1,51 @@
+{
+  "case_id": "C-047",
+  "versions": [
+    {
+      "case_sha256": "884175cd396cca67fdecaaaa20d6d312db4c05ba202553b02fbdb465ed9156a8",
+      "source": [
+        {
+          "location": [
+            "项目本轮实现：cases/C/C-047/C000047.java"
+          ],
+          "version": {
+            "project_base_commit": "7e0b47d605138e227ce899c655ce877df523028e"
+          },
+          "usage_conditions": "按本项目本地案例任务实现或归档；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "完整源码可单独从项目运行时与问题公共接口编译；以小型1秒和非1秒网格夹具检查合法性、编辑权限和运行时接入。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "c65c14423d45f62a7ed5c259109ea733f38dacb22112236629f7ce620a5e1ae0",
+      "source": [
+        {
+          "location": [
+            "项目本轮实现：cases/C/C-047/C000047.java"
+          ],
+          "version": {
+            "project_base_commit": "7e0b47d605138e227ce899c655ce877df523028e"
+          },
+          "usage_conditions": "按本项目本地案例任务实现或归档；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "完整源码可单独从项目运行时与问题公共接口编译；以小型1秒和非1秒网格夹具检查合法性、编辑权限和运行时接入。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "884175cd396cca67fdecaaaa20d6d312db4c05ba202553b02fbdb465ed9156a8",
+      "parent_snapshot": "../versions/C-047/884175cd396cca67fdecaaaa20d6d312db4c05ba202553b02fbdb465ed9156a8.json",
+      "description_revision": {
+        "date": "2026-11-12",
+        "method": "明确仅比较构造过程中可达的可行分支；源码不变。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "case_id": "C-025",
+  "category": "nearest_window_end",
+  "description": [
+    "Initialization: Process B order. Minimize the time between observation completion and the end of its raw window. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000025.java",
+        "sha256": "fc0f0e1345178d86c9d0bb4e3f8a34a848f07c54890c00432026a00a911bab50"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "case_id": "C-014",
+  "category": "minimum_future_options",
+  "description": [
+    "Initialization: Process B order. Maximize the minimum feasible observation count over later unscheduled tasks, including tasks with zero options. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000014.java",
+        "sha256": "0116d074ff05047c40cafb1c39190aabcbb23022ba361dda6f6820c275fcb5a0"
+      }
+    ]
+  }
+}

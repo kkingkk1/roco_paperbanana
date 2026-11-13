@@ -1,0 +1,17 @@
+{
+  "case_id": "C-008",
+  "category": "minimum_neighbor_gap",
+  "description": [
+    "Initialization: Process B order. Minimize the sum of elapsed gaps to the previous and next observations; absent neighbors contribute zero. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000008.java",
+        "sha256": "e86600a34794241bd5146776efda158a35bb0f260db1e92563f3dbb3dde6ee81"
+      }
+    ]
+  }
+}

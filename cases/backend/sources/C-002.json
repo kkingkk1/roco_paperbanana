@@ -1,0 +1,39 @@
+{
+  "case_id": "C-002",
+  "versions": [
+    {
+      "case_sha256": "9a175f72c0a3305f051c5062e89894d630fe73416d0d978b8b2ffd0b52c8e0ca",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_base_commit": "7e0b47d605138e227ce899c655ce877df523028e"
+          },
+          "usage_conditions": "按本项目本地案例任务整理；来源代码及向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "依据项目手工策略重写，在1秒及非1秒网格的构造和两阶段局部编辑夹具上对照。"
+          },
+          "external_model_use": "unknown"
+        },
+        {
+          "location": [
+            "项目本轮实现：cases/C/C-002/C000002.java"
+          ],
+          "version": {
+            "project_base_commit": "7e0b47d605138e227ce899c655ce877df523028e"
+          },
+          "usage_conditions": "按本项目本地案例任务实现或归档；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "完整源码可单独从项目运行时与问题公共接口编译；以小型1秒和非1秒网格夹具检查合法性、编辑权限和运行时接入。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "case_id": "C-055",
+  "category": "chronological_reward_dp",
+  "description": [
+    "Initialization: Use dynamic programming over observation candidates in B order, requiring selected observations to be chronological; maximize total reward and break ties by B-order inclusion.\n\n",
+    "Reassignment: Apply the same search after removing released observations. Unreleased observations stay fixed. Return no change if no complete feasible change is found."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000055.java",
+        "sha256": "d959f4444aa3088063ad536f6ec944776349070254a6a58db097c67a0a9c10b3"
+      }
+    ]
+  }
+}

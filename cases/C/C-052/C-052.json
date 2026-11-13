@@ -1,0 +1,17 @@
+{
+  "case_id": "C-052",
+  "category": "minimum_slew_single_retime",
+  "description": [
+    "Initialization: Insert each task at earliest completion. If blocked, remove one previously inserted task and first require the blocked task to fit the remaining timeline. Reinsert the removed task and choose the complete feasible repair with minimum total adjacent transformation time among those constructed.\n\n",
+    "Reassignment: Remove released observations and use the same rule on reconsidered tasks. Only observations inserted during this call may be re-timed or replaced; other observations stay fixed."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000052.java",
+        "sha256": "78adfd963f6d13ff5d1a3c351496aee34ede562e6fb47c9e09d0166872c45b69"
+      }
+    ]
+  }
+}

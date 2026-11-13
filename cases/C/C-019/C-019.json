@@ -1,0 +1,17 @@
+{
+  "case_id": "C-019",
+  "category": "minimum_observation_rotation",
+  "description": [
+    "Initialization: Process B order. Minimize the total absolute roll and pitch change between the observation endpoints. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000019.java",
+        "sha256": "a6ad2e4e5a4ae0b0a54120b8a1f7decf896e04106330a44812b24016b668d887"
+      }
+    ]
+  }
+}

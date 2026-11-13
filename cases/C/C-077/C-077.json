@@ -1,0 +1,17 @@
+{
+  "case_id": "C-077",
+  "category": "minimum_loss_subset_replacement",
+  "description": [
+    "Initialization: Insert each task at earliest completion. If blocked, enumerate subsets of previously inserted tasks to remove; require a strictly positive reward gain, minimize lost reward, then minimize total adjacent transformation time.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks. Re-timing can change only observations inserted during this call; other observations stay fixed. Return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000077.java",
+        "sha256": "2a69ca3edd0f31b31d411aed737e6c0588c1666fd54823b732fc62897e1286f6"
+      }
+    ]
+  }
+}

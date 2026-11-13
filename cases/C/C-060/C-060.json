@@ -1,0 +1,17 @@
+{
+  "case_id": "C-060",
+  "category": "best_profitable_multi_replacement",
+  "description": [
+    "Initialization: Insert each task at earliest completion. If blocked, remove previously inserted observations from successive violated edges for each candidate, preferring lower reward; select the feasible maximum-gain replacement, then minimum adjacent transformation time.\n\n",
+    "Reassignment: Remove released observations and use the same rule on reconsidered tasks. Only observations inserted during this call may be re-timed or replaced; other observations stay fixed."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000060.java",
+        "sha256": "80a4377346985271321b7d50643f7dfb42b4578c6f6725d08bc788f55b7adc46"
+      }
+    ]
+  }
+}

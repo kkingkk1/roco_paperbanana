@@ -1,0 +1,17 @@
+{
+  "case_id": "C-061",
+  "category": "restricted_slew_random",
+  "description": [
+    "Initialization: Process B order. Calculate added transformation time for each feasible observation. Uniformly sample a restricted list whose cost is at most the midpoint between the minimum and maximum costs. Use the supplied random generator.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000061.java",
+        "sha256": "5a3b68cf102f1597308a2bd6e20c786c4af54685833e2938e1fc2254fa361ef6"
+      }
+    ]
+  }
+}

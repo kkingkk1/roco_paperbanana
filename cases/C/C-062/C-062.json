@@ -1,0 +1,17 @@
+{
+  "case_id": "C-062",
+  "category": "random_rollout",
+  "description": [
+    "Initialization: Process B order. For each feasible observation, simulate later tasks in B order four times, choosing each simulated observation uniformly; select the observation with the largest summed simulated reward, then earliest completion and start. Use the supplied random generator.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000062.java",
+        "sha256": "05cdfb76f0a141b840b1d7081b96284f8871b93f4b0e8c67716b1c14fdc97045"
+      }
+    ]
+  }
+}

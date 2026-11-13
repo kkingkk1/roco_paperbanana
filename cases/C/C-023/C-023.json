@@ -1,0 +1,17 @@
+{
+  "case_id": "C-023",
+  "category": "minimum_preceding_gap",
+  "description": [
+    "Initialization: Process B order. Minimize the elapsed gap after the preceding observation; an absent predecessor contributes zero. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000023.java",
+        "sha256": "ef36aeda7d973ab0a45b156032432e5da91d54a97f17fea090b39beabd3332dd"
+      }
+    ]
+  }
+}

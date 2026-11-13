@@ -1,0 +1,25 @@
+{
+  "case_id": "C-043",
+  "versions": [
+    {
+      "case_sha256": "26778282e1785af55e6fe65abf88b98617314cd92dfb86a40aa3e2378a5c5c7b",
+      "source": [
+        {
+          "location": [
+            "项目本轮实现：cases/C/C-043/C000043.java"
+          ],
+          "version": {
+            "project_base_commit": "7e0b47d605138e227ce899c655ce877df523028e"
+          },
+          "usage_conditions": "按本项目本地案例任务实现或归档；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "完整源码可单独从项目运行时与问题公共接口编译；以小型1秒和非1秒网格夹具检查合法性、编辑权限和运行时接入。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    }
+  ]
+}

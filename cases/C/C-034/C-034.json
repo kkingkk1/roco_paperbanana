@@ -1,0 +1,17 @@
+{
+  "case_id": "C-034",
+  "category": "random_feasible_observation",
+  "description": [
+    "Initialization: Process B order. Assign an independent random key to each feasible observation and select the smallest key, yielding a uniform observation choice. Unless specified otherwise, score ties use earliest completion, then earliest start. Reproducibility uses the supplied random generator.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000034.java",
+        "sha256": "b0aa610b52882baef0a5aee367b7297f155cc7d2ce6e9fb93f0732dc6943c92e"
+      }
+    ]
+  }
+}

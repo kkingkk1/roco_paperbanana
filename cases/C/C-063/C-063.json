@@ -1,0 +1,17 @@
+{
+  "case_id": "C-063",
+  "category": "first_slew_descent",
+  "description": [
+    "Initialization: Construct by earliest completion, then repeatedly accept the first feasible single-observation re-timing that strictly decreases total adjacent transformation time.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks. Re-timing can change only observations inserted during this call; other observations stay fixed. Return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000063.java",
+        "sha256": "62a844bca43e813bb688c793d98a57b2b4aca2ecbc6743215d99aeda1326ec61"
+      }
+    ]
+  }
+}

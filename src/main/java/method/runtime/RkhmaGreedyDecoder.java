@@ -28,6 +28,7 @@ public final class RkhmaGreedyDecoder implements C {
 
   private void prepare(ProblemInstance problem, Budget budget) {
     Objects.requireNonNull(problem);
+    budget.check();
     if (bound != problem) {
       bridge = new ProblemBridge(problem, budget::check);
       compatible.clear();

@@ -1,0 +1,51 @@
+{
+  "case_id": "C-069",
+  "versions": [
+    {
+      "case_sha256": "49ab4b0e9b4c7786d8082992925e418c70bb5bc58de9e8dd27ecb584a0804bbb",
+      "source": [
+        {
+          "location": [
+            "项目本轮实现：cases/C/C-069/C000069.java"
+          ],
+          "version": {
+            "project_base_commit": "7e0b47d605138e227ce899c655ce877df523028e"
+          },
+          "usage_conditions": "按本项目本地案例任务实现或归档；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "完整源码可单独从项目运行时与问题公共接口编译；以小型1秒和非1秒网格夹具检查合法性、编辑权限和运行时接入。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": []
+    },
+    {
+      "case_sha256": "9eb3a40561a07c9fd9b695ea7555e4b360063eb85d29565e3d277b1d12209397",
+      "source": [
+        {
+          "location": [
+            "项目本轮实现：cases/C/C-069/C000069.java"
+          ],
+          "version": {
+            "project_base_commit": "7e0b47d605138e227ce899c655ce877df523028e"
+          },
+          "usage_conditions": "按本项目本地案例任务实现或归档；向外部模型发送的条件尚未核实。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "完整源码可单独从项目运行时与问题公共接口编译；以小型1秒和非1秒网格夹具检查合法性、编辑权限和运行时接入。"
+          },
+          "external_model_use": "unknown"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "49ab4b0e9b4c7786d8082992925e418c70bb5bc58de9e8dd27ecb584a0804bbb",
+      "parent_snapshot": "../versions/C-069/49ab4b0e9b4c7786d8082992925e418c70bb5bc58de9e8dd27ecb584a0804bbb.json",
+      "description_revision": {
+        "date": "2026-11-12",
+        "method": "明确总尝试次数为16乘以已插入任务数，每次随机选择任务。"
+      }
+    }
+  ]
+}

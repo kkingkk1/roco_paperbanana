@@ -1,0 +1,17 @@
+{
+  "case_id": "C-074",
+  "category": "first_maximum_slew_descent",
+  "description": [
+    "Initialization: Construct by earliest completion, then repeatedly accept the first feasible single-observation re-timing that strictly decreases the largest adjacent transformation time.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks. Re-timing can change only observations inserted during this call; other observations stay fixed. Return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000074.java",
+        "sha256": "0b94195d83d5e3c01666a53c50dbd3a9c7b5e5aea5dbb51c4c41237e685d07cc"
+      }
+    ]
+  }
+}

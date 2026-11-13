@@ -1,0 +1,17 @@
+{
+  "case_id": "C-045",
+  "category": "minimum_future_retention",
+  "description": [
+    "Initialization: Process B order. Maximize the smallest remaining feasible-observation fraction among later tasks with at least one option before the insertion. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000045.java",
+        "sha256": "e1def1fbeb9a832a263c8992a22af8f25fe5184776a0d6e707da89121c2af2c9"
+      }
+    ]
+  }
+}

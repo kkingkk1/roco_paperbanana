@@ -1,0 +1,17 @@
+{
+  "case_id": "C-036",
+  "category": "fewest_feasible_in_window",
+  "description": [
+    "Initialization: Process B order. Choose an observation from the window containing the fewest currently feasible observations for this task. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000036.java",
+        "sha256": "69588b09283cf20235539e173357de8bda8d19d2adbae3833a930dd1b17bea15"
+      }
+    ]
+  }
+}

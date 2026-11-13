@@ -1,0 +1,17 @@
+{
+  "case_id": "C-075",
+  "category": "global_local_time_shift",
+  "description": [
+    "Initialization: Enumerate individually feasible insertions and skip choices in B order. Prefer B-order task inclusion, then minimize total absolute start-time shift of released observations, then prefer earlier starts. With no earlier observations, the stability measures are zero.\n\n",
+    "Local editing in either phase removes released observations and uses their original choices to calculate stability. Unreleased observations stay fixed; only constructed feasible timelines are compared."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000075.java",
+        "sha256": "8fe090153ce03656969e01dbc95584da7c2d2de371d68a70aa03cbd4172ec815"
+      }
+    ]
+  }
+}

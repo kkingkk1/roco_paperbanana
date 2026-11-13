@@ -1,0 +1,17 @@
+{
+  "case_id": "C-076",
+  "category": "roulette_slew_random",
+  "description": [
+    "Initialization: Process B order. Sample a feasible observation with roulette-wheel weights inversely proportional to one plus its added transformation cost above the minimum feasible cost. Use the supplied random generator.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000076.java",
+        "sha256": "6bb13b0e842e751fa88e9d2539c81acdcdec59780922ce46370d0373a765d566"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "case_id": "C-054",
+  "category": "best_profitable_replacement",
+  "description": [
+    "Initialization: Insert each task at earliest completion. If blocked, compare feasible one-task replacements, maximize the reward gain, then minimize total adjacent transformation time.\n\n",
+    "Reassignment: Remove released observations and use the same rule on reconsidered tasks. Only observations inserted during this call may be re-timed or replaced; other observations stay fixed."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000054.java",
+        "sha256": "59e1c2a8430f0958611a0f296081597d68661200f9ce92736669ff79442d3639"
+      }
+    ]
+  }
+}

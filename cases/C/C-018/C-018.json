@@ -1,0 +1,17 @@
+{
+  "case_id": "C-018",
+  "category": "minimum_nadir_angle",
+  "description": [
+    "Initialization: Process B order. Minimize the sum of absolute roll and pitch angles at the start and end of the observation. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000018.java",
+        "sha256": "1207302b667ffa33f8125a79e4b9ddac34a193aa63609bec2403c9dae9769c39"
+      }
+    ]
+  }
+}

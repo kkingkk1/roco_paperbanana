@@ -1,0 +1,17 @@
+{
+  "case_id": "C-070",
+  "category": "minimum_local_time_shift",
+  "description": [
+    "Initialization: Construct by earliest completion. In local editing, choose the feasible observation closest in start time to the released observation; prefer the same window on ties, then earliest completion.\n\n",
+    "Local editing in either phase removes released observations and applies the stated stability rule to reconsidered tasks. Return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000070.java",
+        "sha256": "526f7aa6e9f83255a2b885a99c24083832b28a9dd85153b51e006bd99430477f"
+      }
+    ]
+  }
+}
