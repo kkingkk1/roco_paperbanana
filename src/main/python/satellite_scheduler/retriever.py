@@ -3,51 +3,21 @@
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import os
 from pathlib import Path
 import re
-import shutil
-import subprocess
 import sys
 from datetime import datetime
 
 from .cases import CaseData, b_required_count, discover_cases, validate_b_selection
+from .model_call import (
+    ROOT, call_codex, digest as _digest, json_bytes as _json_bytes, parse_json as _parse,
+    verify_call as _verify_call, write_new as _write_new,
+)
 
 
-ROOT = Path(__file__).resolve().parents[4]
 OUTPUTS = ROOT / 'outputs'
-
-
-def _digest(raw: bytes) -> str:
-    return hashlib.sha256(raw).hexdigest()
-
-
-def _json_bytes(value) -> bytes:
-    return (json.dumps(value, ensure_ascii=False, indent=2) + '\n').encode('utf-8')
-
-
-def _write_new(path: Path, raw: bytes) -> None:
-    with path.open('xb') as file:
-        file.write(raw)
-
-
-def _pairs(pairs):
-    result = {}
-    for key, value in pairs:
-        if key in result:
-            raise ValueError(f'duplicate JSON field: {key}')
-        result[key] = value
-    return result
-
-
-def _invalid_constant(value):
-    raise ValueError(f'invalid JSON constant: {value}')
-
-
-def _parse(raw: bytes):
-    return json.loads(raw.decode('utf-8'), object_pairs_hook=_pairs, parse_constant=_invalid_constant)
 
 
 def _module(case_id: str) -> str:
@@ -250,65 +220,6 @@ def _select(raw: bytes, cases: list[CaseData], counts: dict[str, int]):
     return selected
 
 
-def _call(run: Path, prepared: dict) -> None:
-    executable = shutil.which('codex.cmd' if os.name == 'nt' else 'codex')
-    if not executable:
-        raise RuntimeError('existing Codex CLI was not found')
-    command = [executable, 'exec', '--ephemeral', '--json', '--sandbox', 'read-only',
-               '--model', prepared['model'], '-c', 'model_reasoning_effort="low"',
-               '--disable', 'multi_agent', '--disable', 'apps',
-               '--disable', 'shell_tool', '--disable', 'unified_exec', '--output-schema',
-               str(run / 'response-schema.json'), '--output-last-message', str(run / 'response.json'),
-               '--skip-git-repo-check', '-']
-    _write_new(run / 'call-started.json', _json_bytes({'at': datetime.now().astimezone().isoformat(),
-                                                        'command': command}))
-    try:
-        completed = subprocess.run(command, input=(run / 'request.txt').read_bytes(),
-                                   stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=ROOT, check=False)
-    except OSError as error:
-        _write_new(run / 'call-result.json', _json_bytes({'error': str(error), 'exit_code': None}))
-        raise
-    _write_new(run / 'codex-events.jsonl', completed.stdout)
-    _write_new(run / 'codex-stderr.log', completed.stderr)
-    usage = []
-    for line in completed.stdout.splitlines():
-        try:
-            event = _parse(line)
-        except (ValueError, UnicodeError):
-            continue
-        if isinstance(event, dict) and isinstance(event.get('usage'), dict):
-            usage.append(event['usage'])
-    _write_new(run / 'call-result.json', _json_bytes({'exit_code': completed.returncode, 'usage_events': usage,
-                                                       'finished_at': datetime.now().astimezone().isoformat()}))
-    if completed.returncode != 0:
-        raise RuntimeError(f'Codex CLI failed with exit code {completed.returncode}; see codex-stderr.log')
-
-
-def _verify_call(run: Path, response_raw: bytes) -> dict:
-    result_path = run / 'call-result.json'
-    events_path = run / 'codex-events.jsonl'
-    if not result_path.is_file() or not events_path.is_file():
-        raise RuntimeError('response lacks a completed call record; inspect before recovery')
-    result = _parse(result_path.read_bytes())
-    if not isinstance(result, dict) or result.get('exit_code') != 0:
-        raise RuntimeError('prior call failed; preserve its response and inspect before recovery')
-    events = [_parse(line) for line in events_path.read_bytes().splitlines() if line.strip()]
-    if any(not isinstance(event, dict) for event in events):
-        raise ValueError('invalid Codex event')
-    if (sum(event.get('type') == 'turn.started' for event in events) != 1
-            or sum(event.get('type') == 'turn.completed' for event in events) != 1):
-        raise ValueError('expected one completed model turn')
-    messages = [event['item']['text'] for event in events
-                if event.get('type') == 'item.completed' and isinstance(event.get('item'), dict)
-                and event['item'].get('type') == 'agent_message' and isinstance(event['item'].get('text'), str)]
-    if not messages or _parse(messages[-1].encode('utf-8')) != _parse(response_raw):
-        raise ValueError('saved response does not match the completed model message')
-    usage = [event['usage'] for event in events if isinstance(event.get('usage'), dict)]
-    if usage != result.get('usage_events'):
-        raise ValueError('saved usage differs from the model events')
-    return result
-
-
 def execute(run_id: str, reviewed_ids: list[str], selection_basis: str, model: str) -> dict:
     if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_-]{0,79}', run_id):
         raise ValueError('invalid run ID')
@@ -332,7 +243,7 @@ def execute(run_id: str, reviewed_ids: list[str], selection_basis: str, model: s
     if not response_path.exists():
         if (run / 'call-started.json').exists():
             raise RuntimeError('prior call has no saved response; inspect transport and usage before recovery')
-        _call(run, prepared)
+        call_codex(run, prepared['model'])
     response_raw = response_path.read_bytes()
     call_result = _verify_call(run, response_raw)
     selected = _select(response_raw, cases, prepared['required_counts'])

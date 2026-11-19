@@ -6,7 +6,7 @@
 
 项目以Python为主。问题层、两阶段运行时、27种预置组合和案例读取已通过P1工程验收。生成代码的接入与隔离属于P2。
 A/B/C案例库已初步建成，实际条数与使用边界见[案例目录](cases/README.md)。
-原Java版本已完成P1工程验收，作为迁移对照保留。Python已有小范围真实案例检索入口；P2的五角色协作演化系统尚未实现。
+原Java版本已完成P1工程验收，作为迁移对照保留。Python的Retriever和A/B/C生成角色可独立真实调用；组合控制、Critic及生成代码的隔离执行仍在P2。
 
 ## 研究路线
 
@@ -96,6 +96,20 @@ python -B -m satellite_scheduler.retriever python-retriever-20261117-134111
 ```
 
 这次[真实检索证据](vault/Results/Evidence/p2-retriever-python/evidence.md)只使用12条人工复核案例，是小范围联调；后来现有149条版本完成决策逻辑复核，见[复核报告](vault/Results/Reports/case-semantic-review-20261117.md)。不可变模型快照和五角色接入仍未完成。新运行使用新的 `run-id`，通过 `--reviewed-case` 逐条指定候选，并用 `--selection-basis` 记录筛选依据；A、C和B的两个阶段均须有候选。入口检查候选是否列在[语义复核记录](cases/backend/semantic-review.json)中，且版本未发生变化；其他案例须完成实际决策逻辑复核后才能加入。哈希只绑定版本，不证明算法不同。传输失败后的自动重试策略尚未确定。
+
+## A/B/C代码生成
+
+三个角色的提示分别维护：[A任务归属](src/main/python/satellite_scheduler/prompts/allocation.md)、[B单星搜索](src/main/python/satellite_scheduler/prompts/satellite_search.md)、[C时间轴解码](src/main/python/satellite_scheduler/prompts/decoder.md)。程序向各自的提示填入该角色的方法签名、同一份完整P1手工父版本及本模块的冻结案例。
+
+在项目根目录调用一个角色。将`A`换成`B`或`C`可生成相应模块。下例恢复该角色已完成的请求和结果。首次调用一个角色时读取当前提示；要用新提示重新生成已完成的角色，使用新的运行ID。
+
+```powershell
+$env:PYTHONPATH = 'src/main/python'
+python -B -m satellite_scheduler.generation p2-abc-verified-20261119 A `
+  --case-run-id python-retriever-20261117-134111 --parent A1B1C1 --model gpt-6.1-terra
+```
+
+请求、原始回复、用量和候选保存在`outputs/<run-id>/generation/<role>/`。`candidate.json`包含生成的`description`、`code`及程序绑定的角色和父版本哈希。入口检查说明结构、Python语法与方法签名；当前以文本保留生成代码。实际组装和隔离执行见[P2阶段计划](vault/Plan/mechanisms/P2-五角色协作演化.md)。
 
 ## 评价候选解
 
