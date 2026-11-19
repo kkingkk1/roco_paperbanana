@@ -1,0 +1,19 @@
+{
+  "case_id": "A-027",
+  "category": "cost_scaling_matching",
+  "description": [
+    "Cost-scaling push-relabel matching:\n",
+    "- Scaling: Decrease epsilon across cost-scaling phases, pushing flow along admissible residual edges or relabeling dual node potentials.\n",
+    "- Completion: Complete terminal matching via shortest augmenting paths; trigger cold-start completion if step or phase limit is reached.",
+    " Java uses -1 for unmatched indices and rejects inputs without an augmenting path."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000027.java",
+        "sha256": "ba48ede0e27b04429ebf01f98d74c48a873c2ec60f973df21efb18489d4d148d"
+      }
+    ]
+  }
+}

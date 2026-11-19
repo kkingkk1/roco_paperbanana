@@ -1,0 +1,19 @@
+{
+  "case_id": "BI-002",
+  "category": "earliest_opportunity",
+  "sub_library": "initial",
+  "description": [
+    "Initialization only: Sort assigned tasks by earliest legal candidate start, ",
+    "then descending reward, then smaller task ID (tasks without candidates sort last). ",
+    "Issue single-pass evaluation through decoder C."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000005.java",
+        "sha256": "9b22d238e799fdffba20274c39656edd31ffa01988ff95e33aac0f36f55b67cf"
+      }
+    ]
+  }
+}

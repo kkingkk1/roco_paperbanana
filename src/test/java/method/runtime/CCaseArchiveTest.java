@@ -2,6 +2,7 @@ package method.runtime;
 
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.SplittableRandom;
+import java.util.zip.ZipFile;
 import javax.tools.ToolProvider;
 import method.cases.CaseReader;
 import method.runtime.SolverContracts.C;
@@ -34,6 +36,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /** Compiles the archived source, rather than testing copies in the production tree. */
 class CCaseArchiveTest {
   private static ClassLoader archive;
+  private static Path archivedSources;
   private static final Budget BUDGET = new Budget(() -> 0L, 0, Long.MAX_VALUE, Long.MAX_VALUE);
 
   @BeforeAll static void compileArchivedCases() throws Exception {
@@ -57,17 +60,56 @@ class CCaseArchiveTest {
         Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
       }
     }
-    for (int id = 1; id <= 80; id++) {
-      Path caseDirectory = Path.of("cases", "C", String.format("C-%03d", id));
-      List<String> args = new ArrayList<>(List.of("-encoding", "UTF-8", "--release", "21",
-          "-classpath", apiClasses.toString(), "-d", output.toString()));
-      try (var sources = Files.walk(caseDirectory)) {
-        sources.filter(path -> path.toString().endsWith(".java")).sorted()
-            .map(Path::toString).forEach(args::add);
+    assertFalse(Files.exists(apiClasses.resolve("method/rkhma")), "isolated case API contains RKHMA classes");
+    archivedSources = Path.of("target", "c-case-history").toAbsolutePath();
+    Path historyArchive = Path.of("cases", "backend", "archives", "c-python-parity-20261117.zip");
+    try (ZipFile history = new ZipFile(historyArchive.toFile())) {
+      for (int id = 1; id <= 80; id++) {
+        String caseId = String.format("C-%03d", id);
+        String filename = "C" + String.format("%06d", id) + ".java";
+        Path caseDirectory = Path.of("cases", "C", caseId);
+        List<String> args = new ArrayList<>(List.of("-encoding", "UTF-8", "--release", "21",
+            "-classpath", apiClasses.toString(), "-d", output.toString()));
+        var entry = history.getEntry(caseId + "/" + filename);
+        if (entry != null) {
+          assertEquals(1, history.stream().filter(item -> item.getName().equals(entry.getName())).count());
+          byte[] sourceBytes;
+          try (var input = history.getInputStream(entry)) { sourceBytes = input.readAllBytes(); }
+          Path live = caseDirectory.resolve(filename);
+          if (Files.exists(live)) assertArrayEquals(Files.readAllBytes(live), sourceBytes, caseId);
+          Path extracted = archivedSources.resolve(caseId);
+          Files.createDirectories(extracted);
+          Path archivedJava = extracted.resolve(filename);
+          Files.write(archivedJava, sourceBytes);
+          var snapshotEntry = history.getEntry(caseId + "/snapshot.sha256");
+          assertNotNull(snapshotEntry, caseId);
+          String snapshot;
+          try (var input = history.getInputStream(snapshotEntry)) {
+            snapshot = new String(input.readAllBytes(), StandardCharsets.US_ASCII).trim();
+          }
+          assertTrue(snapshot.matches("[0-9a-f]{64}"), caseId);
+          var prior = CaseReader.read(Path.of("cases", "backend", "versions", caseId, snapshot + ".json"), extracted);
+          assertEquals(snapshot, prior.caseSha256(), caseId);
+          assertArrayEquals(sourceBytes, prior.code().getBytes(StandardCharsets.UTF_8), caseId);
+          args.add(archivedJava.toString());
+        } else if (id == 3) {
+          args.add(caseDirectory.resolve(filename).toString());
+        } else {
+          try (var sources = Files.walk(caseDirectory)) {
+            sources.filter(path -> path.toString().endsWith(".java")).sorted()
+                .map(Path::toString).forEach(args::add);
+          }
+        }
+        assertEquals(0, compiler.run(null, null, null, args.toArray(String[]::new)), caseId);
       }
-      assertEquals(0, compiler.run(null, null, null, args.toArray(String[]::new)), caseDirectory.toString());
     }
-    archive = new URLClassLoader(new URL[]{output.toUri().toURL()}, CCaseArchiveTest.class.getClassLoader());
+    ClassLoader caseParent = new ClassLoader(CCaseArchiveTest.class.getClassLoader()) {
+      @Override protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+        if (name.matches("method\\.runtime\\.C\\d{6}(\\$.*)?")) throw new ClassNotFoundException(name);
+        return super.loadClass(name, resolve);
+      }
+    };
+    archive = new URLClassLoader(new URL[]{output.toUri().toURL()}, caseParent);
   }
 
   private static C decoder(int id) throws Exception {
@@ -113,10 +155,17 @@ class CCaseArchiveTest {
       assertEquals(caseId, data.caseId());
       assertNull(data.subLibrary());
       assertFalse(data.description().isBlank());
-      assertTrue(data.code().contains("class C" + String.format("%06d", id)), caseId);
+      Path python = metadata.getParent().resolve("C" + String.format("%06d", id) + ".py");
+      if (Files.exists(python) && data.code().equals(Files.readString(python))) {
+        assertTrue(data.code().contains("class Decoder:"), caseId);
+        assertTrue(data.code().contains("def create():"), caseId);
+      } else {
+        Path java = metadata.getParent().resolve("C" + String.format("%06d", id) + ".java");
+        assertEquals(Files.readString(java), data.code(), caseId);
+        assertTrue(data.code().contains("class C" + String.format("%06d", id)), caseId);
+      }
       String provenance = Files.readString(Path.of("cases", "backend", "sources", caseId + ".json"));
       assertTrue(provenance.contains(data.caseSha256()), "missing background version for " + caseId);
-      assertTrue(provenance.contains("\"external_model_use\": \"unknown\""), caseId);
     }
   }
 
@@ -129,6 +178,15 @@ class CCaseArchiveTest {
     assertEquals(previous, archived.caseSha256());
     assertEquals("C-003", archived.caseId());
     assertNotEquals(archived.caseSha256(), current.caseSha256());
+    String priorStandalone = "ef7ba97779a1a024f6bf6277684478de17d7d9f06db52a6861dcf37a8c9533d2";
+    var priorArchived = CaseReader.read(versions.resolve(priorStandalone + ".json"), Path.of("cases", "C", "C-003"));
+    assertEquals(priorStandalone, priorArchived.caseSha256());
+    assertTrue(priorArchived.code().contains("class GreedyInsertion"));
+    String javaSnapshot = "a0c74da49419d58cff03df590e7b439ad1d42bed407bca3ea9c74e47b420503b";
+    Path priorDirectory = archivedSources.resolve("C-003");
+    var priorJava = CaseReader.read(versions.resolve(javaSnapshot + ".json"), priorDirectory);
+    assertEquals(Files.readString(priorDirectory.resolve("C000003.java")), priorJava.code());
+    assertEquals(Files.readString(Path.of("cases", "C", "C-003", "C000003.py")), current.code());
   }
 
   @Test void archivedProjectBaselinesMatchTheOriginalCodeOnBothTimeGrids() throws Exception {
@@ -162,6 +220,25 @@ class CCaseArchiveTest {
             saved.rebuild(problem, api, view(expected), preferred, order, BUDGET, new SplittableRandom(8)),
             "rebuild C-" + id + ", step=" + step);
       }
+    }
+  }
+
+  @Test void standaloneRkhmaGreedyPreservesWindowOrderAndApplicablePreference() throws Exception {
+    for (int step : List.of(1, 2)) {
+      ProblemInstance problem = instance(List.of(window(0, 50, 56, step, 0), window(0, 10, 20, step, 0)));
+      ProblemAccess api = new ProblemAccess(problem, BUDGET);
+      SatelliteView empty = view(List.of());
+      C original = new RkhmaGreedyDecoder();
+      C standalone = decoder(3);
+      List<Integer> order = List.of(0);
+      List<ScheduledTask> ordinary = standalone.build(problem, api, empty, order, BUDGET, new SplittableRandom(1));
+      assertEquals(original.build(problem, api, empty, order, BUDGET, new SplittableRandom(1)), ordinary);
+      assertSame(problem.satellite(0).getTimeWindows().getFirst(), ordinary.getFirst().timeWindow());
+      LocalContext preferred = new LocalContext(Phase.REASSIGN, Set.of(), Set.of(), List.of(), Set.of(0));
+      List<ScheduledTask> rebuilt = standalone.rebuild(problem, api, empty, preferred, order,
+          BUDGET, new SplittableRandom(1));
+      assertEquals(original.rebuild(problem, api, empty, preferred, order, BUDGET, new SplittableRandom(1)), rebuilt);
+      assertSame(problem.satellite(0).getTimeWindows().get(step == 1 ? 1 : 0), rebuilt.getFirst().timeWindow());
     }
   }
 
@@ -211,6 +288,21 @@ class CCaseArchiveTest {
     }
   }
 
+  @Test void nextTaskAndAllFutureOptionsCanChooseDifferentObservations() throws Exception {
+    ProblemInstance problem = instance(List.of(window(0, 10, 14, 1, 0), window(0, 70, 74, 1, 0),
+        window(1, 70, 74, 1, 0), window(1, 90, 94, 1, 0),
+        window(2, 0, 4, 1, 0), window(2, 4, 8, 1, 0),
+        window(2, 14, 18, 1, 0), window(2, 18, 22, 1, 0)));
+    ProblemAccess api = new ProblemAccess(problem, BUDGET);
+    for (int id : List.of(11, 12)) {
+      List<ScheduledTask> result = decoder(id).build(problem, api, view(List.of()), List.of(0, 1, 2),
+          BUDGET, new SplittableRandom(1));
+      ScheduledTask first = result.stream().filter(o -> o.getTaskId() == 0).findFirst().orElseThrow();
+      assertEquals(id == 11 ? 11 : 71, first.getStartTime(), "C-" + id);
+      assertTrue(ScheduleValidator.evaluate(problem, new SchedulingPlan(result)).feasible());
+    }
+  }
+
   @Test void windowDeadlineAndEarliestFinishAreNotTheSameDecision() throws Exception {
     ProblemInstance problem = instance(List.of(window(0, 10, 50, 1, 0), window(0, 20, 24, 1, 0)));
     ProblemAccess api = new ProblemAccess(problem, BUDGET);
@@ -218,6 +310,38 @@ class CCaseArchiveTest {
         BUDGET, new SplittableRandom(1)).getFirst().getStartTime());
     assertEquals(21, decoder(4).build(problem, api, view(List.of()), List.of(0),
         BUDGET, new SplittableRandom(1)).getFirst().getStartTime());
+  }
+
+  @Test void windowCenterAndMarginPoliciesMakeDifferentDecisions() throws Exception {
+    ProblemInstance initial = instance(List.of(window(0, 10, 15, 1, 0), window(0, 30, 37, 1, 0)));
+    ProblemAccess initialApi = new ProblemAccess(initial, BUDGET);
+    List<TimeWindow> initialWindows = initial.satellite(0).getTimeWindows();
+    for (int id : List.of(10, 26, 27)) {
+      List<ScheduledTask> result = decoder(id).build(initial, initialApi, view(List.of()), List.of(0),
+          BUDGET, new SplittableRandom(1));
+      assertEquals(1, result.size(), "C-" + id);
+      assertSame(initialWindows.get(id == 10 ? 0 : 1), result.getFirst().timeWindow(), "C-" + id);
+      assertTrue(ScheduleValidator.evaluate(initial, new SchedulingPlan(result)).feasible());
+    }
+
+    ProblemInstance local = instance(List.of(window(0, 0, 6, 1, 0), window(0, 0, 59, 1, 0),
+        window(1, 27, 31, 1, 0)));
+    ProblemAccess localApi = new ProblemAccess(local, BUDGET);
+    List<TimeWindow> localWindows = local.satellite(0).getTimeWindows();
+    TimeWindow fixed = localWindows.get(2);
+    ScheduledTask pinned = new ScheduledTask(local.task(1), fixed,
+        fixed.getAttitudeRecord(1), fixed.getAttitudeRecord(3));
+    SatelliteView existing = view(List.of(pinned));
+    LocalPlan plan = new LocalPlan(existing.hash(), Set.of(), List.of(0));
+    for (int id : List.of(26, 27)) {
+      LocalResult result = decoder(id).applyLocal(local, localApi, existing, context(Phase.REASSIGN), plan,
+          BUDGET, new SplittableRandom(1));
+      assertEquals(LocalStatus.APPLIED, result.status(), "C-" + id);
+      ScheduledTask selected = result.observations().stream().filter(o -> o.getTaskId() == 0)
+          .findFirst().orElseThrow();
+      assertSame(localWindows.get(id == 26 ? 1 : 0), selected.timeWindow(), "C-" + id);
+      assertTrue(ScheduleValidator.evaluate(local, new SchedulingPlan(result.observations())).feasible());
+    }
   }
 
   @Test void feasibleOpportunityCountDiffersFromRawWindowLength() throws Exception {

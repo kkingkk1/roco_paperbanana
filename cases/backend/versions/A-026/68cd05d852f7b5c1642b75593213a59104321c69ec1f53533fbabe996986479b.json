@@ -1,0 +1,20 @@
+{
+  "case_id": "A-026",
+  "category": "kbest_matching",
+  "description": [
+    "K-best bipartite matchings (Murty's algorithm): Initialize priority queue with optimal matching. ",
+    "Iteratively extract minimum-cost matching, partition solution space by fixing matched edge prefix and forbidding subsequent edges, ",
+    "and solve subproblems via shortest augmenting paths until K solutions found or queue exhausts. ",
+    "Rectangular padding can yield duplicate original matchings after trimming.",
+    " Java uses -1 for unmatched indices and rejects inputs without an augmenting path."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000026.java",
+        "sha256": "2aa00821a30851a905261c256312615d81a743c291f6a9ba63ae6d265ef8ff3c"
+      }
+    ]
+  }
+}

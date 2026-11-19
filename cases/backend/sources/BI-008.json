@@ -165,12 +165,26 @@
           "version": {
             "commit": "ee282656e8b2f6fd0d3cf84677b40966e2780ef3"
           },
-          "usage_conditions": "参考公开算法思想并由本项目重新实现；来源仓库代码许可和本项目实现向外部模型发送的条件尚未核实。",
+          "usage_conditions": "本条来源只用于参考算法思想；本案例为项目内独立实现，用户已确认该案例可用于本项目外部模型检索和代码生成。不因此授予外发来源原始代码或论文原文的许可；来源及许可台账不进入提示。",
           "verification": {
             "date": "2026-11-12",
             "evidence": "对照来源实现的主要选择或接受规则；本案例仅覆盖单星顺序搜索，非作者代码原样复现。"
           },
-          "external_model_use": "unknown"
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-12",
+              "finding": "参考公开算法思想并由本项目重新实现；来源仓库代码许可和本项目实现向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "本条来源只用于参考算法思想；本案例为项目内独立实现，用户已确认该案例可用于本项目外部模型检索和代码生成。不因此授予外发来源原始代码或论文原文的许可；来源及许可台账不进入提示。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。 原始来源与独立实现范围见本来源记录的verification字段。",
+              "external_model_use": "allowed"
+            }
+          ]
         },
         {
           "location": [
@@ -179,12 +193,26 @@
           "version": {
             "project_base_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2"
           },
-          "usage_conditions": "按本项目本地案例任务实现；向外部模型发送的条件尚未核实。",
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
           "verification": {
             "date": "2026-11-12",
             "evidence": "单星任务顺序完整初始化算法；评分和观测选择委托运行时签发的评价器。"
           },
-          "external_model_use": "unknown"
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-12",
+              "finding": "按本项目本地案例任务实现；向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
         }
       ],
       "merged_case_ids": [],
@@ -194,6 +222,92 @@
         "date": "2026-11-12"
       },
       "parent_snapshot": "../versions/BI-008/2d36a606e3003a12fbd5ca437a0057919c02d06159743873c3f734637cda7b06.json"
+    },
+    {
+      "case_sha256": "0b4305de5c546edbd91551bc0b6e97e18fe4a5b1772509fc4418a3f606720654",
+      "source": [
+        {
+          "location": [
+            "https://github.com/Ethan19YQ/EOS-Bench/blob/ee282656e8b2f6fd0d3cf84677b40966e2780ef3/algorithms/meta_sa.py"
+          ],
+          "version": {
+            "commit": "ee282656e8b2f6fd0d3cf84677b40966e2780ef3"
+          },
+          "usage_conditions": "本条来源只用于参考算法思想；本案例为项目内独立实现，用户已确认该案例可用于本项目外部模型检索和代码生成。不因此授予外发来源原始代码或论文原文的许可；来源及许可台账不进入提示。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "对照来源实现的主要选择或接受规则；本案例仅覆盖单星顺序搜索，非作者代码原样复现。"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-12",
+              "finding": "参考公开算法思想并由本项目重新实现；来源仓库代码许可和本项目实现向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "本条来源只用于参考算法思想；本案例为项目内独立实现，用户已确认该案例可用于本项目外部模型检索和代码生成。不因此授予外发来源原始代码或论文原文的许可；来源及许可台账不进入提示。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。 原始来源与独立实现范围见本来源记录的verification字段。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": [
+            "项目自主设计并实现：B000011.java"
+          ],
+          "version": {
+            "project_base_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2"
+          },
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "单星任务顺序完整初始化算法；评分和观测选择委托运行时签发的评价器。"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-12",
+              "finding": "按本项目本地案例任务实现；向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": [
+            "cases/B/initial_single_satellite_optimization/BI-008/B000011.py"
+          ],
+          "version": {
+            "parent_case_id": "BI-008",
+            "parent_case_sha256": "7662c60f5bdfcd74ed503a848e90fe790264b99277f020f27a241d0031f6cc95",
+            "source_file_sha256": {
+              "cases/B/initial_single_satellite_optimization/BI-008/B000011.py": "76c94a6310e294b891b89f06510332035971a672c97ca1b54de85a488b97e515"
+            }
+          },
+          "usage_conditions": "本项目 Python 移植，按用户确认用于本项目检索与代码生成；保留原来源记录。",
+          "verification": {
+            "date": "2026-11-17",
+            "evidence": "与对应 Java 案例在 12 组固定输入、4 种试评预算及相同随机输入序列下比较返回顺序和收益，共 48 次；不据此声称覆盖所有输入。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "7662c60f5bdfcd74ed503a848e90fe790264b99277f020f27a241d0031f6cc95",
+      "parent_snapshot": "../versions/BI-008/7662c60f5bdfcd74ed503a848e90fe790264b99277f020f27a241d0031f6cc95.json",
+      "implementation_revision": {
+        "date": "2026-11-17",
+        "method": "依据当前 Java 案例移植为 Python；原源码及历史元数据保留。"
+      }
     }
   ],
   "previous_case_ids": [

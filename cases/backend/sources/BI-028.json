@@ -73,12 +73,26 @@
               "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
             }
           },
-          "usage_conditions": "已授权在本项目本地使用与整理；项目源代码外部模型使用条件尚未核实。",
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
           "verification": {
             "date": "2026-11-12",
             "evidence": "原样提取 DensitySearch 完整类体，新增独立外壳和工厂；行为仍需与项目原策略比较。"
           },
-          "external_model_use": "unknown"
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-12",
+              "finding": "已授权在本项目本地使用与整理；项目源代码外部模型使用条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
         }
       ],
       "merged_case_ids": [],
@@ -88,6 +102,67 @@
         "date": "2026-11-12"
       },
       "parent_snapshot": "../versions/BI-028/41654ffacfc9ac86e96d4418c12edb4a577aeb1eee7b8c76b35463192b2782da.json"
+    },
+    {
+      "case_sha256": "dbddc13e585586f1831f484c4fbfd208af4a2757d2b9bdf77621f5a32b99e25f",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "原样提取 DensitySearch 完整类体，新增独立外壳和工厂；行为仍需与项目原策略比较。"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-12",
+              "finding": "已授权在本项目本地使用与整理；项目源代码外部模型使用条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": [
+            "cases/B/initial_single_satellite_optimization/BI-028/B000038.py"
+          ],
+          "version": {
+            "parent_case_id": "BI-028",
+            "parent_case_sha256": "3cc66e1d0f69a3f1cc0f56fe4f4096fc2b8e0aeca2c61109aebe040c2dfb1ccf",
+            "source_file_sha256": {
+              "cases/B/initial_single_satellite_optimization/BI-028/B000038.py": "2f5ace8635090b4c6021d85bc93d5267bdd41f13a058cdff375a0768c9ca868d"
+            }
+          },
+          "usage_conditions": "本项目 Python 移植，按用户确认用于本项目检索与代码生成；保留原来源记录。",
+          "verification": {
+            "date": "2026-11-17",
+            "evidence": "与对应 Java 案例在 12 组固定输入、3 种时间轴和 20 个局部尝试上比较初始顺序与编辑，共 756 次；未覆盖所有输入。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "3cc66e1d0f69a3f1cc0f56fe4f4096fc2b8e0aeca2c61109aebe040c2dfb1ccf",
+      "parent_snapshot": "../versions/BI-028/3cc66e1d0f69a3f1cc0f56fe4f4096fc2b8e0aeca2c61109aebe040c2dfb1ccf.json",
+      "implementation_revision": {
+        "date": "2026-11-17",
+        "method": "依据当前 Java 案例移植为 Python；原源码及历史元数据保留。"
+      }
     }
   ],
   "previous_case_ids": [

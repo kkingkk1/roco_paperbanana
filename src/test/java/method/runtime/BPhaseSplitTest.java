@@ -39,12 +39,13 @@ import problem.ScheduleValidator;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/** 比较RKHMA分阶段入口与未拆分版本，依赖源码另行逐文件检查。 */
+/** 比较保留的历史RKHMA阶段入口，并在相同小夹具上核对独立适配。 */
 class BPhaseSplitTest {
   private static final Path INITIAL = Path.of("cases", "B", "initial_single_satellite_optimization", "BI-030", "src");
   private static final Path REASSIGN = Path.of("cases", "B", "post_reassignment_adjustment", "BR-010", "src");
   private static Class<?> initialType;
   private static Class<?> reassignmentType;
+  private static ClassLoader standaloneArchive;
 
   @BeforeAll static void compileEntries() throws Exception {
     var compiler = ToolProvider.getSystemJavaCompiler();
@@ -55,6 +56,19 @@ class BPhaseSplitTest {
         "-classpath", Path.of("target", "classes").toAbsolutePath().toString(), "-d", output.toString(),
         INITIAL.resolve("method/runtime/B000040.java").toString(),
         REASSIGN.resolve("method/runtime/B000043.java").toString()));
+    Path standaloneOutput = Path.of("target", "b-phase-standalone-test").toAbsolutePath();
+    Files.createDirectories(standaloneOutput);
+    assertEquals(0, compiler.run(null, null, null, "-encoding", "UTF-8", "--release", "21",
+        "-classpath", Path.of("target", "classes").toAbsolutePath().toString(), "-d", standaloneOutput.toString(),
+        "cases/B/initial_single_satellite_optimization/BI-030/B000040.java",
+        "cases/B/post_reassignment_adjustment/BR-010/B000043.java"));
+    ClassLoader caseParent = new ClassLoader(BPhaseSplitTest.class.getClassLoader()) {
+      @Override protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+        if (name.startsWith("method.cases.examples.")) throw new ClassNotFoundException(name);
+        return super.loadClass(name, resolve);
+      }
+    };
+    standaloneArchive = new java.net.URLClassLoader(new java.net.URL[]{standaloneOutput.toUri().toURL()}, caseParent);
     initialType = Class.forName("method.runtime.B000040");
     reassignmentType = Class.forName("method.runtime.B000043");
   }
@@ -195,6 +209,40 @@ class BPhaseSplitTest {
     assertEquals(originalLocal.plan(), splitLocal.plan());
     assertEquals(originalLocal.totalProfit(), splitLocal.totalProfit());
     assertEquals(observations(originalLocal.result().observations()), observations(splitLocal.result().observations()));
+  }
+
+  @Test void standaloneAdaptationsAndOriginalProduceFeasibleTrialsOnTheSameInputs() throws Exception {
+    ProblemInstance problem = fixture();
+    Budget budget = new Budget(() -> 0L, 0, Long.MAX_VALUE, Long.MAX_VALUE);
+    ProblemAccess api = new ProblemAccess(problem, budget);
+    SatelliteView initialView = new SatelliteView(0, Set.of(0, 1, 2), List.of(), "initial");
+    RkhmaGreedyDecoder decoder = new RkhmaGreedyDecoder();
+    InitialEvaluator initialEvaluator = order -> {
+      var built = decoder.build(problem, api, initialView, order, budget, new SplittableRandom(5));
+      return new InitialTrial(order, built, profit(problem, built));
+    };
+    InitialTrial originalInitial = runInitial(new RkhmaHybridSearch(6, 30), problem);
+    var initialMethod = standaloneArchive.loadClass("method.cases.examples.B000040").getMethod("search",
+        ProblemInstance.class, ProblemAccess.class, SatelliteView.class, InitialEvaluator.class,
+        Budget.class, RandomGenerator.class, int.class);
+    InitialTrial standaloneInitial = (InitialTrial) initialMethod.invoke(null, problem, api, initialView,
+        initialEvaluator, budget, new SplittableRandom(5), 30);
+    assertEquals(originalInitial.totalProfit(), standaloneInitial.totalProfit());
+    assertTrue(ScheduleValidator.evaluate(problem, new model.SchedulingPlan(standaloneInitial.observations())).feasible());
+
+    LocalTrial originalLocal = runReassignment(new RkhmaHybridSearch(6, 30), problem);
+    SatelliteView localView = new SatelliteView(0, Set.of(0, 1, 2), List.of(), "affected");
+    LocalContext context = new LocalContext(Phase.REASSIGN, Set.of(2), Set.of(), List.of());
+    var localMethod = standaloneArchive.loadClass("method.cases.examples.B000043").getMethod("search",
+        ProblemInstance.class, ProblemAccess.class, SatelliteView.class, LocalContext.class,
+        LocalEvaluator.class, Budget.class, RandomGenerator.class, int.class);
+    LocalTrial standaloneLocal = (LocalTrial) localMethod.invoke(null, problem, api, localView, context,
+        localEvaluator(problem, api, localView, context, budget), budget, new SplittableRandom(5), 30);
+    assertNotNull(originalLocal);
+    assertNotNull(standaloneLocal);
+    assertEquals(originalLocal.totalProfit(), standaloneLocal.totalProfit());
+    assertTrue(ScheduleValidator.evaluate(problem, new model.SchedulingPlan(
+        standaloneLocal.result().observations())).feasible());
   }
 
   @Test void eachEntryDefinesOnlyItsOwnSearch() throws Exception {

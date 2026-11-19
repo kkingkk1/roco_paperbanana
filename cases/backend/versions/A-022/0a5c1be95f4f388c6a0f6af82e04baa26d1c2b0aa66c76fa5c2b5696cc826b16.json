@@ -1,0 +1,22 @@
+{
+  "case_id": "A-022",
+  "category": "auction_price_matching",
+  "description": [
+    "Auction algorithm for bipartite matching (Bertsekas):\n",
+    "- Bidding Phase: Unassigned tasks bid on resource minimizing cost + price, incrementing ",
+    "resource price by regret gap plus epsilon and displacing prior occupant.\n",
+    "- Epsilon Scaling: Decrease epsilon geometrically across successive auction phases.\n",
+    "- Fallback: Revert to LAPJV/shortest augmenting path if the matrix is non-square, cost ",
+    "magnitudes are extreme, or auction rows remain unmatched.",
+    " Python uses -1 for unmatched indices and reports inputs for which no bid or augmenting path can be selected."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000022.py",
+        "sha256": "f553e20faa4049207f0721f0e1d788914015a76b106d728b3a553d874a273e71"
+      }
+    ]
+  }
+}

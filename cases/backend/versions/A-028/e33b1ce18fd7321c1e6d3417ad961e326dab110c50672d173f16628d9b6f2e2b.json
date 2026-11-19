@@ -1,0 +1,23 @@
+{
+  "case_id": "A-028",
+  "category": "score_based_multi_assignment",
+  "description": [
+    "Score-based multi-assignment with fixed resource quotas:\n",
+    "- Assignment (default): Order tasks by best score + regret (best minus second-best score); ",
+    "greedily assign each to its highest-scoring resource with available slots.\n",
+    "- Local Search: Optionally evaluate pairwise task swaps across resources; accept moves ",
+    "yielding strictly positive total-score improvement.\n",
+    "- Termination: Stop on zero improvement, time limit, iteration limit, or minimum-gain ",
+    "threshold.",
+    " Java accepts finite float scores greater than -Float.MAX_VALUE and returns a stop category; elapsed-time stopping may differ from the source."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000028.java",
+        "sha256": "2589c09ee281017848e5edcb5f9da781320455830ec3ce88653a7e2246ea64ee"
+      }
+    ]
+  }
+}

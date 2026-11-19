@@ -1,0 +1,17 @@
+{
+  "case_id": "C-004",
+  "category": "earliest_window_deadline",
+  "description": [
+    "Initialization: Process B order. Choose a feasible observation in the window with earliest end; tie-break by observation completion, then start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000004.java",
+        "sha256": "84d2c172c78a57f2436323e299a500250d177a0aad6163d6bd3e0780754434c7"
+      }
+    ]
+  }
+}

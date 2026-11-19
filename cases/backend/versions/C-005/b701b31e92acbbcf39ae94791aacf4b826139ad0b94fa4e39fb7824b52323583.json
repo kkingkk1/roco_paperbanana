@@ -1,0 +1,17 @@
+{
+  "case_id": "C-005",
+  "category": "shortest_window",
+  "description": [
+    "Initialization: Process B order. Choose a feasible observation in the shortest raw window; tie-break by observation completion, then start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000005.java",
+        "sha256": "dbcb86f783b46f1ab271662a44de25e07fb70de811163393fc8f49054c380f7d"
+      }
+    ]
+  }
+}

@@ -10,8 +10,8 @@
     "format": "single_file",
     "files": [
       {
-        "path": "A000015.java",
-        "sha256": "b490c1eeb5347e2f75e677856f61e0dec12562760e85aa741d647725d168e80c"
+        "path": "A000015.py",
+        "sha256": "8a150bfc4bb44fb5bb65dd02963e30c5fad3ea9ca22770bfbad6d6b9ffd02cf7"
       }
     ]
   }

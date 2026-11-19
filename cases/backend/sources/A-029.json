@@ -313,12 +313,12 @@
               "asymmetric_greedy_search/backend_numba.py": "6293d34b28502e46e7b556991e654a4b4bfad6dda67def14bc85e1016b313251"
             }
           },
-          "usage_conditions": "源码包包含GPL-3.0许可证全文；本地参考保留原始声明，后续复制、分发、修改及外发须满足对应条款。项目源码无独立许可证，GPL代码与后续用途的关系尚未核实；禁止在不允许来源声明的提示中发送完整代码。",
+          "usage_conditions": "发布提交的pyproject.toml将项目许可证指向LICENSE，文件为GPL-3.0；分类标记为MIT且作者未澄清。按GPL-3.0作为本案例的有条件使用路径，不据此认定MIT适用。向外部模型发送及后续使用、分发或修改前须核查并满足GPL条件，保留完整许可证及原有声明；完整代码不得进入禁止来源声明的提示。",
           "verification": {
             "date": "2026-11-07",
             "evidence": "源码包SHA-256及所含许可证；NumPy后端以30个4×5矩阵分别测试最大化和最小化，核对一对一约束及迭代后不劣于来源初始匹配；可选Numba后端未验证。"
           },
-          "external_model_use": "unknown",
+          "external_model_use": "allowed",
           "source_free_prompt_allowed": false,
           "usage_reviews": [
             {
@@ -326,6 +326,18 @@
               "finding": "PyPI页面分类标记MIT，但源码包LICENSE为GPL-3.0全文；两种声明不一致，实际适用许可及后续使用条件未确定。",
               "evidence": "https://pypi.org/project/asymmetric-greedy-search/0.1.0/；源码包内LICENSE",
               "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "PyPI 0.1.0元数据的license字段为GPL-3.0全文，license_files指向LICENSE；分类仍标示MIT。尚未找到能消除冲突的同版本权利人声明。用户的项目授权不代替第三方许可，当前版本仍不可外发。",
+              "evidence": "https://pypi.org/pypi/asymmetric-greedy-search/0.1.0/json；案例A-029的src/LICENSE。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "发布提交的pyproject.toml将项目许可证指向LICENSE，文件为GPL-3.0；分类标记为MIT且作者未澄清。按GPL-3.0作为本案例的有条件使用路径，不据此认定MIT适用。向外部模型发送及后续使用、分发或修改前须核查并满足GPL条件，保留完整许可证及原有声明；完整代码不得进入禁止来源声明的提示。",
+              "evidence": "PyPI 0.1.0源码包可信发布记录与SHA-256确认提交81112acf93f23a3ddf5d5a7a37e380ed0c861698；该提交pyproject.toml明确license指向LICENSE；LICENSE与案例文件的Git blob SHA均为f288702d2fa16d3cdf0035b15a9fcbc552cd88e7。https://pypi.org/project/asymmetric-greedy-search/0.1.0/；https://github.com/kaboroevich/asymmetric-greedy-search/blob/81112acf93f23a3ddf5d5a7a37e380ed0c861698/pyproject.toml；https://peps.python.org/pep-0621/#license",
+              "external_model_use": "allowed"
             }
           ]
         }
@@ -336,6 +348,226 @@
       "description_revision": {
         "method": "修正归一化与可选成本反转的先后及适用条件；算法代码不变。",
         "date": "2026-11-12"
+      }
+    },
+    {
+      "case_sha256": "344462b9f2cf037c2d81a92824ed98c973a91dc2768f6e8ce4bf4dc70935cce0",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/23/52/8e24a250235085069494970ff706001a1840aceefeed6836b2ef7a31583b/asymmetric_greedy_search-0.1.0.tar.gz",
+          "version": {
+            "release": "asymmetric-greedy-search 0.1.0, 2025-06-20",
+            "archive_sha256": "8bc0ce7588ba18825b25df3e6f684944b333fab3f5cf55ca9ff9c1e742511c1f",
+            "source_file_sha256": {
+              "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+              "asymmetric_greedy_search/__init__.py": "0324cf6ea93957357c87325dddf753aee645a461e6d1421c692b0dac753d52ad",
+              "asymmetric_greedy_search/core.py": "8ba5a5f14269822985c8e7a774c7395095abd98dccf05bae1639b95c2ea6822b",
+              "asymmetric_greedy_search/backend_numpy.py": "87a6236dc254bbe30b076cdfad132f2bec670f11f9d85de11192c9f0b5214930",
+              "asymmetric_greedy_search/backend_numba.py": "6293d34b28502e46e7b556991e654a4b4bfad6dda67def14bc85e1016b313251"
+            }
+          },
+          "usage_conditions": "发布提交的pyproject.toml将项目许可证指向LICENSE，文件为GPL-3.0；分类标记为MIT且作者未澄清。按GPL-3.0作为本案例的有条件使用路径，不据此认定MIT适用。向外部模型发送及后续使用、分发或修改前须核查并满足GPL条件，保留完整许可证及原有声明；完整代码不得进入禁止来源声明的提示。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "源码包SHA-256及所含许可证；NumPy后端以30个4×5矩阵分别测试最大化和最小化，核对一对一约束及迭代后不劣于来源初始匹配；可选Numba后端未验证。"
+          },
+          "external_model_use": "allowed",
+          "source_free_prompt_allowed": false,
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "PyPI页面分类标记MIT，但源码包LICENSE为GPL-3.0全文；两种声明不一致，实际适用许可及后续使用条件未确定。",
+              "evidence": "https://pypi.org/project/asymmetric-greedy-search/0.1.0/；源码包内LICENSE",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "PyPI 0.1.0元数据的license字段为GPL-3.0全文，license_files指向LICENSE；分类仍标示MIT。尚未找到能消除冲突的同版本权利人声明。用户的项目授权不代替第三方许可，当前版本仍不可外发。",
+              "evidence": "https://pypi.org/pypi/asymmetric-greedy-search/0.1.0/json；案例A-029的src/LICENSE。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "发布提交的pyproject.toml将项目许可证指向LICENSE，文件为GPL-3.0；分类标记为MIT且作者未澄清。按GPL-3.0作为本案例的有条件使用路径，不据此认定MIT适用。向外部模型发送及后续使用、分发或修改前须核查并满足GPL条件，保留完整许可证及原有声明；完整代码不得进入禁止来源声明的提示。",
+              "evidence": "PyPI 0.1.0源码包可信发布记录与SHA-256确认提交81112acf93f23a3ddf5d5a7a37e380ed0c861698；该提交pyproject.toml明确license指向LICENSE；LICENSE与案例文件的Git blob SHA均为f288702d2fa16d3cdf0035b15a9fcbc552cd88e7。https://pypi.org/project/asymmetric-greedy-search/0.1.0/；https://github.com/kaboroevich/asymmetric-greedy-search/blob/81112acf93f23a3ddf5d5a7a37e380ed0c861698/pyproject.toml；https://peps.python.org/pep-0621/#license",
+              "external_model_use": "allowed"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户确认删除当前案例清单中的独立许可证文件。新版本只移除该文件的清单项，算法源码与已有使用条件保持不变；父版本仍引用原文件。",
+              "external_model_use": "allowed"
+            }
+          ]
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "ba8d653bfc213b4b6b5a8a5187d2b36d6ccb86cb20cbe593edc56937dbad2cad",
+      "parent_snapshot": "../versions/A-029/ba8d653bfc213b4b6b5a8a5187d2b36d6ccb86cb20cbe593edc56937dbad2cad.json",
+      "storage_migration": "按用户确认从当前案例源码清单移除独立许可证文件；算法源码未改变。父版本清单保留原始文件引用。"
+    },
+    {
+      "case_sha256": "23aba7baefcebf4ab505e7be46aa452a9b52f392c6b2017ad3d782e8233ad8e7",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/23/52/8e24a250235085069494970ff706001a1840aceefeed6836b2ef7a31583b/asymmetric_greedy_search-0.1.0.tar.gz",
+          "version": {
+            "release": "asymmetric-greedy-search 0.1.0, 2025-06-20",
+            "archive_sha256": "8bc0ce7588ba18825b25df3e6f684944b333fab3f5cf55ca9ff9c1e742511c1f",
+            "source_file_sha256": {
+              "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+              "asymmetric_greedy_search/__init__.py": "0324cf6ea93957357c87325dddf753aee645a461e6d1421c692b0dac753d52ad",
+              "asymmetric_greedy_search/core.py": "8ba5a5f14269822985c8e7a774c7395095abd98dccf05bae1639b95c2ea6822b",
+              "asymmetric_greedy_search/backend_numpy.py": "87a6236dc254bbe30b076cdfad132f2bec670f11f9d85de11192c9f0b5214930",
+              "asymmetric_greedy_search/backend_numba.py": "6293d34b28502e46e7b556991e654a4b4bfad6dda67def14bc85e1016b313251"
+            }
+          },
+          "usage_conditions": "发布提交的pyproject.toml将项目许可证指向LICENSE，文件为GPL-3.0；分类标记为MIT且作者未澄清。按GPL-3.0作为本案例的有条件使用路径，不据此认定MIT适用。向外部模型发送及后续使用、分发或修改前须核查并满足GPL条件，保留完整许可证及原有声明；完整代码不得进入禁止来源声明的提示。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "源码包SHA-256及所含许可证；NumPy后端以30个4×5矩阵分别测试最大化和最小化，核对一对一约束及迭代后不劣于来源初始匹配；可选Numba后端未验证。"
+          },
+          "external_model_use": "allowed",
+          "source_free_prompt_allowed": false,
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "PyPI页面分类标记MIT，但源码包LICENSE为GPL-3.0全文；两种声明不一致，实际适用许可及后续使用条件未确定。",
+              "evidence": "https://pypi.org/project/asymmetric-greedy-search/0.1.0/；源码包内LICENSE",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "PyPI 0.1.0元数据的license字段为GPL-3.0全文，license_files指向LICENSE；分类仍标示MIT。尚未找到能消除冲突的同版本权利人声明。用户的项目授权不代替第三方许可，当前版本仍不可外发。",
+              "evidence": "https://pypi.org/pypi/asymmetric-greedy-search/0.1.0/json；案例A-029的src/LICENSE。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "发布提交的pyproject.toml将项目许可证指向LICENSE，文件为GPL-3.0；分类标记为MIT且作者未澄清。按GPL-3.0作为本案例的有条件使用路径，不据此认定MIT适用。向外部模型发送及后续使用、分发或修改前须核查并满足GPL条件，保留完整许可证及原有声明；完整代码不得进入禁止来源声明的提示。",
+              "evidence": "PyPI 0.1.0源码包可信发布记录与SHA-256确认提交81112acf93f23a3ddf5d5a7a37e380ed0c861698；该提交pyproject.toml明确license指向LICENSE；LICENSE与案例文件的Git blob SHA均为f288702d2fa16d3cdf0035b15a9fcbc552cd88e7。https://pypi.org/project/asymmetric-greedy-search/0.1.0/；https://github.com/kaboroevich/asymmetric-greedy-search/blob/81112acf93f23a3ddf5d5a7a37e380ed0c861698/pyproject.toml；https://peps.python.org/pep-0621/#license",
+              "external_model_use": "allowed"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户确认删除当前案例清单中的独立许可证文件。新版本只移除该文件的清单项，算法源码与已有使用条件保持不变；父版本仍引用原文件。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": [
+            "项目Java移植：cases/A/A-029/A000029.java"
+          ],
+          "version": {
+            "parent_case_id": "A-029",
+            "parent_case_sha256": "344462b9f2cf037c2d81a92824ed98c973a91dc2768f6e8ce4bf4dc70935cce0"
+          },
+          "usage_conditions": "本项目Java移植按用户已确认的本项目用途使用；原来源及适用条件保留在同版本来源记录中。",
+          "verification": {
+            "date": "2026-11-16",
+            "evidence": "Java 21独立编译；与原NumPy后端对照142组有限double矩阵和参数组合，行列归属一致，覆盖最大化、最小化、指定行顺序、批量交换和停止条件；随机数发生器不同。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "344462b9f2cf037c2d81a92824ed98c973a91dc2768f6e8ce4bf4dc70935cce0",
+      "parent_snapshot": "../versions/A-029/344462b9f2cf037c2d81a92824ed98c973a91dc2768f6e8ce4bf4dc70935cce0.json",
+      "parent_case_directory": "../../A/A-029",
+      "implementation_revision": {
+        "date": "2026-11-16",
+        "method": "将NumPy后端的归一化、贪心初始化、批量行交换、空列替换和停止条件移植为Java；支持固定行顺序，保留原源码。"
+      }
+    },
+    {
+      "case_sha256": "4ab92fc4f58897d7030ed4638a7c1475aa4324c845bbacdafee0afdefbe11a70",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/23/52/8e24a250235085069494970ff706001a1840aceefeed6836b2ef7a31583b/asymmetric_greedy_search-0.1.0.tar.gz",
+          "version": {
+            "release": "asymmetric-greedy-search 0.1.0, 2025-06-20",
+            "archive_sha256": "8bc0ce7588ba18825b25df3e6f684944b333fab3f5cf55ca9ff9c1e742511c1f",
+            "source_file_sha256": {
+              "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+              "asymmetric_greedy_search/__init__.py": "0324cf6ea93957357c87325dddf753aee645a461e6d1421c692b0dac753d52ad",
+              "asymmetric_greedy_search/core.py": "8ba5a5f14269822985c8e7a774c7395095abd98dccf05bae1639b95c2ea6822b",
+              "asymmetric_greedy_search/backend_numpy.py": "87a6236dc254bbe30b076cdfad132f2bec670f11f9d85de11192c9f0b5214930",
+              "asymmetric_greedy_search/backend_numba.py": "6293d34b28502e46e7b556991e654a4b4bfad6dda67def14bc85e1016b313251"
+            }
+          },
+          "usage_conditions": "发布提交的pyproject.toml将项目许可证指向LICENSE，文件为GPL-3.0；分类标记为MIT且作者未澄清。按GPL-3.0作为本案例的有条件使用路径，不据此认定MIT适用。向外部模型发送及后续使用、分发或修改前须核查并满足GPL条件，保留完整许可证及原有声明；完整代码不得进入禁止来源声明的提示。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "源码包SHA-256及所含许可证；NumPy后端以30个4×5矩阵分别测试最大化和最小化，核对一对一约束及迭代后不劣于来源初始匹配；可选Numba后端未验证。"
+          },
+          "external_model_use": "allowed",
+          "source_free_prompt_allowed": false,
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "PyPI页面分类标记MIT，但源码包LICENSE为GPL-3.0全文；两种声明不一致，实际适用许可及后续使用条件未确定。",
+              "evidence": "https://pypi.org/project/asymmetric-greedy-search/0.1.0/；源码包内LICENSE",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "PyPI 0.1.0元数据的license字段为GPL-3.0全文，license_files指向LICENSE；分类仍标示MIT。尚未找到能消除冲突的同版本权利人声明。用户的项目授权不代替第三方许可，当前版本仍不可外发。",
+              "evidence": "https://pypi.org/pypi/asymmetric-greedy-search/0.1.0/json；案例A-029的src/LICENSE。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "发布提交的pyproject.toml将项目许可证指向LICENSE，文件为GPL-3.0；分类标记为MIT且作者未澄清。按GPL-3.0作为本案例的有条件使用路径，不据此认定MIT适用。向外部模型发送及后续使用、分发或修改前须核查并满足GPL条件，保留完整许可证及原有声明；完整代码不得进入禁止来源声明的提示。",
+              "evidence": "PyPI 0.1.0源码包可信发布记录与SHA-256确认提交81112acf93f23a3ddf5d5a7a37e380ed0c861698；该提交pyproject.toml明确license指向LICENSE；LICENSE与案例文件的Git blob SHA均为f288702d2fa16d3cdf0035b15a9fcbc552cd88e7。https://pypi.org/project/asymmetric-greedy-search/0.1.0/；https://github.com/kaboroevich/asymmetric-greedy-search/blob/81112acf93f23a3ddf5d5a7a37e380ed0c861698/pyproject.toml；https://peps.python.org/pep-0621/#license",
+              "external_model_use": "allowed"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户确认删除当前案例清单中的独立许可证文件。新版本只移除该文件的清单项，算法源码与已有使用条件保持不变；父版本仍引用原文件。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": [
+            "项目Java移植：cases/A/A-029/A000029.java"
+          ],
+          "version": {
+            "parent_case_id": "A-029",
+            "parent_case_sha256": "344462b9f2cf037c2d81a92824ed98c973a91dc2768f6e8ce4bf4dc70935cce0"
+          },
+          "usage_conditions": "本项目Java移植按用户已确认的本项目用途使用；原来源及适用条件保留在同版本来源记录中。",
+          "verification": {
+            "date": "2026-11-16",
+            "evidence": "Java 21独立编译；与原NumPy后端对照142组有限double矩阵和参数组合，行列归属一致，覆盖最大化、最小化、指定行顺序、批量交换和停止条件；随机数发生器不同。"
+          },
+          "external_model_use": "allowed"
+        },
+        {
+          "location": [
+            "cases/A/A-029/A000029.py"
+          ],
+          "version": {
+            "parent_case_id": "A-029",
+            "parent_case_sha256": "23aba7baefcebf4ab505e7be46aa452a9b52f392c6b2017ad3d782e8233ad8e7",
+            "source_file_sha256": {
+              "cases/A/A-029/A000029.py": "440278bc0a13e3edeae143a09cd67e48866834a3bda1412d9b7255a686438b38"
+            }
+          },
+          "usage_conditions": "本项目 Python 移植，按用户确认用于本项目检索与代码生成；保留原来源记录。",
+          "verification": {
+            "date": "2026-11-17",
+            "evidence": "与对应 Java 案例在 120 个有限成本矩阵和固定行序上比较匹配结果；未覆盖所有输入，未比较默认随机流。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "23aba7baefcebf4ab505e7be46aa452a9b52f392c6b2017ad3d782e8233ad8e7",
+      "parent_snapshot": "../versions/A-029/23aba7baefcebf4ab505e7be46aa452a9b52f392c6b2017ad3d782e8233ad8e7.json",
+      "implementation_revision": {
+        "date": "2026-11-17",
+        "method": "依据当前 Java 案例移植为 Python；原源码及历史元数据保留。"
       }
     }
   ]

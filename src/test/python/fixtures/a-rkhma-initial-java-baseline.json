@@ -1,0 +1,17 @@
+{
+  "origin": "Java RkhmaAllocation.initialAssign; AParity.java",
+  "rows": [
+    "RKHMA_INITIAL=0;0:2,1:2,2:1,3:2,4:1,5:1,6:2",
+    "RKHMA_INITIAL=1;0:2,1:1,2:1,3:2,4:0,5:0,6:2",
+    "RKHMA_INITIAL=2;0:2,1:0,2:2,3:2,4:0,5:2,6:0",
+    "RKHMA_INITIAL=3;0:0,1:2,2:1,3:0,4:2,5:1,6:0",
+    "RKHMA_INITIAL=4;0:1,1:1,2:0,3:0,4:1,5:0,6:1",
+    "RKHMA_INITIAL=5;0:1,1:1,2:2,3:1,4:2,5:2,6:1",
+    "RKHMA_INITIAL=6;0:0,1:2,2:1,3:0,4:2,5:1,6:0",
+    "RKHMA_INITIAL=7;0:2,1:2,2:0,3:2,4:0,5:0,6:2",
+    "RKHMA_INITIAL=8;0:1,1:0,2:2,3:1,4:0,5:2,6:1",
+    "RKHMA_INITIAL=9;0:0,1:0,2:1,3:0,4:1,5:1,6:0",
+    "RKHMA_INITIAL=10;0:2,1:1,2:2,3:1,4:1,5:2,6:2",
+    "RKHMA_INITIAL=11;0:1,1:0,2:2,3:0,4:0,5:1,6:1"
+  ]
+}

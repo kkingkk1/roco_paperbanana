@@ -1,0 +1,17 @@
+{
+  "case_id": "C-007",
+  "category": "maximum_minimum_transition_margin",
+  "description": [
+    "Initialization: Process B order. Maximize the smaller of the two adjacent time margins after transformation; an absent neighbor contributes infinity. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000007.java",
+        "sha256": "018ed97e7c615b8eb2c29d7ba01019267756e5078549bf7046a63ad6a58f2e44"
+      }
+    ]
+  }
+}

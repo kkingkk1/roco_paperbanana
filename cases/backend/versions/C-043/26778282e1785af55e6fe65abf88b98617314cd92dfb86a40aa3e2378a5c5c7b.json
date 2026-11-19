@@ -1,0 +1,17 @@
+{
+  "case_id": "C-043",
+  "category": "minimum_slew_rollout",
+  "description": [
+    "Initialization: Process B order. For each feasible current observation, greedily simulate later tasks in B order with minimum-added-transformation insertions; choose the largest simulated later reward. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000043.java",
+        "sha256": "d6ea56ffb7f431930960cecc369f623165f380b956004588b1e059b95d9dd5c6"
+      }
+    ]
+  }
+}

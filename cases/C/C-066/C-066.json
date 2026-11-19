@@ -9,8 +9,8 @@
     "format": "single_file",
     "files": [
       {
-        "path": "C000066.java",
-        "sha256": "8a25f71e147151b7f5b4223cd3dec12aa56a4599d912e30ba762b9d94be90199"
+        "path": "C000066.py",
+        "sha256": "19c8ac7739f98c96f3d99dc7b0f481691c73fcc7ef0d8d1062c3fed17d5826ec"
       }
     ]
   }

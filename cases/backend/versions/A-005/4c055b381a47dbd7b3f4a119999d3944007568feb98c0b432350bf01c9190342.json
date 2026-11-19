@@ -1,0 +1,29 @@
+{
+  "case_id": "A-005",
+  "category": "maximum_window_count",
+  "description": [
+    "Initialization only: Assign tasks (descending reward) to the satellite with the most ",
+    "accommodating windows. Unassigned if none."
+  ],
+  "code": {
+    "format": "file_markers",
+    "files": [
+      {
+        "path": "src/method/rkhma/legacy/utils/CaseA000005.java",
+        "sha256": "b075d3d2dd4c26b6a34b2fd03d198e257508a93c11f6b11ba5f279b79ec1e758"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java",
+        "sha256": "6a249cd1e19ff6e078b7db3f9aec1fb5a373f09c05756bf1242eba9565340e29"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java",
+        "sha256": "3fbb48a71a6fa8f7ad6f03f55358dd39e51715c07127f585a18d5ec8c4981280"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/MaxWindowCountStrategy.java",
+        "sha256": "5481b07cc78cf116949ee12eb9d71933c47f343147f1dc8b6a20979ca4b7948a"
+      }
+    ]
+  }
+}

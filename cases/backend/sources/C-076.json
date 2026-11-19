@@ -12,12 +12,26 @@
           "version": {
             "publication_year": 2020
           },
-          "usage_conditions": "仅参考公开论文的受限候选集随机选择思想；本案例独立实现，外发条件尚未核实。",
+          "usage_conditions": "本条来源只用于参考算法思想；本案例为项目内独立实现，用户已确认该案例可用于本项目外部模型检索和代码生成。不因此授予外发来源原始代码或论文原文的许可；来源及许可台账不进入提示。",
           "verification": {
             "date": "2026-11-12",
             "evidence": "通过Exa检索正文中的INSERT、受限候选和轮盘规则；来源按任务收益构建候选，本案例按单任务观测的新增转换代价选择，不声称复现GRILS。"
           },
-          "external_model_use": "unknown"
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-12",
+              "finding": "仅参考公开论文的受限候选集随机选择思想；本案例独立实现，外发条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "本条来源只用于参考算法思想；本案例为项目内独立实现，用户已确认该案例可用于本项目外部模型检索和代码生成。不因此授予外发来源原始代码或论文原文的许可；来源及许可台账不进入提示。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。 原始来源与独立实现范围见本来源记录的verification字段。",
+              "external_model_use": "allowed"
+            }
+          ]
         },
         {
           "location": [
@@ -26,12 +40,26 @@
           "version": {
             "case_sha256": "f5eb136fceef6d8a19b0a5779c16a09a4a475551ffc5b65d31d9bbd432475d8f"
           },
-          "usage_conditions": "基于本项目C-061改写决策或搜索控制；外发条件尚未核实。",
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
           "verification": {
             "date": "2026-11-12",
             "evidence": "比较共同接口与本案例实际搜索决策；不同决策及边界见案例描述。"
           },
-          "external_model_use": "unknown"
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-12",
+              "finding": "基于本项目C-061改写决策或搜索控制；外发条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
         },
         {
           "location": [
@@ -40,15 +68,144 @@
           "version": {
             "project_base_commit": "7e0b47d605138e227ce899c655ce877df523028e"
           },
-          "usage_conditions": "按本项目本地案例任务实现或归档；向外部模型发送的条件尚未核实。",
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
           "verification": {
             "date": "2026-11-12",
             "evidence": "完整源码可单独从项目运行时与问题公共接口编译；以小型1秒和非1秒网格夹具检查合法性、编辑权限和运行时接入。"
           },
-          "external_model_use": "unknown"
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-12",
+              "finding": "按本项目本地案例任务实现或归档；向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
         }
       ],
       "merged_case_ids": []
+    },
+    {
+      "case_sha256": "566e9982a065f56f75cc37e5a078be8c9c15bc793c1eaccfe9bb131d5a5e757f",
+      "source": [
+        {
+          "location": [
+            "https://doi.org/10.1109/TSMC.2020.3031738",
+            "https://lirias.kuleuven.be/retrieve/596386"
+          ],
+          "version": {
+            "publication_year": 2020
+          },
+          "usage_conditions": "本条来源只用于参考算法思想；本案例为项目内独立实现，用户已确认该案例可用于本项目外部模型检索和代码生成。不因此授予外发来源原始代码或论文原文的许可；来源及许可台账不进入提示。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "通过Exa检索正文中的INSERT、受限候选和轮盘规则；来源按任务收益构建候选，本案例按单任务观测的新增转换代价选择，不声称复现GRILS。"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-12",
+              "finding": "仅参考公开论文的受限候选集随机选择思想；本案例独立实现，外发条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "本条来源只用于参考算法思想；本案例为项目内独立实现，用户已确认该案例可用于本项目外部模型检索和代码生成。不因此授予外发来源原始代码或论文原文的许可；来源及许可台账不进入提示。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。 原始来源与独立实现范围见本来源记录的verification字段。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": [
+            "cases/C/C-061/C000061.java"
+          ],
+          "version": {
+            "case_sha256": "f5eb136fceef6d8a19b0a5779c16a09a4a475551ffc5b65d31d9bbd432475d8f"
+          },
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "比较共同接口与本案例实际搜索决策；不同决策及边界见案例描述。"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-12",
+              "finding": "基于本项目C-061改写决策或搜索控制；外发条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": [
+            "项目本轮实现：cases/C/C-076/C000076.java"
+          ],
+          "version": {
+            "project_base_commit": "7e0b47d605138e227ce899c655ce877df523028e"
+          },
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "完整源码可单独从项目运行时与问题公共接口编译；以小型1秒和非1秒网格夹具检查合法性、编辑权限和运行时接入。"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-12",
+              "finding": "按本项目本地案例任务实现或归档；向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": [
+            "cases/C/C-076/C000076.py"
+          ],
+          "version": {
+            "parent_case_id": "C-076",
+            "parent_case_sha256": "3f25a23864124b9dd40a24a3126c6ace9190495aa0519e5e1d8399e516c68e4b",
+            "source_file_sha256": {
+              "cases/C/C-076/C000076.py": "1aa4ef0cbd1f3d71f2377737b3082cfa70866ac143257be1f639ee1cd5bfbf20"
+            }
+          },
+          "usage_conditions": "本项目 Python 移植，按用户确认用于本项目检索与代码生成；保留原来源记录。",
+          "verification": {
+            "date": "2026-11-17",
+            "evidence": "与对应 Java 案例在 12 组固定输入、3 种任务顺序及构建和 4 种局部编辑下比较输出，共 180 次；未覆盖所有输入。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "3f25a23864124b9dd40a24a3126c6ace9190495aa0519e5e1d8399e516c68e4b",
+      "parent_snapshot": "../versions/C-076/3f25a23864124b9dd40a24a3126c6ace9190495aa0519e5e1d8399e516c68e4b.json",
+      "implementation_revision": {
+        "date": "2026-11-17",
+        "method": "依据当前 Java 案例移植为 Python；原源码及历史元数据保留。"
+      }
     }
   ]
 }

@@ -1,0 +1,17 @@
+{
+  "case_id": "A-009",
+  "category": "minimum_mean_priority",
+  "description": [
+    "Initialization only: Assign tasks (descending reward) to the accommodating satellite with ",
+    "the lowest average reward of assigned tasks (empty satellite = 0). Unassigned if none."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000009.py",
+        "sha256": "3f6ebbbe8ab346e571630d3e49243d85278e33baaf1f886f21f65c6429917eff"
+      }
+    ]
+  }
+}

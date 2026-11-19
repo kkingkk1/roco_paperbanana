@@ -1,0 +1,18 @@
+{
+  "case_id": "C-003",
+  "category": "rkhma_greedy",
+  "description": [
+    "Initialization: Process B order and insert the first feasible observation in the input window and candidate order; check the adjacent transformation constraints.\n\n",
+    "Reassignment: Keep unreleased observations and use the same insertion for reconsidered tasks; return the constructed timeline for runtime checks.\n\n",
+    "Rebuild: For preferred tasks on source-compatible one-second grids, rank windows by duration, start time and deterministic tie noise before choosing the first feasible observation. On other grids retain input window order. Check the budget at entry and while scanning candidates. This is an independent project adaptation, not a byte-for-byte source implementation."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000003.java",
+        "sha256": "fe7fbf68155b0f342895edcf5ad8f32e868c27325d82094679e7cf22825bcca6"
+      }
+    ]
+  }
+}

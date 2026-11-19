@@ -1,0 +1,23 @@
+{
+  "case_id": "A-019",
+  "category": "gap_mtg",
+  "description": [
+    "Generalized assignment branch-and-bound inspired by MTG:\n",
+    "- Bounding: Combine a fractional-knapsack upper bound per resource with a per-task bound; ",
+    "use the best feasible assignment as the incumbent.\n",
+    "- Branching: Select the task with fewest feasible resources, then largest profit regret; ",
+    "try feasible resources in descending profit order.\n",
+    "- Configuration: maxNodes=-1 performs exact search; nonnegative maxNodes limits visited nodes, ",
+    "not the original Fortran backtracking counter. Return a bound and whether search completed. ",
+    "Accept positive integer inputs within safe 32-bit objective range, up to 10 resources and 100 tasks."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000019.java",
+        "sha256": "a15d6932d3b83e42687204366895077c59bc7a4dc53a20ef8e617f499c6c6dc7"
+      }
+    ]
+  }
+}

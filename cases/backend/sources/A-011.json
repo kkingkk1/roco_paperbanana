@@ -285,12 +285,26 @@
         {
           "location": "本项目本轮自主设计并实现 A000011；完整代码保存在对应案例的 code 字段",
           "version": "2026-11-07 首次归档版本",
-          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
           "verification": {
             "date": "2026-11-07",
             "evidence": "编译、受控试评价格更新夹具和 TwoStageSolver 合法性检查"
           },
-          "external_model_use": "unknown"
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
         },
         {
           "location": "https://arxiv.org/html/2607.25835v1#S5.SS2",
@@ -309,6 +323,70 @@
       "description_revision": {
         "method": "删除超时后必定返回已验证检查点的表述；不同超时路径的运行合同不变。",
         "date": "2026-11-12"
+      }
+    },
+    {
+      "case_sha256": "ccc8f7570dd2c9c35492bc8182755d0a1005c96a731cf41ee022983e5db34856",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现 A000011；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "编译、受控试评价格更新夹具和 TwoStageSolver 合法性检查"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": "https://arxiv.org/html/2607.25835v1#S5.SS2",
+          "version": "arXiv:2607.25835v1，2026-07-28，第5.2节",
+          "usage_conditions": "论文页面标示 CC BY 4.0；使用时须满足署名等条件，论文许可不自动等于作者代码许可。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核查第5.2节与 Algorithm 1；本案例只参考未排入请求的价格反馈，属于不同的完整实现。"
+          },
+          "external_model_use": "allowed"
+        },
+        {
+          "location": [
+            "cases/A/A-011/A000011.py"
+          ],
+          "version": {
+            "parent_case_id": "A-011",
+            "parent_case_sha256": "a4d9183c835ad7fb57a4f037d7ac9d5ab21eacd0e03a9ee1b6d96012ec7cd003",
+            "source_file_sha256": {
+              "cases/A/A-011/A000011.py": "75bcec2f9ed530d175924674408f368c4ada25f771a786e562ce90ba6005633d"
+            }
+          },
+          "usage_conditions": "本项目 Python 移植，按用户确认用于本项目检索与代码生成；保留原来源记录。",
+          "verification": {
+            "date": "2026-11-17",
+            "evidence": "与对应 Java 案例在 12 组多星场景及各组 3 种已调度状态中比较初始归属、三轮试评序列、检查点和返回移动；未覆盖所有输入。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "a4d9183c835ad7fb57a4f037d7ac9d5ab21eacd0e03a9ee1b6d96012ec7cd003",
+      "parent_snapshot": "../versions/A-011/a4d9183c835ad7fb57a4f037d7ac9d5ab21eacd0e03a9ee1b6d96012ec7cd003.json",
+      "implementation_revision": {
+        "date": "2026-11-17",
+        "method": "依据当前 Java 案例移植为 Python；原源码及历史元数据保留。"
       }
     }
   ]

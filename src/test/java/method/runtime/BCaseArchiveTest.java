@@ -5,6 +5,7 @@ import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.IdentityHashMap;
@@ -13,6 +14,7 @@ import java.util.Set;
 import java.util.SplittableRandom;
 import java.util.random.RandomGenerator;
 import javax.tools.ToolProvider;
+import method.cases.CaseReader;
 import method.runtime.SolverContracts.B;
 import method.runtime.SolverContracts.BrokenEdge;
 import method.runtime.SolverContracts.Feedback;
@@ -57,14 +59,41 @@ class BCaseArchiveTest {
               : "post_reassignment_adjustment", caseId);
       args.add(root.resolve(String.format("B%06d.java", id)).toString());
     }
-    for (int id : List.of(38, 39, 41, 42)) {
-      String group = id <= 39 ? "initial_single_satellite_optimization" : "post_reassignment_adjustment";
-      String caseId = id <= 39 ? String.format("BI-%03d", id - 10) : String.format("BR-%03d", id - 33);
+    for (int id : List.of(38, 39, 40, 41, 42, 43)) {
+      String group = id <= 40 ? "initial_single_satellite_optimization" : "post_reassignment_adjustment";
+      String caseId = id <= 40 ? String.format("BI-%03d", id - 10) : String.format("BR-%03d", id - 33);
       args.add(Path.of("cases", "B", group, caseId,
           String.format("B%06d.java", id)).toString());
     }
     assertEquals(0, compiler.run(null, null, null, args.toArray(String[]::new)));
-    archive = new URLClassLoader(new URL[]{destination.toUri().toURL()}, BCaseArchiveTest.class.getClassLoader());
+    Path projectClasses = Path.of("target", "classes").toAbsolutePath();
+    Path apiClasses = Path.of("target", "b-case-api").toAbsolutePath();
+    try (var classes = Files.walk(projectClasses)) {
+      for (Path source : classes.filter(Files::isRegularFile).toList()) {
+        Path relative = projectClasses.relativize(source);
+        String name = relative.toString().replace('\\', '/');
+        if (!(name.startsWith("model/") || name.startsWith("problem/") || name.startsWith("utils/")
+            || name.startsWith("method/ProblemAdapter") || name.startsWith("method/runtime/Budget")
+            || name.startsWith("method/runtime/ProblemAccess") || name.startsWith("method/runtime/SolverContracts"))) {
+          continue;
+        }
+        Path target = apiClasses.resolve(relative);
+        Files.createDirectories(target.getParent());
+        Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
+      }
+    }
+    assertFalse(Files.exists(apiClasses.resolve("method/rkhma")), "isolated case API contains RKHMA classes");
+    assertEquals(0, compiler.run(null, null, null, "-encoding", "UTF-8", "--release", "21",
+        "-classpath", apiClasses.toString(), "-d", destination.toString(),
+        "cases/B/initial_single_satellite_optimization/BI-030/B000040.java",
+        "cases/B/post_reassignment_adjustment/BR-010/B000043.java"));
+    ClassLoader caseParent = new ClassLoader(BCaseArchiveTest.class.getClassLoader()) {
+      @Override protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+        if (name.startsWith("method.cases.examples.")) throw new ClassNotFoundException(name);
+        return super.loadClass(name, resolve);
+      }
+    };
+    archive = new URLClassLoader(new URL[]{destination.toUri().toURL()}, caseParent);
   }
 
   private static ProblemInstance fixture() {
@@ -95,6 +124,24 @@ class BCaseArchiveTest {
     Class<?> type = archive.loadClass("method.cases.examples.B" + String.format("%06d", id));
     return type.getMethod("search", ProblemInstance.class, ProblemAccess.class, SatelliteView.class,
         LocalContext.class, LocalEvaluator.class, Budget.class, RandomGenerator.class, int.class);
+  }
+
+  @Test void standaloneCasesAndTheirPreviousVersionsRemainReadable() throws Exception {
+    for (String[] item : List.of(
+        new String[]{"BI-030", "initial_single_satellite_optimization", "B000040.java",
+            "7cc1061cac5151e44c79121f20757e3fbecd92fd2710071712ec502c370d5b5a"},
+        new String[]{"BR-010", "post_reassignment_adjustment", "B000043.java",
+            "3dc8dc7d3dcbb8d82641a218deb2f48bff84c3b62757cfe78c576756cc0ac8a5"})) {
+      Path directory = Path.of("cases", "B", item[1], item[0]);
+      var current = CaseReader.read(directory.resolve(item[0] + ".json"));
+      assertEquals(Files.readString(directory.resolve(item[2].replace(".java", ".py"))), current.code());
+      assertTrue(Files.readString(Path.of("cases", "backend", "sources", item[0] + ".json"))
+          .contains(current.caseSha256()));
+      Path snapshot = Path.of("cases", "backend", "versions", item[0], item[3] + ".json");
+      var previous = CaseReader.read(snapshot, directory);
+      assertEquals(item[3], previous.caseSha256());
+      assertTrue(previous.code().contains("class TaskAllocationCoordinator"));
+    }
   }
 
   @Test void archivedManualCasesMatchOriginalStrategiesAcrossBothPhases() throws Exception {
@@ -146,7 +193,8 @@ class BCaseArchiveTest {
     ProblemAccess api = new ProblemAccess(problem, budget);
     for (Set<Integer> ids : List.of(Set.<Integer>of(), Set.of(2), Set.of(0, 1, 2, 3, 4))) {
       SatelliteView view = new SatelliteView(0, ids, List.of(), "view");
-      for (int id = 4; id <= 30; id++) {
+      for (int id : java.util.stream.IntStream.concat(java.util.stream.IntStream.rangeClosed(4, 30),
+          java.util.stream.IntStream.of(40)).toArray()) {
         for (int limit : List.of(1, 2, 12, 45)) {
           Set<InitialTrial> issued = Collections.newSetFromMap(new IdentityHashMap<>());
           InitialEvaluator evaluator = order -> {
@@ -213,7 +261,8 @@ class BCaseArchiveTest {
             windows.get(1).getAttitudeRecord(3)));
     SatelliteView view = new SatelliteView(0, Set.of(0, 1, 2, 3, 4), observations, "local-view");
     LocalContext context = new LocalContext(Phase.REASSIGN, Set.of(2), Set.of(), List.of(new BrokenEdge(0, 1)));
-    for (int id = 31; id <= 37; id++) {
+    for (int id : java.util.stream.IntStream.concat(java.util.stream.IntStream.rangeClosed(31, 37),
+        java.util.stream.IntStream.of(43)).toArray()) {
       for (int limit : List.of(1, 2, 20)) {
         Set<LocalTrial> issued = Collections.newSetFromMap(new IdentityHashMap<>());
         LocalEvaluator evaluator = new LocalEvaluator() {
@@ -284,6 +333,65 @@ class BCaseArchiveTest {
     assertInstanceOf(IllegalArgumentException.class, error.getCause());
   }
 
+  @Test void standaloneHybridSearchIsDeterministicAndReturnsItsBestIssuedTrial() throws Exception {
+    ProblemInstance problem = fixture();
+    ProblemAccess api = new ProblemAccess(problem, budget);
+    SatelliteView view = new SatelliteView(0, Set.of(0, 1, 2, 3, 4), List.of(), "hybrid");
+    List<InitialTrial> issued = new ArrayList<>();
+    InitialEvaluator evaluator = order -> {
+      long score = 0;
+      for (int i = 0; i < order.size(); i++) score += (long) order.get(i) * (order.size() - i);
+      InitialTrial trial = new InitialTrial(order, List.of(), score);
+      issued.add(trial);
+      return trial;
+    };
+    InitialTrial result = (InitialTrial) initializer(40).invoke(null, problem, api, view,
+        evaluator, budget, new SplittableRandom(4), 45);
+    assertEquals(45, issued.size());
+    assertTrue(issued.stream().anyMatch(trial -> trial == result));
+    assertEquals(issued.stream().mapToLong(InitialTrial::totalProfit).max().orElseThrow(), result.totalProfit());
+    assertTrue(result.totalProfit() > issued.getFirst().totalProfit());
+    InitialTrial replay = (InitialTrial) initializer(40).invoke(null, problem, api, view,
+        evaluator, budget, new SplittableRandom(4), 45);
+    assertEquals(result.priorities(), replay.priorities());
+    assertEquals(result.totalProfit(), replay.totalProfit());
+  }
+
+  @Test void standaloneReassignmentTestsIncomingInsertionsAndNoStateFallback() throws Exception {
+    ProblemInstance problem = fixture();
+    ProblemAccess api = new ProblemAccess(problem, budget);
+    List<ScheduledTask> observations = new ArrayList<>();
+    for (int id : List.of(0, 1)) {
+      TimeWindow window = problem.satellite(0).getTimeWindows().get(id);
+      observations.add(new ScheduledTask(problem.task(id), window, window.getAttitudeRecord(1),
+          window.getAttitudeRecord(3)));
+    }
+    SatelliteView view = new SatelliteView(0, Set.of(0, 1, 2), observations, "repair");
+    LocalContext context = new LocalContext(Phase.REASSIGN, Set.of(2), Set.of(), List.of());
+    List<List<Integer>> orders = new ArrayList<>();
+    LocalEvaluator evaluator = new LocalEvaluator() {
+      @Override public LocalTrial evaluate(LocalPlan plan) { throw new AssertionError("unexpected local edit"); }
+      @Override public LocalTrial rebuild(List<Integer> order) {
+        orders.add(List.copyOf(order));
+        long score = order.getFirst() == 2 ? 50 : 1;
+        return new LocalTrial(new LocalPlan(view.hash(), Set.of(), order), LocalResult.applied(observations), score);
+      }
+    };
+    LocalTrial result = (LocalTrial) localSearch(43).invoke(null, problem, api, view, context,
+        evaluator, budget, new SplittableRandom(4), 10);
+    assertEquals(List.of(0, 1, 2), orders.getFirst());
+    assertEquals(2, result.plan().reconsider().getFirst());
+    assertEquals(50, result.totalProfit());
+    assertTrue(orders.size() <= 10);
+
+    orders.clear();
+    SatelliteView empty = new SatelliteView(0, Set.of(0, 1, 2), List.of(), "fallback");
+    assertNotNull(localSearch(43).invoke(null, problem, api, empty, context,
+        evaluator, budget, new SplittableRandom(4), 20));
+    assertEquals(20, orders.size());
+    assertTrue(new java.util.HashSet<>(orders).size() > 1);
+  }
+
   @Test void archivedSearchesWorkWithTheProjectDecoderAndRuntime() throws Exception {
     List<Task> tasks = List.of(new Task(0, 0, 0, 9, 5), new Task(1, 0, 0, 5, 5));
     List<Satellite> satellites = List.of(new Satellite(0), new Satellite(1));
@@ -300,9 +408,10 @@ class BCaseArchiveTest {
       satellites.get(sat).setTimeWindows(windows);
     }
     ProblemInstance problem = new ProblemInstance(tasks, satellites);
-    for (int id = 4; id <= 37; id++) {
-      final int caseId = id;
-      final Method method = id <= 30 ? initializer(id) : localSearch(id);
+    for (int id : java.util.stream.IntStream.concat(java.util.stream.IntStream.rangeClosed(4, 37),
+        java.util.stream.IntStream.of(40, 43)).toArray()) {
+      final boolean initialCase = id <= 30 || id == 40;
+      final Method method = initialCase ? initializer(id) : localSearch(id);
       SolverContracts.A allocation = new SolverContracts.A() {
         private boolean proposed;
         @Override public SolverContracts.Assignment initialAssign(ProblemInstance p, ProblemAccess api,
@@ -319,7 +428,7 @@ class BCaseArchiveTest {
       B search = new B() {
         @Override public InitialTrial searchInitial(ProblemInstance p, ProblemAccess api, SatelliteView view,
             InitialEvaluator evaluator, Budget budget, RandomGenerator rng) {
-          if (caseId >= 31) return evaluator.evaluate(view.assignedTaskIds().stream().sorted().toList());
+          if (!initialCase) return evaluator.evaluate(view.assignedTaskIds().stream().sorted().toList());
           try { return (InitialTrial) method.invoke(null, p, api, view, evaluator, budget, rng, 32); }
           catch (ReflectiveOperationException e) { throw new IllegalStateException(e); }
         }
@@ -329,7 +438,7 @@ class BCaseArchiveTest {
         }
         @Override public LocalTrial searchReassignment(ProblemInstance p, ProblemAccess api, SatelliteView view,
             LocalContext context, Feedback feedback, LocalEvaluator evaluator, Budget budget, RandomGenerator rng) {
-          if (caseId <= 30 || feedback.attempt() > 0) return null;
+          if (initialCase || feedback.attempt() > 0) return null;
           try { return (LocalTrial) method.invoke(null, p, api, view, context, evaluator, budget, rng, 20); }
           catch (ReflectiveOperationException e) { throw new IllegalStateException(e); }
         }

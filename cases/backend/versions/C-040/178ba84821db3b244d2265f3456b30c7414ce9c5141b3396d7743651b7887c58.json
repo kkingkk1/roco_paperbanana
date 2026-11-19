@@ -1,0 +1,17 @@
+{
+  "case_id": "C-040",
+  "category": "maximum_minimum_neighbor_gap",
+  "description": [
+    "Initialization: Process B order. Maximize the smaller elapsed gap to either neighbor; absent neighbors contribute infinity. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000040.java",
+        "sha256": "e9e82edb8ba3de9e9be5bc2d770dabbe3c4f13c0e24e5ffd4c7550f4528448f4"
+      }
+    ]
+  }
+}

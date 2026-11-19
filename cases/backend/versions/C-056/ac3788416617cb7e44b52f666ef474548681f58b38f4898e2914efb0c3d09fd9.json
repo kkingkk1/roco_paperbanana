@@ -1,0 +1,17 @@
+{
+  "case_id": "C-056",
+  "category": "chronological_count_dp",
+  "description": [
+    "Initialization: Use dynamic programming over individually feasible insertions in chronological B order. Among generated states, maximize the number of observations and break ties by B-order inclusion.\n\n",
+    "Reassignment: Apply the same search after removing released observations. Unreleased observations stay fixed. Return no change if no complete feasible change is found."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000056.java",
+        "sha256": "a84c0ceadb8c4a6fc619bb04e81da2bf30e55f221fcf61735e0a6a69f50b5955"
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "case_id": "BR-005",
+  "category": "broken_edge_repair",
+  "sub_library": "post_reassignment",
+  "description": [
+    "Reassignment local search only:\n",
+    "- Broken Edge Repair: Build up to two global edits: release each broken edge's lower-reward endpoint, or release each higher-reward endpoint; equal rewards select the previous endpoint for the first edit and the next for the second.\n",
+    "- Reconsider: Reconsider incoming unscheduled tasks followed by released endpoints.\n",
+    "- Acceptance & Termination: Evaluate up to both edits within the evaluation limit; return the feasible issued trial with highest profit, or null if there are no broken edges or none is feasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000035.java",
+        "sha256": "90b3951e9dd6b70ceef78d66fbca4d886b0e92d2dc0536cc1504dd0a74da619d"
+      }
+    ]
+  }
+}

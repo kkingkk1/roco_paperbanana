@@ -331,12 +331,26 @@
         {
           "location": "本项目本轮为选取源码新增Rust模块声明，并从原utils保留辅助函数部分；完整整理结果保存于案例code",
           "version": "2026-11-07 首次归档版本",
-          "usage_conditions": "本项目内整理；新增模块声明无单独许可声明，向外部模型发送的条件尚未核实。",
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
           "verification": {
             "date": "2026-11-07",
             "evidence": "独立编译及逐案例夹具测试；算法文件保持源码包原文。"
           },
-          "external_model_use": "unknown"
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "本项目内整理；新增模块声明无单独许可声明，向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
         }
       ],
       "merged_case_ids": [],
@@ -345,6 +359,241 @@
       "description_revision": {
         "method": "保留来源实现并说明矩形矩阵填充裁剪后可能产生重复匹配的使用限制；算法代码不变。",
         "date": "2026-11-12"
+      }
+    },
+    {
+      "case_sha256": "531435cac77623badc98de56b263b9d8e78167fa37cb3fdeb9f6c83e52c9f480",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/24/f4/4524de82706ab2151bfa8f6c6d46db62561f9a6522651c144a27b6c06711/fastlap-0.4.0.tar.gz",
+          "version": {
+            "release": "fastlap 0.4.0, 2026-09-18",
+            "archive_sha256": "7c4e92d7d60043ed33dafbac77c79b99329ef8d364456cb4f7ff6a6f5aca8dcf",
+            "source_file_sha256": {
+              "LICENSE": "74de38034c000100f549482994fd1a84c9e61ba2e47ad48a7624b67bb65892ae",
+              "src/types.rs": "cb31ef66dd133f5a443c7e58b65d77804ddc4c1724e9f875a63eafda756a6905",
+              "src/lap/murty.rs": "98d1dd2236e450771c0ea86758f8a852c2690626a51d9a6d20e92fecbb73d358",
+              "src/utils.rs": "913cc6a0caf4fc2afe1b79f956b0a1de60223b1b634157a0400c88be7d7d5a11"
+            }
+          },
+          "usage_conditions": "源码包LICENSE为MIT，要求在副本或实质部分保留版权及许可声明；当前案例清单不再包含独立许可证文件，许可来源和条件留在后台。仅在遵守许可条件时允许外发；本项目禁止来源声明进入提示的场景不能发送包含该声明的完整代码。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "依发布包逐文件核对来源散列；保留对应算法，提取其需要的通用辅助，编译独立Rust crate并运行源内及构造夹具测试。每条对30个3×3矩阵检查对应目标与归属。"
+          },
+          "external_model_use": "allowed",
+          "source_free_prompt_allowed": false,
+          "usage_reviews": [
+            {
+              "date": "2026-11-13",
+              "finding": "用户确认删除当前案例清单中的独立许可证文件。新版本只移除该文件的清单项，算法源码与已有使用条件保持不变；父版本仍引用原文件。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": "本项目本轮为选取源码新增Rust模块声明，并从原utils保留辅助函数部分；完整整理结果保存于案例code",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "独立编译及逐案例夹具测试；算法文件保持源码包原文。"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "本项目内整理；新增模块声明无单独许可声明，向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "8a47edfa2ae078d07de85364b96b2438852e1bebac9f94584e77ca696ccfc019",
+      "parent_snapshot": "../versions/A-026/8a47edfa2ae078d07de85364b96b2438852e1bebac9f94584e77ca696ccfc019.json",
+      "storage_migration": "按用户确认从当前案例源码清单移除独立许可证文件；算法源码未改变。父版本清单保留原始文件引用。"
+    },
+    {
+      "case_sha256": "68cd05d852f7b5c1642b75593213a59104321c69ec1f53533fbabe996986479b",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/24/f4/4524de82706ab2151bfa8f6c6d46db62561f9a6522651c144a27b6c06711/fastlap-0.4.0.tar.gz",
+          "version": {
+            "release": "fastlap 0.4.0, 2026-09-18",
+            "archive_sha256": "7c4e92d7d60043ed33dafbac77c79b99329ef8d364456cb4f7ff6a6f5aca8dcf",
+            "source_file_sha256": {
+              "LICENSE": "74de38034c000100f549482994fd1a84c9e61ba2e47ad48a7624b67bb65892ae",
+              "src/types.rs": "cb31ef66dd133f5a443c7e58b65d77804ddc4c1724e9f875a63eafda756a6905",
+              "src/lap/murty.rs": "98d1dd2236e450771c0ea86758f8a852c2690626a51d9a6d20e92fecbb73d358",
+              "src/utils.rs": "913cc6a0caf4fc2afe1b79f956b0a1de60223b1b634157a0400c88be7d7d5a11"
+            }
+          },
+          "usage_conditions": "源码包LICENSE为MIT，要求在副本或实质部分保留版权及许可声明；当前案例清单不再包含独立许可证文件，许可来源和条件留在后台。仅在遵守许可条件时允许外发；本项目禁止来源声明进入提示的场景不能发送包含该声明的完整代码。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "依发布包逐文件核对来源散列；保留对应算法，提取其需要的通用辅助，编译独立Rust crate并运行源内及构造夹具测试。每条对30个3×3矩阵检查对应目标与归属。"
+          },
+          "external_model_use": "allowed",
+          "source_free_prompt_allowed": false,
+          "usage_reviews": [
+            {
+              "date": "2026-11-13",
+              "finding": "用户确认删除当前案例清单中的独立许可证文件。新版本只移除该文件的清单项，算法源码与已有使用条件保持不变；父版本仍引用原文件。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": "本项目本轮为选取源码新增Rust模块声明，并从原utils保留辅助函数部分；完整整理结果保存于案例code",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "独立编译及逐案例夹具测试；算法文件保持源码包原文。"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "本项目内整理；新增模块声明无单独许可声明，向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": [
+            "项目Java移植：cases/A/A-026/A000026.java"
+          ],
+          "version": {
+            "parent_case_id": "A-026",
+            "parent_case_sha256": "531435cac77623badc98de56b263b9d8e78167fa37cb3fdeb9f6c83e52c9f480"
+          },
+          "usage_conditions": "本项目Java移植按用户已确认的本项目用途使用；原来源及适用条件保留在同版本来源记录中。",
+          "verification": {
+            "date": "2026-11-16",
+            "evidence": "Java 21独立编译；与当前Rust源码对照77组有限成本矩阵和K值，共288条排序解，行列归属、成本浮点位模式及同成本顺序一致。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "531435cac77623badc98de56b263b9d8e78167fa37cb3fdeb9f6c83e52c9f480",
+      "parent_snapshot": "../versions/A-026/531435cac77623badc98de56b263b9d8e78167fa37cb3fdeb9f6c83e52c9f480.json",
+      "parent_case_directory": "../../A/A-026",
+      "implementation_revision": {
+        "date": "2026-11-16",
+        "method": "将Murty子问题划分、候选堆及最短增广路径移植为Java；未匹配索引用-1，保留原源码。"
+      }
+    },
+    {
+      "case_sha256": "864bac0888f695a8693a6a99968bc47c87b7c0958f28e96939da6a8e58298635",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/24/f4/4524de82706ab2151bfa8f6c6d46db62561f9a6522651c144a27b6c06711/fastlap-0.4.0.tar.gz",
+          "version": {
+            "release": "fastlap 0.4.0, 2026-09-18",
+            "archive_sha256": "7c4e92d7d60043ed33dafbac77c79b99329ef8d364456cb4f7ff6a6f5aca8dcf",
+            "source_file_sha256": {
+              "LICENSE": "74de38034c000100f549482994fd1a84c9e61ba2e47ad48a7624b67bb65892ae",
+              "src/types.rs": "cb31ef66dd133f5a443c7e58b65d77804ddc4c1724e9f875a63eafda756a6905",
+              "src/lap/murty.rs": "98d1dd2236e450771c0ea86758f8a852c2690626a51d9a6d20e92fecbb73d358",
+              "src/utils.rs": "913cc6a0caf4fc2afe1b79f956b0a1de60223b1b634157a0400c88be7d7d5a11"
+            }
+          },
+          "usage_conditions": "源码包LICENSE为MIT，要求在副本或实质部分保留版权及许可声明；当前案例清单不再包含独立许可证文件，许可来源和条件留在后台。仅在遵守许可条件时允许外发；本项目禁止来源声明进入提示的场景不能发送包含该声明的完整代码。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "依发布包逐文件核对来源散列；保留对应算法，提取其需要的通用辅助，编译独立Rust crate并运行源内及构造夹具测试。每条对30个3×3矩阵检查对应目标与归属。"
+          },
+          "external_model_use": "allowed",
+          "source_free_prompt_allowed": false,
+          "usage_reviews": [
+            {
+              "date": "2026-11-13",
+              "finding": "用户确认删除当前案例清单中的独立许可证文件。新版本只移除该文件的清单项，算法源码与已有使用条件保持不变；父版本仍引用原文件。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": "本项目本轮为选取源码新增Rust模块声明，并从原utils保留辅助函数部分；完整整理结果保存于案例code",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "独立编译及逐案例夹具测试；算法文件保持源码包原文。"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "本项目内整理；新增模块声明无单独许可声明，向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": [
+            "项目Java移植：cases/A/A-026/A000026.java"
+          ],
+          "version": {
+            "parent_case_id": "A-026",
+            "parent_case_sha256": "531435cac77623badc98de56b263b9d8e78167fa37cb3fdeb9f6c83e52c9f480"
+          },
+          "usage_conditions": "本项目Java移植按用户已确认的本项目用途使用；原来源及适用条件保留在同版本来源记录中。",
+          "verification": {
+            "date": "2026-11-16",
+            "evidence": "Java 21独立编译；与当前Rust源码对照77组有限成本矩阵和K值，共288条排序解，行列归属、成本浮点位模式及同成本顺序一致。"
+          },
+          "external_model_use": "allowed"
+        },
+        {
+          "location": [
+            "cases/A/A-026/A000026.py"
+          ],
+          "version": {
+            "parent_case_id": "A-026",
+            "parent_case_sha256": "68cd05d852f7b5c1642b75593213a59104321c69ec1f53533fbabe996986479b",
+            "source_file_sha256": {
+              "cases/A/A-026/A000026.py": "25d80d7efd78ed0fe74476232002951b9ad0b36b576a35766f6428ce31d67b1c"
+            }
+          },
+          "usage_conditions": "本项目 Python 移植，按用户确认用于本项目检索与代码生成；保留原来源记录。",
+          "verification": {
+            "date": "2026-11-17",
+            "evidence": "与对应 Java 案例在 120 个有限成本矩阵、四个K值下比较多解及其顺序；未覆盖所有输入。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "68cd05d852f7b5c1642b75593213a59104321c69ec1f53533fbabe996986479b",
+      "parent_snapshot": "../versions/A-026/68cd05d852f7b5c1642b75593213a59104321c69ec1f53533fbabe996986479b.json",
+      "implementation_revision": {
+        "date": "2026-11-17",
+        "method": "依据当前 Java 案例移植为 Python；原源码及历史元数据保留。"
       }
     }
   ]

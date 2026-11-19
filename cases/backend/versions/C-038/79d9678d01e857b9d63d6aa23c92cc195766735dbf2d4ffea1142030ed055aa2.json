@@ -1,0 +1,17 @@
+{
+  "case_id": "C-038",
+  "category": "chronological_prepend",
+  "description": [
+    "Initialization: Process B order. Only prepend a feasible observation before the existing timeline; choose latest start. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000038.java",
+        "sha256": "795454dcad101f8afa41a7362e0113cddfbd24dae78efe5a7323b71bb829b830"
+      }
+    ]
+  }
+}

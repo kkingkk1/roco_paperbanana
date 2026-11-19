@@ -416,12 +416,26 @@
               "src/main/java/method/rkhma/legacy/operator/assignment/MinRollAngleStrategy.java": "9aeb2f1c82596b7b56723ea6967c1ef65ab66aaf33cde54f1501e1f5523836e3"
             }
           },
-          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
           "verification": {
             "date": "2026-11-07",
             "evidence": "基于项目来源初始化排序和分配循环整理独立驱动，并原样保留本条策略及辅助；50个实例、7策略、两种缓存配置合计700次来源结果对照通过。"
           },
-          "external_model_use": "unknown"
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
         }
       ],
       "merged_case_ids": [],
@@ -430,6 +444,165 @@
       "description_revision": {
         "method": "删除与实际候选遍历顺序不符的平局规则；保留来源的主要选择思想和算法代码。",
         "date": "2026-11-12"
+      }
+    },
+    {
+      "case_sha256": "a9c01d9e4426ee3a1b88a2d11f44c4464f8756e15b3ff402521f40cb58fc55ff",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/rkhma/legacy/utils/Initialize.java",
+            "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/MinRollAngleStrategy.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/rkhma/legacy/utils/Initialize.java": "da8889b6d9dda1d99f85f998a9d28cc8833f6246da38ff17174a54c10e78fcbb",
+              "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java": "80c6bf2b06e88fc94b1731409da536318303416c28cfb7eeb045a79628a57381",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java": "6a249cd1e19ff6e078b7db3f9aec1fb5a373f09c05756bf1242eba9565340e29",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java": "3fbb48a71a6fa8f7ad6f03f55358dd39e51715c07127f585a18d5ec8c4981280",
+              "src/main/java/method/rkhma/legacy/operator/assignment/MinRollAngleStrategy.java": "9aeb2f1c82596b7b56723ea6967c1ef65ab66aaf33cde54f1501e1f5523836e3"
+            }
+          },
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "基于项目来源初始化排序和分配循环整理独立驱动，并原样保留本条策略及辅助；50个实例、7策略、两种缓存配置合计700次来源结果对照通过。"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": [
+            "cases/A/A-006/A000006.py"
+          ],
+          "version": {
+            "parent_case_id": "A-006",
+            "parent_case_sha256": "3ddba68d25c1eac81b355b7c415ecaf78b98b85e019bf8c643e99b3f3588ac28",
+            "source_file_sha256": {
+              "cases/A/A-006/A000006.py": "38552c76c85d02d4e4b122ed3464387dc330e867e9e88b2ffcd5d1ee9bdfc463"
+            }
+          },
+          "usage_conditions": "本项目 Python 移植，按用户确认用于本项目检索与代码生成；保留原来源记录。",
+          "verification": {
+            "date": "2026-11-17",
+            "evidence": "与对应 Java 案例在 12 组多星场景及来源窗口验证缓存开关下比较初始归属；随机案例使用相同随机数序列，且检查已有归属不变。未覆盖所有输入。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "3ddba68d25c1eac81b355b7c415ecaf78b98b85e019bf8c643e99b3f3588ac28",
+      "parent_snapshot": "../versions/A-006/3ddba68d25c1eac81b355b7c415ecaf78b98b85e019bf8c643e99b3f3588ac28.json",
+      "implementation_revision": {
+        "date": "2026-11-17",
+        "method": "依据当前 Java 案例移植为 Python；原源码及历史元数据保留。"
+      }
+    },
+    {
+      "case_sha256": "fd10115b320cb0520a12043e6c5e8e1357676ba7d271f0b3cffbd46e540d1106",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/rkhma/legacy/utils/Initialize.java",
+            "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/MinRollAngleStrategy.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/rkhma/legacy/utils/Initialize.java": "da8889b6d9dda1d99f85f998a9d28cc8833f6246da38ff17174a54c10e78fcbb",
+              "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java": "80c6bf2b06e88fc94b1731409da536318303416c28cfb7eeb045a79628a57381",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java": "6a249cd1e19ff6e078b7db3f9aec1fb5a373f09c05756bf1242eba9565340e29",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java": "3fbb48a71a6fa8f7ad6f03f55358dd39e51715c07127f585a18d5ec8c4981280",
+              "src/main/java/method/rkhma/legacy/operator/assignment/MinRollAngleStrategy.java": "9aeb2f1c82596b7b56723ea6967c1ef65ab66aaf33cde54f1501e1f5523836e3"
+            }
+          },
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "基于项目来源初始化排序和分配循环整理独立驱动，并原样保留本条策略及辅助；50个实例、7策略、两种缓存配置合计700次来源结果对照通过。"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": [
+            "cases/A/A-006/A000006.py"
+          ],
+          "version": {
+            "parent_case_id": "A-006",
+            "parent_case_sha256": "3ddba68d25c1eac81b355b7c415ecaf78b98b85e019bf8c643e99b3f3588ac28",
+            "source_file_sha256": {
+              "cases/A/A-006/A000006.py": "38552c76c85d02d4e4b122ed3464387dc330e867e9e88b2ffcd5d1ee9bdfc463"
+            }
+          },
+          "usage_conditions": "本项目 Python 移植，按用户确认用于本项目检索与代码生成；保留原来源记录。",
+          "verification": {
+            "date": "2026-11-17",
+            "evidence": "与对应 Java 案例在 12 组多星场景及来源窗口验证缓存开关下比较初始归属；随机案例使用相同随机数序列，且检查已有归属不变。未覆盖所有输入。"
+          },
+          "external_model_use": "allowed"
+        },
+        {
+          "location": [
+            "cases/A/A-006/A000006.py"
+          ],
+          "version": {
+            "parent_case_id": "A-006",
+            "parent_case_sha256": "a9c01d9e4426ee3a1b88a2d11f44c4464f8756e15b3ff402521f40cb58fc55ff",
+            "source_file_sha256": {
+              "cases/A/A-006/A000006.py": "53540d54f961331fef76dad495987e30580c0d416af2c26ad5187cfd9b05453d"
+            }
+          },
+          "usage_conditions": "本项目Python案例；保留原来源和用户确认的使用范围。",
+          "verification": {
+            "date": "2026-11-17",
+            "evidence": "仅修复Windows输出转码产生的文档字符串乱码；逐行比较确认算法正文未改变。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "a9c01d9e4426ee3a1b88a2d11f44c4464f8756e15b3ff402521f40cb58fc55ff",
+      "parent_snapshot": "../versions/A-006/a9c01d9e4426ee3a1b88a2d11f44c4464f8756e15b3ff402521f40cb58fc55ff.json",
+      "parent_case_directory": "../versions/A-006/a9c01d9e4426ee3a1b88a2d11f44c4464f8756e15b3ff402521f40cb58fc55ff/A-006",
+      "implementation_revision": {
+        "date": "2026-11-17",
+        "method": "修复文档字符串乱码，保留原源码和原元数据以供历史回读。"
       }
     }
   ]

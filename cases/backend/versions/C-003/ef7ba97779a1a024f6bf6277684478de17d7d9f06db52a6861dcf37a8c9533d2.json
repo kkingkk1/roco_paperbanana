@@ -1,0 +1,569 @@
+{
+  "case_id": "C-003",
+  "category": "rkhma_greedy",
+  "description": [
+    "Initialization: Process B order using source GREEDY and the first feasible observation in source window order; the grid bridge enumerates valid observations on non-unit grids.\n\n",
+    "Reassignment: Apply the same insertion to released and reconsidered tasks. Rebuild can rank windows for preferred tasks on source-compatible grids. The local method returns the constructed timeline; the runtime checks permissions and feasibility. Each entry checks the current budget; source-compatible insertion does not check every candidate."
+  ],
+  "code": {
+    "format": "file_markers",
+    "files": [
+      {
+        "path": "src/method/runtime/C000003.java",
+        "sha256": "167496405b7c0189fa0cd2c63d8efd18f96bba2d0a6dd7abd584e9a67f56c989"
+      },
+      {
+        "path": "src/method/rkhma/bridge/GridGreedyInsertion.java",
+        "sha256": "10f578a615fe3c32696a851fb7fda7d538d98ae55a62f9664d509d3782837357"
+      },
+      {
+        "path": "src/method/rkhma/bridge/ProblemBridge.java",
+        "sha256": "db5fa707666e35362d2346f4fc946af2be8adc177aa05b702289aa743505ed3f"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/abc/ABC.java",
+        "sha256": "963fbe9803c42bcfdb30bc6659b3a2206f4bd0c064af1a890c6143250eb2693f"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/aco/ACOGaussGenerate.java",
+        "sha256": "aaf72a4865fac2f94161255b460d5c077188583cce3b4019d3c1420aa1d51cda"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/alns/ALNS.java",
+        "sha256": "55fd7a21a8add34c9df75fa3dd4dd496c25cf2ded77ff611db2e07cdf22ed4ff"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/de/AdaptiveFSchedule.java",
+        "sha256": "c58f1d8d1676ebff2123a226416f60c3b451b9fcaeb5b4939cee81bb4d9c7ba8"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/de/DEBest1.java",
+        "sha256": "0f40c6842ff0fa817a4d30f5c2415f41a2169d12025b4ee1cc5bc8ec7e347869"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/de/DEBest2.java",
+        "sha256": "8fb8c3cbb879813446ddbf5122514fbb55cc22e2badb126cd8b63959e911e237"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/de/DEConfig.java",
+        "sha256": "092dae9c6c4cfd1cd5ce70aca7c8eb782e15545b01f92d1129e8a3930c082bfe"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/de/DECurrentToBest.java",
+        "sha256": "0bf2f183d966a79148bf9c12941bae4670cc17616406d61bfc143747d4a5e96e"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/de/DECurrentToRand.java",
+        "sha256": "93da242f3af87963bd0256d85b95b0b7228336ddb547647e35088e056f6489da"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/de/DERand1.java",
+        "sha256": "fca7fe3b2a4201ff7c509f39af65aabaf2d314946185d54feb95f03abc2b8577"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/de/DERand2.java",
+        "sha256": "abcaf43ef086578b92131013e67ccde19992398b8b46b6ae7ad4ffe000f251a3"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/de/DERandToBest.java",
+        "sha256": "e7ed032925fad4cba9f6d8a025ec1459d5b7e3b4d1f8791d1b5ef8f26cdc4c67"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/eda/EDAGaussSam.java",
+        "sha256": "56a687f01acc510990a80979de099892535cb86a4617abbf7d2ed11556b869ec"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/ga/GeneticAlgorithmNoSelect.java",
+        "sha256": "96c49f82ebe7d74ca5d1e4a2cbf797e59522c20aaa9f40923e5026d98f2af3d7"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/pso/PSO.java",
+        "sha256": "c55eebfc570f0b47f696954352a669b44e51c87caeaef22ea20825cdefcae345"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/sa/SACont.java",
+        "sha256": "7cd386d193ca1c04363c4da8aeb76d734f198a9c13121ac83b7fa87d5de1738b"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/shade/SHADELoopBrief.java",
+        "sha256": "1926d3787046ac8964cb94148247399282c46d9bb92ae273de6b9b123eeda45f"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/shade/UpdateArchive.java",
+        "sha256": "bd19de531345dc086fb45365c0899233fff3a6b1320db6664521f4147753c6e7"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/shade/UpdateProbSHADE.java",
+        "sha256": "b7d77a3c5c011aad08ec1062ccf32300c5e4a385bdcacb895d53954ad0c484fe"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/workspace/ABCWorkspace.java",
+        "sha256": "b4bfd6dc4fd3a84d30d979b9133fcd26efdcd02c555a1f9725a361ffed17dcdb"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/workspace/ACOWorkspace.java",
+        "sha256": "d4134d66afb18e968d582aa1860c08be8ad89e29fa9a351a8a118b9da481e91f"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/workspace/DEWorkspace.java",
+        "sha256": "2d171a8a3931782dea01bb2f675730a5acfd20296837296760b180a5dde2b328"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/workspace/EDAWorkspace.java",
+        "sha256": "8e78fc4d5c779e2982c8413360867f1c412ec4e1101fbc91728d93e55030a45b"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/workspace/GAWorkspace.java",
+        "sha256": "c62a0872f0017811991da74ef1e9d4a64ab767fbc051ba09db2f5783890e2280"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/workspace/PSOWorkspace.java",
+        "sha256": "77adcd937f477d84b739828853f32c2fe5d3d421d2832cfb3466f00c4a00e1a9"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/workspace/SAWorkspace.java",
+        "sha256": "ba16a0c600a4ed0d430fc754e6aaf3e8a0e010177fce34f48aef66f95fa44d01"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/workspace/SHADEWorkspace.java",
+        "sha256": "35335bb2b9207980c503211e2f811fe220fb9da88787f5c3684a6c95557f0401"
+      },
+      {
+        "path": "src/method/rkhma/legacy/algorithm/workspace/Workspace.java",
+        "sha256": "1e5bc058e45ad5801233fd66835349ff28ceeda9a838301af3e771295d2429ba"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/AlgorithmConstants.java",
+        "sha256": "d9a22399cba82475ac4f9524800302d6248b685b1c2c34540d8b8986a2dfa15d"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/AlgorithmParameterValidator.java",
+        "sha256": "8d6a64f6232ed64426bc5bbfe8f74167f3f5cf7749394591c08f3581c634fc50"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/BoundaryHandler.java",
+        "sha256": "219da25c02317767085c28edeac454cc30c891d30a9cf7808953cbdfaffe3a79"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/ConfigStringUtils.java",
+        "sha256": "55dddc8db9a4ae65211148fb96ad95b4cbc0b2fedb04a844403db96334426a35"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/EliteConfigArchive.java",
+        "sha256": "f09e08ec8226102b182c1c05b83d00891482e4204986d4ff105bcb3024c89ffb"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/FastGaussian.java",
+        "sha256": "85dd06a071273c50fc676da65b39a090c88a7df06c3ce40c1aa598a65e2bcaf9"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/RandomProvider.java",
+        "sha256": "d6d3c1cbe855de3a1269a50fbef1530410825f40ddf54fdd90bdeca9a9b64486"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/ResizePop.java",
+        "sha256": "ab73867fa6ec407b0c3b8e39340cfa4d0ba560918eb7e3e2f31973870f964d26"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/SearchDeadline.java",
+        "sha256": "5047dfd28786b8f386c604d956066ac7dc409e755e4cbb2597bb0e948a51c0bf"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/TuningConfig.java",
+        "sha256": "8a78b28fc5c9bd2a06307b0dcc932bd50ffe910129f35a3232f301c7bc38d294"
+      },
+      {
+        "path": "src/method/rkhma/legacy/common/TuningDefaults.java",
+        "sha256": "e5917fce0c1b23931e669f76c3d4684013b8f7efcc068af8b5f38f9846b7587f"
+      },
+      {
+        "path": "src/method/rkhma/legacy/core/calculator/HybridLevelCalculator.java",
+        "sha256": "9fcda3d4e7e097d5c7499989dfafa7136515c76f9c7849d9c944020219e253ef"
+      },
+      {
+        "path": "src/method/rkhma/legacy/core/config/AlgorithmIndex.java",
+        "sha256": "e69f991f7fd16541cf1171dc843f5da881ec3deb9ffdf79fed1b2fde355d2cb4"
+      },
+      {
+        "path": "src/method/rkhma/legacy/core/config/ConfigValidatable.java",
+        "sha256": "2861c3b40a52dfe2a4b80da2e81579fb6e27099b01e831fe14f039ce010e80f0"
+      },
+      {
+        "path": "src/method/rkhma/legacy/core/config/HybCecConfigManager.java",
+        "sha256": "29d3ee66547f009dfcf93e7dd48d885f30efa9e980ca8530566137f7d6a49b67"
+      },
+      {
+        "path": "src/method/rkhma/legacy/core/exception/HybCecExecutionException.java",
+        "sha256": "db000ddfd99ee001147079f1c5945ecf22135a39f05267b3370a080f7fd0d19a"
+      },
+      {
+        "path": "src/method/rkhma/legacy/core/HybCec.java",
+        "sha256": "ceffdfd89b31bcd697b08836e972690e23807c26c132da7c79af00e86e600229"
+      },
+      {
+        "path": "src/method/rkhma/legacy/core/manager/CreditManager.java",
+        "sha256": "c57691f30517b338fa644632addd3aec84d8941cf2f5a26abb38d0b7beed81f1"
+      },
+      {
+        "path": "src/method/rkhma/legacy/core/manager/FitnessManager.java",
+        "sha256": "741be3ea8aa43dc7ad6aef02acfffa9844c930755c63de247b50867ff38d457b"
+      },
+      {
+        "path": "src/method/rkhma/legacy/core/manager/PopulationManager.java",
+        "sha256": "43a0de8e92567816af1cb382d149fb6d6d92387a0f60b47966deb3de648c122a"
+      },
+      {
+        "path": "src/method/rkhma/legacy/core/manager/PopulationResizer.java",
+        "sha256": "b8843339de1c9e1d580dea1fb78c93b039e06caf125286f8afda7291719b1525"
+      },
+      {
+        "path": "src/method/rkhma/legacy/core/state/HybCecState.java",
+        "sha256": "cfcdb25e287d24ffe293ce29a9bc8bba97dcc9b3bbe22af60880f919559f6e98"
+      },
+      {
+        "path": "src/method/rkhma/legacy/core/state/StateKey.java",
+        "sha256": "9da2aea5586e55ffc6e8f6e0d8339966d0191ffd7d8c5b012d6740bb6d6d6420"
+      },
+      {
+        "path": "src/method/rkhma/legacy/core/state/StateUpdater.java",
+        "sha256": "00112d84a9174a2c02d2dfd3c824bac681314b85813740cd80c0285635a97ee5"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/AssignmentDeltaEvaluator.java",
+        "sha256": "8e3b25c3a1f6817af54bcda5716ef1908ea1e15f5c569d476f87f7f1bb3cf7f0"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/AssignmentOverlayMap.java",
+        "sha256": "bf3be7d8e2a1e4daa67f894e059789251bb05ce7c6d7f130d0a3337e1a39b411"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/BundleMoveEvaluator.java",
+        "sha256": "686a241d6ca1f22711e2e02d6c4876799cbd406c98c6c7ee715288b818cfaed8"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/DeltaFastRefiner.java",
+        "sha256": "2cb724afbcf9b141f394885bf6f020a2f980b3054e37a1630c248bb3fb9a4e9e"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/ParallelPolicy.java",
+        "sha256": "f96c2a08c41a8a378c926657000b86e82319194195653d601a6d3ec3cd4abe0a"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/ReassignmentMoveEvaluator.java",
+        "sha256": "6907021466886ad2a24cc54b4e4f9ea913d0dce5b171bed146127368c92034f2"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/ReassignmentMoveServices.java",
+        "sha256": "7de2e57202a5619a4e484cf0732a933fb6a9b2963e439c535d6e5d2550522700"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/ReassignmentOrchestrator.java",
+        "sha256": "85f316a05960b97ce5a114f6ca4dd1d74f3d6439bc5504bce69b9be5e0656523"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/ReplacementMoveEvaluator.java",
+        "sha256": "e95a67d5204d5c6e20fb85ca01236e428cb99c532d27321333b6f3499d0eb5e8"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/SingleAlgorithmOptimizer.java",
+        "sha256": "a8c4b4763cd2d300cb69f902c770049fdb0c57c5b1b5ad870bb3c8b45e3889de"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/SwapMoveEvaluator.java",
+        "sha256": "7ce933146de564cee66dedd0ad9489f24ba65d2272a2483423eeea9d5719afea"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/TargetSatelliteRanker.java",
+        "sha256": "8df4872a6d20912b2aeb77ea5a8f5967b274202519b2d272c8940b36b3638151"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/TargetSatelliteSelector.java",
+        "sha256": "91e65a91ff07fb23226382a07f8e937bcb54c55883c279220e8656cb022ca7a2"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/TaskAllocationCoordinator.java",
+        "sha256": "4d9b7fc389d66c57171770fded310ebb53e31f77963b14670d2bec63ae00e919"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/TaskAllocationModels.java",
+        "sha256": "d3bc78febc649d37b9e1e0af6265d256d9798c1d4e1dd4fb2bb9b3b051b8dd06"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/TaskAllocationScoring.java",
+        "sha256": "73a905ab84a96f6bc58b55ddf3ff3936720a9f73883b6a9c6fb47660f7b49511"
+      },
+      {
+        "path": "src/method/rkhma/legacy/main/TaskSatelliteKnnCache.java",
+        "sha256": "638ad644e64982a993ef72b462f1603a05ac4f8d6b84bfd9d451228b63a2e0be"
+      },
+      {
+        "path": "src/method/rkhma/legacy/model/AttitudeRecord.java",
+        "sha256": "efd98a37e8ae21fa8e509d44a8c2f8a4ceb69eadf60d56dfe6ed7bcc8631dcdf"
+      },
+      {
+        "path": "src/method/rkhma/legacy/model/Satellite.java",
+        "sha256": "e39617d47b7f52fa7ade6e168f941d77d324ce1d7d02dff7805e1bcf772413d7"
+      },
+      {
+        "path": "src/method/rkhma/legacy/model/SatelliteTaskPair.java",
+        "sha256": "ffbc169c539a8d7bd51246e6c36c6fe5678a2e4001e213be0bf5c92dfa4f6733"
+      },
+      {
+        "path": "src/method/rkhma/legacy/model/ScheduledTask.java",
+        "sha256": "81b01e23fd140d96b1321533eab628eece3f7fc3c1031ec2f2944d7b6a3b5c93"
+      },
+      {
+        "path": "src/method/rkhma/legacy/model/SchedulingPlan.java",
+        "sha256": "8382c97e14b2918dd5f856c55a10090a999d0f193ace5eb43d9da27ff6b7b8e4"
+      },
+      {
+        "path": "src/method/rkhma/legacy/model/Task.java",
+        "sha256": "f65a5789f061a7b5350cfeb145edb59cef21820deabcb6eed3fa8e259003078d"
+      },
+      {
+        "path": "src/method/rkhma/legacy/model/TimeWindow.java",
+        "sha256": "d84cfbdc881c173c6b0fb35b259519bb7b3fd0016564dd71c7bdce4ce65f39c5"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java",
+        "sha256": "3fbb48a71a6fa8f7ad6f03f55358dd39e51715c07127f585a18d5ec8c4981280"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java",
+        "sha256": "6a249cd1e19ff6e078b7db3f9aec1fb5a373f09c05756bf1242eba9565340e29"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/CompositeStrategy.java",
+        "sha256": "019393b8479d2fcbb67d8f7e4e720850f05257f0be983c4e0dfe7103860e60f2"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/CompositeWithCapacityStrategy.java",
+        "sha256": "5eca53151a3b6a9f5da430966034954ce4492ce95fc34e00d2948f6329560ed1"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/EarliestTimeStrategy.java",
+        "sha256": "a3bc9c94dc2350dfc3fddf05e23725aaa75903fc18bca1cfea518303f5b4ca5b"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/MaxWindowCountStrategy.java",
+        "sha256": "5481b07cc78cf116949ee12eb9d71933c47f343147f1dc8b6a20979ca4b7948a"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/MaxWindowLengthStrategy.java",
+        "sha256": "bcd164ad39c6c7169aa89f137a249104f96a78babd9c4281e25151dc9ddc68e3"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/MinPriorityStrategy.java",
+        "sha256": "6e241d5e7328ffe47c6393ea1b0ebafa49e3d91f35bc5af567332c5f5bc464d1"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/MinRollAngleStrategy.java",
+        "sha256": "9aeb2f1c82596b7b56723ea6967c1ef65ab66aaf33cde54f1501e1f5523836e3"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java",
+        "sha256": "a4fee6af3dba9a8412e0d2d3e7e933b222309581c2dffc7b8b49661cd99a3628"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/RandomStrategy.java",
+        "sha256": "5ae524861f5e830b338539862334be92b6046fcc30929344fb8a82755a1df7cf"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/crossover/CrossoverDE.java",
+        "sha256": "c0eda422eabe336877cedf8f9c6ea2ff9a4d9aad8d6395bae387e490184bd4b8"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/insertion/AbstractInsertionStrategy.java",
+        "sha256": "284e9967d18d1e1ca7f63068c32578c6d471e63765f6b7a30af8c9a85e42455b"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/insertion/EarliestDeadlineFirstInsertion.java",
+        "sha256": "7a529999d6520feea6912bc193231abf82a55449766cacef202371d4d9fe6566"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/insertion/GreedyInsertion.java",
+        "sha256": "448e59909d2531fb46037b841bc820232c1956dc1c9c416ff9f303b5c7274f96"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/insertion/InsertionMode.java",
+        "sha256": "4437f546cedecfac9aa9fdee334df2ddcfa0b01f269fa6eae4d129cecea67a9d"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/insertion/InsertionStrategy.java",
+        "sha256": "d19654bbc1f9f05cce9f22a1dda30566068fc5cba2b5aca1cefb1ca9157b1e4f"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/insertion/InsertionStrategyFactory.java",
+        "sha256": "2e31adc91a411a7ed60fff03bf319ba3a7c59aff9511ce86f9a4a8f95d963a73"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/insertion/LongestWindowFirstInsertion.java",
+        "sha256": "5342e173dccbfbe5904937f1ede74db956c3fe458cd3f83f11c0095a2cbea88a"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/insertion/MaxRemainingCapacityInsertion.java",
+        "sha256": "91e51c429227875fa5f999d51208c09918f01a869520d6976e5d3c6124130cff"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/insertion/MaxSlackInsertion.java",
+        "sha256": "f30be331751a7d2db34ae2039acb03e45decd599c51fe5344a43e8f046b8d924"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/insertion/MinTransitionInsertion.java",
+        "sha256": "c93e37c6f38e6b4c9e8958305528b0c254045cde65cc8e75218d48d067f68c84"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/insertion/RandomInsertion.java",
+        "sha256": "c12b3a7bb4d248a545ead17080b695cc22f8500e3e99952380fb755bc622be1d"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/insertion/ShortestWindowFirstInsertion.java",
+        "sha256": "1e0e23acc1616ea343363a673e1016dab6555b2299ea4917212c573e06fe33b4"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/mutation/DEUtils.java",
+        "sha256": "091b3c850eb408f1df4e5c208e55e04fef749e55e3b0eaa644be7a83adf94070"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/mutation/MutationDEBest1.java",
+        "sha256": "ec50fd515ebbce0e64095443678b8344de8a94d78bd0506f7ec175f5b86517a0"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/mutation/MutationDEBest2.java",
+        "sha256": "0fbfb7495ecba4e71966d9fcc24b770f4c1c4b6a07d347ecbc0653c05ed9ab63"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/mutation/MutationDECurrentToBest.java",
+        "sha256": "99e73b4d01769f298a9aef75e730ab890f37ae576bf509769cdb308df0e94c25"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/mutation/MutationDECurrentToRand.java",
+        "sha256": "fed43e28adffec2553302b2ad0bd4f579396bd4168b3d29b6ba315dfd991b8bd"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/mutation/MutationDERand1.java",
+        "sha256": "aad3f3dcca1ca68e87a3d09fe4c8ce7f179c4a8c096b9a76cc59d676a812d5ec"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/mutation/MutationDERand2.java",
+        "sha256": "784e0128657157dc6bfb52b3ef5e7d10b1b937ee6929e05d18ed13e6e05f38c2"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/mutation/MutationDERandToBest.java",
+        "sha256": "effe99c84f3e3e2f3b22a4685466ea66a02cb63b48a7e4799c374fb255e1d2d5"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/selection/SurvivorSelect.java",
+        "sha256": "9f0437244f4b0ce9dbf18f0b66421a6ae3ca08063d75a4b0675f123f891a13d1"
+      },
+      {
+        "path": "src/method/rkhma/legacy/strategy/ABCStrategy.java",
+        "sha256": "49647de83a054263efdbbceb85025ea38fd69fe1a0e50e3ce8c2aacb47b8a755"
+      },
+      {
+        "path": "src/method/rkhma/legacy/strategy/ACOStrategy.java",
+        "sha256": "c3ff3a371ca89c885ebcf468c687c460f14aa5ff7e133d47c112d2ac6c907e1d"
+      },
+      {
+        "path": "src/method/rkhma/legacy/strategy/ALNSStrategy.java",
+        "sha256": "7c58741262efc062c31820065ef3912a02378b0e74f163098184c15a046426d7"
+      },
+      {
+        "path": "src/method/rkhma/legacy/strategy/DEBest1Strategy.java",
+        "sha256": "6e5388fd81677e39d6cbed266dd20a04b9c7ba973994ed26a509ccc7e20822fe"
+      },
+      {
+        "path": "src/method/rkhma/legacy/strategy/DEBest2Strategy.java",
+        "sha256": "9f99f0104f159c2413511fd4dca220871444c3611cd07c9de48179aecfe554d3"
+      },
+      {
+        "path": "src/method/rkhma/legacy/strategy/DECurrentToBestStrategy.java",
+        "sha256": "0c1ed75bf0f7cf528aa4cb9a85b8dc715cf38c8e85e07cfc029ac484ee4faea2"
+      },
+      {
+        "path": "src/method/rkhma/legacy/strategy/DECurrentToRandStrategy.java",
+        "sha256": "a824719729c8b48991214917066a79cb612a44b7c919c966374eaf96a05aebd6"
+      },
+      {
+        "path": "src/method/rkhma/legacy/strategy/DERand1Strategy.java",
+        "sha256": "af4aadf151c9a347bb090749471098c7ea63a1ad90bca8708603fdecf0cf6686"
+      },
+      {
+        "path": "src/method/rkhma/legacy/strategy/DERand2Strategy.java",
+        "sha256": "00986f30aa2e1664eaeb771da338ab8395b0d4f0b99a5c8d33c20d41c94af87a"
+      },
+      {
+        "path": "src/method/rkhma/legacy/strategy/DERandToBestStrategy.java",
+        "sha256": "df1f48fa7e29851619de16f827d97fa2750f2d5cdb309f8c7b16999d2f2f294e"
+      },
+      {
+        "path": "src/method/rkhma/legacy/strategy/EDAStrategy.java",
+        "sha256": "3eb470ee76e8a7cb251b7192f46cab5c588af16206ae296f0e31470873c7c1aa"
+      },
+      {
+        "path": "src/method/rkhma/legacy/strategy/GAStrategy.java",
+        "sha256": "5750e9bcdeb05f30aba1ac7a9986b53d59e584f43170a1a0d58a03fb8f5a2012"
+      },
+      {
+        "path": "src/method/rkhma/legacy/strategy/ParentContext.java",
+        "sha256": "bf2deeaad99306245139d2ef43a58bcb616f6cf531fc7bb6717cae2f7bc52984"
+      },
+      {
+        "path": "src/method/rkhma/legacy/strategy/ParentStrategy.java",
+        "sha256": "6b0ed102382962158420f3af37437e67f443dfc665732224461fa43cac34f1b1"
+      },
+      {
+        "path": "src/method/rkhma/legacy/strategy/ParentUpdateResult.java",
+        "sha256": "a64c73453e8f7fdd6b0df2899781c1e35013dcae278ac744156a701ebc4331f9"
+      },
+      {
+        "path": "src/method/rkhma/legacy/strategy/PSOStrategy.java",
+        "sha256": "30d34ea5da4331f849fd4e44c9ef19cba13d2d0f9c50c8bf6f6161bf1bbdab1d"
+      },
+      {
+        "path": "src/method/rkhma/legacy/strategy/SAStrategy.java",
+        "sha256": "144642a944d6229206fd45f38d7a20836c3258e6a59d450d7aadb696bacdfb92"
+      },
+      {
+        "path": "src/method/rkhma/legacy/strategy/SHADEStrategy.java",
+        "sha256": "537d9226e92f7b07b2309a1e61ff04746d1ce0dae1a76c7f4a205172cbd5759e"
+      },
+      {
+        "path": "src/method/rkhma/legacy/strategy/StrategyInput.java",
+        "sha256": "6a707c3ce5fab844451c9431f8c080822c326357c7665194361b486828ea3f3b"
+      },
+      {
+        "path": "src/method/rkhma/legacy/utils/AssignTaskOperator.java",
+        "sha256": "80c6bf2b06e88fc94b1731409da536318303416c28cfb7eeb045a79628a57381"
+      },
+      {
+        "path": "src/method/rkhma/legacy/utils/CandidateArchive.java",
+        "sha256": "8cedba59ba62ac40c498af0953b3dd5baae9b6f355442412d1b7a26a616f8ff5"
+      },
+      {
+        "path": "src/method/rkhma/legacy/utils/DecodeWorkspace.java",
+        "sha256": "c7a70f111a52415004cc608d650d247024bdffd03fe1d742566d409dd681a0df"
+      },
+      {
+        "path": "src/method/rkhma/legacy/utils/FitnessUtils.java",
+        "sha256": "4d0c0380ce907303af495bc99cd2fe583b44dcdbe01886ded656314fd3d8f5db"
+      },
+      {
+        "path": "src/method/rkhma/legacy/utils/Initialize.java",
+        "sha256": "da8889b6d9dda1d99f85f998a9d28cc8833f6246da38ff17174a54c10e78fcbb"
+      },
+      {
+        "path": "src/method/rkhma/legacy/utils/ListUtils.java",
+        "sha256": "e2465b550fba010612613052b939f85797e3ac1d0f49c71c62b2c0630446e1a1"
+      },
+      {
+        "path": "src/method/rkhma/legacy/utils/PlanUtils.java",
+        "sha256": "bbb2738c85cbc6cd487d83533fa74e9dbb50c96faca857fd12e39d47bdd0ab92"
+      },
+      {
+        "path": "src/method/rkhma/legacy/utils/TimeUtils.java",
+        "sha256": "3be2e340dc79d4c954d4e62d5403683ccabeb6dd5729e7edfd41621e4892f210"
+      }
+    ]
+  }
+}

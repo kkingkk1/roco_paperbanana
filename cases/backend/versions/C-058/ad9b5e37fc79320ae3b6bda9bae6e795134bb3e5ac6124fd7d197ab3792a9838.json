@@ -1,0 +1,17 @@
+{
+  "case_id": "C-058",
+  "category": "minimum_movement_cascading_retime",
+  "description": [
+    "Initialization: Insert each task at earliest completion. If blocked, sequentially enumerate feasible re-timings retaining previously inserted tasks; among constructed assignments, minimize total absolute start-time movement, then total adjacent transformation time.\n\n",
+    "Reassignment: Remove released observations and use the same rule on reconsidered tasks. Only observations inserted during this call may be re-timed or replaced; other observations stay fixed."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000058.java",
+        "sha256": "7f82e535a30d95a115df9d2d96c4fbc0785552168fffc407948ef771bbee8f33"
+      }
+    ]
+  }
+}

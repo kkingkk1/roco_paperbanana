@@ -1,0 +1,17 @@
+{
+  "case_id": "C-046",
+  "category": "reward_weighted_retention",
+  "description": [
+    "Initialization: Process B order. Maximize the sum of later tasks’ remaining feasible-observation fractions weighted by their input rewards; omit initially infeasible tasks. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000046.java",
+        "sha256": "ce15c818f887e1f964350477fb1082b7dadda06c897d369ad125fa14cdc6e36d"
+      }
+    ]
+  }
+}

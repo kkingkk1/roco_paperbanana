@@ -277,12 +277,27 @@
               "src/sbma/_util.hpp": "1997165db17a7ba6ae5ff25dfc8e0c1a9ce2973b044a1d60ed4b7551b1f93234"
             }
           },
-          "usage_conditions": "PyPI项目元数据声明MIT；本次读取的源码包未发现独立LICENSE文件或完整版权声明，确切的版权声明和使用条件尚待核实。本地研究整理，未确认前不作为外发合格候选。",
+          "usage_conditions": "sbma 1.0.2发布页及源码包内pyproject.toml均标注MIT；仅在满足MIT条件并保留现有署名及许可信息时可外发。源码包未提供完整LICENSE或明确版权声明，发送前须补齐适用的许可通知并核查权属；完整代码不适用于禁止来源声明的提示。",
           "verification": {
             "date": "2026-11-07",
             "evidence": "校验官方源码包SHA-256；完整保存所需Python/C++源文件，在target中用现有MSVC、Python和NumPy编译，不安装软件；30个6任务3资源夹具检查归属数量、唯一性与返回得分。"
           },
-          "external_model_use": "unknown"
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "PyPI项目元数据声明MIT；本次读取的源码包未发现独立LICENSE文件或完整版权声明，确切的版权声明和使用条件尚待核实。本地研究整理，未确认前不作为外发合格候选。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "sbma 1.0.2发布页及源码包内pyproject.toml均标注MIT；仅在满足MIT条件并保留现有署名及许可信息时可外发。源码包未提供完整LICENSE或明确版权声明，发送前须补齐适用的许可通知并核查权属；完整代码不适用于禁止来源声明的提示。",
+              "evidence": "https://pypi.org/project/sbma/1.0.2/；案例A-028的src/pyproject.toml。",
+              "external_model_use": "allowed"
+            }
+          ],
+          "source_free_prompt_allowed": false
         }
       ],
       "merged_case_ids": [],
@@ -291,6 +306,157 @@
       "description_revision": {
         "method": "明确资源任务数是固定配额，且评分初始化对应默认路径；算法代码不变。",
         "date": "2026-11-12"
+      }
+    },
+    {
+      "case_sha256": "e33b1ce18fd7321c1e6d3417ad961e326dab110c50672d173f16628d9b6f2e2b",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/f1/e4/4fb52371a0bda9e641e72fa3d160502bc0197b1ae93bbd383dce6ee15065/sbma-1.0.2.tar.gz",
+          "version": {
+            "release": "sbma 1.0.2, 2026-09-23",
+            "archive_sha256": "3bec5e75cc2659d2b2aef4f9a9aa23b5d6b7983b44a04e2dcddd2ddbfbf620f9",
+            "source_file_sha256": {
+              "pyproject.toml": "8d392a2eed635fdd451593a57764cecb3f7e1a9739ea17bd5f03454b1f3d2bfe",
+              "setup.py": "41d070a73b038c3344bfc9dac7a02b2f757575579ea192c32fa44942c0b553cc",
+              "src/sbma/__init__.py": "f5455221ec2ed0c1df8720123cbabb991c85c1fe8ab932c0fdada9a17e3b85d9",
+              "src/sbma/solver.py": "48806dd4284d9208b6787bbbe608af2bb4781733f239e79103ee029df0b9607e",
+              "src/sbma/_solver.cpp": "2d241e885ae9205902a7cecd139352f2bb97483369d45232318f43d80edd2e26",
+              "src/sbma/_starting_point.cpp": "78d0e421f537fb59a2788e6ee932d22434a779f74db53dfff46600b991251d20",
+              "src/sbma/_auxiliaries.cpp": "38c78549fcd9994a914e3051b891f7943d9bcfe7d6322e6106a8090ea6fd7f5c",
+              "src/sbma/_util.cpp": "2e0667b626fed8860b3f43f75aeee5a2e1b81415652de791c92aacd9ca36808f",
+              "src/sbma/_util.hpp": "1997165db17a7ba6ae5ff25dfc8e0c1a9ce2973b044a1d60ed4b7551b1f93234"
+            }
+          },
+          "usage_conditions": "sbma 1.0.2发布页及源码包内pyproject.toml均标注MIT；仅在满足MIT条件并保留现有署名及许可信息时可外发。源码包未提供完整LICENSE或明确版权声明，发送前须补齐适用的许可通知并核查权属；完整代码不适用于禁止来源声明的提示。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "校验官方源码包SHA-256；完整保存所需Python/C++源文件，在target中用现有MSVC、Python和NumPy编译，不安装软件；30个6任务3资源夹具检查归属数量、唯一性与返回得分。"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "PyPI项目元数据声明MIT；本次读取的源码包未发现独立LICENSE文件或完整版权声明，确切的版权声明和使用条件尚待核实。本地研究整理，未确认前不作为外发合格候选。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "sbma 1.0.2发布页及源码包内pyproject.toml均标注MIT；仅在满足MIT条件并保留现有署名及许可信息时可外发。源码包未提供完整LICENSE或明确版权声明，发送前须补齐适用的许可通知并核查权属；完整代码不适用于禁止来源声明的提示。",
+              "evidence": "https://pypi.org/project/sbma/1.0.2/；案例A-028的src/pyproject.toml。",
+              "external_model_use": "allowed"
+            }
+          ],
+          "source_free_prompt_allowed": false
+        },
+        {
+          "location": [
+            "项目Java移植：cases/A/A-028/A000028.java"
+          ],
+          "version": {
+            "parent_case_id": "A-028",
+            "parent_case_sha256": "d34e8d2e134d7d67b04ee8035093dcb983644f0c5c73696ec817095b882e3ac7"
+          },
+          "usage_conditions": "本项目Java移植按用户已确认的本项目用途使用；原来源及适用条件保留在同版本来源记录中。",
+          "verification": {
+            "date": "2026-11-16",
+            "evidence": "Java 21独立编译；确认已编译C++测试来源与当前归档文件一致后，对照120组有限float矩阵、配额和参数，任务组及顺序、分数浮点位模式和停止类别一致；未比较触发时间上限的运行。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "d34e8d2e134d7d67b04ee8035093dcb983644f0c5c73696ec817095b882e3ac7",
+      "parent_snapshot": "../versions/A-028/d34e8d2e134d7d67b04ee8035093dcb983644f0c5c73696ec817095b882e3ac7.json",
+      "parent_case_directory": "../../A/A-028",
+      "implementation_revision": {
+        "date": "2026-11-16",
+        "method": "将float配额贪心、成对批量交换、增益缓存及停止条件移植为Java；时间测量和状态输出采用Java表示，保留原源码。"
+      }
+    },
+    {
+      "case_sha256": "a2dd25cc32d6da37504d862c4c0f2b74890250d3c1f5afc2375593e5e3fe484c",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/f1/e4/4fb52371a0bda9e641e72fa3d160502bc0197b1ae93bbd383dce6ee15065/sbma-1.0.2.tar.gz",
+          "version": {
+            "release": "sbma 1.0.2, 2026-09-23",
+            "archive_sha256": "3bec5e75cc2659d2b2aef4f9a9aa23b5d6b7983b44a04e2dcddd2ddbfbf620f9",
+            "source_file_sha256": {
+              "pyproject.toml": "8d392a2eed635fdd451593a57764cecb3f7e1a9739ea17bd5f03454b1f3d2bfe",
+              "setup.py": "41d070a73b038c3344bfc9dac7a02b2f757575579ea192c32fa44942c0b553cc",
+              "src/sbma/__init__.py": "f5455221ec2ed0c1df8720123cbabb991c85c1fe8ab932c0fdada9a17e3b85d9",
+              "src/sbma/solver.py": "48806dd4284d9208b6787bbbe608af2bb4781733f239e79103ee029df0b9607e",
+              "src/sbma/_solver.cpp": "2d241e885ae9205902a7cecd139352f2bb97483369d45232318f43d80edd2e26",
+              "src/sbma/_starting_point.cpp": "78d0e421f537fb59a2788e6ee932d22434a779f74db53dfff46600b991251d20",
+              "src/sbma/_auxiliaries.cpp": "38c78549fcd9994a914e3051b891f7943d9bcfe7d6322e6106a8090ea6fd7f5c",
+              "src/sbma/_util.cpp": "2e0667b626fed8860b3f43f75aeee5a2e1b81415652de791c92aacd9ca36808f",
+              "src/sbma/_util.hpp": "1997165db17a7ba6ae5ff25dfc8e0c1a9ce2973b044a1d60ed4b7551b1f93234"
+            }
+          },
+          "usage_conditions": "sbma 1.0.2发布页及源码包内pyproject.toml均标注MIT；仅在满足MIT条件并保留现有署名及许可信息时可外发。源码包未提供完整LICENSE或明确版权声明，发送前须补齐适用的许可通知并核查权属；完整代码不适用于禁止来源声明的提示。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "校验官方源码包SHA-256；完整保存所需Python/C++源文件，在target中用现有MSVC、Python和NumPy编译，不安装软件；30个6任务3资源夹具检查归属数量、唯一性与返回得分。"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "PyPI项目元数据声明MIT；本次读取的源码包未发现独立LICENSE文件或完整版权声明，确切的版权声明和使用条件尚待核实。本地研究整理，未确认前不作为外发合格候选。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "sbma 1.0.2发布页及源码包内pyproject.toml均标注MIT；仅在满足MIT条件并保留现有署名及许可信息时可外发。源码包未提供完整LICENSE或明确版权声明，发送前须补齐适用的许可通知并核查权属；完整代码不适用于禁止来源声明的提示。",
+              "evidence": "https://pypi.org/project/sbma/1.0.2/；案例A-028的src/pyproject.toml。",
+              "external_model_use": "allowed"
+            }
+          ],
+          "source_free_prompt_allowed": false
+        },
+        {
+          "location": [
+            "项目Java移植：cases/A/A-028/A000028.java"
+          ],
+          "version": {
+            "parent_case_id": "A-028",
+            "parent_case_sha256": "d34e8d2e134d7d67b04ee8035093dcb983644f0c5c73696ec817095b882e3ac7"
+          },
+          "usage_conditions": "本项目Java移植按用户已确认的本项目用途使用；原来源及适用条件保留在同版本来源记录中。",
+          "verification": {
+            "date": "2026-11-16",
+            "evidence": "Java 21独立编译；确认已编译C++测试来源与当前归档文件一致后，对照120组有限float矩阵、配额和参数，任务组及顺序、分数浮点位模式和停止类别一致；未比较触发时间上限的运行。"
+          },
+          "external_model_use": "allowed"
+        },
+        {
+          "location": [
+            "cases/A/A-028/A000028.py"
+          ],
+          "version": {
+            "parent_case_id": "A-028",
+            "parent_case_sha256": "e33b1ce18fd7321c1e6d3417ad961e326dab110c50672d173f16628d9b6f2e2b",
+            "source_file_sha256": {
+              "cases/A/A-028/A000028.py": "81164cfaf733957b7bec7b2c7e3c14214fe59fad143c68c5d4eb4273e7286448"
+            }
+          },
+          "usage_conditions": "本项目 Python 移植，按用户确认用于本项目检索与代码生成；保留原来源记录。",
+          "verification": {
+            "date": "2026-11-17",
+            "evidence": "与对应 Java 案例在 120 个配额输入、初始模式、阈值和迭代限制下比较结果；未对照时间截止触发时刻，未覆盖所有输入。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "e33b1ce18fd7321c1e6d3417ad961e326dab110c50672d173f16628d9b6f2e2b",
+      "parent_snapshot": "../versions/A-028/e33b1ce18fd7321c1e6d3417ad961e326dab110c50672d173f16628d9b6f2e2b.json",
+      "implementation_revision": {
+        "date": "2026-11-17",
+        "method": "依据当前 Java 案例移植为 Python；原源码及历史元数据保留。"
       }
     }
   ]

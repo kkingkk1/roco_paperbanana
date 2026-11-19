@@ -1,0 +1,17 @@
+{
+  "case_id": "A-008",
+  "category": "maximum_window_length",
+  "description": [
+    "Initialization only: Assign tasks (descending reward) to the satellite with the most ",
+    "interior attitude records across accommodating windows. Unassigned if none."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000008.py",
+        "sha256": "d6f0be5430d50a98214c230ae5e4a2d09d284167cf2a396b2e291908ed2bc9ec"
+      }
+    ]
+  }
+}

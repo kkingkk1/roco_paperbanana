@@ -1,0 +1,39 @@
+{
+  "case_id": "A-026",
+  "category": "kbest_matching",
+  "description": [
+    "K-best bipartite matchings (Murty's algorithm): Initialize priority queue with optimal matching. ",
+    "Iteratively extract minimum-cost matching, partition solution space by fixing matched edge prefix and forbidding subsequent edges, ",
+    "and solve subproblems via shortest augmenting paths until K solutions found or queue exhausts. ",
+    "Rectangular padding can yield duplicate original matchings after trimming."
+  ],
+  "code": {
+    "format": "file_markers",
+    "files": [
+      {
+        "path": "src/LICENSE.txt",
+        "sha256": "74de38034c000100f549482994fd1a84c9e61ba2e47ad48a7624b67bb65892ae"
+      },
+      {
+        "path": "src/src/lib.rs",
+        "sha256": "98ae9dc7e503da071909e665cba8de05c0ccaddda893fb187ae22e86061d8a33"
+      },
+      {
+        "path": "src/src/types.rs",
+        "sha256": "cb31ef66dd133f5a443c7e58b65d77804ddc4c1724e9f875a63eafda756a6905"
+      },
+      {
+        "path": "src/src/utils.rs",
+        "sha256": "830463dcf59f44e9cab8f69d4a3c437e82d50df1973c027febdecc9b996d5023"
+      },
+      {
+        "path": "src/src/lap/mod.rs",
+        "sha256": "fb402debe6f4519d138c34fa8f6b4a0795a21c40277cce3074e3905faabd9248"
+      },
+      {
+        "path": "src/src/lap/murty.rs",
+        "sha256": "98d1dd2236e450771c0ea86758f8a852c2690626a51d9a6d20e92fecbb73d358"
+      }
+    ]
+  }
+}

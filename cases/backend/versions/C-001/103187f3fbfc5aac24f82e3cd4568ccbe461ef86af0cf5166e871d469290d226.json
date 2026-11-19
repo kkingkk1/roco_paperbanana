@@ -1,0 +1,17 @@
+{
+  "case_id": "C-001",
+  "category": "earliest_finish",
+  "description": [
+    "Initialization: Process B order. For each task, choose the feasible observation with earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000001.java",
+        "sha256": "45118514bb532e8ac0e34aa457114cbca61fe5ee8329b38941f04a8a45a8386b"
+      }
+    ]
+  }
+}

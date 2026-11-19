@@ -1,0 +1,21 @@
+{
+  "case_id": "BI-030",
+  "category": "rkhma_initial",
+  "sub_library": "initial",
+  "description": [
+    "Initialization only (RKHMA-inspired random-key DE/PSO):\n",
+    "- Representation: Assign a key to each task, sort by descending key and break ties by task ID. Evaluate the ID order first, then random keys; population size is the rounded 2.5 times task count, at least six and capped by the evaluation limit.\n",
+    "- Operators: Alternate DE/rand/1/bin with scale 0.5 and crossover rate 0.9, and PSO with inertia 0.7 and coefficients 1.4. With fewer than four particles use PSO. Clamp keys to [0, 1].\n",
+    "- Selection: Evaluate each order through C, accept a particle when profit does not decrease, and retain strictly better personal and global trials. Return the best issued trial; stop at the evaluation limit, or after one trial for fewer than two tasks.\n",
+    "- Boundary: This independent project adaptation does not reproduce the source coordinator, its exact operator schedule, or its multi-run ensemble."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000040.java",
+        "sha256": "08cb6eba7281fde216d41a708091e24a9f7008b379f85d8fd381ac0c2eafeca0"
+      }
+    ]
+  }
+}

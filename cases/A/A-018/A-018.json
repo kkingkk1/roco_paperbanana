@@ -7,18 +7,15 @@
     "second-best profit gap), updating remaining capacities.\n",
     "- Refinement: If upper bound is unmet, evaluate alternative scoring functions (resource ",
     "consumption, profit ratio, remaining capacity); retain superior feasible solution.\n",
-    "- Bounds: Supports up to 50 resources and 500 tasks."
+    "- Bounds: Supports up to 50 resources and 500 tasks.",
+    " Python accepts positive integer inputs within safe 32-bit arithmetic, preserves its inputs, uses zero-based resource indices, and returns value 0 when no feasible solution was found."
   ],
   "code": {
-    "format": "file_markers",
+    "format": "single_file",
     "files": [
       {
-        "path": "src/LICENSE.txt",
-        "sha256": "eb6dc08eb2962eb5a82a0ea6d92016c041ecb1ac6004ecd8b7ab4b8bf88b1bda"
-      },
-      {
-        "path": "src/mthg.f",
-        "sha256": "58bf71c3eb8951f21059d63d5ac837b30b24daa599215ec942de29ac3c000f73"
+        "path": "A000018.py",
+        "sha256": "18d705f74cc84919cb6014f72e6ef3e3471b953f77825f789f09eccdd21d93e5"
       }
     ]
   }

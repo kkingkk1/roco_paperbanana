@@ -1,0 +1,18 @@
+{
+  "case_id": "A-013",
+  "category": "regret_assignment",
+  "description": [
+    "Initialization only: Regret-based assignment. Score pairs by feasible candidate count / (1 + assigned duration). ",
+    "Iteratively assign task with largest regret (best minus second-best score; single satellite = infinite regret); ",
+    "tie-break by higher reward, then smaller task ID. Update load and recompute after each assignment; unassigned if no candidates."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000013.java",
+        "sha256": "cf134c203546c0d7b641cf6093f8dafce0a9b2b3cae0fb459e1a2c384f64820f"
+      }
+    ]
+  }
+}

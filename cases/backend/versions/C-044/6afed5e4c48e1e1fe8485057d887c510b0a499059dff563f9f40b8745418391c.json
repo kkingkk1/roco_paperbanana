@@ -1,0 +1,17 @@
+{
+  "case_id": "C-044",
+  "category": "future_fractional_retention",
+  "description": [
+    "Initialization: Process B order. Maximize the sum of remaining feasible-observation fractions across later tasks; omit tasks with no option before the insertion. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000044.java",
+        "sha256": "7634a7030d298bad657f0e45f7c06c9d5acadcf9ae07b5cef0fe6d8f2e96a5ae"
+      }
+    ]
+  }
+}

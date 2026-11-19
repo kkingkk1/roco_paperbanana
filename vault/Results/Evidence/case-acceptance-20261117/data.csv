@@ -1,0 +1,17 @@
+scenario,case_id,status,observations
+zero_reward,C-060,SUCCESS,0:10:11|2:40:41
+zero_reward,C-077,SUCCESS,2:40:41
+changes,C-075,APPLIED,2:10:11|1:30:31|0:50:51
+changes,C-080,APPLIED,2:10:11|1:40:41|0:80:81
+preceding_gap,C-001,APPLIED,0:20:21|2:35:36|1:80:81
+preceding_gap,C-023,APPLIED,0:20:21|1:80:81|2:93:94
+added_slew,C-002,APPLIED,0:20:21|2:60:61|1:100:101
+added_slew,C-022,APPLIED,0:20:21|1:100:101|2:120:121
+span_or_gap,C-008,APPLIED,0:20:21|1:100:101|3:125:126|2:150:151
+span_or_gap,C-020,APPLIED,0:20:21|3:50:51|1:100:101|2:150:151
+window_center,C-010,SUCCESS,0:23:24
+window_center,C-027,SUCCESS,0:40:41
+stable_window,C-001,APPLIED,0:10:11
+stable_window,C-071,NO_FEASIBLE_CHANGE,
+descent,C-065,SUCCESS,2:36:39|1:58:59
+descent,C-079,SUCCESS,2:37:40|1:59:60

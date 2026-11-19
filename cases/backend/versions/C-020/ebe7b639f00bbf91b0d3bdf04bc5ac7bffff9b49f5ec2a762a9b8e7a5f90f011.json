@@ -1,0 +1,17 @@
+{
+  "case_id": "C-020",
+  "category": "minimum_schedule_span",
+  "description": [
+    "Initialization: Process B order. Minimize the span enclosing the existing timeline and the candidate observation. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000020.java",
+        "sha256": "68875d480da4131fc0c47a4274c54a309e0a2015eb1c26c14ac372dd7d56b9d5"
+      }
+    ]
+  }
+}

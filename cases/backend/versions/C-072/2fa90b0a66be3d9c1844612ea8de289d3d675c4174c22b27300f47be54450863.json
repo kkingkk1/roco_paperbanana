@@ -1,0 +1,17 @@
+{
+  "case_id": "C-072",
+  "category": "tabu_slew_retiming",
+  "description": [
+    "Initialization: Construct by earliest completion, then perform at most 16 times the number of inserted tasks in total re-timing steps. At each step select the best feasible neighbor across inserted tasks by total adjacent transformation time; temporarily forbid returning to the removed window/start unless it improves the best result. Return the best visited timeline.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks. Re-timing can change only observations inserted during this call; other observations stay fixed. Return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000072.java",
+        "sha256": "b99a3e4cf660cb669eb69398d1e751505122c98d0f2395ace5453a509f2a9f74"
+      }
+    ]
+  }
+}

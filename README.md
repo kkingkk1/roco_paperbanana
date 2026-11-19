@@ -4,9 +4,9 @@
 在统一求解条件下，评价其相对手工起点的收益与实际成本。
 智能体在研发阶段检索方法、规划设计、生成代码、分析执行结果并协作改进，最终运行生成并冻结的求解器。
 
-当前已实现问题输入、候选迭代、完整调度验证、两阶段手工运行时、可互换的RKHMA A/B/C模块，以及案例读取与完整性校验。
+项目以Python为主。问题层、两阶段运行时、27种预置组合和案例读取已通过P1工程验收。生成代码的接入与隔离属于P2。
 A/B/C案例库已初步建成，实际条数与使用边界见[案例目录](cases/README.md)。
-P1工程验收已完成；P2的五角色协作演化系统尚未实现。
+原Java版本已完成P1工程验收，作为迁移对照保留。Python已有小范围真实案例检索入口；P2的五角色协作演化系统尚未实现。
 
 ## 研究路线
 
@@ -15,16 +15,22 @@ P1工程验收已完成；P2的五角色协作演化系统尚未实现。
 Retriever每次独立演化只初始化检索一次；A/B/C分别保留反思与长期记忆，协同经验另存。
 
 冻结代码求解实例时，统一目标流程为A初始归属、B/C单星搜索，再基于已有调度由A重分配并由B/C更新。每个A/B/C版本都支持两个阶段，实例内不调用LLM。
-后台采用候选记录、评价记录和运行级公共信息；公共信息每次运行只存一份。正式案例按决策逻辑去重，元数据和完整算法源码存于`cases/`；入库时不要求已适配本项目接口或预先证明收益更高，案例`source`仅留后台。
+后台采用候选记录、评价记录和运行级公共信息；公共信息每次运行只存一份。正式案例应按决策逻辑去重，元数据和完整算法源码存于`cases/`；现有149条案例版本已按决策逻辑复核。入库时不要求已适配本项目接口或预先证明收益更高，案例`source`仅留后台。
 
 阶段状态与路线见[主计划P0—P4](vault/Plan/面向成像卫星任务调度的多智能体协作自动算法设计.md)，接口、先导配置及评价规则见[方法与评价合同](vault/Knowledge/多智能体算法与评价合同.md)。
-已完成的起点验收见[P1：可运行求解器起点](vault/Plan/mechanisms/P1-可运行求解器起点.md)；后续协作演化工作见[P2阶段计划](vault/Plan/mechanisms/P2-五角色协作演化.md)。
+历史起点验收和Python迁移任务见[P1：可运行求解器起点](vault/Plan/mechanisms/P1-可运行求解器起点.md)；后续协作演化工作见[P2阶段计划](vault/Plan/mechanisms/P2-五角色协作演化.md)。
 [方法参照](vault/Knowledge/算法设计方法参照.md)与[演化示例](vault/Writing/演化机制示例与汇报提纲.md)供理解机制，不替代已确认合同。
 
 ## 环境与验证
 
-使用 Java 21、Maven。生产代码仅依赖 Java 标准库。
-测试沿用来源项目的 JUnit 5.10.0。
+Python实现目前只使用标准库，本机已用Python 3.13验证。先在项目根目录运行：
+
+```powershell
+$env:PYTHONPATH = 'src/main/python'
+python -B -m unittest discover -s src/test/python
+```
+
+保留的Java对照使用Java 21和Maven，测试沿用JUnit 5.10.0：
 
 ```powershell
 mvn -o test
@@ -43,7 +49,8 @@ mvn -o test
 构造 `ProblemInstance` 时，内部间隔不等会被判为输入错误。
 
 ```powershell
-java -Xmx2g -cp target/classes main.InspectScene `
+$env:PYTHONPATH = 'src/main/python'
+python -B -m satellite_scheduler `
   'F:\OneDrive\project\static_determine\Scene\1000-10-0-0-12' `
   1000 10
 ```
@@ -55,36 +62,47 @@ java -Xmx2g -cp target/classes main.InspectScene `
 先执行离线测试，再使用 Windows PowerShell 7 入口运行单个组合：
 
 ```powershell
-.\scripts\run-manual.ps1 `
+.\scripts\run-python-manual.ps1 `
   -Scene 'F:\OneDrive\project\static_determine\Scene\500-5-0-0-24' `
   -Tasks 500 -Satellites 5 -Combination A1B1C1 -Seed 42
 ```
 
-原有 `A1/A2`、`B1/B2`、`C1/C2` 保持可用，形成8个纯手工组合。
-新增 `A3`、`B3`、`C3`，分别提供RKHMA的分配与重分配、单星混合搜索与局部修补、贪心解码。
-`A3B3C3`按来源固定配置 `410000` 组装，已在记录的兼容输入上完成来源对照；各模块实现共同的 `SolverContracts.A/B/C` 接口，可以替换，例如 `A3B1C3`。
-三类模块各有三种选择，共27种组合；其中19种包含至少一个RKHMA模块。
-纯手工组合沿用原运行时；包含RKHMA模块的组合使用 `RkhmaRuntime`，其来源校准可能重新调整未受影响星。
-通用A和B都可受控地比较多个候选。B使用`searchInitial`和`searchInitialLocal`完成初始单星搜索，使用独立的`searchReassignment`处理重分配。来源需要全星校准时，B另通过`searchCalibration`处理重分配后的整星搜索。具体职责与校验见[方法合同](vault/Knowledge/多智能体算法与评价合同.md#11-两阶段接口与职责)。
-A3对所有任务规模使用来源不超过500任务时的复合初始分配规则，即`initializeWithStrategy(..., 7)`。初始分配后不再执行A的跨星局部修补；B的初始单星搜索保留。
-手工B保留初始化的独立局部改进；B3执行来源的初始混合搜索，不额外追加来源中没有的独立初始化局部步骤。
-所有规模沿用来源不超过500任务时的搜索与校准方式。B3默认对有任务且无继承状态的卫星执行两次初始种群搜索；不再启用来源针对4000及以上任务的搜索缩减与延迟校准。
+Python入口接受 `A1/A2/A3`、`B1/B2/B3`、`C1/C2/C3` 的27种组合。其中8种为纯手工组合，19种含至少一个RKHMA模块。将 `-Combination` 改为 `A3B3C3` 运行完整RKHMA，改为 `A3B1C3` 可替换单星搜索。
+
+- A3在所有规模上按来源策略7执行初始分配，初始化不试探跨星迁移。重分配阶段按实际收益试评跨星操作，接受迁移后可重新校准全部卫星。
+- B3沿用固定配置 `410000` 的单星混合搜索，无继承状态的非空卫星首次完整搜索使用两份种群。重分配阶段另做单星修补和校准，无额外初始化局部步骤，也不启用来源仅用于4000及以上任务的搜索缩减与延迟校准。
+- C3执行RKHMA贪心解码。A和B可在统一运行时中受控试评多个候选；各阶段职责与校验见[方法合同](vault/Knowledge/多智能体算法与评价合同.md#11-两阶段接口与职责)。
+
+入口使用单核、2 GiB进程组内存上限。公共数据读取完成后，搜索截止为4.5秒，包含结果输出和进程外验证的硬截止为5秒。独立验证进程在截止内重建并检查求解进程的输出。
 输出首行给出状态、收益、观测数与计时；后续每行给出任务、卫星、原始窗口序号和精确时刻。
 `SEARCH_EXPIRED` 表示搜索截止后返回此前可行调度；`HARD_TIMEOUT` 或 `FAILURE` 表示失败，没有有效收益。
 RKHMA在搜索截止时可能只返回来源首个基准种群个体的调度，不能把该结果称为完整搜索的终点。
 
-该入口为独立进程组设置单核亲和性和 2 GiB Windows Job 总提交内存上限。
-公共数据读取完成后，实例搜索截止为 4.5 秒，包含结果输出的硬上限为 5 秒；进程超时会被终止。
-直接调用 Java 的 `TwoStageSolver`、`RkhmaRuntime` 或 `ForkedSolver` 不会自动设置操作系统级 CPU 和内存限制，正式按该合同运行应使用上述脚本。
+使用 `scripts/run-manual.ps1` 运行保留的Java对照。直接调用Python或Java运行时不会自动设置操作系统级CPU和内存限制；正式运行使用对应脚本。
+Python的27种组合已在小实例上与Java对照，两个真实场景的RKHMA限时对照见[迁移证据](vault/Results/Evidence/python-migration/evidence.md)。后者均在搜索截止时返回，不能替代完整搜索对照。
 RKHMA来源、非1秒记录适配与已验证范围见[来源记录](vault/Knowledge/Source-Provenance.md)和[验收报告](vault/Results/Reports/p1-rkhma-reassembly.md)。
 原版与重组版的初始优化、完整执行及截止行为对照见[分阶段报告](vault/Results/Reports/p1-rkhma-phase-comparison.md)。
 A3初始化调整、B/C试评和改前回归见[试评接口报告](vault/Results/Reports/p1-abc-trial-interface.md)。
 统一接口、原版对照与耗时边界见[RKHMA统一报告](vault/Results/Reports/p1-rkhma-unified.md)。
 8个手工组合在三个可枚举实例上的验收见[手工实例报告](vault/Results/Reports/p1-small-enumeration.md)。
 
+## 真实案例检索
+
+Python检索入口接收已按决策逻辑复核的案例ID，核对当前版本和后台来源后，使用现有Codex CLI发起一次真实请求，并将请求、回复、用量及固定案例包保存在 `outputs/<run-id>/`。候选提示只包含编号、类别、阶段和描述，不默认发送全部源码。已冻结运行可通过相同 `run-id` 恢复，不会重新检索：
+
+```powershell
+$env:PYTHONPATH = 'src/main/python'
+python -B -m satellite_scheduler.retriever python-retriever-20261117-134111
+```
+
+这次[真实检索证据](vault/Results/Evidence/p2-retriever-python/evidence.md)只使用12条人工复核案例，是小范围联调；后来现有149条版本完成决策逻辑复核，见[复核报告](vault/Results/Reports/case-semantic-review-20261117.md)。不可变模型快照和五角色接入仍未完成。新运行使用新的 `run-id`，通过 `--reviewed-case` 逐条指定候选，并用 `--selection-basis` 记录筛选依据；A、C和B的两个阶段均须有候选。入口检查候选是否列在[语义复核记录](cases/backend/semantic-review.json)中，且版本未发生变化；其他案例须完成实际决策逻辑复核后才能加入。哈希只绑定版本，不证明算法不同。传输失败后的自动重试策略尚未确定。
+
 ## 评价候选解
 
-调用方从当前 `ProblemInstance` 中选取任务、窗口和起止姿态记录，构造
+Python调用方从当前 `ProblemInstance` 中选取任务、窗口和起止姿态记录，构造 `ScheduledTask`，然后调用 `satellite_scheduler.problem.evaluate(instance, observations)`。
+合法时读取 `result.total_profit`；非法时读取 `result.violations`。直接调用时验证发生在调用方进程内；手工运行脚本另用独立进程终验。
+
+Java对照的调用方从当前 `ProblemInstance` 中选取任务、窗口和起止姿态记录，构造
 `ScheduledTask` 和 `SchedulingPlan`，再调用
 `ScheduleValidator.evaluate(instance, plan)`。
 

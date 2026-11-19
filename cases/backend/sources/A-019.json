@@ -388,18 +388,301 @@
               "yuse"
             ]
           },
-          "usage_conditions": "源码包自带Jesse Myrberg的MIT声明，要求保留版权及许可；Fortran程序注明参考Martello和Toth的1990年著作，原Fortran代码权利及其与包级MIT声明的关系尚未核实。保留包内许可全文和原程序署名；不得作为无来源声明的外发提示。",
+          "usage_conditions": "mknapsack 1.1.12发布包附MIT声明；案例中的Fortran原作者声明仅允许免费用于研究和学术用途，使用代码所得结果的出版物须引用作者或著作，商业及公司应用须取得作者许可，且不得用于错误结果可能损害人员、机构或财产的问题。仅在满足上述条件并保留原作者及许可证声明时可外发；外部模型服务的用途和处理条件未确认符合时不得发送。完整代码不适用于禁止来源声明的提示。",
           "verification": {
             "date": "2026-11-07",
             "evidence": "核对源码包SHA-256、静态调用闭包和原始声明；提取全部调用过程后使用本机gfortran编译，并在独立3任务2资源夹具中核对目标值和容量。"
           },
-          "external_model_use": "unknown"
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "源码包自带Jesse Myrberg的MIT声明，要求保留版权及许可；Fortran程序注明参考Martello和Toth的1990年著作，原Fortran代码权利及其与包级MIT声明的关系尚未核实。保留包内许可全文和原程序署名；不得作为无来源声明的外发提示。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "mknapsack 1.1.12发布包附MIT声明；案例中的Fortran原作者声明仅允许免费用于研究和学术用途，使用代码所得结果的出版物须引用作者或著作，商业及公司应用须取得作者许可，且不得用于错误结果可能损害人员、机构或财产的问题。仅在满足上述条件并保留原作者及许可证声明时可外发；外部模型服务的用途和处理条件未确认符合时不得发送。完整代码不适用于禁止来源声明的提示。",
+              "evidence": "https://silvano333.github.io/kp/CopyrightNotice.txt；https://pypi.org/project/mknapsack/1.1.12/；案例源码保留的作者与MIT声明。",
+              "external_model_use": "allowed"
+            }
+          ],
+          "source_free_prompt_allowed": false
         }
       ],
       "merged_case_ids": [],
       "parent_case_sha256": "3249b71d9af83f3c1193a90a9cdf87b998f102f31daa84097041a4b7aac2e8ec",
       "parent_snapshot": "../versions/A-019/3249b71d9af83f3c1193a90a9cdf87b998f102f31daa84097041a4b7aac2e8ec.json",
       "storage_migration": "inline_lines_to_source_files"
+    },
+    {
+      "case_sha256": "fcebfc04052459cf466a46e0fccb664716a15eb7d77eeaa5e54688474e57c1ff",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/d4/bb/f8a43ec75014fec16b6ba843eb2b7c21c31fad3b93cb835c7278d2201148/mknapsack-1.1.12.tar.gz",
+          "version": {
+            "release": "mknapsack 1.1.12, 2023-04-07",
+            "archive_sha256": "176d161bf30db094ede1f829981b4c7578a3677e908702c3cad65146575db83b",
+            "source_file": "mknapsack-1.1.12/mknapsack/_algos.f",
+            "source_file_sha256": "7fe74411d87a5cecefead93c4cc04380e6b6f932af6f8040ff5cdd4a808aab3a",
+            "selected_procedures": [
+              "chmtg",
+              "defpck",
+              "dmind",
+              "feas",
+              "gha",
+              "ghbcd",
+              "ghx",
+              "gr1",
+              "gr2",
+              "heur",
+              "kpmax",
+              "kpmin",
+              "mtg",
+              "pen0",
+              "pen1",
+              "prepen",
+              "skp1",
+              "sorti",
+              "sortr",
+              "termin",
+              "trin",
+              "ubfjv",
+              "ubrs",
+              "ydef",
+              "yuse"
+            ]
+          },
+          "usage_conditions": "mknapsack 1.1.12发布包附MIT声明；案例中的Fortran原作者声明仅允许免费用于研究和学术用途，使用代码所得结果的出版物须引用作者或著作，商业及公司应用须取得作者许可，且不得用于错误结果可能损害人员、机构或财产的问题。仅在满足上述条件并保留原作者及许可证声明时可外发；外部模型服务的用途和处理条件未确认符合时不得发送。完整代码不适用于禁止来源声明的提示。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核对源码包SHA-256、静态调用闭包和原始声明；提取全部调用过程后使用本机gfortran编译，并在独立3任务2资源夹具中核对目标值和容量。"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "源码包自带Jesse Myrberg的MIT声明，要求保留版权及许可；Fortran程序注明参考Martello和Toth的1990年著作，原Fortran代码权利及其与包级MIT声明的关系尚未核实。保留包内许可全文和原程序署名；不得作为无来源声明的外发提示。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "mknapsack 1.1.12发布包附MIT声明；案例中的Fortran原作者声明仅允许免费用于研究和学术用途，使用代码所得结果的出版物须引用作者或著作，商业及公司应用须取得作者许可，且不得用于错误结果可能损害人员、机构或财产的问题。仅在满足上述条件并保留原作者及许可证声明时可外发；外部模型服务的用途和处理条件未确认符合时不得发送。完整代码不适用于禁止来源声明的提示。",
+              "evidence": "https://silvano333.github.io/kp/CopyrightNotice.txt；https://pypi.org/project/mknapsack/1.1.12/；案例源码保留的作者与MIT声明。",
+              "external_model_use": "allowed"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户确认删除当前案例清单中的独立许可证文件。新版本只移除该文件的清单项，算法源码与已有使用条件保持不变；父版本仍引用原文件。",
+              "external_model_use": "allowed"
+            }
+          ],
+          "source_free_prompt_allowed": false
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "cded143393c4c45bae78039d3832e53e9279212f61b2329c23f7a5e1fd60b453",
+      "parent_snapshot": "../versions/A-019/cded143393c4c45bae78039d3832e53e9279212f61b2329c23f7a5e1fd60b453.json",
+      "storage_migration": "按用户确认从当前案例源码清单移除独立许可证文件；算法源码未改变。父版本清单保留原始文件引用。"
+    },
+    {
+      "case_sha256": "346b9f04ee4a7d894bfbc4e966170b5b9856115fa69b9c91d10ffec9c2defb38",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/d4/bb/f8a43ec75014fec16b6ba843eb2b7c21c31fad3b93cb835c7278d2201148/mknapsack-1.1.12.tar.gz",
+          "version": {
+            "release": "mknapsack 1.1.12, 2023-04-07",
+            "archive_sha256": "176d161bf30db094ede1f829981b4c7578a3677e908702c3cad65146575db83b",
+            "source_file": "mknapsack-1.1.12/mknapsack/_algos.f",
+            "source_file_sha256": "7fe74411d87a5cecefead93c4cc04380e6b6f932af6f8040ff5cdd4a808aab3a",
+            "selected_procedures": [
+              "chmtg",
+              "defpck",
+              "dmind",
+              "feas",
+              "gha",
+              "ghbcd",
+              "ghx",
+              "gr1",
+              "gr2",
+              "heur",
+              "kpmax",
+              "kpmin",
+              "mtg",
+              "pen0",
+              "pen1",
+              "prepen",
+              "skp1",
+              "sorti",
+              "sortr",
+              "termin",
+              "trin",
+              "ubfjv",
+              "ubrs",
+              "ydef",
+              "yuse"
+            ]
+          },
+          "usage_conditions": "mknapsack 1.1.12发布包附MIT声明；案例中的Fortran原作者声明仅允许免费用于研究和学术用途，使用代码所得结果的出版物须引用作者或著作，商业及公司应用须取得作者许可，且不得用于错误结果可能损害人员、机构或财产的问题。仅在满足上述条件并保留原作者及许可证声明时可外发；外部模型服务的用途和处理条件未确认符合时不得发送。完整代码不适用于禁止来源声明的提示。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核对源码包SHA-256、静态调用闭包和原始声明；提取全部调用过程后使用本机gfortran编译，并在独立3任务2资源夹具中核对目标值和容量。"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "源码包自带Jesse Myrberg的MIT声明，要求保留版权及许可；Fortran程序注明参考Martello和Toth的1990年著作，原Fortran代码权利及其与包级MIT声明的关系尚未核实。保留包内许可全文和原程序署名；不得作为无来源声明的外发提示。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "mknapsack 1.1.12发布包附MIT声明；案例中的Fortran原作者声明仅允许免费用于研究和学术用途，使用代码所得结果的出版物须引用作者或著作，商业及公司应用须取得作者许可，且不得用于错误结果可能损害人员、机构或财产的问题。仅在满足上述条件并保留原作者及许可证声明时可外发；外部模型服务的用途和处理条件未确认符合时不得发送。完整代码不适用于禁止来源声明的提示。",
+              "evidence": "https://silvano333.github.io/kp/CopyrightNotice.txt；https://pypi.org/project/mknapsack/1.1.12/；案例源码保留的作者与MIT声明。",
+              "external_model_use": "allowed"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户确认删除当前案例清单中的独立许可证文件。新版本只移除该文件的清单项，算法源码与已有使用条件保持不变；父版本仍引用原文件。",
+              "external_model_use": "allowed"
+            }
+          ],
+          "source_free_prompt_allowed": false
+        },
+        {
+          "location": [
+            "项目Java适配：cases/A/A-019/A000019.java"
+          ],
+          "version": {
+            "parent_case_id": "A-019",
+            "parent_case_sha256": "fcebfc04052459cf466a46e0fccb664716a15eb7d77eeaa5e54688474e57c1ff"
+          },
+          "usage_conditions": "本项目Java适配按用户已确认的本项目用途使用；原来源作者声明及适用条件保留在同版本来源记录中。",
+          "verification": {
+            "date": "2026-11-16",
+            "evidence": "Java 21独立编译；160个正整数实例的不限节点解与Fortran精确模式及穷举目标值一致；另对120个受限资源实例，以穷举验证精确解、有限节点结果的可行性和上下界方向。80个大整数实例各按三种节点限制与穷举对照，检查精确解、完成标志和界。平分归属和有限预算路径不要求一致。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "fcebfc04052459cf466a46e0fccb664716a15eb7d77eeaa5e54688474e57c1ff",
+      "parent_snapshot": "../versions/A-019/fcebfc04052459cf466a46e0fccb664716a15eb7d77eeaa5e54688474e57c1ff.json",
+      "parent_case_directory": "../../A/A-019",
+      "implementation_revision": {
+        "date": "2026-11-16",
+        "method": "依据MTG广义指派分支定界思想实现Java版本，使用分数背包和逐任务上界、按可行资源数分支；并非逐过程翻译。节点限制替代原回溯次数，有限预算的搜索顺序和返回界可不同。保留作者著作声明、原源码及来源条件。"
+      }
+    },
+    {
+      "case_sha256": "8648a7b29b525058e5e90270a52142be44ba2b4c5be9adcdc3179c78b2331a72",
+      "source": [
+        {
+          "location": "https://files.pythonhosted.org/packages/d4/bb/f8a43ec75014fec16b6ba843eb2b7c21c31fad3b93cb835c7278d2201148/mknapsack-1.1.12.tar.gz",
+          "version": {
+            "release": "mknapsack 1.1.12, 2023-04-07",
+            "archive_sha256": "176d161bf30db094ede1f829981b4c7578a3677e908702c3cad65146575db83b",
+            "source_file": "mknapsack-1.1.12/mknapsack/_algos.f",
+            "source_file_sha256": "7fe74411d87a5cecefead93c4cc04380e6b6f932af6f8040ff5cdd4a808aab3a",
+            "selected_procedures": [
+              "chmtg",
+              "defpck",
+              "dmind",
+              "feas",
+              "gha",
+              "ghbcd",
+              "ghx",
+              "gr1",
+              "gr2",
+              "heur",
+              "kpmax",
+              "kpmin",
+              "mtg",
+              "pen0",
+              "pen1",
+              "prepen",
+              "skp1",
+              "sorti",
+              "sortr",
+              "termin",
+              "trin",
+              "ubfjv",
+              "ubrs",
+              "ydef",
+              "yuse"
+            ]
+          },
+          "usage_conditions": "mknapsack 1.1.12发布包附MIT声明；案例中的Fortran原作者声明仅允许免费用于研究和学术用途，使用代码所得结果的出版物须引用作者或著作，商业及公司应用须取得作者许可，且不得用于错误结果可能损害人员、机构或财产的问题。仅在满足上述条件并保留原作者及许可证声明时可外发；外部模型服务的用途和处理条件未确认符合时不得发送。完整代码不适用于禁止来源声明的提示。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "核对源码包SHA-256、静态调用闭包和原始声明；提取全部调用过程后使用本机gfortran编译，并在独立3任务2资源夹具中核对目标值和容量。"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "源码包自带Jesse Myrberg的MIT声明，要求保留版权及许可；Fortran程序注明参考Martello和Toth的1990年著作，原Fortran代码权利及其与包级MIT声明的关系尚未核实。保留包内许可全文和原程序署名；不得作为无来源声明的外发提示。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "mknapsack 1.1.12发布包附MIT声明；案例中的Fortran原作者声明仅允许免费用于研究和学术用途，使用代码所得结果的出版物须引用作者或著作，商业及公司应用须取得作者许可，且不得用于错误结果可能损害人员、机构或财产的问题。仅在满足上述条件并保留原作者及许可证声明时可外发；外部模型服务的用途和处理条件未确认符合时不得发送。完整代码不适用于禁止来源声明的提示。",
+              "evidence": "https://silvano333.github.io/kp/CopyrightNotice.txt；https://pypi.org/project/mknapsack/1.1.12/；案例源码保留的作者与MIT声明。",
+              "external_model_use": "allowed"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户确认删除当前案例清单中的独立许可证文件。新版本只移除该文件的清单项，算法源码与已有使用条件保持不变；父版本仍引用原文件。",
+              "external_model_use": "allowed"
+            }
+          ],
+          "source_free_prompt_allowed": false
+        },
+        {
+          "location": [
+            "项目Java适配：cases/A/A-019/A000019.java"
+          ],
+          "version": {
+            "parent_case_id": "A-019",
+            "parent_case_sha256": "fcebfc04052459cf466a46e0fccb664716a15eb7d77eeaa5e54688474e57c1ff"
+          },
+          "usage_conditions": "本项目Java适配按用户已确认的本项目用途使用；原来源作者声明及适用条件保留在同版本来源记录中。",
+          "verification": {
+            "date": "2026-11-16",
+            "evidence": "Java 21独立编译；160个正整数实例的不限节点解与Fortran精确模式及穷举目标值一致；另对120个受限资源实例，以穷举验证精确解、有限节点结果的可行性和上下界方向。80个大整数实例各按三种节点限制与穷举对照，检查精确解、完成标志和界。平分归属和有限预算路径不要求一致。"
+          },
+          "external_model_use": "allowed"
+        },
+        {
+          "location": [
+            "cases/A/A-019/A000019.py"
+          ],
+          "version": {
+            "parent_case_id": "A-019",
+            "parent_case_sha256": "346b9f04ee4a7d894bfbc4e966170b5b9856115fa69b9c91d10ffec9c2defb38",
+            "source_file_sha256": {
+              "cases/A/A-019/A000019.py": "0e112ae228153043c464eda36269430c97faa6e94988b4566a4b8e0d59dd724e"
+            }
+          },
+          "usage_conditions": "本项目 Python 移植，按用户确认用于本项目检索与代码生成；保留原来源记录。",
+          "verification": {
+            "date": "2026-11-17",
+            "evidence": "与对应 Java 案例在 80 个广义指派输入、两种优化方向及五种节点限制下比较解、界、完成标记和访问节点；未覆盖所有输入。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "346b9f04ee4a7d894bfbc4e966170b5b9856115fa69b9c91d10ffec9c2defb38",
+      "parent_snapshot": "../versions/A-019/346b9f04ee4a7d894bfbc4e966170b5b9856115fa69b9c91d10ffec9c2defb38.json",
+      "implementation_revision": {
+        "date": "2026-11-17",
+        "method": "依据当前 Java 案例移植为 Python；原源码及历史元数据保留。"
+      }
     }
   ]
 }

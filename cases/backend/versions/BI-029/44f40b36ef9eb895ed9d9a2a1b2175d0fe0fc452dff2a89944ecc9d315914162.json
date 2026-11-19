@@ -1,0 +1,20 @@
+{
+  "case_id": "BI-029",
+  "category": "scarcity_initial",
+  "sub_library": "initial",
+  "description": [
+    "Initialization only (Scarcity-Adjusted Search):\n",
+    "- Initial Order: Sort assigned tasks by (reward / imaging duration) / (1 + ln(1 + legal candidate count)) descending, then smaller task ID.\n",
+    "- Local Improvement: Prioritize missing tasks by candidate scarcity, then reward and ID; enumerate insertion, lower-reward replacement, pairwise reversal, and reinsertion.\n",
+    "- Selection: Return edit selected by feedback attempt; evaluated through runtime."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000039.java",
+        "sha256": "07b124c3e22af00d984d717a177fc65987c0070263775b55d369552b3aae405b"
+      }
+    ]
+  }
+}

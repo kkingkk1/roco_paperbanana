@@ -11,8 +11,8 @@
     "format": "single_file",
     "files": [
       {
-        "path": "B000005.java",
-        "sha256": "9b22d238e799fdffba20274c39656edd31ffa01988ff95e33aac0f36f55b67cf"
+        "path": "B000005.py",
+        "sha256": "b91b36254a1267f3f43c1c007af9644aaae6305958b81fd839f5d37d77721d87"
       }
     ]
   }

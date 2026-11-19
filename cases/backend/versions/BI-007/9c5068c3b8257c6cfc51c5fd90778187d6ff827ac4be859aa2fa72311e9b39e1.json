@@ -1,0 +1,21 @@
+{
+  "case_id": "BI-007",
+  "category": "variable_neighborhood_descent",
+  "sub_library": "initial",
+  "description": [
+    "Initialization only: Variable Neighborhood Descent (VND).\n",
+    "- Initial Order: Ascending task IDs.\n",
+    "- Neighborhoods: Search swap, insertion, and contiguous reversal neighborhoods sequentially.\n",
+    "- Acceptance: Accept first strictly higher-profit trial; restart from swap neighborhood.\n",
+    "- Termination: Stop when all three neighborhoods fail consecutively or evaluation limit is reached."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000010.java",
+        "sha256": "4d4b30d51220764ab98f3ae27c9a626b3c8e25732da522276ce6c74e7db6e7fe"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "case_id": "A-029",
+  "category": "asymmetric_greedy_local_search",
+  "description": [
+    "Asymmetric matching with local search:\n",
+    "- Initialization: Normalize the input matrix; invert it for cost minimization, then ",
+    "greedily assign each row to its highest-benefit unoccupied column.\n",
+    "- Local Search: Evaluate row swaps versus replacements with unused columns; apply move ",
+    "type with superior positive gain (batch non-overlapping row swaps).\n",
+    "- Termination: Stop when no move yields positive gain, or upon hitting ",
+    "iteration/stagnation limits.",
+    " Java adapts the NumPy backend for finite double matrices, requires a finite range and a positive batch size, and uses its own random generator or an explicit row order."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000029.java",
+        "sha256": "ab1b9ed161bf21a657f5c84a9fb83a4ce0a652773cd597f98c0a6df9ce7f37a7"
+      }
+    ]
+  }
+}

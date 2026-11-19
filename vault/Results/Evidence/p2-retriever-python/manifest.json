@@ -1,0 +1,23 @@
+{
+  "id": "p2-retriever-python",
+  "experiment_id": "p2-retriever-python",
+  "plan_id": "satellite-multi-agent-algorithm-design-p2-1",
+  "date": "2026-11-17",
+  "status": "partial_integration",
+  "run_id": "python-retriever-20261117-134111",
+  "model": "gpt-6.1-terra",
+  "immutable_model_snapshot": null,
+  "codex_cli_version": "0.167.0",
+  "model_reasoning_effort": "low",
+  "candidate_counts": {"A": 4, "B": 4, "C": 4},
+  "required_counts": {"A": 1, "B": 2, "C": 1},
+  "input_tokens": 34155,
+  "output_tokens": 245,
+  "reasoning_output_tokens": 0,
+  "model_turns": 1,
+  "request_sha256": "e43c0e761adff9c9e221442af7a6e411342abbd5692b804e25c8d831ff7b076b",
+  "response_sha256": "8253e36c4c9b42619be9c3750e5e43c48d34aea93f39da152c53e7197b1dac41",
+  "package_sha256": "8c4b763ff996af891a3c549c658fe5248f5263661375b78a1b77271b910ea24a",
+  "package_sha256_definition": "SHA-256 of exact UTF-8 bytes of case-package.json; run.json is excluded",
+  "run_directory": "../../../../outputs/python-retriever-20261117-134111"
+}

@@ -1,0 +1,17 @@
+{
+  "case_id": "C-010",
+  "category": "window_midpoint",
+  "description": [
+    "Initialization: Process B order. Choose the observation whose midpoint is closest to its raw window midpoint. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000010.java",
+        "sha256": "5d05a69ae524aa74097ca926fc61520814ddbc9c6e10f9d1380aae36d48b4056"
+      }
+    ]
+  }
+}

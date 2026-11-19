@@ -1,13 +1,13 @@
 # 卫星成像调度问题模板
 
-最后更新：2026-11-12。
+最后更新：2026-11-18。
 
 ## 目标与范围
 
 ### 问题层
 本项目维护基准问题的数据、可行性约束和目标函数。
 任务分配、任务取舍、观测顺序、窗口选择和观测起点全部由求解方法决定。
-问题层（`model`, `problem`, `utils.DataLoader`, `utils.TimeUtils`）保持方法无偏置。
+问题层（Python的 `satellite_scheduler.model`、`loader` 和 `problem`）保持方法无偏置。原Java问题层保留为迁移对照。
 
 新增或修改问题约束时，先说明其依据及对可行域的影响。
 不能把某个算法的搜索范围当作问题的可行域。
@@ -27,20 +27,21 @@
 
 ## 入口与模块
 
-- `main.InspectScene`：显式加载单个场景，报告数据规模。
-- `utils.DataLoader`：读取原数据格式，不缓存、不分配任务。
-- `utils.TimeUtils`：来源项目的姿态转换时间模型。
-- `model`：任务、卫星、窗口、姿态、问题实例及显式观测集合。
-- `problem.ScheduleValidator`：检查完整候选观测集合，合法时给出总收益。
-- `src/test/java`：输入格式、物理约束和目标函数测试。
+- `python -m satellite_scheduler`：显式加载单个场景，报告数据规模。
+- `satellite_scheduler.loader`：读取原数据格式，不缓存、不分配任务。
+- `satellite_scheduler.model`：任务、卫星、窗口、姿态、问题实例及显式观测集合。
+- `satellite_scheduler.problem`：候选迭代、姿态转换模型和完整调度验证。
+- `satellite_scheduler.retriever`：对已人工复核候选执行真实检索及本次案例包冻结；现有149条版本已按决策逻辑复核，后续新增或改动须重新比较。
+- `satellite_scheduler.runtime`：Python两阶段运行时、8个纯手工组合及RKHMA A3/B3/C3；生成代码尚未接入。
+- `src/test/python`：Python问题层、案例与运行时测试。
+- `src/main/java`、`src/test/java`：保留的Java实现及对照测试。
 
-依赖方向为 `main → problem/utils/model`、`problem → utils/model`、`utils → model`。
-生产代码无第三方依赖。
+Python生产代码无第三方依赖；问题层不依赖方法层。
 
 ## 验证与文档
 
-Java 21。执行 `mvn -o test` 后，再运行 README 中的真实场景检查。
-同一目录的构建与 Java 运行串行执行。
+Python入口与测试命令见README；保留的Java对照使用Java 21，并执行 `mvn -o test`。按受影响范围核对同输入对照与真实场景。预置组合的工程验收属于P1；生成代码的隔离执行与进程外终验属于P2。
+同一目录的Java构建与运行串行执行。
 运行保持 Normal 优先级。
 缺少依赖时报告，不自动安装或切换工具链。
 
@@ -69,7 +70,7 @@ Java 21。执行 `mvn -o test` 后，再运行 README 中的真实场景检查�
 问题层计划只规定问题合同、输入表示与验收；算法路线由方法计划单独规定。
 不预建无任务的空方法目录，不按日期堆积 Daily 工作日志。
 
-运行记录包含实际命令、cwd、数据来源、问题合同、Java 环境及 Normal 优先级。
+运行记录包含实际命令、cwd、数据来源、问题合同、实际Python或Java环境及 Normal 优先级。
 没有使用随机性、预算或线程参数的验证，不虚构相应字段。
 修改问题表示或评价器时保留改前实现与同输入的 comparator。
 有兼容且完整的既有验证结果时复用，并记录来源；只运行受影响或缺失的检查。

@@ -1,0 +1,17 @@
+{
+  "case_id": "C-053",
+  "category": "first_profitable_replacement",
+  "description": [
+    "Initialization: Insert each task at earliest completion. If blocked, replace the first previously inserted lower-reward task that yields a feasible timeline.\n\n",
+    "Reassignment: Remove released observations and use the same rule on reconsidered tasks. Only observations inserted during this call may be re-timed or replaced; other observations stay fixed."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000053.java",
+        "sha256": "62c8b23e85c24c4953794734f45f404b86f8f7ae7d8aaf93485b264e797d020f"
+      }
+    ]
+  }
+}

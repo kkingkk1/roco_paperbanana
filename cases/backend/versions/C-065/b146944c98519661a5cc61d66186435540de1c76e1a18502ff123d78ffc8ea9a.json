@@ -1,0 +1,17 @@
+{
+  "case_id": "C-065",
+  "category": "first_span_descent",
+  "description": [
+    "Initialization: Construct by earliest completion, then repeatedly accept the first feasible single-observation re-timing that strictly decreases the enclosing timeline span.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks. Re-timing can change only observations inserted during this call; other observations stay fixed. Return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000065.java",
+        "sha256": "dad59e6d58832a15a85c789db5486055d8f1e1fecb3c6cdcf1f8082b7c70a9ad"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "case_id": "A-007",
+  "category": "earliest_window",
+  "description": [
+    "Initialization only: Assign tasks (descending reward) to the satellite whose first ",
+    "accommodating window starts earliest. Unassigned if none."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000007.py",
+        "sha256": "4a7d154b1e90712d21ce1dc4161b295dff64a439a3eca33fd74099b710adedb1"
+      }
+    ]
+  }
+}

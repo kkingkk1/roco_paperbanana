@@ -18,8 +18,8 @@
     "format": "single_file",
     "files": [
       {
-        "path": "A000011.java",
-        "sha256": "43b8a47ea5680dfaa7ba77262288f6e0dca5f906bce381638e99d768af4346c1"
+        "path": "A000011.py",
+        "sha256": "75bcec2f9ed530d175924674408f368c4ada25f771a786e562ce90ba6005633d"
       }
     ]
   }

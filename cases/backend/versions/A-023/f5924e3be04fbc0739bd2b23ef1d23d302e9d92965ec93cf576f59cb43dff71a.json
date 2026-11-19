@@ -1,0 +1,19 @@
+{
+  "case_id": "A-023",
+  "category": "min_cost_flow_matching",
+  "description": [
+    "Successive shortest path matching: Formulate bipartite assignment as minimum-cost flow. ",
+    "Normalize costs with non-negative offset; initialize dual node potentials. ",
+    "Iteratively augment along shortest source-to-sink paths (Dijkstra) and update potentials until flow saturation.",
+    " Java uses -1 for unmatched indices and can return a partial matching when the sink is unreachable."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000023.java",
+        "sha256": "85c6abd2b4a3504fcc306f94fe9fc91e784c0cf931baaf8fd4224e2aa6e6c2cd"
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "case_id": "A-025",
+  "category": "bottleneck_matching",
+  "description": [
+    "Bottleneck bipartite matching: Pad rectangular matrices and binary-search finite costs for ",
+    "the lowest threshold admitting a perfect matching; use Hopcroft-Karp to test each ",
+    "threshold. If no perfect matching is found and finite costs exist, use a matching at the ",
+    "highest threshold; this fallback need not minimize the bottleneck of an incomplete ",
+    "matching. Trim padded assignments."
+  ],
+  "code": {
+    "format": "file_markers",
+    "files": [
+      {
+        "path": "src/LICENSE.txt",
+        "sha256": "74de38034c000100f549482994fd1a84c9e61ba2e47ad48a7624b67bb65892ae"
+      },
+      {
+        "path": "src/src/lib.rs",
+        "sha256": "98ae9dc7e503da071909e665cba8de05c0ccaddda893fb187ae22e86061d8a33"
+      },
+      {
+        "path": "src/src/types.rs",
+        "sha256": "cb31ef66dd133f5a443c7e58b65d77804ddc4c1724e9f875a63eafda756a6905"
+      },
+      {
+        "path": "src/src/utils.rs",
+        "sha256": "830463dcf59f44e9cab8f69d4a3c437e82d50df1973c027febdecc9b996d5023"
+      },
+      {
+        "path": "src/src/lap/mod.rs",
+        "sha256": "ebc8604c42c8c7c0ca0ac4ff4524cef960c8363b81fb97ba44f44a0388166bd4"
+      },
+      {
+        "path": "src/src/lap/bottleneck.rs",
+        "sha256": "c287de9f2ef890efe2fcfd923f09b92a1f646bb3a6afdc5eca3baf5da3de03a1"
+      }
+    ]
+  }
+}

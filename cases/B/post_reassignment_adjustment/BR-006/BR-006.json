@@ -12,8 +12,8 @@
     "format": "single_file",
     "files": [
       {
-        "path": "B000036.java",
-        "sha256": "73543ad411394372755b7948c50cbe4d60abd768580bff3a18e13c32a245fabd"
+        "path": "B000036.py",
+        "sha256": "c0013c353f18285a3fe94596ccc0acdac53d28a6383cd840df4a8fc667bf02f8"
       }
     ]
   }

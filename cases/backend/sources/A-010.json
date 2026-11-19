@@ -1692,12 +1692,26 @@
               "src/main/java/method/rkhma/legacy/main/TaskSatelliteKnnCache.java": "638ad644e64982a993ef72b462f1603a05ac4f8d6b84bfd9d451228b63a2e0be"
             }
           },
-          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
           "verification": {
             "date": "2026-11-07",
             "evidence": "本项目RKHMA A3和其来源移植材料；算法辅助文件按当前工作树保存，B/C求解器和领域模型为外部依赖。"
           },
-          "external_model_use": "unknown"
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
         }
       ],
       "merged_case_ids": [],
@@ -1706,6 +1720,164 @@
       "description_revision": {
         "method": "按来源与项目桥接实现修正逐任务迁移、候选排序、替换及校准描述；不要求复刻次要细节，算法代码不变。",
         "date": "2026-11-12"
+      }
+    },
+    {
+      "case_sha256": "df4a436a06f70af76ae7a5af05a59b08529e076c20ca1ffa97692ab691af4f84",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/RkhmaAllocation.java",
+            "src/main/java/method/rkhma/bridge/ProblemBridge.java",
+            "src/main/java/method/rkhma/legacy/common/AlgorithmConstants.java",
+            "src/main/java/method/rkhma/legacy/common/AlgorithmParameterValidator.java",
+            "src/main/java/method/rkhma/legacy/common/BoundaryHandler.java",
+            "src/main/java/method/rkhma/legacy/common/ConfigStringUtils.java",
+            "src/main/java/method/rkhma/legacy/common/EliteConfigArchive.java",
+            "src/main/java/method/rkhma/legacy/common/FastGaussian.java",
+            "src/main/java/method/rkhma/legacy/common/RandomProvider.java",
+            "src/main/java/method/rkhma/legacy/common/ResizePop.java",
+            "src/main/java/method/rkhma/legacy/common/SearchDeadline.java",
+            "src/main/java/method/rkhma/legacy/common/TuningConfig.java",
+            "src/main/java/method/rkhma/legacy/common/TuningDefaults.java",
+            "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java",
+            "src/main/java/method/rkhma/legacy/utils/CandidateArchive.java",
+            "src/main/java/method/rkhma/legacy/utils/DecodeWorkspace.java",
+            "src/main/java/method/rkhma/legacy/utils/FitnessUtils.java",
+            "src/main/java/method/rkhma/legacy/utils/Initialize.java",
+            "src/main/java/method/rkhma/legacy/utils/ListUtils.java",
+            "src/main/java/method/rkhma/legacy/utils/PlanUtils.java",
+            "src/main/java/method/rkhma/legacy/utils/TimeUtils.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/CompositeStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/CompositeWithCapacityStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/EarliestTimeStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/MaxWindowCountStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/MaxWindowLengthStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/MinPriorityStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/MinRollAngleStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java",
+            "src/main/java/method/rkhma/legacy/operator/assignment/RandomStrategy.java",
+            "src/main/java/method/rkhma/legacy/main/AssignmentDeltaEvaluator.java",
+            "src/main/java/method/rkhma/legacy/main/AssignmentOverlayMap.java",
+            "src/main/java/method/rkhma/legacy/main/BundleMoveEvaluator.java",
+            "src/main/java/method/rkhma/legacy/main/DeltaFastRefiner.java",
+            "src/main/java/method/rkhma/legacy/main/ParallelPolicy.java",
+            "src/main/java/method/rkhma/legacy/main/ReassignmentMoveEvaluator.java",
+            "src/main/java/method/rkhma/legacy/main/ReassignmentMoveServices.java",
+            "src/main/java/method/rkhma/legacy/main/ReassignmentOrchestrator.java",
+            "src/main/java/method/rkhma/legacy/main/ReplacementMoveEvaluator.java",
+            "src/main/java/method/rkhma/legacy/main/SingleAlgorithmOptimizer.java",
+            "src/main/java/method/rkhma/legacy/main/SwapMoveEvaluator.java",
+            "src/main/java/method/rkhma/legacy/main/TargetSatelliteRanker.java",
+            "src/main/java/method/rkhma/legacy/main/TargetSatelliteSelector.java",
+            "src/main/java/method/rkhma/legacy/main/TaskAllocationCoordinator.java",
+            "src/main/java/method/rkhma/legacy/main/TaskAllocationModels.java",
+            "src/main/java/method/rkhma/legacy/main/TaskAllocationScoring.java",
+            "src/main/java/method/rkhma/legacy/main/TaskSatelliteKnnCache.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/runtime/RkhmaAllocation.java": "e07786710ddf9a46b4dd29f26652f5e95633456e96263a61171fdf5e009afc0e",
+              "src/main/java/method/rkhma/bridge/ProblemBridge.java": "db5fa707666e35362d2346f4fc946af2be8adc177aa05b702289aa743505ed3f",
+              "src/main/java/method/rkhma/legacy/common/AlgorithmConstants.java": "d9a22399cba82475ac4f9524800302d6248b685b1c2c34540d8b8986a2dfa15d",
+              "src/main/java/method/rkhma/legacy/common/AlgorithmParameterValidator.java": "8d6a64f6232ed64426bc5bbfe8f74167f3f5cf7749394591c08f3581c634fc50",
+              "src/main/java/method/rkhma/legacy/common/BoundaryHandler.java": "219da25c02317767085c28edeac454cc30c891d30a9cf7808953cbdfaffe3a79",
+              "src/main/java/method/rkhma/legacy/common/ConfigStringUtils.java": "55dddc8db9a4ae65211148fb96ad95b4cbc0b2fedb04a844403db96334426a35",
+              "src/main/java/method/rkhma/legacy/common/EliteConfigArchive.java": "f09e08ec8226102b182c1c05b83d00891482e4204986d4ff105bcb3024c89ffb",
+              "src/main/java/method/rkhma/legacy/common/FastGaussian.java": "85dd06a071273c50fc676da65b39a090c88a7df06c3ce40c1aa598a65e2bcaf9",
+              "src/main/java/method/rkhma/legacy/common/RandomProvider.java": "d6d3c1cbe855de3a1269a50fbef1530410825f40ddf54fdd90bdeca9a9b64486",
+              "src/main/java/method/rkhma/legacy/common/ResizePop.java": "ab73867fa6ec407b0c3b8e39340cfa4d0ba560918eb7e3e2f31973870f964d26",
+              "src/main/java/method/rkhma/legacy/common/SearchDeadline.java": "5047dfd28786b8f386c604d956066ac7dc409e755e4cbb2597bb0e948a51c0bf",
+              "src/main/java/method/rkhma/legacy/common/TuningConfig.java": "8a78b28fc5c9bd2a06307b0dcc932bd50ffe910129f35a3232f301c7bc38d294",
+              "src/main/java/method/rkhma/legacy/common/TuningDefaults.java": "e5917fce0c1b23931e669f76c3d4684013b8f7efcc068af8b5f38f9846b7587f",
+              "src/main/java/method/rkhma/legacy/utils/AssignTaskOperator.java": "80c6bf2b06e88fc94b1731409da536318303416c28cfb7eeb045a79628a57381",
+              "src/main/java/method/rkhma/legacy/utils/CandidateArchive.java": "8cedba59ba62ac40c498af0953b3dd5baae9b6f355442412d1b7a26a616f8ff5",
+              "src/main/java/method/rkhma/legacy/utils/DecodeWorkspace.java": "c7a70f111a52415004cc608d650d247024bdffd03fe1d742566d409dd681a0df",
+              "src/main/java/method/rkhma/legacy/utils/FitnessUtils.java": "4d0c0380ce907303af495bc99cd2fe583b44dcdbe01886ded656314fd3d8f5db",
+              "src/main/java/method/rkhma/legacy/utils/Initialize.java": "da8889b6d9dda1d99f85f998a9d28cc8833f6246da38ff17174a54c10e78fcbb",
+              "src/main/java/method/rkhma/legacy/utils/ListUtils.java": "e2465b550fba010612613052b939f85797e3ac1d0f49c71c62b2c0630446e1a1",
+              "src/main/java/method/rkhma/legacy/utils/PlanUtils.java": "bbb2738c85cbc6cd487d83533fa74e9dbb50c96faca857fd12e39d47bdd0ab92",
+              "src/main/java/method/rkhma/legacy/utils/TimeUtils.java": "3be2e340dc79d4c954d4e62d5403683ccabeb6dd5729e7edfd41621e4892f210",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java": "3fbb48a71a6fa8f7ad6f03f55358dd39e51715c07127f585a18d5ec8c4981280",
+              "src/main/java/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java": "6a249cd1e19ff6e078b7db3f9aec1fb5a373f09c05756bf1242eba9565340e29",
+              "src/main/java/method/rkhma/legacy/operator/assignment/CompositeStrategy.java": "019393b8479d2fcbb67d8f7e4e720850f05257f0be983c4e0dfe7103860e60f2",
+              "src/main/java/method/rkhma/legacy/operator/assignment/CompositeWithCapacityStrategy.java": "5eca53151a3b6a9f5da430966034954ce4492ce95fc34e00d2948f6329560ed1",
+              "src/main/java/method/rkhma/legacy/operator/assignment/EarliestTimeStrategy.java": "a3bc9c94dc2350dfc3fddf05e23725aaa75903fc18bca1cfea518303f5b4ca5b",
+              "src/main/java/method/rkhma/legacy/operator/assignment/MaxWindowCountStrategy.java": "5481b07cc78cf116949ee12eb9d71933c47f343147f1dc8b6a20979ca4b7948a",
+              "src/main/java/method/rkhma/legacy/operator/assignment/MaxWindowLengthStrategy.java": "bcd164ad39c6c7169aa89f137a249104f96a78babd9c4281e25151dc9ddc68e3",
+              "src/main/java/method/rkhma/legacy/operator/assignment/MinPriorityStrategy.java": "6e241d5e7328ffe47c6393ea1b0ebafa49e3d91f35bc5af567332c5f5bc464d1",
+              "src/main/java/method/rkhma/legacy/operator/assignment/MinRollAngleStrategy.java": "9aeb2f1c82596b7b56723ea6967c1ef65ab66aaf33cde54f1501e1f5523836e3",
+              "src/main/java/method/rkhma/legacy/operator/assignment/MinTaskCountStrategy.java": "a4fee6af3dba9a8412e0d2d3e7e933b222309581c2dffc7b8b49661cd99a3628",
+              "src/main/java/method/rkhma/legacy/operator/assignment/RandomStrategy.java": "5ae524861f5e830b338539862334be92b6046fcc30929344fb8a82755a1df7cf",
+              "src/main/java/method/rkhma/legacy/main/AssignmentDeltaEvaluator.java": "8e3b25c3a1f6817af54bcda5716ef1908ea1e15f5c569d476f87f7f1bb3cf7f0",
+              "src/main/java/method/rkhma/legacy/main/AssignmentOverlayMap.java": "bf3be7d8e2a1e4daa67f894e059789251bb05ce7c6d7f130d0a3337e1a39b411",
+              "src/main/java/method/rkhma/legacy/main/BundleMoveEvaluator.java": "686a241d6ca1f22711e2e02d6c4876799cbd406c98c6c7ee715288b818cfaed8",
+              "src/main/java/method/rkhma/legacy/main/DeltaFastRefiner.java": "2cb724afbcf9b141f394885bf6f020a2f980b3054e37a1630c248bb3fb9a4e9e",
+              "src/main/java/method/rkhma/legacy/main/ParallelPolicy.java": "f96c2a08c41a8a378c926657000b86e82319194195653d601a6d3ec3cd4abe0a",
+              "src/main/java/method/rkhma/legacy/main/ReassignmentMoveEvaluator.java": "6907021466886ad2a24cc54b4e4f9ea913d0dce5b171bed146127368c92034f2",
+              "src/main/java/method/rkhma/legacy/main/ReassignmentMoveServices.java": "7de2e57202a5619a4e484cf0732a933fb6a9b2963e439c535d6e5d2550522700",
+              "src/main/java/method/rkhma/legacy/main/ReassignmentOrchestrator.java": "85f316a05960b97ce5a114f6ca4dd1d74f3d6439bc5504bce69b9be5e0656523",
+              "src/main/java/method/rkhma/legacy/main/ReplacementMoveEvaluator.java": "e95a67d5204d5c6e20fb85ca01236e428cb99c532d27321333b6f3499d0eb5e8",
+              "src/main/java/method/rkhma/legacy/main/SingleAlgorithmOptimizer.java": "a8c4b4763cd2d300cb69f902c770049fdb0c57c5b1b5ad870bb3c8b45e3889de",
+              "src/main/java/method/rkhma/legacy/main/SwapMoveEvaluator.java": "7ce933146de564cee66dedd0ad9489f24ba65d2272a2483423eeea9d5719afea",
+              "src/main/java/method/rkhma/legacy/main/TargetSatelliteRanker.java": "8df4872a6d20912b2aeb77ea5a8f5967b274202519b2d272c8940b36b3638151",
+              "src/main/java/method/rkhma/legacy/main/TargetSatelliteSelector.java": "91e65a91ff07fb23226382a07f8e937bcb54c55883c279220e8656cb022ca7a2",
+              "src/main/java/method/rkhma/legacy/main/TaskAllocationCoordinator.java": "4d9b7fc389d66c57171770fded310ebb53e31f77963b14670d2bec63ae00e919",
+              "src/main/java/method/rkhma/legacy/main/TaskAllocationModels.java": "d3bc78febc649d37b9e1e0af6265d256d9798c1d4e1dd4fb2bb9b3b051b8dd06",
+              "src/main/java/method/rkhma/legacy/main/TaskAllocationScoring.java": "73a905ab84a96f6bc58b55ddf3ff3936720a9f73883b6a9c6fb47660f7b49511",
+              "src/main/java/method/rkhma/legacy/main/TaskSatelliteKnnCache.java": "638ad644e64982a993ef72b462f1603a05ac4f8d6b84bfd9d451228b63a2e0be"
+            }
+          },
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "本项目RKHMA A3和其来源移植材料；算法辅助文件按当前工作树保存，B/C求解器和领域模型为外部依赖。"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": [
+            "cases/A/A-010/A000010.py"
+          ],
+          "version": {
+            "parent_case_id": "A-010",
+            "parent_case_sha256": "8093bd0e92e6d4fb6f763ec1c0c159c0eaf5872fb7a5854542996a6e9abdcfcb",
+            "source_file_sha256": {
+              "cases/A/A-010/A000010.py": "953bf8789935dbb276259b86d905e3b8720e80554ca3c18d0ac7e2a02c286f56"
+            }
+          },
+          "usage_conditions": "本项目 Python 思路适配；保留原版来源和用户确认的使用范围。",
+          "verification": {
+            "date": "2026-11-17",
+            "evidence": "12 组多星输入的复合初始归属与 Java 一致；四类重分配分支及真实运行时试评接口已测试。重分配未逐步复刻来源。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "8093bd0e92e6d4fb6f763ec1c0c159c0eaf5872fb7a5854542996a6e9abdcfcb",
+      "parent_snapshot": "../versions/A-010/8093bd0e92e6d4fb6f763ec1c0c159c0eaf5872fb7a5854542996a6e9abdcfcb.json",
+      "implementation_revision": {
+        "date": "2026-11-17",
+        "method": "依据 RKHMA 复合归属及迁移、替换、交换和打包思路编写 Python 适配版；不替代完整 RKHMA 基线。"
       }
     }
   ]

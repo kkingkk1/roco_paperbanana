@@ -1,0 +1,21 @@
+{
+  "case_id": "BI-005",
+  "category": "first_improvement_insertion",
+  "sub_library": "initial",
+  "description": [
+    "Initialization only:\n",
+    "- Initial Order: Ascending task IDs.\n",
+    "- Search: Trial relocating each task to every other position in index order.\n",
+    "- Acceptance: Accept first strictly higher-profit trial; restart scan immediately.\n",
+    "- Termination: Stop when insertion neighborhood exhausts or evaluation limit is reached."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000008.java",
+        "sha256": "1cecb8cc0b6eb763179620c84035bc8e7d0c86f4af01529912e6ff543db8b985"
+      }
+    ]
+  }
+}

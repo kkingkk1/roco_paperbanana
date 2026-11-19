@@ -1,0 +1,29 @@
+{
+  "case_id": "A-009",
+  "category": "minimum_mean_priority",
+  "description": [
+    "Initialization only: Assign tasks (descending reward) to the accommodating satellite with ",
+    "the lowest average reward of assigned tasks (empty satellite = 0). Unassigned if none."
+  ],
+  "code": {
+    "format": "file_markers",
+    "files": [
+      {
+        "path": "src/method/rkhma/legacy/utils/CaseA000009.java",
+        "sha256": "9881a9c149f78f3ca8bf0b70e77b4ed179ceff5086deff1727235124de5d4b99"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/AssignmentStrategy.java",
+        "sha256": "6a249cd1e19ff6e078b7db3f9aec1fb5a373f09c05756bf1242eba9565340e29"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/AbstractAssignmentStrategy.java",
+        "sha256": "3fbb48a71a6fa8f7ad6f03f55358dd39e51715c07127f585a18d5ec8c4981280"
+      },
+      {
+        "path": "src/method/rkhma/legacy/operator/assignment/MinPriorityStrategy.java",
+        "sha256": "6e241d5e7328ffe47c6393ea1b0ebafa49e3d91f35bc5af567332c5f5bc464d1"
+      }
+    ]
+  }
+}

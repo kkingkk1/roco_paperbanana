@@ -1,0 +1,17 @@
+{
+  "case_id": "C-071",
+  "category": "same_window_local",
+  "description": [
+    "Initialization: Construct by earliest completion. In local editing, prefer a feasible observation in the released observation’s previous window, then earliest completion; use earliest completion if that window is unavailable.\n\n",
+    "Local editing in either phase removes released observations and applies the stated stability rule to reconsidered tasks. Return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000071.java",
+        "sha256": "10b8961d304e513416a7374a546af750ee99bb62c91530b10fe6775177a64776"
+      }
+    ]
+  }
+}

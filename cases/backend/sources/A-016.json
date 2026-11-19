@@ -168,12 +168,26 @@
         {
           "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
           "version": "2026-11-07 首次归档版本",
-          "usage_conditions": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
           "verification": {
             "date": "2026-11-07",
             "evidence": "Java编译；窗口冲突选择夹具或跨星交换最佳改善夹具；A000017经完整运行时和合法性检查。"
           },
-          "external_model_use": "unknown"
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
         }
       ],
       "merged_case_ids": [],
@@ -182,6 +196,60 @@
       "description_revision": {
         "method": "明确冲突统计单位为至少存在一对重叠窗口的已分配任务；算法代码不变。",
         "date": "2026-11-12"
+      }
+    },
+    {
+      "case_sha256": "19424a8d734b3d25136bd6ec3042e8e99ca417f435e3f43bc78d9d5b8caa9656",
+      "source": [
+        {
+          "location": "本项目本轮自主设计并实现；完整代码保存在对应案例的 code 字段",
+          "version": "2026-11-07 首次归档版本",
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "Java编译；窗口冲突选择夹具或跨星交换最佳改善夹具；A000017经完整运行时和合法性检查。"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "本项目内整理；源码无单独许可声明，向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": [
+            "cases/A/A-016/A000016.py"
+          ],
+          "version": {
+            "parent_case_id": "A-016",
+            "parent_case_sha256": "6568d8eb71f901855397cb2b9057012fab1cf358a753b654ebaf144cd74e02db",
+            "source_file_sha256": {
+              "cases/A/A-016/A000016.py": "da4c4472c8f7f7005a231222816f14568cf2b1a4beb383460562cf37e7a37a44"
+            }
+          },
+          "usage_conditions": "本项目 Python 移植，按用户确认用于本项目检索与代码生成；保留原来源记录。",
+          "verification": {
+            "date": "2026-11-17",
+            "evidence": "与对应 Java 案例在 12 组多星场景比较初始归属；该案例只实现初始化，未覆盖所有输入。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "6568d8eb71f901855397cb2b9057012fab1cf358a753b654ebaf144cd74e02db",
+      "parent_snapshot": "../versions/A-016/6568d8eb71f901855397cb2b9057012fab1cf358a753b654ebaf144cd74e02db.json",
+      "implementation_revision": {
+        "date": "2026-11-17",
+        "method": "依据当前 Java 案例移植为 Python；原源码及历史元数据保留。"
       }
     }
   ]

@@ -1,0 +1,17 @@
+{
+  "case_id": "C-069",
+  "category": "annealed_slew_retiming",
+  "description": [
+    "Initialization: Construct by earliest completion, then make a total of 16 times the number of inserted tasks in re-timing attempts. Each attempt selects an inserted task at random and samples a feasible re-timing. Anneal total adjacent transformation time with a linearly decreasing temperature from 1 second, retaining the best visited timeline. Use the supplied random generator.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks. Re-timing can change only observations inserted during this call; other observations stay fixed. Return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000069.java",
+        "sha256": "61e7e3f91a8af01b429e032b494dcb9e2fa3008a324f703b3300ccd5e0ffa836"
+      }
+    ]
+  }
+}

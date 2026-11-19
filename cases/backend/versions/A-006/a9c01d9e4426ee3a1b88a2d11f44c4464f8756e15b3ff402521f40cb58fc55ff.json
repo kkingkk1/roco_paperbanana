@@ -1,0 +1,18 @@
+{
+  "case_id": "A-006",
+  "category": "minimum_roll_angle",
+  "description": [
+    "Initialization only: Assign tasks (descending reward) to the accommodating satellite whose ",
+    "first stored window with attitude records has the smallest initial absolute roll angle. ",
+    "Unassigned if none."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000006.py",
+        "sha256": "38552c76c85d02d4e4b122ed3464387dc330e867e9e88b2ffcd5d1ee9bdfc463"
+      }
+    ]
+  }
+}

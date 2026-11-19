@@ -135,12 +135,26 @@
           "version": {
             "project_base_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2"
           },
-          "usage_conditions": "按本项目本地案例任务实现；向外部模型发送的条件尚未核实。",
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
           "verification": {
             "date": "2026-11-12",
             "evidence": "单星任务顺序完整初始化算法；评分和观测选择委托运行时签发的评价器。"
           },
-          "external_model_use": "unknown"
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-12",
+              "finding": "按本项目本地案例任务实现；向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
         }
       ],
       "merged_case_ids": [],
@@ -149,6 +163,64 @@
       "description_revision": {
         "date": "2026-11-12",
         "method": "依据案例源码修正算子、试评返回值、阶段基准和终止条件；源码不变。"
+      }
+    },
+    {
+      "case_sha256": "3d22e77c0f7ffb44761c157696038ea1d4bad8c076c87cca421ce2fd2ddad0eb",
+      "source": [
+        {
+          "location": [
+            "项目自主设计并实现：B000015.java"
+          ],
+          "version": {
+            "project_base_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2"
+          },
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "单星任务顺序完整初始化算法；评分和观测选择委托运行时签发的评价器。"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-12",
+              "finding": "按本项目本地案例任务实现；向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": [
+            "cases/B/initial_single_satellite_optimization/BI-012/B000015.py"
+          ],
+          "version": {
+            "parent_case_id": "BI-012",
+            "parent_case_sha256": "6d7dc4f848bfd445f398c92b20c2022032e5c4002dcbb0853410ebf3f8e6861c",
+            "source_file_sha256": {
+              "cases/B/initial_single_satellite_optimization/BI-012/B000015.py": "61589ba7cd6d7658c8e9d16e6befa90c227c2a65e1458df96b134ca96a225c40"
+            }
+          },
+          "usage_conditions": "本项目 Python 移植，按用户确认用于本项目检索与代码生成；保留原来源记录。",
+          "verification": {
+            "date": "2026-11-17",
+            "evidence": "与对应 Java 案例在 12 组固定输入和 4 种试评预算下比较返回顺序和收益，共 48 次；不据此声称覆盖所有输入。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "6d7dc4f848bfd445f398c92b20c2022032e5c4002dcbb0853410ebf3f8e6861c",
+      "parent_snapshot": "../versions/BI-012/6d7dc4f848bfd445f398c92b20c2022032e5c4002dcbb0853410ebf3f8e6861c.json",
+      "implementation_revision": {
+        "date": "2026-11-17",
+        "method": "依据当前 Java 案例移植为 Python；原源码及历史元数据保留。"
       }
     }
   ],

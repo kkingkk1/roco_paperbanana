@@ -1,0 +1,7 @@
+language,tasks,satellites,combination,seed,status,detail,profit,observations,elapsed_ms,python_independent_in_budget,java_validation
+Java,500,5,A1B1C1,42,SUCCESS,SEARCH_EXPIRED,2368,388,4648.067,not_applicable,feasible
+Python,500,5,A1B1C1,42,SUCCESS,SEARCH_EXPIRED,2362,387,4590.058,no,feasible
+Python,500,5,A1B1C3,42,SUCCESS,SEARCH_EXPIRED,2354,386,4588.230,no,feasible
+Python,500,5,A1B1C1,42,SUCCESS,SEARCH_EXPIRED,2362,387,4623.428,yes,feasible
+Python,500,5,A1B1C3,42,SUCCESS,SEARCH_EXPIRED,2354,386,4616.564,yes,feasible
+Python,1000,10,A1B1C1,42,SUCCESS,SEARCH_EXPIRED,1823,263,4599.020,yes,feasible

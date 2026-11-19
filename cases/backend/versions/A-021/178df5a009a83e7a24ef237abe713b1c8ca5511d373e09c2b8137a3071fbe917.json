@@ -1,0 +1,18 @@
+{
+  "case_id": "A-021",
+  "category": "hungarian_matching",
+  "description": [
+    "Hungarian matching (Kuhn-Munkres): Reduce cost matrix by row and column minima; mark independent zeros. ",
+    "Iteratively cover zeros, update dual potential values, and augment matching along alternating starred and primed zeros.",
+    " Java uses -1 for unmatched indices; a nonempty matrix with no columns or no finite uncovered cost is rejected."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000021.java",
+        "sha256": "91a747c1bac2fd4aaf59cf48136e2074dba448d73d78375d2a508218e9e44b9d"
+      }
+    ]
+  }
+}

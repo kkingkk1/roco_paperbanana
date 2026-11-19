@@ -1,0 +1,21 @@
+{
+  "case_id": "BI-011",
+  "category": "late_acceptance_swap",
+  "sub_library": "initial",
+  "description": [
+    "Initialization only: Late Acceptance Hill-Climbing (LAHC).\n",
+    "- Initial Order: Ascending task IDs.\n",
+    "- Move: Random pairwise swap.\n",
+    "- Acceptance: Accept if profit >= current profit OR profit >= profit from 5 iterations ago; update history slot.\n",
+    "- Termination: Stop at evaluation limit (or if <2 tasks); return best issued trial."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000014.java",
+        "sha256": "7f57d528cfd055ca975d09486ddae92a1eaab892aa2466bb4255640bf5049d32"
+      }
+    ]
+  }
+}

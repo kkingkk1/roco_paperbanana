@@ -1,0 +1,17 @@
+{
+  "case_id": "C-041",
+  "category": "next_task_earliest_finish",
+  "description": [
+    "Initialization: Process B order. For each feasible current observation, find the earliest feasible completion of the first later unscheduled task; choose the smallest such completion. Unless specified otherwise, score ties use earliest completion, then earliest start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000041.java",
+        "sha256": "a30bc89d79040cc21199434cd6dcfdd256f824ee81312731d7391d2e24bc2a8a"
+      }
+    ]
+  }
+}

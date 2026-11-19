@@ -1,6 +1,6 @@
 # 研究计划与进度
 
-更新日期：2026-11-13。
+更新日期：2026-11-19。
 
 ## 项目目标
 
@@ -14,14 +14,18 @@
 共享合同见[方法与评价合同](Knowledge/多智能体算法与评价合同.md)，决定时点见[风险与待决事项](Plan/面向成像卫星任务调度的多智能体协作自动算法设计.md#六风险与待决事项)。
 
 - [P0：研究合同与既有起点](Plan/mechanisms/P0-研究合同与既有起点.md)
-- [P1：可运行求解器起点](Plan/mechanisms/P1-可运行求解器起点.md)——工程验收已完成，阶段状态见主计划。
+- [P1：可运行求解器起点](Plan/mechanisms/P1-可运行求解器起点.md)——问题层、两阶段运行时及预置组合验收。
 - [P2：五角色协作演化](Plan/mechanisms/P2-五角色协作演化.md)
-- [P2案例与检索子计划](Plan/mechanisms/P2-任务1-准备案例与检索协议.md)及[材料与入库规则](Knowledge/案例入库与接口适配.md)：材料盘点与规则已完成，A/B/C案例库已初步建成；条数与使用边界见[案例库](../cases/README.md)，阶段覆盖和缺口见[后台台账](../cases/backend/材料台账.md)。案例扩充、检索与冻结实现仍待完成。
+- [P2案例与检索子计划](Plan/mechanisms/P2-任务1-准备案例与检索协议.md)及[材料与入库规则](Knowledge/案例入库与接口适配.md)：首批149条案例和Retriever已独立验收，可接入演化控制程序。
 - [P3：小预算先导与冻结选型](Plan/mechanisms/P3-小预算先导与冻结选型.md)
 - [P4：正式实验与研究主张](Plan/mechanisms/P4-正式实验与研究主张.md)
 
 ## 证据与来源
 
+- [Python迁移阶段证据](Results/Evidence/python-migration/evidence.md)：输入、案例、27种组合的小实例对照，以及500和1000任务场景的RKHMA限时对照。
+- [现有案例决策逻辑复核](Results/Reports/case-semantic-review-20261117.md)及[证据](Results/Evidence/case-semantic-review-20261117/evidence.md)：149条当前版本的分模块比较和近似案例反例。
+- [C案例跨语言验收与去重复核](Results/Reports/case-acceptance-20261117.md)及[证据](Results/Evidence/case-acceptance-20261117/evidence.md)：80条C案例的有限输入对照与阶段性语义复核。
+- [Retriever独立验收证据](Results/Evidence/p2-retriever-python/evidence.md#2026-11-19-任务1独立验收)：149条案例核对、既有真实回复重放、冻结包恢复及异常输入检查。
 - [初始化验收](Results/Reports/problem-template-initialization.md)及[manifest](Results/Evidence/problem-template-initialization/manifest.json)：可复用的问题层起点，不代表新首尾检查或求解方法已实现。
 - [P1问题层适配](Results/Reports/p1-problem-adaptation.md)及[证据](Results/Evidence/p1-problem-adaptation/evidence.md)：内部网格、候选迭代、首尾排除和同输入对照。
 - [P1两阶段运行时](Results/Reports/p1-two-stage-runtime.md)及[证据](Results/Evidence/p1-two-stage-runtime/evidence.md)：手工组合、资源限制、超时与真实场景烟测。

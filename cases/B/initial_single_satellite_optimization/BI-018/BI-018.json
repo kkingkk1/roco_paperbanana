@@ -13,8 +13,8 @@
     "format": "single_file",
     "files": [
       {
-        "path": "B000021.java",
-        "sha256": "ab2501877298c35da74315d093b016f7afc8f038e08e49fc941bf16cbd351ca5"
+        "path": "B000021.py",
+        "sha256": "d21d9de82e6fcd725be1c66b079a6fa9fecbea6b6467b6b625edaf55ecbd779a"
       }
     ]
   }

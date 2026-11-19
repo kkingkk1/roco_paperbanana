@@ -1,0 +1,21 @@
+{
+  "case_id": "A-025",
+  "category": "bottleneck_matching",
+  "description": [
+    "Bottleneck bipartite matching: Pad rectangular matrices and binary-search finite costs for ",
+    "the lowest threshold admitting a perfect matching; use Hopcroft-Karp to test each ",
+    "threshold. If no perfect matching is found and finite costs exist, use a matching at the ",
+    "highest threshold; this fallback need not minimize the bottleneck of an incomplete ",
+    "matching. Trim padded assignments.",
+    " Java uses -1 for unmatched indices."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000025.java",
+        "sha256": "1352a47c74e45220d11cb33bde14169a46a19254bc74c71cf46cc9fc269b4b76"
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "case_id": "A-022",
+  "category": "auction_price_matching",
+  "description": [
+    "Auction algorithm for bipartite matching (Bertsekas):\n",
+    "- Bidding Phase: Unassigned tasks bid on resource minimizing cost + price, incrementing ",
+    "resource price by regret gap plus epsilon and displacing prior occupant.\n",
+    "- Epsilon Scaling: Decrease epsilon geometrically across successive auction phases.\n",
+    "- Fallback: Revert to LAPJV/shortest augmenting path if the matrix is non-square, cost ",
+    "magnitudes are extreme, or auction rows remain unmatched."
+  ],
+  "code": {
+    "format": "file_markers",
+    "files": [
+      {
+        "path": "src/LICENSE.txt",
+        "sha256": "74de38034c000100f549482994fd1a84c9e61ba2e47ad48a7624b67bb65892ae"
+      },
+      {
+        "path": "src/src/lib.rs",
+        "sha256": "98ae9dc7e503da071909e665cba8de05c0ccaddda893fb187ae22e86061d8a33"
+      },
+      {
+        "path": "src/src/types.rs",
+        "sha256": "cb31ef66dd133f5a443c7e58b65d77804ddc4c1724e9f875a63eafda756a6905"
+      },
+      {
+        "path": "src/src/utils.rs",
+        "sha256": "830463dcf59f44e9cab8f69d4a3c437e82d50df1973c027febdecc9b996d5023"
+      },
+      {
+        "path": "src/src/lap/mod.rs",
+        "sha256": "174a14df31a9bea94481f2988d491b8d3a99ea97acbe644e36c569ccc86736dc"
+      },
+      {
+        "path": "src/src/lap/auction.rs",
+        "sha256": "e8f1cd19e9de0e09cd63739c192831fbec0866c458078c8bc36646c63ebae42b"
+      },
+      {
+        "path": "src/src/lap/lapjv.rs",
+        "sha256": "c7b592be12fa2a1a94ed7b0c72c9f6d369f625da206168b266e3717c3fbe9d28"
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "case_id": "A-027",
+  "category": "cost_scaling_matching",
+  "description": [
+    "Cost-scaling push-relabel matching:\n",
+    "- Scaling: Decrease epsilon across cost-scaling phases, pushing flow along admissible residual edges or relabeling dual node potentials.\n",
+    "- Completion: Complete terminal matching via shortest augmenting paths; trigger cold-start completion if step or phase limit is reached.",
+    " Python uses -1 for unmatched indices and rejects inputs without an augmenting path."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000027.py",
+        "sha256": "160c7d61ef349b088d06cf8c68fc0f4ea661f22a04a2ccf202a1a12de3b6fd58"
+      }
+    ]
+  }
+}

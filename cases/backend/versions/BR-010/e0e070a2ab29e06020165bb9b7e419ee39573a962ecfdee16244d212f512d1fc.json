@@ -1,0 +1,21 @@
+{
+  "case_id": "BR-010",
+  "category": "rkhma_reassignment",
+  "sub_library": "post_reassignment",
+  "description": [
+    "Reassignment local search only (RKHMA-inspired affected-satellite refinement):\n",
+    "- Seed: Keep assigned observed tasks in start-time order, then append pending tasks with incoming tasks first, followed by descending reward and task ID. Evaluate the whole-satellite order through C.\n",
+    "- Refinement: With an existing order, test each pending task at each position, then adjacent swaps; retain strictly higher-profit feasible trials.\n",
+    "- Fallback: Without an existing order, repeatedly swap two tasks from a pool of at most six improving orders and retain the best feasible issued trial.\n",
+    "- Termination: Stop at the evaluation limit, or after one trial with fewer than two assigned tasks; return null if no feasible trial was issued. This standalone adaptation rebuilds through the evaluator and does not use source coordinator state or reproduce the original fast-refinement implementation."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000043.java",
+        "sha256": "2b41956b60b6782d0e469774806facda4285c87cd8076e101affc6a706af1e40"
+      }
+    ]
+  }
+}

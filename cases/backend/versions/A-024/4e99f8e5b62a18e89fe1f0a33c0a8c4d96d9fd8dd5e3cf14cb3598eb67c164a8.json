@@ -1,0 +1,19 @@
+{
+  "case_id": "A-024",
+  "category": "transport_simplex_matching",
+  "description": [
+    "Transportation simplex matching: Maintain tree basis and dual node potentials on bipartite network. ",
+    "Pivot into basis nonbasic edge with most negative reduced cost; adjust flow along fundamental cycle. ",
+    "Apply Bland's anti-cycling rule upon repeated degenerate pivots.",
+    " Java uses -1 for unmatched indices; the dual solve rejects inputs without an augmenting path."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000024.java",
+        "sha256": "09e6805e424095375543ff2610e780a9db8626f4660470394251f9d09bc46343"
+      }
+    ]
+  }
+}

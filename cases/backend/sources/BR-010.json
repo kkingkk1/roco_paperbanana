@@ -118,12 +118,26 @@
             },
             "source_tree": "逐文件SHA-256绑定在案例元数据中"
           },
-          "usage_conditions": "已授权在本项目本地迁移、使用和整理；来源与本项目代码向外部模型发送的条件尚未核实。",
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
           "verification": {
             "date": "2026-11-12",
             "evidence": "B入口、A共享协调入口及method.rkhma依赖源码按当前项目版本原样保存；需要项目运行时与问题模型。"
           },
-          "external_model_use": "unknown"
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-12",
+              "finding": "已授权在本项目本地迁移、使用和整理；来源与本项目代码向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
         }
       ],
       "merged_case_ids": [],
@@ -132,6 +146,149 @@
       "description_revision": {
         "date": "2026-11-12",
         "method": "依据案例源码修正算子、试评返回值、阶段基准和终止条件；源码不变。"
+      }
+    },
+    {
+      "case_sha256": "e0e070a2ab29e06020165bb9b7e419ee39573a962ecfdee16244d212f512d1fc",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/RkhmaHybridSearch.java",
+            "src/main/java/method/runtime/RkhmaAllocation.java",
+            "src/main/java/method/rkhma/"
+          ],
+          "version": {
+            "project_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2",
+            "file_sha256": {
+              "src/main/java/method/runtime/RkhmaHybridSearch.java": "59f593b1b8e39b3fcbde69988aecd6bd1ee1de9182c973336d5ad0a1f74601a7",
+              "src/main/java/method/runtime/RkhmaAllocation.java": "e07786710ddf9a46b4dd29f26652f5e95633456e96263a61171fdf5e009afc0e"
+            },
+            "source_tree": "逐文件SHA-256绑定在案例元数据中"
+          },
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "B入口、A共享协调入口及method.rkhma依赖源码按当前项目版本原样保存；需要项目运行时与问题模型。"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-12",
+              "finding": "已授权在本项目本地迁移、使用和整理；来源与本项目代码向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": [
+            "项目独立适配实现：cases/B/post_reassignment_adjustment/BR-010/B000043.java"
+          ],
+          "version": {
+            "parent_case_id": "BR-010",
+            "parent_case_sha256": "3dc8dc7d3dcbb8d82641a218deb2f48bff84c3b62757cfe78c576756cc0ac8a5"
+          },
+          "usage_conditions": "本项目独立适配实现，按用户已确认的本项目用途使用。",
+          "verification": {
+            "date": "2026-11-16",
+            "evidence": "仅依赖项目公共接口编译；阶段行为与原版对照见BCaseArchiveTest、BPhaseSplitTest及CCaseArchiveTest。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "3dc8dc7d3dcbb8d82641a218deb2f48bff84c3b62757cfe78c576756cc0ac8a5",
+      "parent_snapshot": "../versions/BR-010/3dc8dc7d3dcbb8d82641a218deb2f48bff84c3b62757cfe78c576756cc0ac8a5.json",
+      "parent_case_directory": "../../B/post_reassignment_adjustment/BR-010",
+      "implementation_revision": {
+        "date": "2026-11-16",
+        "method": "依据RKHMA受影响星修补及无状态回退思想，以受控整星重建独立适配；不复刻原增量修补或协调器状态。"
+      }
+    },
+    {
+      "case_sha256": "7d63cdb8c48dd49fe2e90a9c16dd7cff4053111e4b57a317aceb0f2797afed2c",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/RkhmaHybridSearch.java",
+            "src/main/java/method/runtime/RkhmaAllocation.java",
+            "src/main/java/method/rkhma/"
+          ],
+          "version": {
+            "project_commit": "a52f51e30b2e2b8334978bc10778c01cfb7a68f2",
+            "file_sha256": {
+              "src/main/java/method/runtime/RkhmaHybridSearch.java": "59f593b1b8e39b3fcbde69988aecd6bd1ee1de9182c973336d5ad0a1f74601a7",
+              "src/main/java/method/runtime/RkhmaAllocation.java": "e07786710ddf9a46b4dd29f26652f5e95633456e96263a61171fdf5e009afc0e"
+            },
+            "source_tree": "逐文件SHA-256绑定在案例元数据中"
+          },
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+          "verification": {
+            "date": "2026-11-12",
+            "evidence": "B入口、A共享协调入口及method.rkhma依赖源码按当前项目版本原样保存；需要项目运行时与问题模型。"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-12",
+              "finding": "已授权在本项目本地迁移、使用和整理；来源与本项目代码向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": [
+            "项目独立适配实现：cases/B/post_reassignment_adjustment/BR-010/B000043.java"
+          ],
+          "version": {
+            "parent_case_id": "BR-010",
+            "parent_case_sha256": "3dc8dc7d3dcbb8d82641a218deb2f48bff84c3b62757cfe78c576756cc0ac8a5"
+          },
+          "usage_conditions": "本项目独立适配实现，按用户已确认的本项目用途使用。",
+          "verification": {
+            "date": "2026-11-16",
+            "evidence": "仅依赖项目公共接口编译；阶段行为与原版对照见BCaseArchiveTest、BPhaseSplitTest及CCaseArchiveTest。"
+          },
+          "external_model_use": "allowed"
+        },
+        {
+          "location": [
+            "cases/B/post_reassignment_adjustment/BR-010/B000043.py"
+          ],
+          "version": {
+            "parent_case_id": "BR-010",
+            "parent_case_sha256": "e0e070a2ab29e06020165bb9b7e419ee39573a962ecfdee16244d212f512d1fc",
+            "source_file_sha256": {
+              "cases/B/post_reassignment_adjustment/BR-010/B000043.py": "36a5f83cea3ce4a19f472fbedf45c3000ded87fd2ef643dd0a6c2a01d1a7f52a"
+            }
+          },
+          "usage_conditions": "本项目 Python 移植，按用户确认用于本项目检索与代码生成；保留原来源记录。",
+          "verification": {
+            "date": "2026-11-17",
+            "evidence": "与对应 Java 案例在 12 组固定输入、4 种时间轴、4 种试评预算及相同随机输入序列下比较选择结果与试评次数，共 192 次；未覆盖所有输入。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "e0e070a2ab29e06020165bb9b7e419ee39573a962ecfdee16244d212f512d1fc",
+      "parent_snapshot": "../versions/BR-010/e0e070a2ab29e06020165bb9b7e419ee39573a962ecfdee16244d212f512d1fc.json",
+      "implementation_revision": {
+        "date": "2026-11-17",
+        "method": "依据当前 Java 案例移植为 Python；原源码及历史元数据保留。"
       }
     }
   ],

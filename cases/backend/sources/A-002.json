@@ -298,12 +298,26 @@
               "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
             }
           },
-          "usage_conditions": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
           "verification": {
             "date": "2026-11-07",
             "evidence": "从本项目手工策略源码按原样提取类体，仅新增独立外壳和工厂入口；allocationByScarcityAndLoad"
           },
-          "external_model_use": "unknown"
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
         }
       ],
       "merged_case_ids": [],
@@ -312,6 +326,68 @@
       "description_revision": {
         "method": "澄清迁移与交换的任务范围和排序；算法代码不变。",
         "date": "2026-11-12"
+      }
+    },
+    {
+      "case_sha256": "07cd1b686de424e8a5d93b335b34ed4a13b07f90fc84a1636d9fbd11fab3305f",
+      "source": [
+        {
+          "location": [
+            "src/main/java/method/runtime/ManualStrategies.java"
+          ],
+          "version": {
+            "project_commit": "0efc09bcf1235db9c513121d373ed58d7223c0a1",
+            "working_tree": "所列源文件与该提交一致",
+            "file_sha256": {
+              "src/main/java/method/runtime/ManualStrategies.java": "ae28b6330e66eea2f6e23eb7ea5f298ba9ea2d78e25b34add8aace3761f2506e"
+            }
+          },
+          "usage_conditions": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+          "verification": {
+            "date": "2026-11-07",
+            "evidence": "从本项目手工策略源码按原样提取类体，仅新增独立外壳和工厂入口；allocationByScarcityAndLoad"
+          },
+          "external_model_use": "allowed",
+          "usage_reviews": [
+            {
+              "date": "2026-11-07",
+              "finding": "此前已授权在本项目本地使用和整理；相关源码未发现明确许可证，向外部模型发送的条件尚未核实。",
+              "evidence": "原来源记录的verification字段；其证据范围见原字段。",
+              "external_model_use": "unknown"
+            },
+            {
+              "date": "2026-11-13",
+              "finding": "用户于2026-11-13确认本项目已入库案例可用于本项目的外部模型检索和代码生成；本条仅覆盖项目代码，其他来源的适用许可及使用条件另行核验。",
+              "evidence": "用户于2026-11-13在本任务对“有权授权哪些项目代码用于外部模型检索和代码生成”的询问答复：“所有入库的都行啊”；仅作为本项目可授权内容的依据，不代替第三方许可。",
+              "external_model_use": "allowed"
+            }
+          ]
+        },
+        {
+          "location": [
+            "cases/A/A-002/A000002.py"
+          ],
+          "version": {
+            "parent_case_id": "A-002",
+            "parent_case_sha256": "4eb775d9efdf6b16cc69167956ea2a0d2ef4907bdc42824a3b407ab426deb20e",
+            "source_file_sha256": {
+              "cases/A/A-002/A000002.py": "de9b3819ac8df302edd3883e509326436514463910df1936e75a9e64130db4af"
+            }
+          },
+          "usage_conditions": "本项目 Python 移植，按用户确认用于本项目检索与代码生成；保留原来源记录。",
+          "verification": {
+            "date": "2026-11-17",
+            "evidence": "与对应 Java 案例在 12 组多星场景比较初始归属，并在每组 3 种已调度状态比较完整候选移动序列；未覆盖所有输入。"
+          },
+          "external_model_use": "allowed"
+        }
+      ],
+      "merged_case_ids": [],
+      "parent_case_sha256": "4eb775d9efdf6b16cc69167956ea2a0d2ef4907bdc42824a3b407ab426deb20e",
+      "parent_snapshot": "../versions/A-002/4eb775d9efdf6b16cc69167956ea2a0d2ef4907bdc42824a3b407ab426deb20e.json",
+      "implementation_revision": {
+        "date": "2026-11-17",
+        "method": "依据当前 Java 案例移植为 Python；原源码及历史元数据保留。"
       }
     }
   ]

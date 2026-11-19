@@ -1,0 +1,22 @@
+{
+  "case_id": "A-018",
+  "category": "gap_mthg",
+  "description": [
+    "Generalized assignment heuristic (MTHG):\n",
+    "- Assignment: Iteratively assign tasks ordered by descending regret (best minus ",
+    "second-best profit gap), updating remaining capacities.\n",
+    "- Refinement: If upper bound is unmet, evaluate alternative scoring functions (resource ",
+    "consumption, profit ratio, remaining capacity); retain superior feasible solution.\n",
+    "- Bounds: Supports up to 50 resources and 500 tasks.",
+    " Java accepts positive integer inputs within safe 32-bit arithmetic, preserves its inputs, uses zero-based resource indices, and returns value 0 when no feasible solution was found."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000018.java",
+        "sha256": "19d0dfc3ae0fe8d27975c6841a51a20b83248db31a57773644328af030d7c69d"
+      }
+    ]
+  }
+}

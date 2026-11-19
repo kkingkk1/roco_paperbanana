@@ -1,0 +1,20 @@
+{
+  "case_id": "BR-006",
+  "category": "incoming_first_rebuild",
+  "sub_library": "post_reassignment",
+  "description": [
+    "Reassignment local search only:\n",
+    "- Rebuild Order: Incoming assigned tasks ordered first, other assigned tasks second ",
+    "(each group sorted by descending reward, then smaller task ID).\n",
+    "- Execution: Request single controlled full-satellite rebuild through decoder C; return issued trial."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "B000036.java",
+        "sha256": "73543ad411394372755b7948c50cbe4d60abd768580bff3a18e13c32a245fabd"
+      }
+    ]
+  }
+}

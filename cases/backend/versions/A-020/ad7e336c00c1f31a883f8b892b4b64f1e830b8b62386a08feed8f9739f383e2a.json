@@ -1,0 +1,18 @@
+{
+  "case_id": "A-020",
+  "category": "greedy_weighted_matching",
+  "description": [
+    "Greedy bipartite matching: Sort all finite task-resource edges by ascending cost; ",
+    "iteratively match edge endpoints if both remain unmatched. Unmatched tasks or resources stay unassigned.",
+    " Java implementation uses -1 for unmatched row and column indices."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000020.java",
+        "sha256": "10f263e52806d685021fd45e9dfdde0044b9c8b3428e9f6d997103735d72de5d"
+      }
+    ]
+  }
+}

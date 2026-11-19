@@ -138,7 +138,8 @@ class CaseReaderTest {
     assertEquals("initial", previous.subLibrary());
     assertTrue(previous.description().contains("profit-first"));
     assertTrue(latest.description().contains("single-pass evaluation"));
-    assertEquals(latest.code(), previous.code());
+    assertEquals(Files.readString(current.resolve("B000004.java")), previous.code());
+    assertEquals(Files.readString(current.resolve("B000004.py")), latest.code());
     assertEquals(sha256(Files.readAllBytes(history)), previous.caseSha256());
   }
 

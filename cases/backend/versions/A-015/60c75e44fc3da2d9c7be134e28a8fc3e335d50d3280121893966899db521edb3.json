@@ -1,0 +1,18 @@
+{
+  "case_id": "A-015",
+  "category": "minimum_squared_load_search",
+  "description": [
+    "Initialization only: Branch-and-bound search ordered by ascending eligible satellite ",
+    "count, minimizing sum of squared satellite imaging durations. Prune branches when lower ",
+    "bound >= best cost. Unassigned if no candidates; stop the search on budget expiration."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000015.java",
+        "sha256": "b490c1eeb5347e2f75e677856f61e0dec12562760e85aa741d647725d168e80c"
+      }
+    ]
+  }
+}

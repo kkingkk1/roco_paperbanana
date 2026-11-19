@@ -1,0 +1,25 @@
+{
+  "case_id": "A-001",
+  "category": "candidate_count_load",
+  "description": [
+    "Initialization: Assign tasks (ascending ID) to satellite with most feasible candidates; ",
+    "tie-break by least assigned duration, then smaller ID. Unassigned if no candidates.\n",
+    "\n",
+    "Reassignment:\n",
+    "- Migration: Process unscheduled tasks by descending reward, then task ID; test non-owner ",
+    "satellites with candidates in ascending satellite ID.\n",
+    "- Swap: After migrations exhaust, test pairs of owned tasks in ascending task-ID order; ",
+    "require distinct owners and mutual candidates.\n",
+    "- Acceptance: Require feasibility and strictly higher profit; restart from Migration.\n",
+    "- Termination: Move exhaustion or budget limit."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "A000001.java",
+        "sha256": "4bc8e37e0626900bbe1b89b42d539d1ad1ebaafdf0a45ad9c63f10aff3c869ed"
+      }
+    ]
+  }
+}

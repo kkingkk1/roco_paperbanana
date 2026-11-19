@@ -1,0 +1,17 @@
+{
+  "case_id": "C-068",
+  "category": "random_multistart",
+  "description": [
+    "Initialization: Construct 16 timelines in B order using uniformly sampled feasible observations. Choose the feasible timeline with highest total reward, then B-order inclusion and earlier starts. Use the supplied random generator.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks. Re-timing can change only observations inserted during this call; other observations stay fixed. Return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000068.java",
+        "sha256": "18009f3b474430570c8e3c5c77dcea059159d3f7005f2c0e89c070500fb15f5e"
+      }
+    ]
+  }
+}

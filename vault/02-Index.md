@@ -1,6 +1,6 @@
 # 项目知识索引
 
-更新日期：2026-11-13。
+更新日期：2026-11-18。
 
 ## 顶层入口
 
@@ -15,7 +15,7 @@
 各阶段计划维护对应任务、交付物与验收：
 
 - [P0-研究合同与既有起点](Plan/mechanisms/P0-研究合同与既有起点.md)
-- [P1-可运行求解器起点](Plan/mechanisms/P1-可运行求解器起点.md)——已完成工程验收。
+- [P1-可运行求解器起点](Plan/mechanisms/P1-可运行求解器起点.md)——Python问题层、两阶段运行时及预置组合验收。
 - [P2-五角色协作演化](Plan/mechanisms/P2-五角色协作演化.md)
 - [P2-任务1-准备案例与检索协议](Plan/mechanisms/P2-任务1-准备案例与检索协议.md)
 - [P3-小预算先导与冻结选型](Plan/mechanisms/P3-小预算先导与冻结选型.md)
@@ -32,8 +32,12 @@
 
 ## 既有验收
 
-各历史报告保留当时的实现状态。RKHMA接口和P1阶段的当前状态以统一接口报告与主计划为准。
+各历史报告保留当时的实现状态。RKHMA历史Java接口见统一接口报告，Python迁移和P1当前状态以主计划与阶段计划为准。
 
+- [Python迁移阶段报告](Results/Reports/python-migration.md)及[证据](Results/Evidence/python-migration/evidence.md)——27种组合的小实例对照及两个真实场景的RKHMA限时验收。
+- [现有案例决策逻辑复核](Results/Reports/case-semantic-review-20261117.md)及[证据](Results/Evidence/case-semantic-review-20261117/evidence.md)——149条当前版本的决策比较。
+- [C案例跨语言验收与去重复核](Results/Reports/case-acceptance-20261117.md)及[证据](Results/Evidence/case-acceptance-20261117/evidence.md)——有限输入对照与阶段性复核。
+- [Python真实检索联调报告](Results/Reports/p2-retriever-python.md)及[证据](Results/Evidence/p2-retriever-python/evidence.md)——小范围联调，尚非完整P2验收。
 - [P1 RKHMA统一接口报告](Results/Reports/p1-rkhma-unified.md)及[证据](Results/Evidence/p1-rkhma-unified/evidence.md)
 - [RKHMA分阶段对照报告](Results/Reports/p1-rkhma-phase-comparison.md)及[证据](Results/Evidence/p1-rkhma-phase-comparison/evidence.md)
 - [P1试评接口报告](Results/Reports/p1-abc-trial-interface.md)及[证据](Results/Evidence/p1-abc-trial-interface/evidence.md)

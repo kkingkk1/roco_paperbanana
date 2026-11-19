@@ -1,0 +1,17 @@
+{
+  "case_id": "C-002",
+  "category": "minimum_added_transition",
+  "description": [
+    "Initialization: Process B order. Choose the feasible observation with the smallest added adjacent transformation time, subtracting the replaced edge; tie-break by earliest completion, then start.\n\n",
+    "Reassignment: Remove released observations and apply the same rule to reconsidered tasks; return no change if the complete timeline is unchanged or infeasible."
+  ],
+  "code": {
+    "format": "single_file",
+    "files": [
+      {
+        "path": "C000002.java",
+        "sha256": "7bce0543db0ac0843816aaa3fbd047d0712d26625033663382ec2852879d9224"
+      }
+    ]
+  }
+}
