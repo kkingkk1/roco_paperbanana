@@ -15,8 +15,8 @@
 
 - [P0：研究合同与既有起点](Plan/mechanisms/P0-研究合同与既有起点.md)
 - [P1：可运行求解器起点](Plan/mechanisms/P1-可运行求解器起点.md)——问题层、两阶段运行时及预置组合验收。
-- [P2：五角色协作演化](Plan/mechanisms/P2-五角色协作演化.md)：三个[A/B/C生成角色](../README.md#abc代码生成)可分别调用，下一步接入同轮组装。
-- [P2案例与检索子计划](Plan/mechanisms/P2-任务1-准备案例与检索协议.md)及[材料与入库规则](Knowledge/案例入库与接口适配.md)：首批149条案例和Retriever已独立验收，可接入演化控制程序。
+- P2已接通初始化和同轮八项组装。下一项为实评、复用与选版。[P2阶段计划](Plan/mechanisms/P2-五角色协作演化.md) · [同轮组装入口](../README.md#演化初始化与同轮组装)
+- 首批149条案例和Retriever已独立验收。Retriever为演化初始化提供冻结案例包。[P2案例与检索子计划](Plan/mechanisms/P2-任务1-准备案例与检索协议.md) · [材料与入库规则](Knowledge/案例入库与接口适配.md)
 - [P3：小预算先导与冻结选型](Plan/mechanisms/P3-小预算先导与冻结选型.md)
 - [P4：正式实验与研究主张](Plan/mechanisms/P4-正式实验与研究主张.md)
 

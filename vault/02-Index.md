@@ -6,6 +6,7 @@
 
 - [项目使用说明](../README.md)
 - [A/B/C代码生成入口](../README.md#abc代码生成)
+- [演化初始化与同轮组装](../README.md#演化初始化与同轮组装)
 - [项目指令](../AGENTS.md)
 - [知识库状态](00-Knowledge-Base-Status.md)
 - [研究计划与进度](01-Research-Plan-and-Progress.md)

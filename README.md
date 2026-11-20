@@ -6,7 +6,7 @@
 
 项目以Python为主。问题层、两阶段运行时、27种预置组合和案例读取已通过P1工程验收。生成代码的接入与隔离属于P2。
 A/B/C案例库已初步建成，实际条数与使用边界见[案例目录](cases/README.md)。
-原Java版本已完成P1工程验收，作为迁移对照保留。Python的Retriever和A/B/C生成角色可独立真实调用；组合控制、Critic及生成代码的隔离执行仍在P2。
+原Java版本已完成P1工程验收，作为迁移对照保留。Python已接通Retriever、A/B/C生成和同轮组装。实例实评、Critic及生成代码的隔离执行仍在P2。
 
 ## 研究路线
 
@@ -109,7 +109,24 @@ python -B -m satellite_scheduler.generation p2-abc-verified-20261119 A `
   --case-run-id python-retriever-20261117-134111 --parent A1B1C1 --model gpt-6.1-terra
 ```
 
-请求、原始回复、用量和候选保存在`outputs/<run-id>/generation/<role>/`。`candidate.json`包含生成的`description`、`code`及程序绑定的角色和父版本哈希。入口检查说明结构、Python语法与方法签名；当前以文本保留生成代码。实际组装和隔离执行见[P2阶段计划](vault/Plan/mechanisms/P2-五角色协作演化.md)。
+请求、原始回复、用量和候选保存在`outputs/<run-id>/generation/<role>/`。`candidate.json`包含生成的`description`、`code`及程序绑定的角色和父版本哈希。入口检查说明结构、Python语法和方法签名，并以文本保存生成代码。
+
+## 演化初始化与同轮组装
+
+`satellite_scheduler.evolution init` 接入Retriever，并登记P1的八个手工起点。首次初始化提供新的运行ID、`--model`、逐条传入的`--reviewed-case`和`--selection-basis`。初始化恢复后继续使用同一份冻结案例包。候选要求见[真实案例检索](#真实案例检索)。
+
+`round` 接收运行ID、链ID、从1开始的轮号和`--parent`。命令行的父版本从八个P1起点中选择。Python入口`run_round`也接受已组装的完整版本作为父版本。
+同链同轮先冻结完整父版本，再为每个角色提供本模块的案例和适配说明。版本哈希由三模块源码和预置策略参数决定。
+
+本机可用以下命令回读已保存的离线验收运行。
+
+```powershell
+$env:PYTHONPATH = 'src/main/python'
+python -B -m satellite_scheduler.evolution init p2-task2-2-offline-20261119 --model gpt-6.1-terra
+python -B -m satellite_scheduler.evolution round p2-task2-2-offline-20261119 verified 1 --parent A1B1C1
+```
+
+每轮在`outputs/<run-id>/evolution/rounds/<chain-id>/<round>/combinations.json`记录原父版本、三个单改、三个双改和一个三改。程序核对角色、父版本、语法、签名及可静态识别的越权。未通过静态门禁的候选最多由责任角色修复一次。仍失败时，含该改动的搭配逐项记录为`static_failure`，其余搭配照常组装。实例实评、复用与选版属于任务2.3，生成代码的隔离执行与终验属于任务4。[P2阶段计划](vault/Plan/mechanisms/P2-五角色协作演化.md)
 
 ## 评价候选解
 

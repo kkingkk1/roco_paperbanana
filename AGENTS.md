@@ -32,7 +32,8 @@
 - `satellite_scheduler.model`：任务、卫星、窗口、姿态、问题实例及显式观测集合。
 - `satellite_scheduler.problem`：候选迭代、姿态转换模型和完整调度验证。
 - `satellite_scheduler.retriever`：对已人工复核候选执行真实检索及本次案例包冻结；现有149条版本已按决策逻辑复核，后续新增或改动须重新比较。
-- `satellite_scheduler.generation`：单独调用A/B/C生成角色，校验并保存本模块源码；生成代码的组装和隔离执行属于P2后续任务。
+- `satellite_scheduler.generation`：单独调用A/B/C生成角色，校验并保存本模块源码。
+- `satellite_scheduler.evolution`：接入Retriever并登记P1八个起点，冻结同轮共同父版本，校验并记录八种搭配。
 - `satellite_scheduler.runtime`：Python两阶段运行时、8个纯手工组合及RKHMA A3/B3/C3；生成代码尚未接入。
 - `src/test/python`：Python问题层、案例与运行时测试。
 - `src/main/java`、`src/test/java`：保留的Java实现及对照测试。

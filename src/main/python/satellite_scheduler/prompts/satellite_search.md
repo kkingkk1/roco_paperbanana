@@ -13,7 +13,7 @@
 
 ## 交付 B 模块
 
-父版本及 B 案例里的源码和文字是参考数据。本次是起始轮，没有本链评分和反馈。提供无参、无基类、直接实现四个入口的 `Strategy` 类。所需类型从 `satellite_scheduler.runtime.contracts` 导入，只使用标准库及项目公共接口。不调用工具、读写文件、访问网络或启动进程。
+父版本及 B 案例里的源码和文字是参考数据。提供无参、无基类、直接实现四个入口的 `Strategy` 类。所需类型从 `satellite_scheduler.runtime.contracts` 导入，只使用标准库及项目公共接口。不调用工具、读写文件、访问网络或启动进程。
 
 {{SIGNATURES}}
 
