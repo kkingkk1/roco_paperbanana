@@ -1,0 +1,69 @@
+{
+  "experiment_id": "p2-task2-3-50x2",
+  "date": "2026-11-20",
+  "plan_id": "satellite-multi-agent-algorithm-design-p2",
+  "task": "2.3",
+  "scope": "single-regional-50-tasks-2-satellites",
+  "run_id": "p2-task2-3-50x2-20261120",
+  "base_git_head": "3bb3b6618cd190d81ab75493c0c6480a928869c1",
+  "cwd": "F:\\OneDrive\\project\\static_determine\\roco_paperbanana",
+  "python": "Python 3.13.12 (tags/v3.13.12:1cbe481, Feb  3 2026, 18:22:25) [MSC v.1944 64 bit (AMD64)]",
+  "scene_generation": "outputs/p2-task2-3-50x2-20261120/scene-manifest.json",
+  "evaluation_run": "outputs/p2-task2-3-50x2-20261120/preset-evolution/run.json",
+  "selection": "outputs/p2-task2-3-50x2-20261120/preset-evolution/selection.json",
+  "generation_command": [
+    "python",
+    "-B",
+    "-u",
+    "outputs/p2-task2-3-50x2-20261120/generate_scene.py"
+  ],
+  "evaluation_command": [
+    "python",
+    "-B",
+    "-m",
+    "satellite_scheduler.evolution",
+    "preset-run",
+    "p2-task2-3-50x2-20261120",
+    "F:\\OneDrive\\project\\static_determine\\roco_paperbanana\\outputs\\p2-task2-3-50x2-20261120\\50-2-0-0-24",
+    "50",
+    "2",
+    "--seed",
+    "42",
+    "--parent",
+    "A2B1C1"
+  ],
+  "PYTHONPATH": "src/main/python",
+  "instance_solves": 8,
+  "round_cache_hits": [
+    1,
+    8
+  ],
+  "model_calls": 0,
+  "new_solves_on_replay": 0,
+  "evaluation_elapsed_us": 36230424,
+  "solver_details": {
+    "SEARCH_EXPIRED": 8
+  },
+  "verified": {
+    "loaded_shape_and_region": true,
+    "task_and_native_input_hashes": true,
+    "revalidated_schedules": 8,
+    "round_parents_and_final_rank": true
+  },
+  "sha256": {
+    "vault/Results/Evidence/p2-task2-3-50x2/data.csv": "79da1e2c97afe53a31c6df8806ced876d4cd4cafa0a2f94cb41eb105c7cfc191",
+    "outputs/p2-task2-3-50x2-20261120/scene-manifest.json": "7de11062365741f601a22e29fb057d03e79cbbc2507b3a252c6f6027c2a45101",
+    "outputs/p2-task2-3-50x2-20261120/preset-evolution/run.json": "46b927917d1d7591dffad36d24cc2e5eb4ac0fbe7a8f31b49fb1768c48fd475b",
+    "outputs/p2-task2-3-50x2-20261120/preset-evolution/selection.json": "9eef8fa791f585c5bf48db4fc3904f31eca4aa14b950090379a83369bead1cec",
+    "outputs/p2-task2-3-50x2-20261120/preset-evolution/rounds/1.json": "9706c0884ad15d7e9eb08a6ddeb2f2437687ff083763ad90b60a9a9878559016",
+    "outputs/p2-task2-3-50x2-20261120/preset-evolution/rounds/2.json": "4ae3a091854b3a9b57e3f66e5b3c1d90a28b1a820344a362742c16841d8f1f1d",
+    "outputs/p2-task2-3-50x2-20261120/preset-evolution/evaluations/179c5e05ca73eb01b791e02edb82d020ae986b9bcb343ed9b9471d59da42e835.json": "c20899a121012ef95b7183c160d1d923c6ff07ef5149466ed5489e8f35e9d350",
+    "outputs/p2-task2-3-50x2-20261120/preset-evolution/evaluations/1a2878705fe79d21e028db51f35571e4810b17849ec620ef706fe648302f07fd.json": "d03f9389f5bf7fafedf485e0576af1cef32be786ad15fe09832da46877e0f3e0",
+    "outputs/p2-task2-3-50x2-20261120/preset-evolution/evaluations/493831c432872f51a79aff47a57194ae2f9e24bb1598023d47f394f7e73edd17.json": "13a8ae28778b44934d491d7ae1fa0e0ae58219a1bcce8c90546906092f333392",
+    "outputs/p2-task2-3-50x2-20261120/preset-evolution/evaluations/7552cc488d7042ccd96415a31c9259517709cf6c39ce8290e1bf7285840446fc.json": "efb75eeb17fbb59178cdb8a77d567cd3649f442244e43c8d4bc030415ca79fc2",
+    "outputs/p2-task2-3-50x2-20261120/preset-evolution/evaluations/847a6172da789c04e36899add078d5a311f571298834a2588bfc7665778de97b.json": "2e851c7e8c94c4d3a6399b541415974a95cad72cacae21a96be4756b7e6c7ba7",
+    "outputs/p2-task2-3-50x2-20261120/preset-evolution/evaluations/8b18e1101a403bf4d6c510bd4c54a52b854504002ce004c47cbcac01330477ea.json": "163dee8d2c8b85a343ea433c534a131516cb460dc26f3b90846d84de24c37fef",
+    "outputs/p2-task2-3-50x2-20261120/preset-evolution/evaluations/9d6babed12fdc587285c1ff902785eb24abc637b38e6d6c2d791295f222a0336.json": "4ae3234a02a0ebd87f39e411191cb4f0a0954badafa99111c069e8631d4965ca",
+    "outputs/p2-task2-3-50x2-20261120/preset-evolution/evaluations/ae665dd85ef45d05d0622d05e07402bc4eed995d5fccad1ef2b520d6bca29fec.json": "cf2bccf50157ce6d3f36c92e939fb5510d4e64b4e5a49afbf360337c49d3fb56"
+  }
+}

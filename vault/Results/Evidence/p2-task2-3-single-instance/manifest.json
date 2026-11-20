@@ -1,0 +1,51 @@
+{
+  "experiment_id": "p2-task2-3-single-instance",
+  "date": "2026-11-20",
+  "plan_id": "satellite-multi-agent-algorithm-design-p2",
+  "task": "2.3",
+  "run_id": "p2-task2-3-single-instance-20261120",
+  "scope": "single-design-instance-preset-check",
+  "fixture_source": "src/test/python/test_runtime.py::fixtures()['half_second']",
+  "independent_oracle": "vault/Results/Evidence/p1-small-enumeration/independent_oracle.py",
+  "comparison_data": "vault/Results/Evidence/p1-small-enumeration/data.csv",
+  "commands": {
+    "powershell_setup": "$env:PYTHONPATH = 'src/main/python'",
+    "run_and_resume": "python -B -m satellite_scheduler.evolution preset-run p2-task2-3-single-instance-20261120 outputs/p2-task2-3-single-instance-20261120/half_second 4 2 --seed 42 --parent A2B1C1",
+    "tests": "python -B -m unittest discover -s src/test/python"
+  },
+  "cwd": "F:\\OneDrive\\project\\static_determine\\roco_paperbanana",
+  "worker_python_version": "Python 3.13.12 (tags/v3.13.12:1cbe481, Feb  3 2026, 18:22:25) [MSC v.1944 64 bit (AMD64)]",
+  "base_git_head": "3bb3b6618cd190d81ab75493c0c6480a928869c1",
+  "run_record": "outputs/p2-task2-3-single-instance-20261120/preset-evolution/run.json",
+  "selection_record": "outputs/p2-task2-3-single-instance-20261120/preset-evolution/selection.json",
+  "algorithm_model_calls": 0,
+  "new_instance_solves_on_resume": 0,
+  "total_evaluation_elapsed_us": 200878,
+  "validation": {
+    "p1_fixture_values_match": true,
+    "p1_oracle_checked_schedules": 8,
+    "p1_baseline_profit_matches": 8,
+    "round_cache_hits": [
+      1,
+      8
+    ],
+    "round_parent_and_final_ranks_match": true,
+    "different_seed_same_run_rejected": true,
+    "python_tests_passed": 79
+  },
+  "sha256": {
+    "vault/Results/Evidence/p2-task2-3-single-instance/data.csv": "1261762076dc3715a2a69cae9cda803bf862f052d4b3333ffd170ea07073ae9c",
+    "outputs/p2-task2-3-single-instance-20261120/preset-evolution/run.json": "2fa46498ee9b5c8426e21bda5fe8f4e2565f4abf5ed665e6070e864c88cc0962",
+    "outputs/p2-task2-3-single-instance-20261120/preset-evolution/selection.json": "0c44cd1470938af26e8a4d051cc139406f7215a7d17745aed213e7ddc685f516",
+    "outputs/p2-task2-3-single-instance-20261120/preset-evolution/rounds/1.json": "65cc9f97e04a362067b871af3e44e8a9155dc3a5b7f3a9854611a1bea641f599",
+    "outputs/p2-task2-3-single-instance-20261120/preset-evolution/rounds/2.json": "b04fc0a73e50a785f4125a1011db9ed57389b72f78687b5236e7c1e774758779",
+    "outputs/p2-task2-3-single-instance-20261120/preset-evolution/evaluations/0cf2bfb2d6013d0afb5d19d0169e5b4ed981f52d2c22b5c01631b9257dbd18dc.json": "f0f3df54afd7766fefe76f9108cd6a19788f18118a8a5020e71fc0b918694235",
+    "outputs/p2-task2-3-single-instance-20261120/preset-evolution/evaluations/26d6a408c4ebaa7088b10f1aeb6cb965884bed5673ec3ac9b4479fabddad30a6.json": "db6b4d4c37de851d0c658f4c50f8d4cb0539c12cfb9d0a8f4e63e4ba44b62879",
+    "outputs/p2-task2-3-single-instance-20261120/preset-evolution/evaluations/5e48d3866074f3cd6cef034c0e8480ee3908bf8135e5e5f93eb52ecbce0773e8.json": "a6b56b0493b626a73b134143666d7b9da540d402dea776603383bae522b7eecb",
+    "outputs/p2-task2-3-single-instance-20261120/preset-evolution/evaluations/6ca338b1e4bde12266aa22b49c84a95286b360f2ddb42ec919d851dad132ed51.json": "fa397c4c769e35d3f187ad6bd5f9ace4f2fb2ab75cc929e11d7c6fbab1dbb9a0",
+    "outputs/p2-task2-3-single-instance-20261120/preset-evolution/evaluations/7b2b4f52941e0937c4ddfcfa66ebdb0b8c2bd7f604205a7d2a1e75448f29e693.json": "05504e83e22869acf704d134cfba627cc533f833133d511be79225d1c623c17d",
+    "outputs/p2-task2-3-single-instance-20261120/preset-evolution/evaluations/e48af4529e38b2f28f4b5fd85b8ebbcb83078aa59893ab9e1854f587033fe41a.json": "aeb47c7405d391ed4298e438285b3f8d4d7cd4297de072b86f649e32f2287f1e",
+    "outputs/p2-task2-3-single-instance-20261120/preset-evolution/evaluations/f6122b469091cbb69e81acc2f2b139ad38d70f4a52d8a30d6fdc88bf0cbf7a8e.json": "025787f094b8f771e6efa6961a6df0cc0ecb33f64e15089715f34a30ae6f95c9",
+    "outputs/p2-task2-3-single-instance-20261120/preset-evolution/evaluations/f700bbd9e6ee1957ca567979f364c1ff62061775eb82e787fc88930fcab0bae6.json": "f375dc7c33c4f02acc5f24c3fc36bcb54e5083084651d5f28256f5e1a62d799d"
+  }
+}

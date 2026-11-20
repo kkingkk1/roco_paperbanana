@@ -6,7 +6,7 @@
 
 项目以Python为主。问题层、两阶段运行时、27种预置组合和案例读取已通过P1工程验收。生成代码的接入与隔离属于P2。
 A/B/C案例库已初步建成，实际条数与使用边界见[案例目录](cases/README.md)。
-原Java版本已完成P1工程验收，作为迁移对照保留。Python已接通Retriever、A/B/C生成和同轮组装。实例实评、Critic及生成代码的隔离执行仍在P2。
+原Java版本已完成P1工程验收，作为迁移对照保留。Python已接通Retriever、A/B/C生成和同轮组装。P2已用预置组合完成单实例实评及选版检查。
 
 ## 研究路线
 
@@ -127,6 +127,21 @@ python -B -m satellite_scheduler.evolution round p2-task2-2-offline-20261119 ver
 ```
 
 每轮在`outputs/<run-id>/evolution/rounds/<chain-id>/<round>/combinations.json`记录原父版本、三个单改、三个双改和一个三改。程序核对角色、父版本、语法、签名及可静态识别的越权。未通过静态门禁的候选最多由责任角色修复一次。仍失败时，含该改动的搭配逐项记录为`static_failure`，其余搭配照常组装。实例实评、复用与选版属于任务2.3，生成代码的隔离执行与终验属于任务4。[P2阶段计划](vault/Plan/mechanisms/P2-五角色协作演化.md)
+
+### 预置组合单实例实评
+
+`preset-run` 在一个场景和一个求解种子上，从指定的P1父版跑一代、一链、两轮。每轮处理全部八项搭配。Windows PowerShell 7 上的求解沿用单核、2 GiB、5秒硬截止和进程外终验。
+
+在项目根目录运行。下例回读本机保存的 `half_second` 夹具验收。首次运行提供新的运行ID和本地场景目录。
+
+```powershell
+$env:PYTHONPATH = 'src/main/python'
+$runId = 'p2-task2-3-single-instance-20261120'
+python -B -m satellite_scheduler.evolution preset-run $runId `
+  "outputs/$runId/half_second" 4 2 --seed 42 --parent A2B1C1
+```
+
+在 `outputs/<run-id>/preset-evolution/` 查看 `run.json`、逐实例求解记录、两轮的事件引用和 `selection.json`。同运行ID恢复时校验冻结条件，只求解尚未完成的搭配。 [单实例证据](vault/Results/Evidence/p2-task2-3-single-instance/evidence.md)
 
 ## 评价候选解
 

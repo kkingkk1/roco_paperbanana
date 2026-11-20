@@ -231,7 +231,7 @@ def run_round(run_id: str, chain_id: str, round_number: int, parent: AlgorithmVe
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description='初始化独立演化，或组装同一轮的八种搭配')
+    parser = argparse.ArgumentParser(description='初始化演化、组装搭配或实评预置组合')
     commands = parser.add_subparsers(dest='command', required=True)
     start = commands.add_parser('init')
     start.add_argument('run_id')
@@ -243,10 +243,21 @@ def main() -> int:
     step.add_argument('chain_id')
     step.add_argument('round_number', type=int)
     step.add_argument('--parent', choices=_PRESETS, required=True)
+    trial = commands.add_parser('preset-run', help='用一个场景和 P1 预置组合实评两轮')
+    trial.add_argument('run_id')
+    trial.add_argument('scene', type=Path)
+    trial.add_argument('tasks', type=int)
+    trial.add_argument('satellites', type=int)
+    trial.add_argument('--seed', type=int, required=True)
+    trial.add_argument('--parent', choices=_PRESETS, required=True)
     args = parser.parse_args()
     try:
         if args.command == 'init':
             result = initialize(args.run_id, args.reviewed_case, args.selection_basis, args.model)
+        elif args.command == 'preset-run':
+            from .preset_evolution import run_preset_generation
+            result = run_preset_generation(args.run_id, args.scene, args.tasks, args.satellites,
+                                           args.seed, args.parent)
         else:
             assembled = run_round(args.run_id, args.chain_id, args.round_number, args.parent)
             result = {'record': str(assembled.record_path), 'combinations': len(assembled.combinations),
